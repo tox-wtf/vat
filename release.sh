@@ -175,7 +175,7 @@ cat "$header_temp" "$new_temp" "$old_temp" > CHANGES.md
 rm  "$header_temp" "$new_temp" "$old_temp"
 
 git add Cargo.{toml,lock} CHANGES.md
-git commit -m "auto(bump): $new_tag" -m "$changelog_entry"
+git commit -m "chore(bump): $new_tag" -m "$changelog_entry"
 
 git tag "$new_tag"
 git push origin "$new_tag"
