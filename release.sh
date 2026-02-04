@@ -66,7 +66,7 @@ fixes=""
 chores=""
 docs=""
 while IFS= read -r change; do
-    if echo "$change" | grep -q "feat.*:"; then
+    if echo "$change" | grep -qx "!?!?feat.*:.\+"; then
         msg="$(echo "$change" | cut -d: -f2- | sed 's,^\s,,')"
         case "$change" in
             !!* ) features+="**[!!]** ${msg^}$nl" ;;
@@ -76,7 +76,7 @@ while IFS= read -r change; do
         continue
     fi
 
-    if echo "$change" | grep -q "fix.*:"; then
+    if echo "$change" | grep -qx "!?!?fix.*:.\+"; then
         msg="$(echo "$change" | cut -d: -f2- | sed 's,^\s,,')"
         case "$change" in
             !!* ) fixes+="**[!!]** ${msg^}$nl" ;;
@@ -86,7 +86,7 @@ while IFS= read -r change; do
         continue
     fi
 
-    if echo "$change" | grep -q "chore.*:"; then
+    if echo "$change" | grep -qx "!?!?chore.*:.\+"; then
         msg="$(echo "$change" | cut -d: -f2- | sed 's,^\s,,')"
         case "$change" in
             !!* ) chores+="**[!!]** ${msg^}$nl" ;;
@@ -96,7 +96,7 @@ while IFS= read -r change; do
         continue
     fi
 
-    if echo "$change" | grep -q "doc.*:"; then
+    if echo "$change" | grep -qx "!?!?doc.*:.\+"; then
         msg="$(echo "$change" | cut -d: -f2- | sed 's,^\s,,')"
         case "$change" in
             !!* ) docs+="**[!!]** ${msg^}$nl" ;;
