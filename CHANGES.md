@@ -7,6 +7,31 @@
 > Major ones are prefixed with **[!!]**.
 
 
+## 2.10.0 - 2026-02-04 13:00:40 -0600
+
+### Features
+
+ - Add num_threads config option
+ - **[!]** Refactoring
+ - Add libgbm
+
+### Fixes
+
+ - Update broken upstreams
+ - Libxfixes:commit | 70d5b0e3 -> 55bb2d1d
+ - Add release channel for tinaries
+
+### Chores
+
+ - Update dependencies
+ - Auto(bump) -> chore(bump)
+ - Update dependencies
+
+### Docs
+
+ - Add offline note
+
+
 ## 2.9.2 - 2025-12-31 22:09:44 -0600
 
 ### Features
