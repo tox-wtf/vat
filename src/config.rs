@@ -19,6 +19,8 @@ impl Shortform {
 
 #[derive(Debug, Deserialize)]
 pub struct Config {
+    pub num_threads: usize,
+
     /// Maximum lifespan for a fetch (in seconds)
     pub fetch_timeout: u64,
 
@@ -32,6 +34,7 @@ pub struct Config {
 impl Default for Config {
     fn default() -> Self {
         Self {
+            num_threads: num_cpus::get() * 2,
             fetch_timeout: 30,
             cache_timeout: 3600,
             shortforms: default_shortforms(),

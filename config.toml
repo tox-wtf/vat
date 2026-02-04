@@ -1,3 +1,6 @@
+# Number of threads rayon should use
+num_threads = 64
+
 # Maximum lifespan for a fetch (in seconds)
 fetch_timeout = 30
 

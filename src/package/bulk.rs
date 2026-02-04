@@ -1,6 +1,6 @@
 // package/bulk.rs
 
-use crate::VAT_CACHE;
+use crate::{CONFIG, VAT_CACHE};
 use crate::package::{PackageError, PackageVersions};
 
 use super::{Package, VersionChannel};
@@ -9,7 +9,7 @@ use color_eyre::eyre::{Context, Error};
 use indexmap::IndexMap;
 use rayon::prelude::*;
 use std::path::Path;
-use std::{env, fs};
+use std::fs;
 use walkdir::WalkDir;
 
 pub fn find_all() -> Result<Vec<Package>> {
@@ -33,10 +33,7 @@ pub fn find_all() -> Result<Vec<Package>> {
 }
 
 pub fn fetch_all(packages: &[Package]) -> Result<IndexMap<Package, Vec<VersionChannel>>> {
-    let threads = env::var("RAYON_NUM_THREADS")
-        .ok()
-        .and_then(|v| v.parse::<usize>().ok())
-        .unwrap_or_else(|| num_cpus::get() * 2);
+    let threads = CONFIG.get().expect("Config should be initialized").num_threads;
 
     let pool = rayon::ThreadPoolBuilder::new()
         .num_threads(threads)
