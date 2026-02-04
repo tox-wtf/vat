@@ -6,34 +6,32 @@ use std::process::{Command, Stdio};
 use std::time::Duration;
 use std::thread;
 
-use color_eyre::Result;
-use color_eyre::eyre::Context;
 use thiserror::Error;
 use wait_timeout::ChildExt;
 
 use crate::CONFIG;
 
 #[derive(Error, Debug)]
-enum CmdError {
-    #[error("output in stderr")]
+pub enum CmdError {
+    #[error("Output in stderr")]
     OutputInStderr,
 
-    #[error("nonzero status")]
+    #[error("Nonzero status")]
     NonzeroStatus,
 
-    #[error("empty stdout")]
+    #[error("Empty stdout")]
     EmptyStdout,
 
-    #[error("timeout")]
+    #[error("Timed out")]
     Timeout,
 
-    #[error("io error")]
+    #[error("I/O error: {0}")]
     Io(#[from] io::Error),
 }
 
 /// # Lowish level function to execute a command and return stdout
 #[allow(clippy::similar_names, clippy::unwrap_used)]
-pub fn cmd(cmd: &[&str], env: HashMap<&str, &str>, cwd: &str) -> Result<String> {
+pub fn cmd(cmd: &[&str], env: HashMap<&str, &str>, cwd: &str) -> Result<String, CmdError> {
     trace!("Evaluating command: {}", cmd.join(" "));
 
     let (arg0, args) = cmd.split_first().expect("command should not be empty");
@@ -44,8 +42,7 @@ pub fn cmd(cmd: &[&str], env: HashMap<&str, &str>, cwd: &str) -> Result<String> 
         .stdin(Stdio::null())
         .stdout(Stdio::piped())
         .stderr(Stdio::piped())
-        .spawn()
-        .wrap_err("Failed to spawn command")?;
+        .spawn()?;
 
     let timeout = CONFIG.get().expect("Config should be initialized").fetch_timeout;
     trace!("Spawned command with a timeout of {timeout} seconds");
@@ -69,7 +66,7 @@ pub fn cmd(cmd: &[&str], env: HashMap<&str, &str>, cwd: &str) -> Result<String> 
     let Some(status) = child.wait_timeout(timeout)? else {
         child.kill().expect("Could not kill child");
         child.wait().expect("Failed to wait on child");
-        return Err(CmdError::Timeout).wrap_err("Timed out");
+        return Err(CmdError::Timeout);
     };
 
     let out_buf = out_thread.join().unwrap();
@@ -85,18 +82,17 @@ pub fn cmd(cmd: &[&str], env: HashMap<&str, &str>, cwd: &str) -> Result<String> 
 
     if !err.is_empty() {
         warn!("{err}");
-        return Err(CmdError::OutputInStderr).wrap_err("Output in stderr");
+        return Err(CmdError::OutputInStderr);
     }
 
     if out.trim().is_empty() {
         warn!("No output in stdout");
-        return Err(CmdError::EmptyStdout).wrap_err("No output in stdout");
+        return Err(CmdError::EmptyStdout);
     }
 
     if code != 0 {
         warn!("Exited with nonzero status: {code}");
-        return Err(CmdError::NonzeroStatus)
-            .wrap_err_with(|| format!("Exited with nonzero status: {code}"));
+        return Err(CmdError::NonzeroStatus);
     }
 
     Ok(out)

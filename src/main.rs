@@ -62,7 +62,7 @@ fn main() -> color_eyre::Result<()> {
         ARGS.packages
             .iter()
             .map(|s| Package::from_name(s.clone()))
-            .collect::<Result<Vec<_>>>()?
+            .collect::<Result<Vec<_>, _>>()?
     };
 
     debug!("Detected packages: {packages:#?}");
@@ -105,6 +105,7 @@ fn clean_cache() -> Result<()> {
             CONFIG.get().expect("Config should be initialized").cache_timeout
         );
 
+        #[allow(clippy::unchecked_time_subtraction)]
         if now - mtime > cache_timeout {
             debug!("Removing cache");
             fs::remove_dir_all(cache_path).wrap_err("Failed to remove cache")?;

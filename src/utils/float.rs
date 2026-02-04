@@ -7,10 +7,9 @@ pub const fn defloat(val: f64) -> (u64, i16, i8) {
     let sign: i8 = if bits >> 63 == 0 { 1 } else { -1 };
     let mut exponent: i16 = ((bits >> 52) & 0x7ff) as i16;
 
-    let mantissa = if exponent == 0 {
-        (bits & 0xfffffffffffff) << 1
-    } else {
-        (bits & 0xfffffffffffff) | 0x10000000000000
+    let mantissa = match exponent {
+        0 => (bits & 0xfffffffffffff) << 1,
+        _ => (bits & 0xfffffffffffff) | 0x10000000000000,
     };
 
     exponent -= 1023 + 52;

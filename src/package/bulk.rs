@@ -1,7 +1,7 @@
 // package/bulk.rs
 
 use crate::VAT_CACHE;
-use crate::package::PackageVersions;
+use crate::package::{PackageError, PackageVersions};
 
 use super::{Package, VersionChannel};
 use color_eyre::Result;
@@ -53,7 +53,7 @@ pub fn fetch_all(packages: &[Package]) -> Result<IndexMap<Package, Vec<VersionCh
 
                     let versions = match package.fetch() {
                         Ok(v) => v,
-                        Err(e) if e.to_string().contains("Tails!") => {
+                        Err(PackageError::ChancedUponTails) => {
                             skipped = 1;
                             debug!("Skipped fetching versions for package '{}'", package.name);
                             package.read_versions().wrap_err_with(|| {

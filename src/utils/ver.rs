@@ -21,8 +21,7 @@ impl Version {
         let ver = self
             .raw
             .lines()
-            .filter(|l| !l.is_empty())
-            .next_back()
+            .rfind(|l| !l.is_empty())
             .map_or_else(|| unreachable!("No output"), str::to_lowercase);
 
         let name = basename(&package.name);

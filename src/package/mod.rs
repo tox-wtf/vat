@@ -2,21 +2,25 @@
 
 pub mod bulk;
 
-use color_eyre::Result;
-use color_eyre::eyre::Context;
-use color_eyre::eyre::ContextCompat;
-use color_eyre::eyre::bail;
+// use color_eyre::Result;
+// use color_eyre::eyre::Context;
+// use color_eyre::eyre::ContextCompat;
+// use color_eyre::eyre::bail;
 use rand::random_range;
 use regex::Regex;
 use serde::{Deserialize, Serialize};
+use thiserror::Error;
 use std::collections::HashMap;
 use std::fmt::Debug;
 use std::fmt::Write;
 use std::fs;
 use std::hash::Hash;
+use std::io;
+use std::os::unix::ffi::OsStrExt;
 use std::path::Component;
 use std::path::{Path, PathBuf};
 use std::str::FromStr;
+use std::str::Utf8Error;
 
 #[cfg(test)]
 use pretty_assertions::assert_eq;
@@ -27,10 +31,50 @@ use crate::SHLIB_PATH;
 use crate::VAT_CACHE;
 use crate::VAT_ROOT;
 use crate::args::ARGS;
+use crate::utils::cmd::CmdError;
 use crate::utils::cmd::cmd;
 use crate::utils::float::defloat;
 use crate::utils::str::basename;
 use crate::utils::ver::Version;
+
+#[derive(Debug, Error)]
+pub enum PackageError {
+    #[error("I/O error: {0}")]
+    Io(#[from] io::Error),
+
+    /// If the chance doesn't roll favorably, skip the package
+    #[error("Chanced upon tails")]
+    ChancedUponTails,
+
+    #[error("JSON deserializiation error: {0}")]
+    Json(#[from] serde_json::Error),
+
+    #[error("TOML deserializiation error: {0}")]
+    Toml(#[from] toml::de::Error),
+
+    #[error("UTF-8 error: {0}")]
+    Utf8(#[from] Utf8Error),
+
+    #[error("Unexpected first component in path to config")]
+    UnexpectedFirstComponent,
+
+    #[error("Invalid package name: {0}")]
+    InvalidPackageName(String),
+
+    #[error("Empty package name")]
+    EmptyPackageName,
+
+    #[error("Command error: {0}")]
+    Cmd(#[from] CmdError),
+
+    #[error("Regex error: {0}")]
+    Regex(#[from] regex::Error),
+
+    #[error("Received version does not match expected")]
+    DoesntMatchExpected,
+}
+
+type Result<T> = std::result::Result<T, PackageError>;
 
 #[derive(Debug, Clone, Hash, Eq, PartialEq)]
 pub struct Package {
@@ -92,17 +136,9 @@ impl PackageChannel {
     pub fn cmd(&self, package: &Package, command: &[&str]) -> Result<String> {
         let package_root = Package::dir(&package.name);
 
-        let Some(vat_root) = VAT_ROOT.to_str() else {
-            bail!("Invalid Unicode in {}", VAT_ROOT.display());
-        };
-
-        let Some(vat_cache) = VAT_CACHE.to_str() else {
-            bail!("Invalid Unicode in {}", VAT_CACHE.display());
-        };
-
-        let Some(shlib_path) = SHLIB_PATH.to_str() else {
-            bail!("Invalid Unicode in {}", SHLIB_PATH.display());
-        };
+        let vat_root = str::from_utf8(VAT_ROOT.as_os_str().as_bytes())?;
+        let vat_cache = str::from_utf8(VAT_CACHE.as_os_str().as_bytes())?;
+        let shlib_path = str::from_utf8(SHLIB_PATH.as_os_str().as_bytes())?;
 
         let no_cache = NO_CACHE.to_string();
 
@@ -120,34 +156,25 @@ impl PackageChannel {
             ("upstream", &upstream),
         ]);
 
-        cmd(command, env, &package_root)
+        Ok(cmd(command, env, &package_root)?)
     }
 
     pub fn fetch(&self, package: &Package) -> Result<String> {
         let fetch = format!(". {} && {}", SHLIB_PATH.display(), self.fetch);
         let command = ["bash", "-c", &fetch];
 
-        let ver = match self.cmd(package, &command) {
-            Err(e) => bail!("{e}"),
-            Ok(v) => v,
-        };
+        let ver = self.cmd(package, &command)?;
 
         let mut version = Version::new(ver);
         version.trim(package);
         let v = version.fmt;
 
         if let Some(re) = &self.expected {
-            let re = match Regex::from_str(re) {
-                Ok(re) => re,
-                Err(e) => {
-                    error!("Invalid expected regex '{re}': {e}");
-                    bail!("Invalid expected regex");
-                }
-            };
+            let re = Regex::from_str(re).inspect_err(|e| error!("Invalid expected regex '{re}': {e}"))?;
 
             if !re.is_match(&v) {
                 error!("Version '{v}' does not match expected '{re}'");
-                bail!("Version does not match expected");
+                return Err(PackageError::DoesntMatchExpected);
             }
         }
 
@@ -231,7 +258,7 @@ impl Package {
 
         match components.next() {
             Some(Component::Normal(c)) if c == "p" => {}
-            _ => bail!("config path must start with 'p'"),
+            _ => return Err(PackageError::UnexpectedFirstComponent)
         }
 
         let mut name = String::with_capacity(16);
@@ -240,20 +267,20 @@ impl Package {
             match comp {
                 Component::Normal(c) if c == "config" => break,
                 Component::Normal(c) => {
-                    name.push_str(c.to_str().wrap_err("Invalid UTF-8")?);
+                    name.push_str(str::from_utf8(c.as_bytes())?);
                     name.push('/');
-                }
-                _ => bail!("Invalid component in config path"),
+                },
+                _ => warn!("Unexpected component in config path: {comp:?}"),
             }
         }
 
         let name = name
             .strip_suffix('/')
-            .wrap_err("Unexpected package name")?
+            .ok_or_else(|| PackageError::InvalidPackageName(name.clone()))?
             .to_string();
 
         if name.is_empty() {
-            bail!("Received an empty package name");
+            return Err(PackageError::EmptyPackageName);
         }
 
         Self::from_name(name)
@@ -269,20 +296,21 @@ impl Package {
             VAT_ROOT.join("p").join(name).join("config")
         }
 
-        let raw = fs::read_to_string(&config_path).wrap_err_with(|| {
-            format!(
-                "Couldn't read package config at '{}'",
+        let raw = fs::read_to_string(&config_path).inspect_err(|e| {
+            error!(
+                "Couldn't read package config at '{}': {e}",
                 config_path.display()
-            )
+            );
         })?;
+
         let config: PackageConfig = toml::from_str(&raw)?;
 
         let mut package = Self {
             name: name.to_string(),
             config,
         };
-        package.set_defaults();
 
+        package.set_defaults();
         Ok(package)
     }
 
@@ -353,6 +381,7 @@ impl Package {
         let Ok(version_channels_str) = fs::read_to_string(path) else {
             return false;
         };
+
         let Ok(version_channels) =
             serde_json::from_str::<Vec<VersionChannel>>(&version_channels_str)
         else {
@@ -386,7 +415,7 @@ impl Package {
             && !should_guarantee
             && random_range(0.0..=1.0) > self.config.chance
         {
-            bail!("Tails!")
+            return Err(PackageError::ChancedUponTails);
         }
 
         let mut version_channels = vec![];
