@@ -73,7 +73,7 @@ for p in p/**/config; do
 
         # Channels without prior version history
         if [ -z "$wdiff" ]; then
-            wdiff="$(<"$channel")"
+            wdiff="$(sed -re 's,([0-9a-f]{8})([0-9a-f]{32}),\1,g' "$channel")"
         fi
 
         msg_long="$(printf "%-40s%s\n" "$pname:$cname" "$wdiff")"
