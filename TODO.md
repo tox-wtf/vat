@@ -1,5 +1,6 @@
 # TODO
 
+- [ ] Fix release script
 - [ ] Make ERROR and WARN logs less ugly
     - [x] Move timeout errors to rust
     - [ ] Clean up redundant error messages
@@ -22,7 +23,7 @@
   in a while. These might then be manually confirmed.
 - [x] Implement parallelization
 - [x] Add GitHub issue templates
-- [ ] Mirror to vat.tox.wtf
+- [x] Mirror to vat.tox.wtf
 - [x] Add changelog
 - [x] Add caching for `gr`
 - [x] Add version channels
