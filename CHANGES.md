@@ -9,6 +9,24 @@
 
 ## 2.10.1 - 2026-02-09 02:12:49 -0600
 
+### Features
+
+ - Add cracklib
+ - Add cryptsetup
+ - Add gpgmepp
+ - Add iptables
+ - Add liboauth
+ - Add libpwquality
+ - Add krb5
+ - Add polkit-gnome
+ - Add stunnel
+
+### Fixes
+
+- Stricter regexes in changelog generator
+- Short commits for empty wdiffs
+- Fix stunnel string escaping
+
 
 ## 2.10.0 - 2026-02-04 13:00:40 -0600
 
