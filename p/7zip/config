@@ -1,7 +1,5 @@
-upstream = "gh:ip7z/7zip"
+upstream="gh:ip7z/7zip"
 
-[[channels]]
-name = "release"
+:release() { :; }
 
-[[channels]]
-name = "commit"
+:commit() { :; }

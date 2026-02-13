@@ -1,12 +1,15 @@
-upstream = "gh:google/brotli"
+upstream="gh:google/brotli"
 
-[[channels]]
-name = "release"
-fetch = "gr | vtrim | fl | vsort"
+:release() {
+    fetch() {
+        gr | vtrim | fl | vsort
+    }
+}
 
-[[channels]]
-name = "unstable"
-fetch = "gr | vtrim | fsl | vsort"
+:unstable() {
+    fetch() {
+        gr | vtrim | fsl | vsort
+    }
+}
 
-[[channels]]
-name = "commit"
+:commit() { :; }

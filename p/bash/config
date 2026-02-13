@@ -1,9 +1,33 @@
-upstream = "http://mirror.rit.edu/gnu/bash/?C=M;O=D"
+upstream="http://mirror.rit.edu/gnu/bash/?C=M;O=D"
 
-[[channels]]
-name = "release"
-fetch = "script"
+:release() {
+    chance=88
 
-[[channels]]
-name = "unstable"
-fetch = "script"
+    fetch() {
+        basever="$(ca | fl | vsort | tail -n1)"
+        upstream="${upstream%\?*}/bash-$basever-patches/?C=M;O=D"
+        patch=$(cr | grep -Eo 'bash[0-9]+-[0-9]{3}' | uniq | cut -d- -f2 | sed 's,^0*,,' | vsort | tail -n1)
+
+        echo "$basever.$patch"
+    }
+}
+
+:unstable() {
+    chance=77
+
+    fetch() {
+        release_basever=$(ca | fl | vsort | tail -n1)
+        unstable_basever=$(cr | grep $name | cut -d\" -f8 | grep -Ev 'diff|patches|doc|<' | vtrim -re 's,.tar.gz(|.sig)$,,' | fsl | vsort | tail -n1)
+
+        # there is no prerelease version
+        if [[ "$release_basever" == "$unstable_basever" ]]; then
+            upstream="${upstream%\?*}/bash-$release_basever-patches/?C=M;O=D"
+            patch=$(cr | grep -Eo 'bash[0-9]+-[0-9]{3}' | uniq | cut -d- -f2 | sed 's,^0*,,' | vsort | tail -n1)
+            echo "$release_basever.$patch"
+            exit 0
+        fi
+
+        # there is a prerelease version
+        echo "$unstable_basever"
+    }
+}

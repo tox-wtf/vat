@@ -1,13 +1,12 @@
-upstream = "gh:abseil/abseil-cpp"
+upstream="gh:abseil/abseil-cpp"
 
-[[channels]]
-name = "unstable"
-fetch = "gr | vsort"
-expected = '''^[0-9]{8}\.(rc[0-9]+|[0-9]+)$'''
+:release() {
+    expected='[0-9]{8}\.[0-9]+'
+}
 
-[[channels]]
-name = "release"
-expected = '''^[0-9]{8}\.[0-9]+$'''
+:unstable() {
+    expected='[0-9]{8}\.(rc[0-9]+|[0-9]+)'
+    fetch() { gr | vsort; }
+}
 
-[[channels]]
-name = "commit"
+:commit() { :; }

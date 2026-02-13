@@ -1,5 +1,5 @@
-[[channels]]
-name = "release"
+upstream="gh:alacritty/alacritty"
 
-[[channels]]
-name = "commit"
+:release() { :; }
+
+:commit() { :; }
