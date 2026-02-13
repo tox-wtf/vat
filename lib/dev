@@ -1,0 +1,39 @@
+#!/usr/bin/env false
+#shellcheck shell=bash
+
+. ./lib/base
+
+# add a project by its name
+va() {
+
+if ! [ -d p ]; then
+    echo "Execute this from the source directory" >&2
+    return 2
+fi
+
+mkdir -p "p/${1:?}"
+if ! [ -f "p/$1/config" ]; then
+install -vDm644 /dev/stdin "p/$1/config" << .
+upstream=""
+
+:release() { :; }
+
+:commit() { :; }
+.
+fi
+
+"${EDITOR:?Please set \$EDITOR}" "p/$1/config"
+
+}
+
+# test a project by its name
+vt() {
+
+if ! [ -d p ]; then
+    echo "Execute this from the source directory" >&2
+    return 2
+fi
+
+./vat "${1:-${name:?Specify the project to test}}"
+
+}

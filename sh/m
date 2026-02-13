@@ -1,9 +1,0 @@
-#!/usr/bin/env false
-#shellcheck shell=bash
-
-alias vat=target/release/vat
-. sh/dev-utils.env
-. sh/lib.env
-
-NO_CACHE="${NO_CACHE:-false}"
-VAT_CACHE="${VAT_CACHE:-$PWD/.vat-cache}"
