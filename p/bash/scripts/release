@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+. "$SHLIB_PATH"
+
+basever="$(ca | fl | vsort | tail -n1)"
+upstream="${upstream%\?*}/bash-$basever-patches/?C=M;O=D"
+patch=$(cr | grep -Eo 'bash[0-9]+-[0-9]{3}' | uniq | cut -d- -f2 | sed 's,^0*,,' | vsort | tail -n1)
+
+echo "$basever.$patch"
