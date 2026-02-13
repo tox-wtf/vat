@@ -1,0 +1,10 @@
+upstream = "gl:AOMediaCodec/SVT-AV1.git"
+
+[[channels]]
+name = "release"
+
+[[channels]]
+name = "unstable"
+
+[[channels]]
+name = "commit"
