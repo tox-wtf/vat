@@ -1,8 +1,0 @@
-upstream = "gh:xkbcommon/libxkbcommon"
-
-[[channels]]
-name = "release"
-fetch = "gr | vtrim -e 's,^xkbcommon-,,' | vsort"
-
-[[channels]]
-name = "commit"

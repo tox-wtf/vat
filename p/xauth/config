@@ -1,8 +1,0 @@
-upstream = "freedesktop:/xorg/app/xauth.git"
-
-[[channels]]
-name = "release"
-fetch = "gr | vtrim -e 's,_,.,g ' | fsl | vsort"
-
-[[channels]]
-name = "commit"

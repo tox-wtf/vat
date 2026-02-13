@@ -1,8 +1,0 @@
-upstream = "freedesktop:/xorg/proto/xorgproto.git"
-
-[[channels]]
-name = "release"
-expected = "^[0-9]{4}.[0-9]$"
-
-[[channels]]
-name = "commit"

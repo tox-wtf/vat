@@ -1,8 +1,0 @@
-upstream = "gh:GNOME/libxml2"
-
-[[channels]]
-name = "release"
-fetch = "gr | fcve | sed -e 's,^v,,' | fl | vsort"
-
-[[channels]]
-name = "commit"

@@ -1,8 +1,0 @@
-upstream = "gh:ximion/appstream"
-
-[[channels]]
-name = "release"
-fetch = "gr | vtrim -e 's,^APPSTREAM_,,' -e 's,_,.,g' | vsort"
-
-[[channels]]
-name = "commit"

@@ -1,8 +1,0 @@
-upstream = "gh:yt-dlp/yt-dlp"
-
-[[channels]]
-name = "release"
-fetch = "gr | vsort"
-
-[[channels]]
-name = "commit"

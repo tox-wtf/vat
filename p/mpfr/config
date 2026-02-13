@@ -1,8 +1,0 @@
-upstream = "inria:mpfr/mpfr.git"
-
-[[channels]]
-name = "release"
-fetch = "gr | vtrim | fl | vsort"
-
-[[channels]]
-name = "commit"

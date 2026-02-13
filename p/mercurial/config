@@ -1,5 +1,0 @@
-upstream = "https://www.mercurial-scm.org/release/"
-
-[[channels]]
-name = "release"
-fetch = "cr | vrepo -3 | vsort"

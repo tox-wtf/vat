@@ -1,8 +1,0 @@
-upstream = "gh:mm2/little-cms"
-
-[[channels]]
-name = "release"
-fetch = "gr | vtrim -e 's,^lcms,,' -e 's,-,.,g' | vfs | vsort"
-
-[[channels]]
-name = "commit"

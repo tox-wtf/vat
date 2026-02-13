@@ -1,8 +1,0 @@
-upstream = "freedesktop:/xorg/lib/libx11.git"
-
-[[channels]]
-name = "release"
-fetch = "gr | tolower | vtrim -e 's,_,.,g' | fsl | vsort"
-
-[[channels]]
-name = "commit"

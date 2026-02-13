@@ -1,8 +1,0 @@
-upstream = "gh:autotools-mirror/libtool"
-
-[[channels]]
-name = "release"
-fetch = "gr | vtrim -e 's,-,.,g' | fsl | vsort"
-
-[[channels]]
-name = "commit"

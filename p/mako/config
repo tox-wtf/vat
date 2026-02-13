@@ -1,8 +1,0 @@
-upstream = "gh:sqlalchemy/mako"
-
-[[channels]]
-name = "release"
-fetch = "gr | vtrim -e 's,^rel_,,' -e 's,_,.,g' | vsort"
-
-[[channels]]
-name = "commit"

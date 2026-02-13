@@ -1,3 +1,0 @@
-[[channels]]
-name = "release"
-fetch = "gr | vtrim -e 's,^FILE,,' -e 's,_,.,g' | fsl | vsort"

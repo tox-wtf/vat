@@ -1,6 +1,0 @@
-upstream = "http://dist.schmorp.de/libev/Attic/"
-chance = 0.23 # last release dated 2020-03-18
-
-[[channels]]
-name = "release"
-fetch = "cr | vrepo -p $name- | vtrim | vsort"

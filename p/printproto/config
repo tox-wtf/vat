@@ -1,9 +1,0 @@
-upstream = "freedesktop:/xorg/proto/printproto.git"
-chance = 0.11 # last commit dated 2018-03-01
-
-[[channels]]
-name = "release"
-fetch = "gr | vtrim -e 's,_,.,g ' | fsl | vsort"
-
-[[channels]]
-name = "commit"

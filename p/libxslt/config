@@ -1,8 +1,0 @@
-upstream = "gh:GNOME/libxslt"
-
-[[channels]]
-name = "release"
-fetch = "gr | tolower | vtrim -e 's,_,.,g' | fl | vsort"
-
-[[channels]]
-name = "commit"

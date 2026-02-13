@@ -1,8 +1,0 @@
-upstream = "gitlab:gnuwget/wget2.git"
-
-[[channels]]
-name = "release"
-expected = '''^2\.[0-9]+\.[0-9]+$'''
-
-[[channels]]
-name = "commit"

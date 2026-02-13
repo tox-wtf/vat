@@ -1,8 +1,0 @@
-upstream = "gh:gpg/libassuan"
-
-[[channels]]
-name = "release"
-fetch = "gr | vtrim -e 's,-,.,g' | fl | vsort"
-
-[[channels]]
-name = "commit"

@@ -1,8 +1,0 @@
-upstream = "gh:altlinux/libutempter"
-
-[[channels]]
-name = "release"
-fetch = "gr | vtrim -e 's,-alt[0-9]+$,,'"
-
-[[channels]]
-name = "commit"

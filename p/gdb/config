@@ -1,5 +1,0 @@
-upstream = "https://sourceware.org/git/binutils-gdb.git"
-
-[[channels]]
-name = "release"
-fetch = "gr | grep '^gdb' | vtrim -e 's,-release$,,' | fl | fdate | vsort"

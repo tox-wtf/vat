@@ -1,8 +1,0 @@
-upstream = "freedesktop:/mesa/mesa.git"
-
-[[channels]]
-name = "release"
-fetch = "gr | vtrim -e 's,_,.,g' | fdate | fl | vsort"
-
-[[channels]]
-name = "commit"

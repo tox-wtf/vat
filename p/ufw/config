@@ -1,8 +1,0 @@
-upstream = "https://git.launchpad.net/ufw"
-
-[[channels]]
-name = "release"
-fetch = "defgitrelease | fl | fdash"
-
-[[channels]]
-name = "commit"

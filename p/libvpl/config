@@ -1,8 +1,0 @@
-upstream = "gh:intel/libvpl"
-
-[[channels]]
-name = "release"
-fetch = "gr | vtrim | grep -Ev '[0-9]{4}' | vsort"
-
-[[channels]]
-name = "commit"

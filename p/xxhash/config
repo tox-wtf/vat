@@ -1,8 +1,0 @@
-upstream = "gh:Cyan4973/xxhash"
-
-[[channels]]
-name = "release"
-fetch = "gr | vtrim | vrep | vsort"
-
-[[channels]]
-name = "commit"

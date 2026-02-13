@@ -1,6 +1,0 @@
-upstream = "https://www.stunnel.org/versions.html"
-chance = 0.84
-
-[[channels]]
-name = "release"
-fetch = '''cr | grep -Eo 'Version [0-9\.a-z]+ released,' | awk '{print $2}' | vsort -c'''

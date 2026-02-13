@@ -1,5 +1,0 @@
-upstream = "https://downloads.xvid.com/downloads"
-
-[[channels]]
-name = "release"
-fetch = "ca | vtrim | vsort"

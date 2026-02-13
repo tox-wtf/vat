@@ -1,8 +1,0 @@
-upstream = "gh:util-linux/util-linux"
-
-[[channels]]
-name = "release"
-fetch = "gr | vtrim | grep -v start | vfs | vsort"
-
-[[channels]]
-name = "commit"

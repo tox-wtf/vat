@@ -1,8 +1,0 @@
-upstream = "gh:lsof-org/lsof"
-
-[[channels]]
-name = "release"
-fetch = "gr | vtrim | fl | vsort"
-
-[[channels]]
-name = "commit"

@@ -1,8 +1,0 @@
-upstream = "salsa:debian/netcat-openbsd.git"
-
-[[channels]]
-name = "release"
-fetch = "defgitrelease | fl | sed 's,-,.,g'"
-
-[[channels]]
-name = "commit"

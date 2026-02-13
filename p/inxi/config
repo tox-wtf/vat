@@ -1,9 +1,0 @@
-upstream = "codeberg:smxi/inxi"
-
-[[channels]]
-name = "release"
-fetch = "gr | vtrim -e 's,-,.,g'"
-expected = '''^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$'''
-
-[[channels]]
-name = "commit"

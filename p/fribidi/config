@@ -1,8 +1,0 @@
-chance = 0.42
-
-[[channels]]
-name = "release"
-fetch = "gr | vtrim | fsl | vsort"
-
-[[channels]]
-name = "commit"

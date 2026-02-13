@@ -1,6 +1,0 @@
-upstream = "https://mandoc.bsd.lv/"
-chance = 0.1
-
-[[channels]]
-name = "release"
-fetch = "cr | grep 'current version' | awk '{print $3}'"

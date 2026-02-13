@@ -1,8 +1,0 @@
-upstream = "gh:gpg/libgpg-error"
-
-[[channels]]
-name = "release"
-fetch = "gr | vtrim -e 's,-,.,g' | fsl | vsort"
-
-[[channels]]
-name = "commit"

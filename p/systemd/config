@@ -1,6 +1,0 @@
-[[channels]]
-name = "release"
-fetch = "gr | vtrim -e 's,-,.,g' | uniq | vfs | vsort"
-
-[[channels]]
-name = "commit"

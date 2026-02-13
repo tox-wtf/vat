@@ -1,8 +1,0 @@
-upstream = "gh:tytso/e2fsprogs"
-
-[[channels]]
-name = "release"
-fetch = "gr | vtrim -e 's,_,.,g' | fl | fdash | vsort"
-
-[[channels]]
-name = "commit"

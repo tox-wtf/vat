@@ -1,8 +1,0 @@
-upstream = "gh:gnome/libsoup"
-
-[[channels]]
-name = "release"
-fetch = "gr | tolower | vtrim -e 's,soup_,,' -e 's,_,.,g' | fl | vsort"
-
-[[channels]]
-name = "commit"

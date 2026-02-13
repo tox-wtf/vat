@@ -1,8 +1,0 @@
-upstream = "gh:zlib-ng/zlib-ng"
-
-[[channels]]
-name = "release"
-fetch = "gr | vtrim | fl | vsort"
-
-[[channels]]
-name = "commit"

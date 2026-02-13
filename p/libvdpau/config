@@ -1,9 +1,0 @@
-upstream = "freedesktop:/vdpau/libvdpau.git"
-chance = 0.17 # last commit dated 2022-06-03
-
-[[channels]]
-name = "release"
-fetch = "gr | vtrim | vsort"
-
-[[channels]]
-name = "commit"

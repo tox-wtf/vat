@@ -1,8 +1,0 @@
-upstream = "gh:vcrhonek/hwdata"
-
-[[channels]]
-name = "release"
-fetch = "gr | vtrim | fdash | vsort"
-
-[[channels]]
-name = "commit"

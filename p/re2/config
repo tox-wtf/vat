@@ -1,9 +1,0 @@
-upstream = "gh:google/re2"
-
-[[channels]]
-name = "release"
-fetch = "defgitrelease | sed 's,-,.,g'"
-expected = '''^[0-9]{4}\.[0-9]{2}\.[0-9]{2}$'''
-
-[[channels]]
-name = "commit"
