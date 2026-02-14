@@ -18,6 +18,15 @@ set -u
 
 echo "[ VAT $(<version) | $(date +"%Y-%m-%d %H:%M:%S %z") | #$(<runcount) ]"
 
+fmt() {
+    local re="[a-f0-9]{40}"
+    if [[ $1 =~ $re ]]; then
+        echo "${1:0:8}"
+    else
+        echo "$1"
+    fi
+}
+
 git add p
 diff="$(git diff --staged -U0 --word-diff=plain --no-color -- p/**/v/v.tsv | sed -r '/^(index|---|\+\+\+|@@|new file mode) /d')"
 while read -r line; do
@@ -45,7 +54,7 @@ while read -r line; do
         l=$(echo "$line" | sed 's,-]{+,'$'\t',)
         l=$(echo "$l" | tr -d '+}[-')
         IFS=$'\t' read -r channel old new <<< "$l"
-        printf "\t$channel: $old -> $new\n"
+        printf "\t$channel: $(fmt $old) -> $(fmt $new)\n"
         continue
     fi
 
@@ -54,7 +63,7 @@ while read -r line; do
     if [[ $line == "{+"* ]]; then
         l=$(echo "$line" | tr -d '+}{')
         IFS=$'\t' read -r channel new <<< "$l"
-        printf "\t$channel: $new\n"
+        printf "\t$channel: $(fmt $new)\n"
         continue
     fi
 done <<< "$diff"
