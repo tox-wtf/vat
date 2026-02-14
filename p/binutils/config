@@ -1,4 +1,4 @@
-upstream="sourceware:git/binutils-gdb.git"
+upstream="sourceware:binutils-gdb.git"
 
 :release() {
     fetch() {
