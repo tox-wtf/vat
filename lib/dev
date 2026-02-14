@@ -34,6 +34,10 @@ if ! [ -d p ]; then
     return 2
 fi
 
-./vat "${1:-${name:?Specify the project to test}}"
+local project="${1:-${name:?Specify the project to test}}"
+./vat "$project"
+
+cat "$VAT_CACHE/logs/$project/out"
+cat "$VAT_CACHE/logs/$project/err" >&2
 
 }
