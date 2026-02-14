@@ -1,0 +1,20 @@
+upstream="https://git.causal.agency/catgirl"
+chance=82
+
+:release() {
+    expected='[0-9]+\.[0-9]+[a-f]?'
+
+    fetch() {
+        gr | vtrim | vsort -c
+    }
+}
+
+:unstable() {
+    expected='[0-9]+\.[0-9]+[a-f]?'
+
+    fetch() {
+        gr | vtrim | vsort -c
+    }
+}
+
+:commit() { :; }

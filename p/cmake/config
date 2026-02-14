@@ -1,0 +1,7 @@
+upstream="gh:kitware/cmake"
+
+:release() { :; }
+
+:unstable() { :; }
+
+:commit() { :; }

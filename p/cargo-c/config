@@ -1,0 +1,9 @@
+upstream="gh:lu-zero/cargo-c"
+
+:release() {
+    fetch() {
+        gr | vtrim | fl | vsort
+    }
+}
+
+:commit() { :; }

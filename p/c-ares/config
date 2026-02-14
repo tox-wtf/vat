@@ -1,0 +1,16 @@
+upstream="gh:c-ares/c-ares"
+chance=95
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,cares-,,' -e 's,_,.,g' | grep -v curl | vfs | vsort
+    }
+}
+
+:unstable() {
+    fetch() {
+        gr | vtrim -e 's,cares-,,' -e 's,_,.,g' | grep -v curl | vsort
+    }
+}
+
+:commit() { :; }

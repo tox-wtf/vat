@@ -1,0 +1,6 @@
+upstream="gh:libcheck/check"
+chance=10
+
+:release() { :; }
+
+:commit() { :; }

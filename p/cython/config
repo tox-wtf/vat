@@ -1,0 +1,15 @@
+upstream="gh:cython/cython"
+
+:release() {
+    fetch() {
+        gr | vtrim | fl | vfs | fdash | vsort
+    }
+}
+
+:unstable() {
+    fetch() {
+        gr | vtrim | fdash | vsort
+    }
+}
+
+:commit() { :; }

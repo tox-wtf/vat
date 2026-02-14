@@ -1,0 +1,5 @@
+upstream="gl:cryptsetup/cryptsetup.git"
+
+:release() { :; }
+
+:commit() { :; }

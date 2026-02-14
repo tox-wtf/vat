@@ -1,0 +1,5 @@
+upstream="gh:coreutils/coreutils"
+
+:release() { :; }
+
+:commit() { :; }

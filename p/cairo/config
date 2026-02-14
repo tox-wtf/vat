@@ -1,0 +1,16 @@
+upstream="freedesktop:/cairo/cairo.git"
+chance=84
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,^SNAPSHOT_,,' -e 's,_,.,g' | fsl | vfem | vsort
+    }
+}
+
+:unstable() {
+    fetch() {
+        gr | vtrim -e 's,^SNAPSHOT_,,' -e 's,_,.,g' | fsl | vsort
+    }
+}
+
+:commit() { :; }

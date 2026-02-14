@@ -1,0 +1,9 @@
+upstream="gh:openprinting/cups-filters"
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,-,.,g' | vsort
+    }
+}
+
+:commit() { :; }
