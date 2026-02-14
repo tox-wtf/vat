@@ -28,22 +28,22 @@ _ghapi() {
 }
 
 # fetch latest github release that isn't a pre-release. if no releases are
-# present, fall back to tags with `gr`.
+# present, fall back to tags with `defgitrelease`.
 ghr() {
+    local shortform url version
     shortform="${upstream#https://github.com/}"
     shortform="${shortform#github:}"
     shortform="${shortform#gh:}"
     shortform="${shortform%.git}"
 
     url="https://api.github.com/repos/${shortform:?}/releases?per_page=10&page=1"
-    ver="$(_ghapi "$url" | jq -r 'first(.[] | select(.prerelease == false)).tag_name')"
+    version="$(_ghapi "$url" | jq -r 'first(.[] | select(.prerelease == false)).tag_name')"
 
-    if [ -z "$ver" ]; then
-        ver="$(defgitrelease)"
+    if [ -z "$version" ]; then
+        version="$(defgitrelease)"
     fi
 
-    printf "%s" "$ver"
-    unset shortform
+    echo "$version"
 }
 
 # fetch latest github commit
