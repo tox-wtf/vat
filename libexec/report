@@ -21,6 +21,8 @@ echo "[ VAT $(<version) | $(date +"%Y-%m-%d %H:%M:%S %z") | #$(<runcount) ]"
 git add p
 diff="$(git diff --staged -U0 --word-diff=plain --no-color -- p/**/v/v.tsv | sed -r '/^(index|---|\+\+\+|@@|new file mode) /d')"
 while read -r line; do
+    [ -z "$line" ] && continue
+
     # diff --git a/p/7zip/v/v.tsv b/p/7zip/v/v.tsv
     # determine project
     if [[ $line == *"diff --git a/p/"* ]]; then
