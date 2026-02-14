@@ -116,7 +116,7 @@ done
 
 log "Logs available at $all_base.*"
 
-libexec/record "$project"
-libexec/report "$project"
+libexec/record
+libexec/report | tee "$VAT_CACHE/report"
 
 exit $status
