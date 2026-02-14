@@ -1,6 +1,21 @@
 #!/usr/bin/env false
 #shellcheck shell=bash
 
+# utility to source a library
+w() {
+    for lib in "$@"; do
+        [ -f "$VAT_ROOT/lib/$lib" ] || {
+            echo "Library '$lib' does not exist"
+            return 1
+        }
+
+        . "$VAT_ROOT/lib/$lib" ] || {
+            echo "Library '$lib' could not be sourced"
+            return 1
+        }
+    done
+}
+
 # private wrapper around curl
 _curl() {
     local out
