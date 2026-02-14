@@ -1,7 +1,8 @@
 #!/usr/bin/env false
 #shellcheck shell=bash
 
-. ./lib/base
+. lib/base
+. lib/vars
 
 # add a project by its name
 va() {
