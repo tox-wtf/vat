@@ -1,0 +1,122 @@
+#!/usr/bin/env bash
+
+log() {
+    now_ms=$(date +%s%N)
+    now_ms=${now_ms:0:13}
+    diff_ms="$((now_ms - start_time_ms))"
+
+    printf "%8d [VAT] %s\n" "$diff_ms" "$1" >&2
+}
+
+# Sanity check
+if [ ! -d p ]; then
+    log "Execute vat from the source directory"
+    exit 2
+fi
+
+# Read config and set up environment
+. lib/vars
+. lib/config
+export NO_CACHE GUARANTEE
+
+# Record start times
+start_time_ns=$(date +%s%N)
+start_time_ms="${start_time_ns:0:13}"
+start_time="${start_time_ms:0:10}"
+
+# Increment runcount
+runcount=$(<runcount)
+runcount=$((runcount++))
+log "VAT v$(<version) beginning run #$(<runcount)"
+echo "$runcount" > runcount
+unset runcount
+
+# Clear old logs
+rm -rf "$VAT_CACHE/logs"
+
+# Handle caching
+mkdir -p "$VAT_CACHE"
+modtime=$(stat -c %Y "$VAT_CACHE")
+diff=$((start_time - modtime))
+
+if [ $diff -gt $CACHE_LIFESPAN ]; then
+    echo "[VAT] Clearing cache ($diff seconds old)" >&2
+    rm -rf $VAT_CACHE
+    mkdir -p $VAT_CACHE
+fi
+
+mkdir -p $VAT_CACHE/p-old
+cp -af p -T $VAT_CACHE/p-old
+
+# Collect projects if none were specified
+declare -a projects
+projects=("$@")
+
+if [ "${#projects[@]}" -eq 0 ]; then
+    log "Collecting projects"
+    readarray -t projects < <(find p -type f -name config | sed -e 's,^p/,,' -e 's,/config$,,')
+fi
+
+# Spawn jobs
+# TODO: Limit the number of jobs that may run at once
+jobs=()
+for project in "${projects[@]}"; do
+    log "Fetching $project"
+
+    (
+        log_file_out="$VAT_CACHE/logs/$project/out"
+        log_file_err="$VAT_CACHE/logs/$project/err"
+        log_file_dbg="$VAT_CACHE/logs/$project/dbg"
+        install -Dm644 /dev/null "$log_file_out"
+        install -Dm644 /dev/null "$log_file_err"
+        install -Dm644 /dev/null "$log_file_dbg"
+        exec 1> "$log_file_out"
+        exec 2> "$log_file_err"
+        exec 3> "$log_file_dbg"
+        libexec/runner "$project"
+        exec 1>&-
+        exec 2>&-
+        exec 3>&-
+    ) &
+    jobs+=($!)
+done
+
+# Reap jobs
+status=0
+for pid in "${jobs[@]}"; do
+    if ! wait $pid; then
+        status=1
+    fi
+done
+
+# Log completion
+log "Processed ${#jobs[@]} projects"
+
+# Consolidate logs
+log "Consolidating logs"
+all_base="$VAT_CACHE/logs/ALL"
+all_out="$all_base.out"
+all_err="$all_base.err"
+all_dbg="$all_base.dbg"
+install -Dm644 /dev/null "$all_out"
+install -Dm644 /dev/null "$all_err"
+install -Dm644 /dev/null "$all_dbg"
+
+find $VAT_CACHE/logs -type f -name 'out' ! -name 'ALL.out' | sort | while read -r log_out; do
+    cat "$log_out" >> "$all_out"
+done
+
+find $VAT_CACHE/logs -type f -name 'err' ! -name 'ALL.err' | sort | while read -r log_err; do
+    cat "$log_err" >> "$all_err"
+done
+
+find $VAT_CACHE/logs -type f -name 'dbg' ! -name 'ALL.dbg' | sort | while read -r log_dbg; do
+    cat "$log_dbg" >> "$all_dbg"
+done
+
+log "Logs available at $all_base.*"
+
+libexec/record "$project"
+libexec/report "$project"
+
+exit $status
