@@ -1,0 +1,6 @@
+upstream="gitlab:bzip2/bzip2.git/"
+chance=13
+
+:release() { :; }
+
+:commit() { :; }

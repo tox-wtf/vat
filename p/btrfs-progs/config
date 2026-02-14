@@ -1,0 +1,9 @@
+upstream="gh:kdave/btrfs-progs"
+
+:release() {
+    fetch() {
+        gr | vtrim | vsort
+    }
+}
+
+:commit() { :; }

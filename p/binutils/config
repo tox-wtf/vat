@@ -1,0 +1,9 @@
+upstream="sourceware:git/binutils-gdb.git"
+
+:release() {
+    fetch() {
+        gr | vtrim | fl | fdate | vsort
+    }
+}
+
+:commit() { :; }

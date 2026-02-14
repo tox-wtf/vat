@@ -1,0 +1,12 @@
+upstream="gh:gavinhoward/bc"
+
+:release() {
+    fetch() {
+        w github
+        ghr | vtrim
+    }
+}
+
+:unstable() { :; }
+
+:commit() { :; }

@@ -1,0 +1,5 @@
+upstream="gh:alsa-project/alsa-lib"
+
+:release() { :; }
+
+:commit() { :; }

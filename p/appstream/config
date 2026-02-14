@@ -1,0 +1,9 @@
+upstream="gh:ximion/appstream"
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,^APPSTREAM_,,' -e 's,_,.,g' | vsort
+    }
+}
+
+:commit() { :; }

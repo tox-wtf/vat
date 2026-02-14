@@ -1,0 +1,8 @@
+upstream="gh:avahi/avahi"
+chance=82
+
+:release() { :; }
+
+:unstable() { :; }
+
+:commit() { :; }

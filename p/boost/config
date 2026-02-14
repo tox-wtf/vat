@@ -1,0 +1,5 @@
+upstream="gh:boostorg/boost"
+
+:release() { :; }
+
+:commit() { :; }

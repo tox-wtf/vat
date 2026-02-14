@@ -1,0 +1,10 @@
+upstream="gh:hughsie/appstream-glib"
+chance=77
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,^appstream_glib_,,' | vsort
+    }
+}
+
+:commit() { :; }

@@ -1,0 +1,10 @@
+upstream="cb:catseye/Befunge-93.git"
+chance=17
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,^rel_,,' | vsort
+    }
+}
+
+:commit() { :; }
