@@ -26,9 +26,9 @@ start_time="${start_time_ms:0:10}"
 
 # Increment runcount
 runcount=$(<runcount)
-runcount=$((runcount++))
+((runcount++))
 log "VAT v$(<version) beginning run #$(<runcount)"
-echo "$runcount" > runcount
+echo $runcount > runcount
 unset runcount
 
 # Clear old logs
