@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+
+# Generate a report of the run, once it's completed
+
+command -v git &>/dev/null || {
+    echo 'Missing `git` -- cannot continue'
+    exit 1
+}
+
+. lib/vars
+
+projects_updated=$(git status --porcelain=v1 -u all p | grep -vF ALL | cut -d/ -f2 | uniq | wc -l)
+
+shopt -s globstar
+shopt -s nullglob
+
+set -u
+
+echo "[ VAT $(<version) | $(date +"%Y-%m-%d %H:%M:%S %z") | #$(<runcount) ]"
+
+git add p
+diff="$(git diff --staged -U0 --word-diff=plain --no-color -- p/**/v/v.tsv | sed -r '/^(index|---|\+\+\+|@@|new file mode) /d')"
+while read -r line; do
+    # diff --git a/p/7zip/v/v.tsv b/p/7zip/v/v.tsv
+    # determine project
+    if [[ $line == *"diff --git a/p/"* ]]; then
+        project="$(echo "$line" | cut -d\  -f3)"
+        project="${project%/v/v.tsv}"
+        project="${project#a/p/}"
+        echo "$project:"
+        continue
+    fi
+
+    # unexpected line
+    if ! [[ $line == *$'\t'* && $line == *'+}'* ]]; then
+        echo "WARNING: Found unexpected line '$line'"
+        continue
+    fi
+
+    # release	[-26.00-]{+26.01+}
+    # new version
+    if [[ $line == *$'\t[-'* ]];  then
+        l=$(echo "$line" | sed 's,-]{+,'$'\t',)
+        l=$(echo "$l" | tr -d '+}[-')
+        IFS=$'\t' read -r channel old new <<< "$l"
+        printf "\t$channel: $old -> $new\n"
+        continue
+    fi
+
+    # {+release	1.2.0+}
+    # new channel
+    if [[ $line == "{+"* ]]; then
+        l=$(echo "$line" | tr -d '+}{')
+        IFS=$'\t' read -r channel new <<< "$l"
+        printf "\t$channel: $new\n"
+        continue
+    fi
+done <<< "$diff"
+git restore --staged p

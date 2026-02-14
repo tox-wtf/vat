@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+# Record the results of a run once it's completed
+
+. lib/vars
+
+retrieve_old_version() {
+    local file="$VAT_ROOT/p/$project/v/v.tsv"
+
+    if ! [ -f "$file" ]; then
+        echo "Attempted to retrieve fallback version from nonexistent $file" >&2
+        exit 1
+    fi
+
+    grep "^$channel"$'\t' "$file" | cut -f2
+}
+
+write_tsv() {
+    local file="$VAT_ROOT/p/$project/v/v.tsv"
+
+    [ -f "$file" ] && sed -i "/^$channel"$'\t'"/d" "$file"
+    printf "$channel\t$version\n" >> "$file"
+}
+
+# write_json() {
+#     local file="$VAT_ROOT/p/$project/v/v.json"
+#     local line="$(grep -n "\"channel\": \"$channel\"," "$file" 2>/dev/null | cut -d: -f1)"
+#
+#     if [ -f "$file" ] && [ -n "$line" ]; then
+#         sed -i "$((line++))s|\"version\": \".+\"|\"version\": \"$version\"" "$file"
+#     fi
+#
+#     if [ -f "$file" ]; then
+#         sed -i '$d' "$file"
+# cat >> "$file" << .
+#     {
+#         "channel": "$channel",
+#         "version": "$version",
+#     },
+# ]
+# .
+#     fi
+#
+#     tac "$file" | sed '2s|},|}|' | tac > _ && mv _ "$file"
+# }
+
+while IFS= read -r line; do
+    IFS=$'\t' read -r project channel version <<< "$line"
+    mkdir -p "$VAT_ROOT/p/$project/v"
+
+    case "$version" in
+        FAIL|SKIP) version=$(retrieve_old_version) ;;
+    esac
+
+    write_tsv
+done < "$VAT_CACHE/logs/ALL.out"

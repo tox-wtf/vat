@@ -1,0 +1,109 @@
+#!/usr/bin/env bash
+
+set -u
+
+. lib/base || {
+    echo "Could not source base library" >&2
+    exit 2
+}
+. p/${1:?}/config || {
+    echo "Could not source config for $1" >&2
+    exit 2
+}
+
+name="${1##*/}"
+
+upstream_is_curl() {
+    local re="/\?C=M[;&]O=D"
+    [[ $upstream =~ $re ]]
+}
+
+roll_dice() {
+    if "${GUARANTEE:?}"; then
+        echo "Chance guaranteed" >&3
+        return 0
+    fi
+
+    rand="$((RANDOM % 101))"
+    if [ $rand -gt ${chance:-100} ]; then
+        echo "Chance $rand > ${chance:-100}; skipping" >&3
+        return 1
+    else
+        echo "Chance $rand < ${chance:-100}; continuing" >&3
+        return 0
+    fi
+}
+
+set_default_expected() {
+    [ -n "${expected-}" ] && return
+    case "$channel" in
+        release) expected='[0-9]+(\.[0-9]+)*' ;;
+        unstable) expected='[0-9]+(\.[0-9]+)*-?(rc|alpha|beta|a|b|pre|dev)?[0-9]*' ;;
+        commit) expected='[0-9a-f]{40}' ;;
+    esac
+}
+
+expand_upstream_shortforms() {
+    printf "Expanded $upstream to " >&3
+    upstream="$(echo "$upstream" | sed -f "$VAT_CACHE/shortforms.sed")"
+    echo "$upstream" >&3
+}
+
+set_default_fetch() {
+    type -t fetch | grep -qxF function && return
+    if upstream_is_curl; then
+        case "$channel" in
+            release) fetch() { defcurlrelease; } ;;
+            unstable) fetch() { defcurlunstable; } ;;
+            commit) fetch() { defcurlcommit; } ;;
+        esac
+    else
+        case "$channel" in
+            release) fetch() { defgitrelease; } ;;
+            unstable) fetch() { defgitunstable; } ;;
+            commit) fetch() { defgitcommit; } ;;
+        esac
+    fi
+}
+
+eval_result() {
+    case $? in
+        77) echo SKIP; return 77 ;;
+        1)  echo FAIL; return 1  ;;
+    esac
+}
+
+declare -a channels
+readarray -t channels < <(declare -f | grep -x ':.\+ \(\)' | tr -d ': ()')
+
+for channel in "${channels[@]}"; do
+    (
+        printf "$name\t$channel\t"
+
+        type ":$channel" >&3
+        ":$channel"
+        roll_dice
+        eval_result || exit
+
+        expand_upstream_shortforms
+
+        set_default_fetch
+        type fetch >&3
+        out=$(fetch)
+        eval_result || exit
+
+        echo "$out" | tail -n32 >&3
+        ver="$(echo "$out" | tail -n1)"
+
+        set_default_expected
+        echo "expected is set to '$expected'" >&3
+
+        if ! [[ $ver =~ ^$expected$ ]]; then
+            echo "FAIL"
+            echo "Version '$ver' does not match regex '$expected' for $name:$channel" >&2
+            exit 1
+        fi
+
+        echo "$ver"
+    )
+done
