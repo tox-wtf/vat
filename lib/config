@@ -1,0 +1,17 @@
+# Small library to read the config
+
+set -u
+
+# Read config
+declare -A shortforms
+. config || {
+    log "Invalid config"
+    exit 2
+}
+
+install -Dm644 /dev/null "$VAT_CACHE/shortforms.sed"
+for shortform in "${!shortforms[@]}"; do
+    from="$shortform:"
+    to="${shortforms[$shortform]}"
+    echo "s|$from|$to|" >> "$VAT_CACHE/shortforms.sed"
+done
