@@ -11,7 +11,16 @@ set -u
     exit 2
 }
 
-name="${1##*/}"
+project="$1"
+name="${project##*/}"
+
+upstream_type() {
+    case "$upstream" in
+        */\?C=M?O=D) echo curl ;;
+        *archlinux.org*) echo arch ;;
+        *) echo git ;;
+    esac
+}
 
 upstream_is_curl() {
     local re="/\?C=M[;&]O=D"
@@ -51,19 +60,27 @@ expand_upstream_shortforms() {
 
 set_default_fetch() {
     type -t fetch | grep -qxF function && return
-    if upstream_is_curl; then
-        case "$channel" in
-            release) fetch() { defcurlrelease; } ;;
-            unstable) fetch() { defcurlunstable; } ;;
-            commit) fetch() { defcurlcommit; } ;;
-        esac
-    else
-        case "$channel" in
-            release) fetch() { defgitrelease; } ;;
-            unstable) fetch() { defgitunstable; } ;;
-            commit) fetch() { defgitcommit; } ;;
-        esac
-    fi
+    case "$(upstream_type)" in
+        git)
+            case "$channel" in
+                release) fetch() { defgitrelease; } ;;
+                unstable) fetch() { defgitunstable; } ;;
+                commit) fetch() { defgitcommit; } ;;
+            esac
+        ;;
+        curl)
+            case "$channel" in
+                release) fetch() { defcurlrelease; } ;;
+                unstable) fetch() { defcurlunstable; } ;;
+                commit) fetch() { defcurlcommit; } ;;
+            esac
+        ;;
+        arch)
+            case "$channel" in
+                release) fetch() { archver; } ;;
+            esac
+        ;;
+    esac
 }
 
 eval_result() {
@@ -78,7 +95,7 @@ readarray -t channels < <(declare -f | grep -x ':.\+ \(\)' | tr -d ': ()')
 
 for channel in "${channels[@]}"; do
     (
-        printf "$name\t$channel\t"
+        printf "$project\t$channel\t"
 
         type ":$channel" >&3
         ":$channel"
@@ -100,7 +117,7 @@ for channel in "${channels[@]}"; do
 
         if ! [[ $ver =~ ^$expected$ ]]; then
             echo "FAIL"
-            echo "Version '$ver' does not match regex '$expected' for $name:$channel" >&2
+            echo "Version '$ver' does not match regex '$expected' for $project:$channel" >&2
             exit 1
         fi
 
