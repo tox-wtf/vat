@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# Generate a report of the run, once it's completed
+
+command -v git &>/dev/null || {
+    echo 'Missing `git` -- cannot continue'
+    exit 1
+}
+
+. lib/vars
+
+projects=$(git status --porcelain=v1 -u all p/**/v/v.tsv | sed -e 's,^p/,,' -e 's,/v/v.tsv$,,')
+
+shopt -s globstar
+shopt -s nullglob
+
+set -u
+
+for project in "${projects[@]}"; do
+    desc="$(sed -n "/^$project:/",'/^[^\t]/p' .vat-cache/report | sed '$d')"
+    echo git add "p/$project/v"
+    echo git commit -m "auto(p): update versions for $project" -m "$desc"
+done
+
+desc="$(<.vat-cache/report)"
+echo git add "p/ALL.tsv"
+echo git commit -m "auto(p): update versions for all projects" -m "$desc"

@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+# Generate a tag and release assets for the run, once it's completed
+
+command -v git &>/dev/null || {
+    echo 'Missing `git` -- cannot continue'
+    exit 1
+}
+
+. lib/vars
+
+projects=$(git status --porcelain=v1 -u all p/**/v/v.tsv | sed -e 's,^p/,,' -e 's,/v/v.tsv$,,')
+
+shopt -s globstar
+shopt -s nullglob
+
+set -u
+
+rm -rf "$VAT_CACHE/dist"
+mkdir -pv "$VAT_CACHE/dist"
+cp -vf "$VAT_CACHE/report" "$VAT_CACHE/dist/report"
+tar -cJvf "$VAT_CACHE/dist/logs.tar.xz" "$VAT_CACHE/logs"
+tar -cJvf "$VAT_CACHE/dist/p.tar.xz"    "$VAT_ROOT/p"
+
+for project in "${projects[@]}"; do
+    echo git tag run-"$(<runcount) -m $(<$VAT_CACHE/report)"
+    echo git push
+    echo git push --tags
+    echo gh release create "VAT run #$(<runcount)" --notes-from-tag --latest=false "$VAT_CACHE/dist/"*
+done
