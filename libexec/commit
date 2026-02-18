@@ -9,7 +9,7 @@ command -v git &>/dev/null || {
 
 . lib/vars
 
-projects=$(git status --porcelain=v1 -u all p/**/v/v.tsv | sed -e 's,^p/,,' -e 's,/v/v.tsv$,,')
+readarray -t projects < <(git status --porcelain=v1 -u all p/**/v/v.tsv | sed -e 's,^...p/,,' -e 's,/v/v.tsv$,,')
 
 shopt -s globstar
 shopt -s nullglob
@@ -17,11 +17,11 @@ shopt -s nullglob
 set -u
 
 for project in "${projects[@]}"; do
-    desc="$(sed -n "/^$project:/",'/^[^\t]/p' .vat-cache/report | sed '$d')"
-    echo git add "p/$project/v"
-    echo git commit -m "auto(p): update versions for $project" -m "$desc"
+    desc="$(grep "^$project:" .vat-cache/report)"
+    git add "p/$project/v"
+    git commit -m "auto(p): update versions for $project" -m "$desc"
 done
 
 desc="$(<.vat-cache/report)"
-echo git add "p/ALL.tsv"
-echo git commit -m "auto(p): update versions for all projects" -m "$desc"
+git add "p/ALL.tsv"
+git commit -m "auto(p): update versions for all projects" -m "$desc"
