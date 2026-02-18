@@ -17,7 +17,7 @@ fi
 # Read config and set up environment
 . lib/vars
 . lib/config
-export NO_CACHE GUARANTEE
+export NO_CACHE GUARANTEE DRY
 
 # Record start times
 start_time_ns=$(date +%s%N)
@@ -28,7 +28,7 @@ start_time="${start_time_ms:0:10}"
 runcount=$(<runcount)
 ((runcount++))
 log "VAT v$(<version) beginning run #$(<runcount)"
-echo $runcount > runcount
+$DRY || echo $runcount > runcount
 unset runcount
 
 mkdir -p "$VAT_CACHE"
@@ -119,5 +119,13 @@ log "Logs available at $all_base.*"
 
 libexec/record
 libexec/report "${projects[@]}" | tee "$VAT_CACHE/report"
+
+if $DRY; then
+    echo
+    log "Cleaning artifacts after dry run"
+    for project in "${projects[@]}"; do
+        git clean -fd -- "p/$project/v" &>/dev/null
+    done
+fi
 
 exit $status

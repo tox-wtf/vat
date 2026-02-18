@@ -37,7 +37,11 @@ if ! [ -d p ]; then
 fi
 
 export project="${1:-${project:?Specify the project to test}}"
+
+cp -f config "$VAT_CACHE/config.bak"
+echo "DRY=true" >> config
 ./vat "$project"
+cp -f "$VAT_CACHE/config.bak" config
 
 cat "$VAT_CACHE/logs/$project/err" >&2
 
