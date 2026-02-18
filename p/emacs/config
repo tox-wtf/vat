@@ -1,0 +1,5 @@
+upstream="gh:emacs-mirror/emacs"
+
+:release() { :; }
+
+:commit() { :; }

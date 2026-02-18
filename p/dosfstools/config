@@ -1,0 +1,6 @@
+upstream="gh:dosfstools/dosfstools"
+chance=17
+
+:release() { :; }
+
+:commit() { :; }

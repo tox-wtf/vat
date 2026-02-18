@@ -1,0 +1,19 @@
+upstream="gh:ffmpeg/ffmpeg"
+
+:release() { :; }
+
+:unstable() { :; }
+
+:commit() { :; }
+
+for i in {2..7}; do
+    eval "
+    :$i() {
+        expected='^$i(\\.[0-9]+)+'
+
+        fetch() {
+            defgitrelease | grep '^$i\\.'
+        }
+    }
+    "
+done

@@ -1,0 +1,9 @@
+upstream="gh:networkconfiguration/dhcpcd"
+
+:release() {
+    fetch() {
+        gr | vtrim | vfs | vsort
+    }
+}
+
+:commit() { :; }

@@ -1,0 +1,5 @@
+upstream="sourceware:elfutils.git"
+
+:release() { :; }
+
+:commit() { :; }

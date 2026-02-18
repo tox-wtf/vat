@@ -1,0 +1,6 @@
+upstream="gh:google/double-conversion"
+chance=88
+
+:release() { :; }
+
+:commit() { :; }

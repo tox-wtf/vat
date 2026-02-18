@@ -1,0 +1,5 @@
+upstream="freedesktop:/dbus/dbus-glib.git"
+
+:release() { :; }
+
+:commit() { :; }

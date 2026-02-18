@@ -1,0 +1,4 @@
+upstream="https://archlinux.org/packages/extra/any/docbook-xml/json/"
+chance=2
+
+:release() { :; }

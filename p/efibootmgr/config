@@ -1,0 +1,10 @@
+upstream="gh:rhboot/efibootmgr"
+chance=44
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,^Release_,,' -e 's,_,.,g' | fl | vsort
+    }
+}
+
+:commit() { :; }

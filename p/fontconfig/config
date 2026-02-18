@@ -1,0 +1,9 @@
+upstream="freedesktop:/fontconfig/fontconfig.git"
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,_,.,g' | fsl | grep -v '\.9[0-9]+$' | vsort
+    }
+}
+
+:commit() { :; }

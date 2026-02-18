@@ -1,0 +1,9 @@
+upstream="gh:rrthomas/enchant"
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,-,.,g' | vsort
+    }
+}
+
+:commit() { :; }

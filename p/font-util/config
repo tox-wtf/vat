@@ -1,0 +1,9 @@
+upstream="freedesktop:/xorg/font/util.git"
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,_,.,g' | fsl | vfs | vsort
+    }
+}
+
+:commit() { :; }

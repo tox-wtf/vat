@@ -1,0 +1,9 @@
+upstream="gh:westes/flex"
+
+:release() {
+    fetch() {
+        gr | vtrim -e s,-,.,g | vsort
+    }
+}
+
+:commit() { :; }

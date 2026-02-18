@@ -1,0 +1,4 @@
+upstream="https://archlinux.org/packages/extra/any/docbook-sgml/json/"
+chance=2 # dead
+
+:release() { :; }

@@ -1,0 +1,6 @@
+upstream="gh:svaarala/duktape"
+chance=24
+
+:release() { :; }
+
+:commit() { :; }

@@ -1,0 +1,5 @@
+upstream="kernel:utils/dash/dash.git"
+
+:release() { :; }
+
+:commit() { :; }

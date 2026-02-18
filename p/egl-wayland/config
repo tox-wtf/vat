@@ -1,0 +1,5 @@
+upstream="gh:nvidia/egl-wayland"
+
+:release() { :; }
+
+:commit() { :; }

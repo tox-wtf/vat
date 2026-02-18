@@ -1,0 +1,15 @@
+upstream="gh:fftw/fftw3"
+
+:release() {
+    fetch() {
+        gr | vtrim | fsl | vfs | vsort
+    }
+}
+
+:unstable() {
+    fetch() {
+        gr | vtrim | fsl | vsort
+    }
+}
+
+:commit() { :; }

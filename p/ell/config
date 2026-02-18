@@ -1,0 +1,5 @@
+upstream="kernel:libs/ell/ell.git"
+
+:release() { :; }
+
+:commit() { :; }

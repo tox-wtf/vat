@@ -1,0 +1,15 @@
+upstream="gh:gwsw/less"
+
+:release() {
+    fetch() {
+        gr | vtrim | grep -F -- -rel | cut -d- -f1 | vsort
+    }
+}
+
+:unstable() {
+    fetch() {
+        gr | vtrim | grep -vF -- -rel | vsort
+    }
+}
+
+:commit() { :; }

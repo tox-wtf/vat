@@ -1,0 +1,9 @@
+upstream="gh:tytso/e2fsprogs"
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,_,.,g' | fl | fdash | vsort
+    }
+}
+
+:commit() { :; }

@@ -1,0 +1,6 @@
+upstream="gh:xiph/flac"
+chance=66
+
+:release() { :; }
+
+:commit() { :; }
