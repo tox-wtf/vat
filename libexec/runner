@@ -6,13 +6,14 @@ set -u
     echo "Could not source base library" >&2
     exit 2
 }
-. p/${1:?}/config || {
-    echo "Could not source config for $1" >&2
-    exit 2
-}
 
 project="$1"
 name="${project##*/}"
+
+. p/$project/config || {
+    echo "Could not source config for $1" >&2
+    exit 2
+}
 
 upstream_type() {
     case "$upstream" in

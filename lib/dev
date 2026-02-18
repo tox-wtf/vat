@@ -50,12 +50,14 @@ cat "$VAT_CACHE/logs/$project/err" >&2
 # execute a command from vat's environment
 vx() {
 
-. p/"${project:?Specify the project to test}"/config
+echo "${project:?}" >/dev/null # ensure it's set
+
+name="${project##*/}"
+. p/"$project"/config
 . lib/vars
 . lib/config
 
 upstream="$(echo "${upstream:?}" | sed -f "${VAT_CACHE:?}/shortforms.sed")"
-name="${project##*/}"
 eval "$@"
 
 }
