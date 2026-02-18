@@ -12,9 +12,10 @@ if ! [ -d p ]; then
     return 2
 fi
 
-mkdir -p "p/${1:?}"
-if ! [ -f "p/$1/config" ]; then
-install -vDm644 /dev/stdin "p/$1/config" << .
+export project="$1"
+mkdir -p "p/${project:?}"
+if ! [ -f "p/$project/config" ]; then
+install -vDm644 /dev/stdin "p/$project/config" << .
 upstream=""
 
 :release() { :; }
@@ -23,7 +24,7 @@ upstream=""
 .
 fi
 
-"${EDITOR:?Please set \$EDITOR}" "p/$1/config"
+"${EDITOR:?Please set \$EDITOR}" "p/$project/config"
 
 }
 
@@ -35,10 +36,22 @@ if ! [ -d p ]; then
     return 2
 fi
 
-local project="${1:-${name:?Specify the project to test}}"
+export project="${1:-${project:?Specify the project to test}}"
 ./vat "$project"
 
-cat "$VAT_CACHE/logs/$project/out"
 cat "$VAT_CACHE/logs/$project/err" >&2
+
+}
+
+# execute a command from vat's environment
+vx() {
+
+. p/"${project:?Specify the project to test}"/config
+. lib/vars
+. lib/config
+
+upstream="$(echo "${upstream:?}" | sed -f "${VAT_CACHE:?}/shortforms.sed")"
+name="${project##*/}"
+eval "$@"
 
 }
