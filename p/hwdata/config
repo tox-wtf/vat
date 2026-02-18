@@ -1,0 +1,9 @@
+upstream="gh:vcrhonek/hwdata"
+
+:release() {
+    fetch() {
+        gr | vtrim | fdash | vsort
+    }
+}
+
+:commit() { :; }

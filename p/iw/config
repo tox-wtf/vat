@@ -1,0 +1,6 @@
+upstream="kernel:linux/kernel/git/jberg/iw.git"
+chance=88
+
+:release() { :; }
+
+:commit() { :; }

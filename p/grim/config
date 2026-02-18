@@ -1,0 +1,6 @@
+upstream="freedesktop:emersion/grim.git"
+chance=44
+
+:release() { :; }
+
+:commit() { :; }

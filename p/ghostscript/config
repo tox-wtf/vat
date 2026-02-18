@@ -1,0 +1,15 @@
+upstream="gh:ArtifexSoftware/ghostpdl"
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,^ghostpdl-,,' | fsl | grep -v test | vfs | vsort
+    }
+}
+
+:unstable() {
+    fetch() {
+        gr | vtrim -e 's,^ghostpdl-,,' | fsl | grep -v test | vsort
+    }
+}
+
+:commit() { :; }

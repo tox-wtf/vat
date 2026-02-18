@@ -1,0 +1,6 @@
+upstream="freedesktop:/mesa/glu.git"
+chance=19
+
+:release() { :; }
+
+:commit() { :; }

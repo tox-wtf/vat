@@ -1,0 +1,17 @@
+upstream="gh:gnome/gdk-pixbuf"
+
+# ancient 2.90* tags mess with vsort
+:release() {
+    fetch() {
+        gr | vtrim -e 's,_,.,g' | fsl | vsort | grep -v '\.9[0-9]\+\.[0-9]\+$' | vfem | vsort
+    }
+}
+
+# ancient 2.90* tags mess with vsort
+:unstable() {
+    fetch() {
+        gr | vtrim -e 's,_,.,g' | fsl | vsort | grep -v '\.9[0-9]\+\.[0-9]\+$' | vsort
+    }
+}
+
+:commit() { :; }

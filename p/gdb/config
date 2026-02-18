@@ -1,0 +1,9 @@
+upstream="sourceware:binutils-gdb.git"
+
+:release() {
+    fetch() {
+        gr | grep '^gdb' | vtrim -e 's,-release$,,' | fl | fdate | vsort
+    }
+}
+
+:commit() { :; }

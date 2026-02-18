@@ -1,0 +1,9 @@
+upstream="gh:gnome/gsettings-desktop-schemas"
+
+:release() { :; }
+
+# Upstream's tagging scheme is more than a little cursed, and I wouldn't be
+# surprised if this breaks.
+:unstable() { :; }
+
+:commit() { :; }

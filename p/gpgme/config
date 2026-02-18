@@ -1,0 +1,10 @@
+upstream="gh:gpg/gpgme"
+
+# TODO: Does gpgme use even minor parts for stable releases?
+:release() {
+    fetch() {
+        gr | vtrim -re 's,(_|-|@),.,g' | fl | vsort
+    }
+}
+
+:commit() { :; }

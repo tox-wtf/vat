@@ -1,0 +1,5 @@
+upstream="gl:iniparser/iniparser.git"
+
+:release() { :; }
+
+:commit() { :; }

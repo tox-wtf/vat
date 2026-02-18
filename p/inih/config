@@ -1,0 +1,9 @@
+upstream="gh:benhoyt/inih"
+
+:release() {
+    fetch() {
+        gr | vtrim | vfs | vsort
+    }
+}
+
+:commit() { :; }

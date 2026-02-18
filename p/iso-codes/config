@@ -1,0 +1,5 @@
+upstream="salsa:iso-codes-team/iso-codes.git"
+
+:release() { :; }
+
+:commit() { :; }

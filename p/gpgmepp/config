@@ -1,0 +1,9 @@
+upstream="gh:gpg/gpgmepp"
+
+:release() {
+    fetch() {
+        gr | vtrim -re 's,(_|-|@),.,g' | fl | vsort
+    }
+}
+
+:commit() { :; }

@@ -1,0 +1,6 @@
+upstream="gh:nigels-com/glew"
+chance=80
+
+:release() { :; }
+
+:commit() { :; }

@@ -1,0 +1,9 @@
+upstream="gh:imagemagick/imagemagick"
+
+:release() {
+    fetch() {
+        gr | sed 's,-,.,' | vsort
+    }
+}
+
+:commit() { :; }

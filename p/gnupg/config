@@ -1,0 +1,15 @@
+upstream="gh:gpg/gnupg"
+
+:release() {
+    fetch() {
+        gr | vtrim | fsl | grep -vF -- -base | vfem | vsort
+    }
+}
+
+:unstable() {
+    fetch() {
+        gr | vtrim | fsl | grep -vF -- -base | vsort
+    }
+}
+
+:commit() { :; }

@@ -1,0 +1,15 @@
+upstream="gh:GNOME/glib-networking"
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,^glib-,,' | vfs | grep -v '\.9[0-9]$' | vsort
+    }
+}
+
+:unstable() {
+    fetch() {
+        gr | vtrim -e 's,^glib-,,' | vsort
+    }
+}
+
+:commit() { :; }

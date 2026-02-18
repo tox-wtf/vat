@@ -1,0 +1,5 @@
+upstream="cb:$name/$name.git"
+
+:release() { :; }
+
+:commit() { :; }

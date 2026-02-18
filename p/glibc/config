@@ -1,0 +1,16 @@
+upstream="sourceware:glibc.git"
+chance=83
+
+:release() {
+    fetch() {
+        gr | vtrim | fdash | fl | vsort | grep -v '\.900*$'
+    }
+}
+
+:unstable() {
+    fetch() {
+        gr | vtrim | fdash | fl | vsort
+    }
+}
+
+:commit() { :; }

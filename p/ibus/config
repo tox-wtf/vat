@@ -1,0 +1,9 @@
+upstream="gh:ibus/ibus"
+
+:release() {
+    fetch() {
+        defgitrelease | fdate
+    }
+}
+
+:commit() { :; }

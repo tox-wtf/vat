@@ -1,0 +1,13 @@
+upstream="gh:gnome/gtkmm"
+
+:release() { :; }
+
+:commit() { :; }
+
+:3() {
+    expected="3\.[0-7][0-9]*\.[0-9]+"
+
+    fetch() {
+        defgitrelease | grep '^3\.[0-7][0-9]*\.'
+    }
+}

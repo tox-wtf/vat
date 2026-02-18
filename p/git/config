@@ -1,0 +1,7 @@
+upstream="gh:git/git"
+
+:release() { :; }
+
+:unstable() { :; }
+
+:commit() { :; }

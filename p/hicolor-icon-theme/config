@@ -1,0 +1,6 @@
+upstream="freedesktop:/xdg/default-icon-theme.git"
+chance=64
+
+:release() { :; }
+
+:commit() { :; }

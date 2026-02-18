@@ -1,0 +1,5 @@
+upstream="gl:inkscape/inkscape.git"
+
+:release() { :; }
+
+:commit() { :; }
