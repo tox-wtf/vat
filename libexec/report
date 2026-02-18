@@ -27,7 +27,10 @@ fmt() {
     fi
 }
 
-git add p
+for project in "$@"; do
+    git add "p/$project"
+done
+
 diff="$(git diff --staged -U0 --word-diff=plain --no-color -- p/**/v/v.tsv | sed -r '/^(index|---|\+\+\+|@@|new file mode) /d')"
 while read -r line; do
     [ -z "$line" ] && continue

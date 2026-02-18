@@ -31,13 +31,14 @@ log "VAT v$(<version) beginning run #$(<runcount)"
 echo $runcount > runcount
 unset runcount
 
-# Clear old logs
-rm -rf "$VAT_CACHE/logs"
-
-# Handle caching
 mkdir -p "$VAT_CACHE"
 modtime=$(stat -c %Y "$VAT_CACHE")
+
+# Handle caching
 diff=$((start_time - modtime))
+
+# Clear old logs
+rm -rf "$VAT_CACHE/logs"
 
 if [ $diff -gt $CACHE_LIFESPAN ]; then
     echo "[VAT] Clearing cache ($diff seconds old)" >&2
@@ -117,6 +118,6 @@ done
 log "Logs available at $all_base.*"
 
 libexec/record
-libexec/report | tee "$VAT_CACHE/report"
+libexec/report "${projects[@]}" | tee "$VAT_CACHE/report"
 
 exit $status
