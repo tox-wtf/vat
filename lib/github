@@ -10,7 +10,7 @@ _ghapi() {
 
     if [ ! -r "$cache" ] || [ ! -s "$cache" ] || "$NO_CACHE" ; then
         install -Dm644 /dev/null "$cache"
-        if [ -n "$GH_TOKEN" ]; then
+        if [ -n "${GH_TOKEN-}" ]; then
             _curl \
                 -H "Accept: application/vnd.github+json" \
                 -H "X-GitHub-Api-Version: 2022-11-28" \
