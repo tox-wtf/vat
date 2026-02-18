@@ -19,20 +19,24 @@ set -u
 rm -rf "$VAT_CACHE/dist"
 mkdir -pv "$VAT_CACHE/dist"
 cp -vf "$VAT_CACHE/report" "$VAT_CACHE/dist/report"
+cp -vf "$VAT_CACHE/logs/ALL."* "$VAT_CACHE/dist/"
+xz -9e "$VAT_CACHE/dist/ALL."*
 
 runcount="$(<runcount)"
+version="$(<version)"
 
 (
-    # TODO: Add runcount prefix to tarballs
+    echo "Archiving logs"
     cd "$VAT_CACHE"
-    tar -cJvf "$VAT_CACHE/dist/logs.tar.xz" "logs"
+    tar --numeric-owner --transform "s,logs,logs-$version-$runcount," -cJvf "$VAT_CACHE/dist/logs.tar.xz" "logs"
+    echo "Archiving projects"
     cd "$VAT_ROOT"
-    tar -cJvf "$VAT_CACHE/dist/p.tar.xz"    "p"
+    tar --numeric-owner --transform "s,p,p-$version-$runcount,"       -cJvf "$VAT_CACHE/dist/p.tar.xz"    "p"
 )
 
 for project in "${projects[@]}"; do
     echo git tag "run-$runcount" -m "$(<$VAT_CACHE/report)"
     echo git push
     echo git push --tags
-    echo gh release create "VAT run #$runcount" --notes-from-tag --latest=false "$VAT_CACHE/dist/"*
+    echo gh release create "VAT $version run #$runcount" --notes-from-tag --latest=false "$VAT_CACHE/dist/"*
 done
