@@ -38,7 +38,6 @@ while read -r line; do
         project="$(echo "$line" | cut -d\  -f3)"
         project="${project%/v/v.tsv}"
         project="${project#a/p/}"
-        echo "$project:"
         continue
     fi
 
@@ -54,7 +53,7 @@ while read -r line; do
         l=$(echo "$line" | sed 's,-]{+,'$'\t',)
         l=$(echo "$l" | tr -d '+}[-')
         IFS=$'\t' read -r channel old new <<< "$l"
-        printf "\t$channel: $(fmt $old) -> $(fmt $new)\n"
+        printf "%-63s\t$(fmt $old) -> $(fmt $new)\n" "$project:$channel"
         continue
     fi
 
@@ -63,7 +62,7 @@ while read -r line; do
     if [[ $line == "{+"* ]]; then
         l=$(echo "$line" | tr -d '+}{')
         IFS=$'\t' read -r channel new <<< "$l"
-        printf "\t$channel: $(fmt $new)\n"
+        printf "%-63s\t$(fmt $new)\n" "$project:$channel"
         continue
     fi
 done <<< "$diff"
