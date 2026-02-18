@@ -17,11 +17,11 @@ shopt -s nullglob
 set -u
 
 for project in "${projects[@]}"; do
-    desc="$(grep "^$project:" .vat-cache/report)"
+    desc="$(grep "^$project:" "$VAT_CACHE/report")"
     git add "p/$project/v"
     git commit -m "auto(p): update versions for $project" -m "$desc"
 done
 
-desc="$(<.vat-cache/report)"
+desc="$(<"$VAT_CACHE/report")"
 git add "p/ALL.tsv"
 git commit -m "auto(p): update versions for all projects" -m "$desc"
