@@ -9,12 +9,12 @@ command -v git &>/dev/null || {
 
 . lib/vars
 
-readarray -t projects < <(git status --porcelain=v1 -u all p/**/v/v.tsv | sed -e 's,^...p/,,' -e 's,/v/v.tsv$,,')
-
 shopt -s globstar
 shopt -s nullglob
 
 set -u
+
+readarray -t projects < <(git status --porcelain=v1 -u all p/**/v/v.tsv | sed -e 's,^...p/,,' -e 's,/v/v.tsv$,,')
 
 for project in "${projects[@]}"; do
     desc="$(grep "^$project:" "$VAT_CACHE/report")"
