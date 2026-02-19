@@ -55,7 +55,7 @@ while read -r line; do
     if [[ $line == *$'\t[-'* ]];  then
         l=$(echo "$line" | sed 's,-]{+,'$'\t',)
         l=$(echo "$l" | tr -d '+}[-')
-        IFS=$'\t' read -r channel old new <<< "$l"
+        IFS=$'\t' read -r _ channel old new <<< "$l"
         printf "%-63s\t$(fmt $old) -> $(fmt $new)\n" "$project:$channel"
         continue
     fi
@@ -64,7 +64,7 @@ while read -r line; do
     # new channel
     if [[ $line == "{+"* ]]; then
         l=$(echo "$line" | tr -d '+}{')
-        IFS=$'\t' read -r channel new <<< "$l"
+        IFS=$'\t' read -r _ channel new <<< "$l"
         printf "%-63s\t$(fmt $new)\n" "$project:$channel"
         continue
     fi
