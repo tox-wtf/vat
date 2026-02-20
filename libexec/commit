@@ -23,5 +23,5 @@ for project in "${projects[@]}"; do
 done
 
 desc="$(<"$VAT_TARGET/report")"
-git add "p/ALL.tsv"
+git add "p/ALL."*
 git commit -m "auto(p): update versions for all projects" -m "$desc"
