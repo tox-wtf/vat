@@ -59,4 +59,4 @@ while IFS= read -r line; do
     write_tsv
 done < "$VAT_CACHE/logs/ALL.out"
 
-cp -f "$VAT_CACHE/logs/ALL.out" p/ALL.tsv
+${DRY:?} || cp -f "$VAT_CACHE/logs/ALL.out" p/ALL.tsv
