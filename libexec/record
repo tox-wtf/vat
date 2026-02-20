@@ -18,7 +18,7 @@ retrieve_old_version() {
 write_tsv() {
     local file="$VAT_ROOT/p/$project/v/v.tsv"
 
-    [ -f "$file" ] && sed -i "/^$channel"$'\t'"/d" "$file"
+    [ -f "$file" ] && sed -i "/^${project}	${channel}	/d" "$file"
     printf "$project\t$channel\t$version\n" >> "$file"
 }
 
