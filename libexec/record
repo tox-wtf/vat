@@ -18,7 +18,12 @@ retrieve_old_version() {
 write_tsv() {
     local file="$VAT_ROOT/p/$project/v/v.tsv"
 
-    [ -f "$file" ] && sed -i "/^${project}	${channel}	/d" "$file"
+    # Remove old versions
+    if [ -f "$file" ]; then
+        grep -vF "$project	$channel	" "$file" > "$file.tmp"
+        mv "$file.tmp" "$file"
+    fi
+
     printf "$project\t$channel\t$version\n" >> "$file"
 }
 
