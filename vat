@@ -31,19 +31,25 @@ log "VAT v$(<version) beginning run #$(<runcount)"
 $DRY || echo $runcount > runcount
 unset runcount
 
-mkdir -p "$VAT_CACHE"
-modtime=$(stat -c %Y "$VAT_CACHE")
-
 # Handle caching
-diff=$((start_time - modtime))
+if [ -f "$VAT_CACHE/timestamp" ]; then
+    modtime=$(stat -c %Y "$VAT_CACHE/timestamp")
+    diff=$((start_time - modtime))
+else
+    diff=0
+    touch "$VAT_CACHE/timestamp"
+fi
 
 # Clear old logs
 rm -rf "$VAT_CACHE/logs"
 
 if [ $diff -gt $CACHE_LIFESPAN ]; then
-    echo "[VAT] Clearing cache ($diff seconds old)" >&2
+    log "Clearing cache ($diff seconds old)"
     rm -rf $VAT_CACHE
     mkdir -p $VAT_CACHE
+    touch "$VAT_CACHE/timestmap"
+else
+    log "Not clearing cache ($diff seconds old)"
 fi
 
 mkdir -p $VAT_CACHE/p-old
