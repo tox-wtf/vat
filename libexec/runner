@@ -55,7 +55,7 @@ set_default_expected() {
 
 expand_upstream_shortforms() {
     printf "Expanded $upstream to " >&3
-    upstream="$(echo "$upstream" | sed -f "$VAT_CACHE/shortforms.sed")"
+    upstream="$(echo "$upstream" | sed -f "$VAT_TARGET/shortforms.sed")"
     echo "$upstream" >&3
 }
 

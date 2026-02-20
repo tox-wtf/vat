@@ -17,11 +17,11 @@ set -u
 readarray -t projects < <(git status --porcelain=v1 -u all p/**/v.tsv | sed -e 's,^...p/,,' -e 's,/v.tsv$,,')
 
 for project in "${projects[@]}"; do
-    desc="$(grep "^$project:" "$VAT_CACHE/report")"
+    desc="$(grep "^$project:" "$VAT_TARGET/report")"
     git add "p/$project/v".*
     git commit -m "auto(p): update versions for $project" -m "$desc"
 done
 
-desc="$(<"$VAT_CACHE/report")"
+desc="$(<"$VAT_TARGET/report")"
 git add "p/ALL.tsv"
 git commit -m "auto(p): update versions for all projects" -m "$desc"

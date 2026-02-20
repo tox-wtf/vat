@@ -9,9 +9,9 @@ declare -A shortforms
     exit 2
 }
 
-install -Dm644 /dev/null "$VAT_CACHE/shortforms.sed"
+install -Dm644 /dev/null "$VAT_TARGET/shortforms.sed"
 for shortform in "${!shortforms[@]}"; do
     from="$shortform:"
     to="${shortforms[$shortform]}"
-    echo "s|$from|$to|" >> "$VAT_CACHE/shortforms.sed"
+    echo "s|$from|$to|" >> "$VAT_TARGET/shortforms.sed"
 done

@@ -16,27 +16,27 @@ shopt -s nullglob
 
 set -u
 
-rm -rf "$VAT_CACHE/dist"
-mkdir -pv "$VAT_CACHE/dist"
-cp -vf "$VAT_CACHE/report" "$VAT_CACHE/dist/report"
-cp -vf "$VAT_CACHE/logs/ALL."* "$VAT_CACHE/dist/"
-xz -9e "$VAT_CACHE/dist/ALL."*
+rm -rf "$VAT_TARGET/dist"
+mkdir -pv "$VAT_TARGET/dist"
+cp -vf "$VAT_TARGET/report" "$VAT_TARGET/dist/report"
+cp -vf "$VAT_TARGET/logs/ALL."* "$VAT_TARGET/dist/"
+xz -9e "$VAT_TARGET/dist/ALL."*
 
 runcount="$(<runcount)"
 version="$(<version)"
 
 (
     echo "Archiving logs"
-    cd "$VAT_CACHE"
-    tar --numeric-owner --transform "s,logs,logs-$version-$runcount," -cJvf "$VAT_CACHE/dist/logs.tar.xz" "logs"
+    cd "$VAT_TARGET"
+    tar --numeric-owner --transform "s,logs,logs-$version-$runcount," -cJvf "$VAT_TARGET/dist/logs.tar.xz" "logs"
     echo "Archiving projects"
     cd "$VAT_ROOT"
-    tar --numeric-owner --transform "s,p,p-$version-$runcount,"       -cJvf "$VAT_CACHE/dist/p.tar.xz"    "p"
+    tar --numeric-owner --transform "s,p,p-$version-$runcount,"       -cJvf "$VAT_TARGET/dist/p.tar.xz"    "p"
 )
 
 for project in "${projects[@]}"; do
-    echo git tag "run-$runcount" -m "$(<$VAT_CACHE/report)"
+    echo git tag "run-$runcount" -m "$(<$VAT_TARGET/report)"
     echo git push
     echo git push --tags
-    echo gh release create "VAT $version run #$runcount" --notes-from-tag --latest=false "$VAT_CACHE/dist/"*
+    echo gh release create "VAT $version run #$runcount" --notes-from-tag --latest=false "$VAT_TARGET/dist/"*
 done

@@ -41,19 +41,15 @@ else
 fi
 
 # Clear old logs
-rm -rf "$VAT_CACHE/logs"
+rm -rf "$VAT_TARGET/logs"
 
 if [ $diff -gt $CACHE_LIFESPAN ]; then
     log "Clearing cache ($diff seconds old)"
     rm -rf $VAT_CACHE
-    mkdir -p $VAT_CACHE
-    touch "$VAT_CACHE/timestmap"
+    touch "$VAT_CACHE/timestamp"
 else
     log "Not clearing cache ($diff seconds old)"
 fi
-
-mkdir -p $VAT_CACHE/p-old
-cp -af p -T $VAT_CACHE/p-old
 
 # Collect projects if none were specified
 declare -a projects
@@ -71,9 +67,9 @@ for project in "${projects[@]}"; do
     log "Fetching $project"
 
     (
-        log_file_out="$VAT_CACHE/logs/$project/out"
-        log_file_err="$VAT_CACHE/logs/$project/err"
-        log_file_dbg="$VAT_CACHE/logs/$project/dbg"
+        log_file_out="$VAT_TARGET/logs/$project/out"
+        log_file_err="$VAT_TARGET/logs/$project/err"
+        log_file_dbg="$VAT_TARGET/logs/$project/dbg"
         install -Dm644 /dev/null "$log_file_out"
         install -Dm644 /dev/null "$log_file_err"
         install -Dm644 /dev/null "$log_file_dbg"
@@ -101,7 +97,7 @@ log "Processed ${#jobs[@]} projects"
 
 # Consolidate logs
 log "Consolidating logs"
-all_base="$VAT_CACHE/logs/ALL"
+all_base="$VAT_TARGET/logs/ALL"
 all_out="$all_base.out"
 all_err="$all_base.err"
 all_dbg="$all_base.dbg"
@@ -109,22 +105,22 @@ install -Dm644 /dev/null "$all_out"
 install -Dm644 /dev/null "$all_err"
 install -Dm644 /dev/null "$all_dbg"
 
-find $VAT_CACHE/logs -type f -name 'out' ! -name 'ALL.out' | sort | while read -r log_out; do
+find $VAT_TARGET/logs -type f -name 'out' ! -name 'ALL.out' | sort | while read -r log_out; do
     cat "$log_out" >> "$all_out"
 done
 
-find $VAT_CACHE/logs -type f -name 'err' ! -name 'ALL.err' | sort | while read -r log_err; do
+find $VAT_TARGET/logs -type f -name 'err' ! -name 'ALL.err' | sort | while read -r log_err; do
     cat "$log_err" >> "$all_err"
 done
 
-find $VAT_CACHE/logs -type f -name 'dbg' ! -name 'ALL.dbg' | sort | while read -r log_dbg; do
+find $VAT_TARGET/logs -type f -name 'dbg' ! -name 'ALL.dbg' | sort | while read -r log_dbg; do
     cat "$log_dbg" >> "$all_dbg"
 done
 
 log "Logs available at $all_base.*"
 
 libexec/record
-libexec/report "${projects[@]}" | tee "$VAT_CACHE/report"
+libexec/report "${projects[@]}" | tee "$VAT_TARGET/report"
 
 if $DRY; then
     echo

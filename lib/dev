@@ -38,12 +38,12 @@ fi
 
 export project="${1:-${project:?Specify the project to test}}"
 
-cp -f config "$VAT_CACHE/config.bak"
+cp -f config "$VAT_TARGET/config.bak"
 echo "DRY=true" >> config
 ./vat "$project"
-cp -f "$VAT_CACHE/config.bak" config
+cp -f "$VAT_TARGET/config.bak" config
 
-cat "$VAT_CACHE/logs/$project/err" >&2
+cat "$VAT_TARGET/logs/$project/err" >&2
 
 }
 
@@ -57,7 +57,7 @@ name="${project##*/}"
 . lib/vars
 . lib/config
 
-upstream="$(echo "${upstream:?}" | sed -f "${VAT_CACHE:?}/shortforms.sed")"
+upstream="$(echo "${upstream:?}" | sed -f "${VAT_TARGET:?}/shortforms.sed")"
 eval "$@"
 
 }
