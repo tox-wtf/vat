@@ -9,7 +9,7 @@ command -v git &>/dev/null || {
 
 . lib/vars
 
-projects=$(git status --porcelain=v1 -u all p/**/v/v.tsv | sed -e 's,^p/,,' -e 's,/v/v.tsv$,,')
+projects=$(git status --porcelain=v1 -u all p/**/v.tsv | sed -e 's,^p/,,' -e 's,/v.tsv$,,')
 
 shopt -s globstar
 shopt -s nullglob

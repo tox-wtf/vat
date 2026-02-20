@@ -5,7 +5,7 @@
 . lib/vars
 
 retrieve_old_version() {
-    local file="$VAT_ROOT/p/$project/v/v.tsv"
+    local file="$VAT_ROOT/p/$project/v.tsv"
 
     if ! [ -f "$file" ]; then
         echo "Attempted to retrieve fallback version from nonexistent $file" >&2
@@ -16,7 +16,7 @@ retrieve_old_version() {
 }
 
 write_tsv() {
-    local file="$VAT_ROOT/p/$project/v/v.tsv"
+    local file="$VAT_ROOT/p/$project/v.tsv"
 
     # Remove old versions
     if [ -f "$file" ]; then
@@ -28,7 +28,7 @@ write_tsv() {
 }
 
 # write_json() {
-#     local file="$VAT_ROOT/p/$project/v/v.json"
+#     local file="$VAT_ROOT/p/$project/v.json"
 #     local line="$(grep -n "\"channel\": \"$channel\"," "$file" 2>/dev/null | cut -d: -f1)"
 #
 #     if [ -f "$file" ] && [ -n "$line" ]; then
@@ -51,7 +51,6 @@ write_tsv() {
 
 while IFS= read -r line; do
     IFS=$'\t' read -r project channel version <<< "$line"
-    mkdir -p "$VAT_ROOT/p/$project/v"
 
     case "$version" in
         FAIL|SKIP) version=$(retrieve_old_version) ;;
