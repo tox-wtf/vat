@@ -1,0 +1,8 @@
+upstream="https://sourceforge.net/projects/lame/rss?path=/lame"
+# TODO: Use svn repo?
+
+:release() {
+    fetch() {
+        cr | grep -F '<title><![CDATA[/lame/' | cut -d/ -f3 | vsort
+    }
+}

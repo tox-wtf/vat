@@ -1,0 +1,6 @@
+upstream="gh:jemalloc/jemalloc"
+chance=11
+
+:release() { :; }
+
+:commit() { :; }

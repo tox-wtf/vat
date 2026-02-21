@@ -1,0 +1,9 @@
+upstream="gh:krb5/krb5"
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,-final$,,' | fl | vfs | vsort
+    }
+}
+
+:commit() { :; }

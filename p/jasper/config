@@ -1,0 +1,9 @@
+upstream="gh:jasper-software/jasper"
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,^version-,,' | fsl | vsort
+    }
+}
+
+:commit() { :; }

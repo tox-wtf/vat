@@ -1,0 +1,10 @@
+upstream="gh:json-c/json-c"
+chance=91
+
+:release() {
+    fetch() {
+        gr | vtrim -re 's,-[0-9]{8}$,,' | vsort
+    }
+}
+
+:commit() { :; }
