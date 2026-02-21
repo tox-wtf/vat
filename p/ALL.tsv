@@ -2,7 +2,7 @@
 7zip	release	26.00
 99f	commit	ca378419587d31c53ca871d9afda9b2f3ac006f7
 99f	release	2
-abseil-cpp	commit	a62029e346b45d77e3ec98f18185c0177e1dafa2
+abseil-cpp	commit	64c1b40d732cccd660df378a1639505bbdbfe5b3
 abseil-cpp	release	20260107.1
 abseil-cpp	unstable	20260107.1
 acl	commit	ae0448cb7d0d328440425d1ac347e9d6845e3f0e
@@ -32,7 +32,7 @@ aquamarine	release	0.10.0
 aria2	commit	b4fd7cb1ca03e38ad9d7ab9308b8200cb1d41c25
 aria2	release	1.37.0
 aspell	release	0.60.8.2
-at-spi2-core	commit	877a06f298f63cfac8b5822f5a65d1ca42a8cd2d
+at-spi2-core	commit	c2b778ede14676ebad58fa5e643db604d9a04a03
 at-spi2-core	release	2.59.1
 attr	commit	4d4a562d7b73dcea8bd4b2d40b8c030d5065111b
 attr	release	2.5.2
@@ -54,7 +54,7 @@ befunge-93	commit	8fe4065c0415b6f6fa6f699798fa9b64737aadc1
 befunge-93	release	2.25
 bind-utils	commit	92d3c7d011e0218faed7e74735a116a758301aa3
 bind-utils	release	9.21.18
-binutils	commit	e16c7848007e4faa071a6483556e69f365e9eb69
+binutils	commit	3049829f1e6dd849e5d3ca71d633990f8d799ae6
 binutils	release	2.46
 bison	release	3.8.2
 bluefish	release	2.4.0
@@ -80,9 +80,9 @@ bzip2	commit	66c46b8c9436613fd81bc5d03f63a61933a4dcc3
 bzip2	release	1.0.8
 cachecontrol	commit	2d4710cb2bd622cc96b47a593dea9c9afe96fbe0
 cachecontrol	release	0.14.4
-caddy	commit	a1081194bfae4e0d8c227ec44aecb95eded55d1e
-caddy	release	2.10.2
-caddy	unstable	2.11.0-beta.2
+caddy	commit	6610e2f1bd8f54853006eefd3849c9965190e57f
+caddy	release	2.11.1
+caddy	unstable	2.11.1
 cairo	commit	2a4589266388622f8c779721c8a4e090966fae79
 cairo	release	1.18.4
 cairo	unstable	1.18.4
@@ -126,7 +126,7 @@ cups-filters	commit	956283c74a34ae924266a2a63f8e5f529a1abd06
 cups-filters	release	2.0.1
 cups	commit	07c17a0464bbd33da13734e94544350c77c77070
 cups	release	2.4.16
-curl	commit	2862cafb49ec79b69f5521e860f2fd6041a934c8
+curl	commit	c81309479a1fcfa18e87159f29e8be06dc3a4861
 curl	release	8.18.0
 curl	unstable	8.18.0
 cyrus-sasl	commit	ac0c278817a082c625c496ec812318c019e0b96f
@@ -163,7 +163,7 @@ dosfstools	commit	289a48b9cb5b3c589391d28aa2515c325c932c7a
 dosfstools	release	4.2
 double-conversion	commit	3b30c09758cd21c7fae3173dbd62b11913c63a58
 double-conversion	release	3.4.0
-doxygen	commit	b04d2848d59b90c2e091af98207ea91949573020
+doxygen	commit	a9cfe4068085ebe0457803584f2bbfb4a03ea2be
 doxygen	release	1.16.1
 dtc	commit	68b960e299f7a31c986d6e5c6244a31f3dd4b8fd
 dtc	release	1.7.2
@@ -173,7 +173,7 @@ dunst	commit	0d1a40c511fc2b3ac3f6aefa6a6f62a0370946a7
 dunst	release	1.13.1
 dust	commit	709b87e1370217f0bb0f19523f05deb38ef4328d
 dust	release	1.2.4
-dxvk	commit	68374ec39b4828afedd21dd89463beb30b9d1266
+dxvk	commit	02c540224b9bee42adbae12d6701cdd1958c7f56
 dxvk	release	2.7.1
 e2fsprogs	commit	0b2752ce6276b383a5254cd766204f81f41b6631
 e2fsprogs	release	1.47.3
@@ -197,7 +197,7 @@ ell	release	0.82
 elogind	commit	88c346cdc5ef231465552de9c55332fd9d2c408b
 elogind	release	255.17
 elogind	unstable	257-pre
-emacs	commit	f680b988c2d7123f5159bb1a6a645f62166ab282
+emacs	commit	b83771e534fbddf50fc05135ac299f95955fc1e3
 emacs	release	30.2
 enchant	commit	774ff6dc2e441ba2b9b786f8edbe00e014960408
 enchant	release	2.8.15
@@ -220,7 +220,7 @@ ffmpeg	4	4.4.6
 ffmpeg	5	5.1.8
 ffmpeg	6	6.1.4
 ffmpeg	7	7.1.3
-ffmpeg	commit	a0b55a049153e94d61fc1ac92b0d25d802145840
+ffmpeg	commit	f951aa9ef382d6bb517e05d04d52710f751de427
 ffmpeg	release	8.0.1
 ffmpeg	unstable	8.1-dev
 fftw	commit	6c8f5c3e620ebc38262cd80ca6f65e9f85783d9e
@@ -262,11 +262,11 @@ gavinhoward/bc	commit	ec712dfba5c70fcf7958f1471fc93ead014d02f8
 gavinhoward/bc	release	7.0.3
 gavinhoward/bc	unstable	7.1.0
 gawk	release	5.3.2
-gcc	commit	3a17cc11cb5543be553774819c0a454b57ef739b
+gcc	commit	b9238d30705e11fec890a2d99a92f9d2ec43a008
 gcc	release	15.2.0
 gcc	unstable	16
 gdbm	release	1.26
-gdb	commit	e16c7848007e4faa071a6483556e69f365e9eb69
+gdb	commit	3049829f1e6dd849e5d3ca71d633990f8d799ae6
 gdb	release	17.1
 gdk-pixbuf	commit	da5c85cad6e8bd24ec5a198a1f23b7dfb8493bfb
 gdk-pixbuf	release	2.44.5
@@ -281,13 +281,13 @@ giflib	commit	5146815377b7395944cb683a08c43eee3f631eb7
 giflib	release	6.1.1
 girara	commit	d0207b1312f0ce40277750e94c629fbdea18e02d
 girara	release	2026.02.04
-git	commit	73fd77805fc6406f31c36212846d9e2541d19321
+git	commit	7c02d39fc2ed2702223c7674f73150d9a7e61ba4
 git	release	2.53.0
 git	unstable	2.53.0
 gkermit	release	2.01
 glad	commit	a4ca574522ff69d0bb584584977aa9a53ace29d9
 glad	release	2.0.8
-glaze	commit	b23419d95009361e0bdfc637380ee816730c1f37
+glaze	commit	0af0b09b21cbe9debe16e2b66319a9b53e85d042
 glaze	release	7.0.2
 glew	commit	ee5586bbd99c2976bafee5de97bbacc38c71a103
 glew	release	2.3.1
@@ -309,13 +309,13 @@ glu	commit	a2b96c7bba8db8fec3e02fb4227a7f7b02cabad1
 glu	release	9.0.3
 gmp	release	6.3.0
 gnu/bc	release	1.08.2
-gnupg	commit	463812bfed4ed3074fa6990c89dc6dbbdc9d5837
+gnupg	commit	7fca79f0aae6c3d3f27bb714c4132f6f0171fe53
 gnupg	release	2.4.9
 gnupg	unstable	2.5.17
 gnutls	commit	165ae258752eb0859008d5105de147644179e7a3
 gnutls	release	3.8.12
 gnutls	unstable	3.8.12
-go	commit	f3755d9eba1147eb2cc3257689764f0cd8aac77b
+go	commit	34b9742c817d1c689f09af71364f52711524cc09
 go	release	1.26.0
 go	unstable	1.26.0
 gperf	release	3.3
@@ -336,7 +336,7 @@ gsettings-desktop-schemas	commit	1bc4491b449a62fe570522b74a18beb47ec5fdad
 gsettings-desktop-schemas	release	49.1
 gsettings-desktop-schemas	unstable	50.beta
 gsl	release	2.8
-gstreamer	commit	7d782ff94ddf7237ca8b206e9e7d9538874c1a0f
+gstreamer	commit	5a32ce44fa728f002885b7cf00b69699ac599048
 gstreamer	release	1.28.0
 gstreamer	unstable	1.28.0
 gtkmm	3	3.24.10
@@ -344,7 +344,7 @@ gtkmm	commit	a73ca6a7d5f3708ed5622886d4f20cbb8c59232b
 gtkmm	release	4.21.3
 gtk	2	2.24.33
 gtk	3	3.24.51
-gtk	commit	8e7496027a2bb76122a19f2828bcfa1adc3cfe35
+gtk	commit	ed756c79b7cbf983aa7661a246933ebc3c9d3da9
 gtk	release	4.20.3
 gtk	unstable	4.21.5
 gumbo-parser	commit	6dddad6503480afc1a1379187aa114415ac7e640
@@ -363,7 +363,7 @@ i3	release	4.25.1
 iana-etc	release	20260213
 ibus	commit	a5624b25b8ae666eaffb5b1d0fb197358ce4e9ef
 ibus	release	1.5.33
-imagemagick	commit	6aa3dd799938d9d02e8a87a8988789f8b51ce454
+imagemagick	commit	7a758ee1cd8c120c85914a9d256e064205ab8799
 imagemagick	release	7.1.2.13
 inih	commit	577ae2dee1f0d9c2d11c7f10375c1715f3d6940c
 inih	release	62
