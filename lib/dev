@@ -39,7 +39,10 @@ fi
 export project="${1:-${project:?Specify the project to test}}"
 
 cp -f config "$VAT_TARGET/config.bak"
-echo "DRY=true" >> config
+cat >> config << .
+GUARANTEE=true
+DRY=true
+.
 ./vat "$project"
 cp -f "$VAT_TARGET/config.bak" config
 
