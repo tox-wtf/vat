@@ -57,8 +57,6 @@ for project in "${!projects[@]}"; do
     write_json
 done
 
-${DRY:?} && exit
-
 cp -f "$VAT_TARGET/logs/ALL.out" p/ALL.tsv
 
 # HACK: This is kind of horrible but I'm not very good at `jq`. If you have a

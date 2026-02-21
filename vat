@@ -126,8 +126,10 @@ if $DRY; then
     echo
     log "Cleaning artifacts after dry run"
     for project in "${projects[@]}"; do
-        git clean -fd -- "p/$project/v" &>/dev/null
+        git clean -fd "p/$project/v" &>/dev/null
     done
+
+    git restore "p/ALL".* &>/dev/null
 fi
 
 exit $status
