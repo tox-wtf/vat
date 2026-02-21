@@ -57,7 +57,7 @@ for project in "${!projects[@]}"; do
     write_json
 done
 
-${DRY:?} && return
+${DRY:?} && exit
 
 cp -f "$VAT_TARGET/logs/ALL.out" p/ALL.tsv
 
