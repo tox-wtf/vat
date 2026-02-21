@@ -43,7 +43,12 @@ echo "DRY=true" >> config
 ./vat "$project"
 cp -f "$VAT_TARGET/config.bak" config
 
-cat "$VAT_TARGET/logs/$project/err" >&2
+cat "$VAT_TARGET/logs/$project/out"
+
+if [ -s "$VAT_TARGET/logs/$project/err" ]; then
+    cat "$VAT_TARGET/logs/$project/err" >&2
+    return 1
+fi
 
 }
 
