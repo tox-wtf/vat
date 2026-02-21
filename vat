@@ -37,7 +37,7 @@ if [ -f "$VAT_CACHE/timestamp" ]; then
     diff=$((start_time - modtime))
 else
     diff=0
-    touch "$VAT_CACHE/timestamp"
+    install -Dm644 /dev/null "$VAT_CACHE/timestamp"
 fi
 
 # Clear old logs
@@ -46,7 +46,7 @@ rm -rf "$VAT_TARGET/logs"
 if [ $diff -gt $CACHE_LIFESPAN ]; then
     log "Clearing cache ($diff seconds old)"
     rm -rf $VAT_CACHE
-    touch "$VAT_CACHE/timestamp"
+    install -Dm644 /dev/null "$VAT_CACHE/timestamp"
 else
     log "Not clearing cache ($diff seconds old)"
 fi
