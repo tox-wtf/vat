@@ -3,6 +3,12 @@ upstream="https://sourceforge.net/projects/lame/rss?path=/lame"
 
 :release() {
     fetch() {
+        cr | grep -F '<title><![CDATA[/lame/' | cut -d/ -f3 | vfs | vsort
+    }
+}
+
+:unstable() {
+    fetch() {
         cr | grep -F '<title><![CDATA[/lame/' | cut -d/ -f3 | vsort
     }
 }
