@@ -1,12 +1,6 @@
-[
-    {
-        "project": "efibootmgr",
-        "channel": "commit",
-        "version": ""
-    },
-    {
-        "project": "efibootmgr",
-        "channel": "release",
-        "version": ""
-    }
-]
+{
+  "efibootmgr": {
+    "release": "18",
+    "commit": "0a85e9baaac8a34e4a0bb9c23dfcc9c4f759e061"
+  }
+}
