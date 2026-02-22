@@ -33,11 +33,32 @@ write_json() {
     local tsv_file="$VAT_ROOT/p/$project/v.tsv"
     local json_file="$VAT_ROOT/p/$project/v.json"
 
-    jq --indent 4 -Rs '
-      split("\n")[:-1]
-      | map(split("\t"))
-      | map({project: .[0], channel: .[1], version: .[2]})
-    ' "$tsv_file" > "$json_file"
+    declare -A entries
+
+    exec 1> "$json_file.tmp"
+    while IFS= read -r line; do
+        IFS=$'\t' read -r _ channel version <<< "$line"
+        entries["$channel"]="$version"
+    done < "$tsv_file"
+
+    printf '{ "%s": {\n' "$project"
+
+    local len="${#entries[@]}"
+    local ct=0
+    for entry in "${!entries[@]}"; do
+        ((ct++))
+        if [ $ct -eq $len ]; then
+            printf '"%s": "%s"\n' "${entry}" "${entries["$entry"]}"
+        else
+            printf '"%s": "%s",\n' "${entry}" "${entries["$entry"]}"
+        fi
+    done
+
+    printf '} }\n'
+    1>&-
+    unset entries
+
+    jq --indent 4 . "$json_file.tmp" > "$json_file" && rm -f "$json_file.tmp"
 }
 
 # We only care about keys, but we don't want duplicates
@@ -66,6 +87,7 @@ unset projects
 
 cat p/**/v.tsv > p/ALL.tsv
 
-# HACK: This is kind of horrible but I'm not very good at `jq`. If you have a
-# better solution, please send it my way!
-jq -s '.[]' p/**/v.json | sed -e '/^\]$/d' -e '/^\[$/d' -e 's/},/}/' | jq -s '.' > p/ALL.json
+# HACK: I'm sure there's a correct way to do this, but I don't know it
+jq . p/**/v.json |
+    sed 's/},/}/' |
+    jq --indent 4 -s '.' > p/ALL.json
