@@ -37,11 +37,11 @@ roll_dice() {
     rand="$((RANDOM % 101))"
     if [ $rand -gt ${chance:-100} ]; then
         echo "Chance $rand > ${chance:-100}; skipping" >&3
-        return 1
-    else
-        echo "Chance $rand < ${chance:-100}; continuing" >&3
-        return 0
+        return 77
     fi
+
+    echo "Chance $rand < ${chance:-100}; continuing" >&3
+    return 0
 }
 
 set_default_expected() {

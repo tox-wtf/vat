@@ -8,7 +8,7 @@ retrieve_old_version() {
     local file="$VAT_ROOT/p/$project/v.tsv"
 
     if ! [ -f "$file" ]; then
-        echo "Attempted to retrieve fallback version from nonexistent $file" >&2
+        echo "ERROR: Attempted to retrieve fallback version from nonexistent $file" >&2
         exit 1
     fi
 
