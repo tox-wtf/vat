@@ -1,12 +1,6 @@
-[
-    {
-        "project": "binutils",
-        "channel": "commit",
-        "version": "6b36b8f3ca13e7c1a8be9c759f7bd7188c88cc55"
-    },
-    {
-        "project": "binutils",
-        "channel": "release",
-        "version": "2.46"
-    }
-]
+{
+  "binutils": {
+    "release": "2.46",
+    "commit": "130abadf1af1093f60537136560a184461604d23"
+  }
+}
