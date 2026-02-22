@@ -12,7 +12,7 @@ retrieve_old_version() {
         exit 1
     fi
 
-    grep "^$channel"$'\t' "$file" | cut -f2
+    grep "^$project"$'\t'"$channel"$'\t' "$file" | cut -f3
 }
 
 # Serialize raw data to TSV
@@ -40,14 +40,19 @@ write_json() {
     ' "$tsv_file" > "$json_file"
 }
 
-# we only care about keys, but we don't want duplicates
+# We only care about keys, but we don't want duplicates
 declare -A projects
+
 while IFS= read -r line; do
     IFS=$'\t' read -r project channel version <<< "$line"
+
+    [ -z "$version" ] && continue
 
     case "$version" in
         FAIL|SKIP|TIME) version=$(retrieve_old_version) ;;
     esac
+
+    [ -z "$version" ] && continue
 
     write_tsv
     projects["$project"]=_
@@ -57,7 +62,9 @@ for project in "${!projects[@]}"; do
     write_json
 done
 
-cp -f "$VAT_TARGET/logs/ALL.out" p/ALL.tsv
+unset projects
+
+cat p/**/v.tsv > p/ALL.tsv
 
 # HACK: This is kind of horrible but I'm not very good at `jq`. If you have a
 # better solution, please send it my way!
