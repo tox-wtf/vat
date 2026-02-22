@@ -1,0 +1,6 @@
+upstream="https://git.code.sf.net/p/xmlstar/code"
+chance=12 # last commit dated 2018-02-04
+
+:release() { :; }
+
+:commit() { :; }
