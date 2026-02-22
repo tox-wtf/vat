@@ -1,17 +1,7 @@
-[
-    {
-        "project": "cython",
-        "channel": "commit",
-        "version": "030400ab22005e756d87bec4f67ad2b5b9c30aa7"
-    },
-    {
-        "project": "cython",
-        "channel": "release",
-        "version": "3.2.4"
-    },
-    {
-        "project": "cython",
-        "channel": "unstable",
-        "version": "3.2.4"
-    }
-]
+{
+  "cython": {
+    "unstable": "3.2.4",
+    "release": "3.2.4",
+    "commit": "85b7fc011e49ba1e91d7220b531b59bc834e78ea"
+  }
+}
