@@ -1,12 +1,6 @@
-[
-    {
-        "project": "coreutils",
-        "channel": "commit",
-        "version": "89735ea830b293d50a9323770d6089bac7324aab"
-    },
-    {
-        "project": "coreutils",
-        "channel": "release",
-        "version": "9.10"
-    }
-]
+{
+  "coreutils": {
+    "release": "9.10",
+    "commit": "c057266f15c5ff72673d6f8349ec633065d8566d"
+  }
+}
