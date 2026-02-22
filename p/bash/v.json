@@ -1,12 +1,6 @@
-[
-    {
-        "project": "bash",
-        "channel": "release",
-        "version": "5.3.9"
-    },
-    {
-        "project": "bash",
-        "channel": "unstable",
-        "version": ""
-    }
-]
+{
+  "bash": {
+    "unstable": "5.3.9",
+    "release": "5.3.9"
+  }
+}
