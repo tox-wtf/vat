@@ -35,30 +35,29 @@ write_json() {
 
     declare -A entries
 
-    exec 1> "$json_file.tmp"
-    while IFS= read -r line; do
-        IFS=$'\t' read -r _ channel version <<< "$line"
-        entries["$channel"]="$version"
-    done < "$tsv_file"
+    {
+        while IFS= read -r line; do
+            IFS=$'\t' read -r _ channel version <<< "$line"
+            entries["$channel"]="$version"
+        done < "$tsv_file"
 
-    printf '{ "%s": {\n' "$project"
+        printf '{ "%s": {\n' "$project"
 
-    local len="${#entries[@]}"
-    local ct=0
-    for entry in "${!entries[@]}"; do
-        ((ct++))
-        if [ $ct -eq $len ]; then
-            printf '"%s": "%s"\n' "${entry}" "${entries["$entry"]}"
-        else
-            printf '"%s": "%s",\n' "${entry}" "${entries["$entry"]}"
-        fi
-    done
+        local len="${#entries[@]}"
+        local ct=0
+        for entry in "${!entries[@]}"; do
+            ((ct++))
+            if [ $ct -eq $len ]; then
+                printf '"%s": "%s"\n' "${entry}" "${entries["$entry"]}"
+            else
+                printf '"%s": "%s",\n' "${entry}" "${entries["$entry"]}"
+            fi
+        done
 
-    printf '} }\n'
-    1>&-
+        printf '} }\n'
+    } | jq --indent 4 . > "$json_file"
+
     unset entries
-
-    jq --indent 4 . "$json_file.tmp" > "$json_file" && rm -f "$json_file.tmp"
 }
 
 # We only care about keys, but we don't want duplicates
@@ -88,6 +87,8 @@ unset projects
 cat p/**/v.tsv > p/ALL.tsv
 
 # HACK: I'm sure there's a correct way to do this, but I don't know it
-jq . p/**/v.json |
-    sed 's/},/}/' |
-    jq --indent 4 -s '.' > p/ALL.json
+{
+    printf '{\n'
+    sed '/^[\{\}]/d' p/**/v.json | sed -e '$d' -e 's/}/&,/'
+    printf '}}\n'
+} | jq --indent 4 . > p/ALL.json
