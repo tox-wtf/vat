@@ -1,12 +1,6 @@
-[
-    {
-        "project": "emacs",
-        "channel": "commit",
-        "version": "7527cc1963c3a574599299538c3b6c68950c2a6b"
-    },
-    {
-        "project": "emacs",
-        "channel": "release",
-        "version": "30.2"
-    }
-]
+{
+  "emacs": {
+    "release": "30.2",
+    "commit": "923aac2e4ec76b51891ba711c44ee08f7211ea2a"
+  }
+}
