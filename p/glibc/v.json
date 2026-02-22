@@ -1,17 +1,7 @@
-[
-    {
-        "project": "glibc",
-        "channel": "commit",
-        "version": "0a380fe9a31bc2d5793c7c5d22d36c45dfe6e2ed"
-    },
-    {
-        "project": "glibc",
-        "channel": "release",
-        "version": "2.43"
-    },
-    {
-        "project": "glibc",
-        "channel": "unstable",
-        "version": "2.43.9000"
+{
+    "glibc": {
+        "unstable": "2.43.9000",
+        "release": "2.43",
+        "commit": "0a380fe9a31bc2d5793c7c5d22d36c45dfe6e2ed"
     }
-]
+}

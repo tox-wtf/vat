@@ -1,17 +1,7 @@
-[
-    {
-        "project": "jq",
-        "channel": "commit",
-        "version": "b33a7634ba34ffa7ce7368cc0ebf5ca40b54c7e6"
-    },
-    {
-        "project": "jq",
-        "channel": "release",
-        "version": "1.8.1"
-    },
-    {
-        "project": "jq",
-        "channel": "unstable",
-        "version": "1.8.1"
+{
+    "jq": {
+        "unstable": "1.8.1",
+        "release": "1.8.1",
+        "commit": "b33a7634ba34ffa7ce7368cc0ebf5ca40b54c7e6"
     }
-]
+}

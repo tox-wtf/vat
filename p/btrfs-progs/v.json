@@ -1,12 +1,6 @@
-[
-    {
-        "project": "btrfs-progs",
-        "channel": "commit",
-        "version": "8ebf6be85168242267adc626f6bbc1a51b953059"
-    },
-    {
-        "project": "btrfs-progs",
-        "channel": "release",
-        "version": "6.19"
+{
+    "btrfs-progs": {
+        "release": "6.19",
+        "commit": "8ebf6be85168242267adc626f6bbc1a51b953059"
     }
-]
+}

@@ -1,17 +1,7 @@
-[
-    {
-        "project": "curl",
-        "channel": "commit",
-        "version": "25512ab34e1852c6a33aff56075989e132919a3b"
-    },
-    {
-        "project": "curl",
-        "channel": "release",
-        "version": "8.18.0"
-    },
-    {
-        "project": "curl",
-        "channel": "unstable",
-        "version": "8.18.0"
+{
+    "curl": {
+        "unstable": "8.18.0",
+        "release": "8.18.0",
+        "commit": "25512ab34e1852c6a33aff56075989e132919a3b"
     }
-]
+}

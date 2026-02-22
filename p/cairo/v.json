@@ -1,17 +1,7 @@
-[
-    {
-        "project": "cairo",
-        "channel": "commit",
-        "version": "2a4589266388622f8c779721c8a4e090966fae79"
-    },
-    {
-        "project": "cairo",
-        "channel": "release",
-        "version": "1.18.4"
-    },
-    {
-        "project": "cairo",
-        "channel": "unstable",
-        "version": "1.18.4"
+{
+    "cairo": {
+        "unstable": "1.18.4",
+        "release": "1.18.4",
+        "commit": "2a4589266388622f8c779721c8a4e090966fae79"
     }
-]
+}

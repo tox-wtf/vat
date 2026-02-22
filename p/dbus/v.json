@@ -1,17 +1,7 @@
-[
-    {
-        "project": "dbus",
-        "channel": "commit",
-        "version": "4f5796a37dd303b6030127d20cba52c72523df79"
-    },
-    {
-        "project": "dbus",
-        "channel": "release",
-        "version": "1.16.2"
-    },
-    {
-        "project": "dbus",
-        "channel": "unstable",
-        "version": "1.16.2"
+{
+    "dbus": {
+        "unstable": "1.16.2",
+        "release": "1.16.2",
+        "commit": "4f5796a37dd303b6030127d20cba52c72523df79"
     }
-]
+}

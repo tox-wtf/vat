@@ -1,17 +1,7 @@
-[
-    {
-        "project": "gsettings-desktop-schemas",
-        "channel": "commit",
-        "version": "ded81402ef7b0580f4f193b2504946df76b34935"
-    },
-    {
-        "project": "gsettings-desktop-schemas",
-        "channel": "release",
-        "version": "49.1"
-    },
-    {
-        "project": "gsettings-desktop-schemas",
-        "channel": "unstable",
-        "version": "50.beta"
+{
+    "gsettings-desktop-schemas": {
+        "unstable": "50.beta",
+        "release": "49.1",
+        "commit": "ded81402ef7b0580f4f193b2504946df76b34935"
     }
-]
+}

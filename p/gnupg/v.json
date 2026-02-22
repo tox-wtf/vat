@@ -1,17 +1,7 @@
-[
-    {
-        "project": "gnupg",
-        "channel": "commit",
-        "version": "7fca79f0aae6c3d3f27bb714c4132f6f0171fe53"
-    },
-    {
-        "project": "gnupg",
-        "channel": "release",
-        "version": "2.4.9"
-    },
-    {
-        "project": "gnupg",
-        "channel": "unstable",
-        "version": "2.5.17"
+{
+    "gnupg": {
+        "unstable": "2.5.17",
+        "release": "2.4.9",
+        "commit": "7fca79f0aae6c3d3f27bb714c4132f6f0171fe53"
     }
-]
+}

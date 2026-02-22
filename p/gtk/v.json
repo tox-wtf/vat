@@ -1,27 +1,9 @@
-[
-    {
-        "project": "gtk",
-        "channel": "2",
-        "version": "2.24.33"
-    },
-    {
-        "project": "gtk",
-        "channel": "3",
-        "version": "3.24.51"
-    },
-    {
-        "project": "gtk",
-        "channel": "commit",
-        "version": "2d7b0d4d367804352a8a46ed5bd27a6b92408868"
-    },
-    {
-        "project": "gtk",
-        "channel": "release",
-        "version": "4.20.3"
-    },
-    {
-        "project": "gtk",
-        "channel": "unstable",
-        "version": "4.21.5"
+{
+    "gtk": {
+        "unstable": "4.21.5",
+        "3": "3.24.51",
+        "2": "2.24.33",
+        "release": "4.20.3",
+        "commit": "2d7b0d4d367804352a8a46ed5bd27a6b92408868"
     }
-]
+}

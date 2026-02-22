@@ -1,17 +1,7 @@
-[
-    {
-        "project": "elogind",
-        "channel": "commit",
-        "version": "88c346cdc5ef231465552de9c55332fd9d2c408b"
-    },
-    {
-        "project": "elogind",
-        "channel": "release",
-        "version": "255.17"
-    },
-    {
-        "project": "elogind",
-        "channel": "unstable",
-        "version": "257-pre"
+{
+    "elogind": {
+        "unstable": "257-pre",
+        "release": "255.17",
+        "commit": "88c346cdc5ef231465552de9c55332fd9d2c408b"
     }
-]
+}

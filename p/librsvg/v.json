@@ -1,17 +1,7 @@
-[
-    {
-        "project": "librsvg",
-        "channel": "commit",
-        "version": "fb97451c13e5ddb95a5c0af07fb3a314bd679f43"
-    },
-    {
-        "project": "librsvg",
-        "channel": "release",
-        "version": "2.61.4"
-    },
-    {
-        "project": "librsvg",
-        "channel": "unstable",
-        "version": "2.61.91"
+{
+    "librsvg": {
+        "unstable": "2.61.91",
+        "release": "2.61.4",
+        "commit": "fb97451c13e5ddb95a5c0af07fb3a314bd679f43"
     }
-]
+}

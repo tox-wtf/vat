@@ -1,17 +1,7 @@
-[
-    {
-        "project": "caddy",
-        "channel": "commit",
-        "version": "76b198f586e4e2482a0278ba52c176cff70af8cf"
-    },
-    {
-        "project": "caddy",
-        "channel": "release",
-        "version": "2.11.1"
-    },
-    {
-        "project": "caddy",
-        "channel": "unstable",
-        "version": "2.11.1"
+{
+    "caddy": {
+        "unstable": "2.11.1",
+        "release": "2.11.1",
+        "commit": "76b198f586e4e2482a0278ba52c176cff70af8cf"
     }
-]
+}

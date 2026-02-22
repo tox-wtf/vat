@@ -1,32 +1,10 @@
-[
-    {
-        "project": "jdk",
-        "channel": "11",
-        "version": "11.0.31.u3"
-    },
-    {
-        "project": "jdk",
-        "channel": "17",
-        "version": "17.0.19.u3"
-    },
-    {
-        "project": "jdk",
-        "channel": "21",
-        "version": "21.0.11.u3"
-    },
-    {
-        "project": "jdk",
-        "channel": "8",
-        "version": "8.492.u03"
-    },
-    {
-        "project": "jdk",
-        "channel": "release",
-        "version": "26.u35"
-    },
-    {
-        "project": "jdk",
-        "channel": "unstable",
-        "version": "27.10"
+{
+    "jdk": {
+        "unstable": "27.10",
+        "8": "8.492.u03",
+        "21": "21.0.11.u3",
+        "release": "26.u35",
+        "11": "11.0.31.u3",
+        "17": "17.0.19.u3"
     }
-]
+}

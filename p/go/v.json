@@ -1,17 +1,7 @@
-[
-    {
-        "project": "go",
-        "channel": "commit",
-        "version": "6435bf46c17dccb2eb5f7bab7dd8aa4972252b21"
-    },
-    {
-        "project": "go",
-        "channel": "release",
-        "version": "1.26.0"
-    },
-    {
-        "project": "go",
-        "channel": "unstable",
-        "version": "1.26.0"
+{
+    "go": {
+        "unstable": "1.26.0",
+        "release": "1.26.0",
+        "commit": "6435bf46c17dccb2eb5f7bab7dd8aa4972252b21"
     }
-]
+}

@@ -1,17 +1,7 @@
-[
-    {
-        "project": "gstreamer",
-        "channel": "commit",
-        "version": "ab13d63acb8f3227d19d52fac2c2f0ad8c068f1b"
-    },
-    {
-        "project": "gstreamer",
-        "channel": "release",
-        "version": "1.28.0"
-    },
-    {
-        "project": "gstreamer",
-        "channel": "unstable",
-        "version": "1.28.0"
+{
+    "gstreamer": {
+        "unstable": "1.28.0",
+        "release": "1.28.0",
+        "commit": "ab13d63acb8f3227d19d52fac2c2f0ad8c068f1b"
     }
-]
+}

@@ -1,17 +1,7 @@
-[
-    {
-        "project": "git",
-        "channel": "commit",
-        "version": "7c02d39fc2ed2702223c7674f73150d9a7e61ba4"
-    },
-    {
-        "project": "git",
-        "channel": "release",
-        "version": "2.53.0"
-    },
-    {
-        "project": "git",
-        "channel": "unstable",
-        "version": "2.53.0"
+{
+    "git": {
+        "unstable": "2.53.0",
+        "release": "2.53.0",
+        "commit": "7c02d39fc2ed2702223c7674f73150d9a7e61ba4"
     }
-]
+}

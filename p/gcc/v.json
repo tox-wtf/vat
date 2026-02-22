@@ -1,17 +1,7 @@
-[
-    {
-        "project": "gcc",
-        "channel": "commit",
-        "version": "8e15a13e2a756ef05ea285c9c46454d786e05cb5"
-    },
-    {
-        "project": "gcc",
-        "channel": "release",
-        "version": "15.2.0"
-    },
-    {
-        "project": "gcc",
-        "channel": "unstable",
-        "version": "16"
+{
+    "gcc": {
+        "unstable": "16",
+        "release": "15.2.0",
+        "commit": "8e15a13e2a756ef05ea285c9c46454d786e05cb5"
     }
-]
+}

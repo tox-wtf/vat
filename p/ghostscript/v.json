@@ -1,17 +1,7 @@
-[
-    {
-        "project": "ghostscript",
-        "channel": "commit",
-        "version": "5acadc2d6826664f6df8669ca1a09dd6de0288b5"
-    },
-    {
-        "project": "ghostscript",
-        "channel": "release",
-        "version": "10.06.0"
-    },
-    {
-        "project": "ghostscript",
-        "channel": "unstable",
-        "version": "10.06.0"
+{
+    "ghostscript": {
+        "unstable": "10.06.0",
+        "release": "10.06.0",
+        "commit": "5acadc2d6826664f6df8669ca1a09dd6de0288b5"
     }
-]
+}
