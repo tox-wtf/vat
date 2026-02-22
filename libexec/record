@@ -46,7 +46,7 @@ while IFS= read -r line; do
     IFS=$'\t' read -r project channel version <<< "$line"
 
     case "$version" in
-        FAIL|SKIP) version=$(retrieve_old_version) ;;
+        FAIL|SKIP|TIME) version=$(retrieve_old_version) ;;
     esac
 
     write_tsv

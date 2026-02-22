@@ -34,6 +34,11 @@ roll_dice() {
         return 0
     fi
 
+    if ! grep -q "$channel" "./p/$project/v.tsv" &>/dev/null; then
+        echo "$project:$channel has no fallbacks; continuing" >&3
+        return 0
+    fi
+
     rand="$((RANDOM % 101))"
     if [ $rand -gt ${chance:-100} ]; then
         echo "Chance $rand > ${chance:-100}; skipping" >&3
@@ -86,13 +91,39 @@ set_default_fetch() {
 
 eval_result() {
     case $? in
-        77) echo SKIP; return 77 ;;
-        1)  echo FAIL; return 1  ;;
+        124) echo TIME; return 124 ;;
+        77)  echo SKIP; return 77  ;;
+        0)              return 0   ;;
+        *)   echo FAIL; return 1   ;;
     esac
 }
 
 declare -a channels
 readarray -t channels < <(declare -f | grep -x ':.\+ \(\)' | tr -d ': ()')
+
+timeout() {
+    local secs="${1:?}"
+    shift
+
+    # Silence job control output through redirectionanigans
+    { "$@" 2>&3 & } 3>&2 2>&-
+    local cmd_pid="$!"
+
+    { sleep "$secs" 2>&3 & } 3>&2 2>&-
+    local sleep_pid="$!"
+
+    wait -n "$cmd_pid" "$sleep_pid" &>/dev/null
+    local finished="$?"
+
+    if kill -0 "$cmd_pid" &>/dev/null; then
+        kill "$cmd_pid" &>/dev/null
+        wait "$cmd_pid" &>/dev/null
+        return 124
+    fi
+
+    kill "$sleep_pid" &>/dev/null &>/dev/null
+    return "$finished"
+}
 
 for channel in "${channels[@]}"; do
     (
@@ -107,7 +138,7 @@ for channel in "${channels[@]}"; do
 
         set_default_fetch
         type fetch >&3
-        out=$(fetch)
+        out=$(timeout 30 fetch | tail -n128)
         eval_result || exit
 
         echo "$out" | tail -n32 >&3
@@ -117,7 +148,7 @@ for channel in "${channels[@]}"; do
         echo "expected is set to '$expected'" >&3
 
         if ! [[ $ver =~ ^$expected$ ]]; then
-            echo "FAIL"
+            echo FAIL
             echo "Version '$ver' does not match regex '$expected' for $project:$channel" >&2
             exit 1
         fi
