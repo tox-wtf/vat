@@ -1,17 +1,7 @@
-[
-    {
-        "project": "cmake",
-        "channel": "commit",
-        "version": "2f2148748200a4b0ef40cf5b99c5f4c726df9ada"
-    },
-    {
-        "project": "cmake",
-        "channel": "release",
-        "version": "4.2.3"
-    },
-    {
-        "project": "cmake",
-        "channel": "unstable",
-        "version": "4.3.0-rc1"
-    }
-]
+{
+  "cmake": {
+    "unstable": "4.3.0-rc1",
+    "release": "4.2.3",
+    "commit": "abea27e89c06268c84685744664d061db779b366"
+  }
+}
