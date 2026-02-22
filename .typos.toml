@@ -1,0 +1,17 @@
+[files]
+extend-exclude = ["target/", ".git"]
+ignore-hidden = false
+ignore-files = false
+ignore-dot = false
+ignore-vcs = true
+
+[default]
+binary = false
+check-filename = true
+check-file = true
+unicode=true
+locale = "en"
+extend-ignore-re = [
+    "archver",
+    "fnd",
+]
