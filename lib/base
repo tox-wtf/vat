@@ -1,6 +1,8 @@
 #!/usr/bin/env false
 #shellcheck shell=bash
 
+export GIT_TERMINAL_PROMPT=false
+
 # utility to source a library
 w() {
     for lib in "$@"; do
