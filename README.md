@@ -1,6 +1,7 @@
 <div align="center">
-    <img src="https://www.dandreapartners.com/wp-content/uploads/2024/01/vat.jpg" width="25%">
-    <h1 align="center">Vat</h1>
+    <!-- TODO: When merging dev into master, change the line below -->
+    <img src="https://github.com/tox-wtf/vat/tree/dev/assets/vat.jpg" width="25%">
+    <h1 align="center">VAT</h1>
 </div>
 
 <h2 align="center">Version Aggregator and Tracker</h2>
