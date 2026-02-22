@@ -34,7 +34,7 @@ roll_dice() {
         return 0
     fi
 
-    if [ -z $(grep "$channel" "./p/$project/v.tsv" 2>/dev/null | cut -f3) ]; then
+    if [ -z "$(grep "$channel" "./p/$project/v.tsv" 2>/dev/null | cut -f3)" ]; then
         echo "$project:$channel has no fallback version; continuing" >&3
         return 0
     fi
