@@ -1,0 +1,15 @@
+upstream="gh:llvm/llvm-project"
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,^org-,,' | vfs | vsort
+    }
+}
+
+:unstable() {
+    fetch() {
+        gr | vtrim -e 's,^org-,,' | vsort
+    }
+}
+
+:commit() { :; }

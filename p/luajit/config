@@ -1,0 +1,4 @@
+upstream="gh:luajit/luajit"
+
+# rolling only
+:commit() { :; }

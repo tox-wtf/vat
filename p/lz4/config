@@ -1,0 +1,9 @@
+upstream="gh:lz4/lz4"
+
+:release() {
+    fetch() {
+        gr | grep -Ev 'r[0-9]{3}' | vtrim | fsl | vsort
+    }
+}
+
+:commit() { :; }

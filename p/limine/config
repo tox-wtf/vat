@@ -1,0 +1,9 @@
+upstream="cb:Limine/Limine.git"
+
+:release() {
+    fetch() {
+        gr | vtrim | fl | vsort
+    }
+}
+
+:commit() { :; }

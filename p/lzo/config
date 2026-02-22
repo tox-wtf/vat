@@ -1,0 +1,8 @@
+upstream="https://www.oberhumer.com/opensource/lzo/"
+chance=11 # last release dated 2017-03-01
+
+:release() {
+    fetch() {
+        cr | grep -F '<a href="download/lzo-' | vrepo
+    }
+}

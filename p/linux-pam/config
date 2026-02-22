@@ -1,0 +1,9 @@
+upstream="gh:linux-pam/linux-pam"
+
+:release() {
+    fetch() {
+        gr | tolower | vtrim -e 's,_,.,g' -e 's,-,.,g' | fl | vsort
+    }
+}
+
+:commit() { :; }

@@ -1,0 +1,9 @@
+upstream="gh:mm2/little-cms"
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,^lcms,,' -e 's,-,.,g' | vfs | vsort
+    }
+}
+
+:commit() { :; }

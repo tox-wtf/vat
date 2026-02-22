@@ -1,0 +1,88 @@
+upstream="https://www.kernel.org/feeds/kdist.xml"
+# Channel names are based on the kdist atom feed
+
+:mainline() {
+    expected='[0-9]\.[0-9]+(-rc[0-9]+)?'
+
+    fetch() {
+        cr | xmlstarlet sel -t -v '/rss/channel/item[1]/title' |
+            vtrim -e "s,: mainline,,"
+    }
+}
+
+# Corresponds to latest release
+:stable1() {
+    expected='[0-9]\.[0-9]+\.[0-9]+'
+
+    fetch() {
+        cr | xmlstarlet sel -t -v '/rss/channel/item[2]/title' |
+            vtrim -e "s,: stable,,"
+    }
+}
+
+:stable2() {
+    expected='[0-9]\.[0-9]+\.[0-9]+'
+
+    fetch() {
+        cr | xmlstarlet sel -t -v '/rss/channel/item[3]/title' |
+            vtrim -e "s,: stable,,"
+    }
+}
+
+:longterm1() {
+    expected='[0-9]\.[0-9]+\.[0-9]+'
+
+    fetch() {
+        cr | xmlstarlet sel -t -v '/rss/channel/item[4]/title' |
+            vtrim -e "s,: longterm,,"
+    }
+}
+
+:longterm2() {
+    expected='[0-9]\.[0-9]+\.[0-9]+'
+
+    fetch() {
+        cr | xmlstarlet sel -t -v '/rss/channel/item[5]/title' |
+            vtrim -e "s,: longterm,,"
+    }
+}
+
+:longterm3() {
+    expected='[0-9]\.[0-9]+\.[0-9]+'
+
+    fetch() {
+        cr | xmlstarlet sel -t -v '/rss/channel/item[6]/title' |
+            vtrim -e "s,: longterm,,"
+    }
+}
+
+:longterm4() {
+    expected='[0-9]\.[0-9]+\.[0-9]+'
+
+    fetch() {
+        cr | xmlstarlet sel -t -v '/rss/channel/item[7]/title' |
+            vtrim -e "s,: longterm,,"
+    }
+}
+
+:longterm5() {
+    expected='[0-9]\.[0-9]+\.[0-9]+'
+
+    fetch() {
+        cr | xmlstarlet sel -t -v '/rss/channel/item[8]/title' |
+            vtrim -e "s,: longterm,,"
+    }
+}
+
+:next() {
+    expected='[0-9]{8}'
+
+    fetch() {
+        cr | xmlstarlet sel -t -v '/rss/channel/item[9]/title' |
+            vtrim -e 's,next-,,' -e 's,: linux-next,,'
+    }
+}
+
+:commit() {
+    upstream="kernel:linux/kernel/git/torvalds/linux.git"
+}

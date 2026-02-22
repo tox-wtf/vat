@@ -1,0 +1,7 @@
+upstream="https://invisible-mirror.net/archives/lynx/tarballs/?C=M;O=D"
+
+:release() {
+    fetch() {
+        ca | vtrim -e 's,rel.*,,' | vfs | vsort
+    }
+}

@@ -1,0 +1,6 @@
+upstream="https://www.ohse.de/uwe/software/lrzsz.html"
+chance=1 # last release dated December 1998
+
+:release() {
+    fetch() { defcurlrelease; }
+}

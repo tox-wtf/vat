@@ -1,0 +1,8 @@
+upstream="https://git.openldap.org/openldap/openldap.git"
+chance=77
+
+:release() {
+    fetch() {
+        gr | tolower | grep '^lmdb' | vtrim | vsort
+    }
+}
