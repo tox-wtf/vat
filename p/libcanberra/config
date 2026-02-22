@@ -1,0 +1,10 @@
+upstream="https://0pointer.de/lennart/projects/libcanberra/"
+chance=9 # last updated in 2012
+
+:release() {
+    expected='0\.3[0-9]'
+
+    fetch() {
+        defcurlrelease
+    }
+}

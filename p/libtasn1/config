@@ -1,0 +1,9 @@
+upstream="gl:gnutls/libtasn1.git"
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,_,.,g' -e 's,-,.,g' | fsl | vsort
+    }
+}
+
+:commit() { :; }

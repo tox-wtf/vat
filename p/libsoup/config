@@ -1,0 +1,9 @@
+upstream="gh:GNOME/libsoup"
+
+:release() {
+    fetch() {
+        gr | tolower | vtrim -e 's,soup_,,' -e 's,_,.,g' | fl | vsort
+    }
+}
+
+:commit() { :; }

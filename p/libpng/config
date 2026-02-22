@@ -1,0 +1,9 @@
+upstream="gh:pnggroup/libpng"
+
+:release() {
+    fetch() {
+        gr | vtrim | fl | vsort
+    }
+}
+
+:commit() { :; }

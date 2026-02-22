@@ -1,0 +1,10 @@
+upstream="http://0pointer.de/lennart/projects/libdaemon/"
+chance=5 # last release dated 2009
+
+:release() {
+    expected='0\.1[0-9]'
+
+    fetch() {
+        defcurlrelease
+    }
+}

@@ -1,0 +1,15 @@
+upstream="gh:libusb/libusb"
+
+:release() {
+    fetch() {
+        gr | vtrim | vrep | vfs | vsort
+    }
+}
+
+:unstable() {
+    fetch() {
+        gr | vtrim | vrep | vsort
+    }
+}
+
+:commit() { :; }

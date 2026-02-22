@@ -1,0 +1,6 @@
+upstream="gh:libffi/libffi"
+chance=93
+
+:release() { :; }
+
+:commit() { :; }

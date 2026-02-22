@@ -1,0 +1,9 @@
+upstream="freedesktop:/xorg/lib/libxfont.git"
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,2-,,' | fsl | vsort
+    }
+}
+
+:commit() { :; }

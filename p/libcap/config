@@ -1,0 +1,9 @@
+upstream="kernel:libs/libcap/libcap.git"
+
+:release() {
+    fetch() {
+        gr | vtrim | fsl | fdate | vfs | vsort
+    }
+}
+
+:commit() { :; }

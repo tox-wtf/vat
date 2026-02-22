@@ -1,0 +1,10 @@
+upstream="freedesktop:/xorg/lib/libfontenc.git"
+chance=74
+
+:release() {
+    fetch() {
+        gr | vtrim | fsl | sed 's,_,.,g' | vsort
+    }
+}
+
+:commit() { :; }

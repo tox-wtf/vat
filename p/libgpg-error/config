@@ -1,0 +1,9 @@
+upstream="gh:gpg/libgpg-error"
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,-,.,g' | fsl | vsort
+    }
+}
+
+:commit() { :; }

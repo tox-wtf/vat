@@ -1,0 +1,9 @@
+upstream="gh:autotools-mirror/libtool"
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,-,.,g' | fsl | vsort
+    }
+}
+
+:commit() { :; }

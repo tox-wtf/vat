@@ -1,0 +1,7 @@
+upstream="gh:$name/$name"
+
+:release() { :; }
+
+:unstable() { :; }
+
+:commit() { :; }

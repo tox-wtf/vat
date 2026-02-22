@@ -1,0 +1,9 @@
+upstream="gh:altlinux/libutempter"
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,-alt[0-9]+$,,'
+    }
+}
+
+:commit() { :; }

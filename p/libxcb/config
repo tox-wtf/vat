@@ -1,0 +1,9 @@
+upstream="freedesktop:/xorg/lib/libxcb.git"
+
+:release() {
+    fetch() {
+        gr | vtrim | fl | vsort
+    }
+}
+
+:commit() { :; }

@@ -1,0 +1,9 @@
+upstream="gh:gpg/libassuan"
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,-,.,g' | fl | vsort
+    }
+}
+
+:commit() { :; }

@@ -1,0 +1,6 @@
+upstream="https://git.netfilter.org/libmnl"
+chance=88
+
+:release() { :; }
+
+:commit() { :; }

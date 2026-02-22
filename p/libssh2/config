@@ -1,0 +1,9 @@
+upstream="gh:libssh2/libssh2"
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,^RELEASE.,,' | fsl | vsort
+    }
+}
+
+:commit() { :; }

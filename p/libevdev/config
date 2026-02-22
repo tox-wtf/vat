@@ -1,0 +1,10 @@
+upstream="freedesktop:/libevdev/libevdev.git"
+chance=88
+
+:release() {
+    fetch() {
+        gr | vtrim | grep -Ev '\.9[0-9]+$' | vsort
+    }
+}
+
+:commit() { :; }

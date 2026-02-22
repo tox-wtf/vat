@@ -1,0 +1,9 @@
+upstream="gh:GNOME/libxml2"
+
+:release() {
+    fetch() {
+        gr | fcve | sed -e 's,^v,,' | fl | vsort
+    }
+}
+
+:commit() { :; }

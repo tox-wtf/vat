@@ -1,0 +1,9 @@
+upstream="gh:xkbcommon/libxkbcommon"
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,^xkbcommon-,,' | vsort
+    }
+}
+
+:commit() { :; }

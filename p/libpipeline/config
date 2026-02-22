@@ -1,0 +1,9 @@
+upstream="gl:libpipeline/libpipeline.git"
+
+:release() {
+    fetch() {
+        gr | vtrim | vfs | grep -v ^2 | vsort
+    }
+}
+
+:commit() { :; }

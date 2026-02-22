@@ -1,0 +1,6 @@
+upstream="freedesktop:/glvnd/libglvnd.git"
+chance=44
+
+:release() { :; }
+
+:commit() { :; }

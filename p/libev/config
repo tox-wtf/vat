@@ -1,0 +1,9 @@
+upstream="http://dist.schmorp.de/libev/Attic/"
+chance=23 # last released in 2020
+
+:release() {
+    fetch() {
+        # vrepo -p $name- since libevent is also present
+        cr | vrepo -p "$name-" | vtrim | vsort
+    }
+}

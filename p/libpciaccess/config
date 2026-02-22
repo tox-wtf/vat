@@ -1,0 +1,9 @@
+upstream="freedesktop:/xorg/lib/libpciaccess.git"
+
+:release() {
+    fetch() {
+        gr | vtrim | fsl | grep -Ev '\.9[0-9]+$' | vsort
+    }
+}
+
+:commit() { :; }

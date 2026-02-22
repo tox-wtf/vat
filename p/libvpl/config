@@ -1,0 +1,9 @@
+upstream="gh:intel/libvpl"
+
+:release() {
+    fetch() {
+         gr | vtrim | grep -v '^202[123]\.' | vsort
+    }
+}
+
+:commit() { :; }

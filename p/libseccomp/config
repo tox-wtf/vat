@@ -1,0 +1,6 @@
+upstream="gh:seccomp/libseccomp"
+chance=94
+
+:release() { :; }
+
+:commit() { :; }

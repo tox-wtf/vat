@@ -1,0 +1,6 @@
+upstream="gh:anholt/libepoxy"
+chance=93
+
+:release() { :; }
+
+:commit() { :; }

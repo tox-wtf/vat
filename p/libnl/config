@@ -1,0 +1,9 @@
+upstream="gh:thom311/libnl"
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,^libnl,,' -e 's,_,.,g' | vfs | vsort
+    }
+}
+
+:commit() { :; }

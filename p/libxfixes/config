@@ -1,0 +1,9 @@
+upstream="freedesktop:/xorg/lib/libxfixes.git"
+
+:release() {
+    fetch() {
+        gr | tolower | vtrim -e 's,_,.,g' | fsl | vsort
+    }
+}
+
+:commit() { :; }

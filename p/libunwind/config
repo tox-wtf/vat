@@ -1,0 +1,9 @@
+upstream="gh:libunwind/libunwind"
+
+:release() {
+    fetch() {
+        gr | vtrim | fl | grep -v '^4\.' | vsort
+    }
+}
+
+:commit() { :; }

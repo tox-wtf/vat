@@ -1,0 +1,9 @@
+upstream="freedesktop:/mesa/drm.git"
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,_,.,g' | fsl | fdate | vsort
+    }
+}
+
+:commit() { :; }

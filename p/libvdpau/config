@@ -1,0 +1,10 @@
+upstream="freedesktop:/vdpau/libvdpau.git"
+chance=33
+
+:release() {
+    fetch() {
+        gr | vtrim | vsort
+    }
+}
+
+:commit() { :; }

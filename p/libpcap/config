@@ -1,0 +1,9 @@
+upstream="gh:the-tcpdump-group/libpcap"
+
+:release() {
+    fetch() {
+        gr | vtrim | fl | vsort
+    }
+}
+
+:commit() { :; }

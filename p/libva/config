@@ -1,0 +1,9 @@
+upstream="gh:intel/libva"
+
+:release() {
+    fetch() {
+        gr | vtrim | fdate | fl | vsort
+    }
+}
+
+:commit() { :; }

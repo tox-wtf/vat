@@ -1,0 +1,6 @@
+upstream="https://git.causal.agency/libretls"
+chance=22 # last commit dated 2023-10-11
+
+:release() { :; }
+
+:commit() { :; }

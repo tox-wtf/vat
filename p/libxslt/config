@@ -1,0 +1,9 @@
+upstream="gh:GNOME/libxslt"
+
+:release() {
+    fetch() {
+        gr | tolower | vtrim -e 's,_,.,g' | fl | vsort
+    }
+}
+
+:commit() { :; }

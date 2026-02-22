@@ -1,0 +1,6 @@
+upstream="freedesktop:/libbsd/libbsd.git"
+chance=88
+
+:release() { :; }
+
+:commit() { :; }

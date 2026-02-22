@@ -1,0 +1,9 @@
+upstream="gh:gpg/libksba"
+
+:release() {
+    fetch() {
+        gr | tolower | vtrim -e 's,-,.,g' | vsort
+    }
+}
+
+:commit() { :; }

@@ -1,0 +1,9 @@
+upstream="gh:libuv/libuv"
+
+:release() {
+    fetch() {
+        gr | vtrim | fl | vsort
+    }
+}
+
+:commit() { :; }

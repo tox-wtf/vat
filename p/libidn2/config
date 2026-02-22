@@ -1,0 +1,9 @@
+upstream="gl:libidn/libidn2.git"
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,^2-,,' | vsort
+    }
+}
+
+:commit() { :; }

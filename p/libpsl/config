@@ -1,0 +1,9 @@
+upstream="gh:rockdaboot/libpsl"
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,-,.,g' | vsort
+    }
+}
+
+:commit() { :; }

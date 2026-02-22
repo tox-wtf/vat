@@ -1,0 +1,9 @@
+upstream="gh:gpg/libgcrypt"
+
+:release() {
+    fetch() {
+        gr | vtrim | fl | vsort
+    }
+}
+
+:commit() { :; }

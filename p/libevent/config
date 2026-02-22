@@ -1,0 +1,10 @@
+upstream="gh:libevent/libevent"
+chance=82
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,-stable$,,' | vfs | vsort
+    }
+}
+
+:commit() { :; }

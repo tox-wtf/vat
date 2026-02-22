@@ -1,0 +1,9 @@
+upstream="freedesktop:/libinput/libinput.git"
+
+:release() {
+    fetch() {
+        gr | vtrim | grep -Ev '\.9[0-9]+$' | vsort
+    }
+}
+
+:commit() { :; }

@@ -1,0 +1,6 @@
+upstream="cb:tenacityteam/libid3tag.git"
+chance=88
+
+:release() { :; }
+
+:commit() { :; }

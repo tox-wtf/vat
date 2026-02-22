@@ -1,0 +1,9 @@
+upstream="gh:nih-at/libzip"
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,^rel-,,' -e 's,-,.,g' | fl | vsort
+    }
+}
+
+:commit() { :; }

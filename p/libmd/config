@@ -1,0 +1,6 @@
+upstream="https://git.hadrons.org/git/libmd.git"
+chance=32 # last commit dated 2024-02-21
+
+:release() { :; }
+
+:commit() { :; }

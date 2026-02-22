@@ -1,0 +1,9 @@
+upstream="gh:libsndfile/libsndfile"
+
+:release() {
+    fetch() {
+        gr | vtrim | vfs | vsort
+    }
+}
+
+:commit() { :; }

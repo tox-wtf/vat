@@ -1,0 +1,9 @@
+upstream="https://chromium.googlesource.com/webm/libwebp"
+
+:release() {
+    fetch() {
+        gr | vtrim | fl | vsort
+    }
+}
+
+:commit() { :; }

@@ -1,0 +1,5 @@
+upstream="gl:libtiff/libtiff.git"
+
+:release() { :; }
+
+:commit() { :; }

@@ -1,0 +1,10 @@
+upstream="https://pagure.io/libaio.git"
+chance=17
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,^libaio.,,' -e 's,-,.,g' | vsort
+    }
+}
+
+:commit() { :; }

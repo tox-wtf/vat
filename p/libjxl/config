@@ -1,0 +1,9 @@
+upstream="gh:libjxl/libjxl"
+
+:release() {
+    fetch() {
+        gr | vtrim | fl | vsort
+    }
+}
+
+:commit() { :; }

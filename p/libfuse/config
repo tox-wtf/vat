@@ -1,0 +1,16 @@
+upstream="gh:libfuse/libfuse"
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,^fuse[-_]?,,' -e 's,_,.,g' | fl | vfs | vsort
+    }
+}
+
+:2() {
+    expected="2\.[0-9]+\.[0-9]+"
+    fetch() {
+        gr | vtrim -e 's,^fuse[-_]?,,' -e 's,_,.,g' | fl | grep '^2\.' | vfs | vsort
+    }
+}
+
+:commit() { :; }
