@@ -1,0 +1,14 @@
+# NOTE: This project config serves as an example of what can (and shouldn't) be
+# done.
+
+upstream="gh:sqlalchemy/mako"
+expected='[0-9]+\.[0-9]+\.[0-9]+'
+
+fetch() { gr | vtrim -e 's,^rel_,,' -e 's,_,.,g' | vsort; }
+
+:release() { :; }
+
+:commit() {
+    expected='[0-9a-f]{40}'
+    fetch() { defgitcommit; }
+}
