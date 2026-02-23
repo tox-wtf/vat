@@ -4,7 +4,7 @@
 . lib/base
 . lib/vars
 
-# add a project by its name
+# Add a project by its name
 va() {
 
 if ! [ -d p ]; then
@@ -28,7 +28,7 @@ fi
 
 }
 
-# test a project by its name
+# Test a project by its name
 vt() {
 
 if ! [ -d p ]; then
@@ -58,7 +58,7 @@ fi
 
 }
 
-# execute a command from vat's environment
+# Execute a command from VAT's environment
 vx() {
 
 echo "${project:?}" >/dev/null # ensure it's set

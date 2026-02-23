@@ -24,7 +24,7 @@ log() {
 
 # Sanity check
 if [ ! -d p ]; then
-    log "Execute vat from the source directory"
+    log "Execute VAT from its source directory"
     exit 2
 fi
 
