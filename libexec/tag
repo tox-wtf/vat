@@ -9,12 +9,10 @@ command -v git &>/dev/null || {
 
 . lib/vars
 
-projects=$(git status --porcelain=v1 -u all p/**/v.tsv | sed -e 's,^p/,,' -e 's,/v.tsv$,,')
-
 shopt -s globstar
-shopt -s nullglob
-
 set -u
+
+projects=$(git status --porcelain=v1 -u all p/**/v.tsv | sed -e 's,^p/,,' -e 's,/v.tsv$,,')
 
 rm -rf "$VAT_TARGET/dist"
 mkdir -pv "$VAT_TARGET/dist"
@@ -34,9 +32,7 @@ version="$(<version)"
     tar --numeric-owner --transform "s,p,p-$version-$runcount,"       -cJvf "$VAT_TARGET/dist/p.tar.xz"    "p"
 )
 
-for project in "${projects[@]}"; do
-    echo git tag "run-$runcount" -m "$(<$VAT_TARGET/report)"
-    echo git push
-    echo git push --tags
-    echo gh release create "VAT $version run #$runcount" --notes-from-tag --latest=false "$VAT_TARGET/dist/"*
-done
+echo git tag "run-$runcount" -m "$(<$VAT_TARGET/report)"
+echo git push
+echo git push --tags
+echo gh release create "VAT $version run #$runcount" --notes-from-tag --latest=false "$VAT_TARGET/dist/"*
