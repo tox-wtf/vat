@@ -109,7 +109,7 @@
     },
     "bind-utils": {
         "release": "9.21.18",
-        "commit": "bc0b26439b126d9cea9633cffe035d1b1ece99f4"
+        "commit": "6d3252bbe6f1a3272dde401dbdbf78311241e4be"
     },
     "binutils": {
         "release": "2.46",
@@ -440,7 +440,7 @@
         "3": "3.4.14",
         "2": "2.8.22",
         "release": "8.0.1",
-        "commit": "40e04631133402701a9365e11f152ed7b8c57a61"
+        "commit": "7b15039cdb828794eeed3b3aed20f6a0ba7f2fef"
     },
     "fftw": {
         "unstable": "3.3.10",
@@ -967,7 +967,7 @@
     },
     "libid3tag": {
         "release": "0.16.4",
-        "commit": "c686430f60c6deff30bd081a99c71123222e58be"
+        "commit": "fff52d4e27a6f8e3a714bd304e4258d9e1b0dad8"
     },
     "libidn2": {
         "release": "2.3.8",
@@ -1366,7 +1366,7 @@
     "llvm": {
         "unstable": "22.1.0-rc3",
         "release": "21.1.8",
-        "commit": "059accca5367283d842cfb2bbe03aa45af2fc543"
+        "commit": "9a109fbb6e184ec9bcce10615949f598f4c974a9"
     },
     "lmdb": {
         "release": "0.9.35"
@@ -1408,17 +1408,139 @@
     "lzo": {
         "release": "2.10"
     },
+    "m4": {
+        "release": "1.4.21"
+    },
+    "maim": {
+        "release": "5.8.1",
+        "commit": "e160c3c15eac94aecb541607f5d5929ceefee5eb"
+    },
+    "make": {
+        "release": "4.4.1"
+    },
+    "mako": {
+        "release": "1.3.10",
+        "commit": "91232d80e4914fd82b42628bb2e2b061abb3dcfc"
+    },
+    "man-db": {
+        "release": "2.13.1",
+        "commit": "284503da4af33401f294d5163e74e63e4c718548"
+    },
+    "mandoc": {
+        "release": "1.14.6"
+    },
+    "man-pages": {
+        "release": "6.17",
+        "commit": "bee95c64456e37c4828878bfaa6b6921daeda8a5"
+    },
+    "markupsafe": {
+        "release": "3.0.3",
+        "commit": "b2e4d9c7687be25695fffbe93a37622302b24fb1"
+    },
+    "mbedtls": {
+        "release": "4.0.0",
+        "commit": "bbf8bbbdb6f4a483ae8221bb0938330b829daa60"
+    },
+    "mercurial": {
+        "release": "7.1.2"
+    },
+    "mesa-demos": {
+        "release": "9.0.0",
+        "commit": "cba8da1f87b264d0906ba3f4320db0368916decd"
+    },
+    "mesa": {
+        "release": "26.0.0",
+        "commit": "b2050f1173db8387504d8b3e0e62596dde8719c4"
+    },
+    "meson": {
+        "release": "1.10.1",
+        "commit": "4b8886ee1bc771a39f83bf823fd6866bcea663e9"
+    },
+    "minicom": {
+        "release": "2.11",
+        "commit": "330efcd2dbb48c28a900d52855ce559eafeeb523"
+    },
+    "mkfontscale": {
+        "release": "1.2.3",
+        "commit": "9c9c8834dc4ce17d0e878a28d36ff5e736bddb9b"
+    },
+    "mpc": {
+        "release": "1.3.1",
+        "commit": "d142eaeb1bb1817c26e84e8ae53e6c06c72fa53d"
+    },
+    "mpdecimal": {
+        "release": "4.0.1"
+    },
+    "mpd": {
+        "release": "0.24.8",
+        "commit": "227ccd8d6c5f436033a373e276e7ad7bf60d8162"
+    },
+    "mpfr": {
+        "release": "4.2.2",
+        "commit": "4c822282c822ff58baee9fdf1741cc0819cb1b4c"
+    },
+    "mpg123": {
+        "release": "1.33.4"
+    },
+    "mpv": {
+        "release": "0.41.0",
+        "commit": "f439c7f62c48c61185acc6814df6bfb065a20ea4"
+    },
     "mrustc": {
         "release": "0.12.0",
         "commit": "9fe54bee52476ebd4a906f566ec79a1b90e9dbb7"
+    },
+    "mtdev": {
+        "release": "1.1.7",
+        "commit": "9035c2225494b80b02e985fc7ee77880e0bd6993"
+    },
+    "muon": {
+        "release": "0.5.0",
+        "commit": "dea94cf9546627b7e78617cf53b95a65a579f528"
+    },
+    "mupdf": {
+        "release": "1.27.2",
+        "commit": "53d140db017352190eae56b2c5a71d93494dd226"
+    },
+    "nano": {
+        "release": "8.7.1",
+        "commit": "49be1275e6e8975b4902827d47765f96d7f8fe1c"
+    },
+    "nasm": {
+        "release": "3.01",
+        "commit": "184f8485b54c78a611caa3e227acf6cce12c812c"
     },
     "rip": {
         "release": "2.1.1",
         "commit": "5ac2eeb429034cb3241d8c86e7fd8acf11f2a0f2"
     },
+    "rust/anyhow": {
+        "release": "1.0.102",
+        "commit": "5c657b32522023a9f7ef883fb08582fd8e656b1a"
+    },
+    "rust/axum": {
+        "release": "0.8.8",
+        "commit": "60a0d2838f1837eee2c359473f6d302f7f39b88e"
+    },
+    "rust/mio": {
+        "release": "1.1.1",
+        "commit": "66ac9fab79bf191218488c4f35c99d13935b7e12"
+    },
     "rust/serde": {
         "release": "1.0.228",
         "commit": "6b1a17851ea3d86a56aa116ca1cbf428f8d5f22d"
+    },
+    "rust/thiserror": {
+        "release": "2.0.18",
+        "commit": "99e8a6cd6a312d455d74f40b449a6cbb868b2460"
+    },
+    "rust/tokio": {
+        "release": "1.49.0",
+        "commit": "25e7f2641ef2555d688c267059431a2802805f1d"
+    },
+    "rust/tracing": {
+        "release": "0.1.44",
+        "commit": "efc690fa6bd1d9c3a57528b9bc8ac80504a7a6ed"
     },
     "rust": {
         "release": "1.93.1",
