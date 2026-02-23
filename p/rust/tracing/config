@@ -1,0 +1,9 @@
+upstream="gh:tokio-rs/tracing"
+
+:release() {
+    fetch() {
+        gr | vtrim | fdash | fsl | vsort
+    }
+}
+
+:commit() { :; }

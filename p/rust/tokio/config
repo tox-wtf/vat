@@ -1,0 +1,5 @@
+upstream="gh:tokio-rs/tokio"
+
+:release() { :; }
+
+:commit() { :; }
