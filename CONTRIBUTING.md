@@ -1,88 +1,106 @@
 # Contributing
 
 ## Quick Start
-You're probably interested in adding a package. The first step is forking and
+You're probably interested in adding a project. The first step is forking and
 cloning this repo.
 
 ### Maintainer Utilities
-Maintainer utilities are provided in `./sh/m`. You'll want to source this file
-from a POSIX-compliant shell.
+Maintainer utilities are provided in the [dev library](./lib/dev). You'll want
+to source this file from bash.
 
-You can add a package with `va mypackage`. There are various utility functions
-defined in `./sh/lib.env`. Peruse existing packages for an idea of how to use
-them.
+You can add a project with `va $project`. There are various utility functions
+defined in [the base library](./lib/base). Peruse existing projects for an idea
+of how to use them.
 
 ### Fields
 The available fields are as follows:
 
-```
-package
- ├── upstream     [string]
- ├── chance       (float between 0 and 1)
- └── channels     [array]
-     ├── name     [string]
-     ├── enabled  (bool)
-     ├── upstream (string)
-     ├── fetch    (string)
-     └── expected (string)
+- `upstream` usually contains the project's git repo.
+- `chance` is an integer between 0 and 100, that defaults to 100. This is the
+  chance that a project or channel is fetched, and is used mostly for dead
+  projects.
+- `expected` is a (bash) regex which the version should match.
+- `fetch` is a function that fetches the version usually using VAT's utility
+  functions. This is almost always defined within a channel's scope.
+- `channel` is a function beginning with `:`. The above fields may be overridden
+  for a channel by defining them within this function.
+
+The only required field is an upstream, but you'll also want to specify at least
+one channel. Everything else uses a sane default.
+
+For example:
+```bash
+upstream="gh:git/git"
+
+:release() { :; }
+:unstable() { :; }
+:commit() { :; }
 ```
 
-None of the fields are required, but the recommended fields are typed with
-brackets. Omitted fields are populated with sane defaults.
+Here, we rely on defaults everywhere. Note that we must include `:` in the body
+of the function or else bash complains.
+
 
 ### Editor Configuration
-The following config snippet should make working with Vat in Neovim a little
+The following config snippet should make working with VAT in Neovim a little
 more pleasant by automatically setting the filetype to TOML, enabling syntax
 highlighting:
 
 ```lua
--- Vat config filetype
+-- VAT config filetype
 vim.filetype.add({
     pattern = {
-        [".*/p/.*/config"] = "toml",
+        [".*/p/.*/config"] = "bash",
     }
 })
 ```
 
 ## Commits
-Vat follows a variant of conventional commits, and uses pre-commit hooks to
-enforce these.
+VAT follows a variant of conventional commits.
 
 Some general rules:
 - Keep commit subject length to 72 characters or fewer.
-- Commit subjects should be lowercase and limited to ASCII. Descriptions should
-  also keep to ASCII, but may be capitalized as desired.
-- Breaking changes (i.e. changes that might impact the version fetching of other
-  packages) should start with '!' in the subject line.
+- Commit subjects should be limited to ASCII, and are preferred to be lowercase.
+  Descriptions should also keep to ASCII, but may be capitalized as desired.
+- The subject line of minor breaking changes should be prefixed with '!'.
+- The subject line of major breaking changes should be prefixed with '!!'.
 
-To add a package, the commit message would be:
-> feat(p): add mypackage
+To add a project, the commit message would be:
+```git
+feat(p): add someproject
+```
 
-To fix the release fetch for a package, the commit message would be:
-> fix(p): fix release fetch for mypackage
+To fix the release fetch for a project, the commit message would be:
+```git
+fix(p): fix release fetch for someproject
+```
 
-To make a breaking tweak to the vtrim function in the shell library, addressing
-an issue, and signing off:
-> !feat(lib): adjust vtrim behavior
->
-> Instead of only trimming a leading 'v', vtrim now trims any leading alphabetic
-> character if it's immediately followed by a number.
->
-> Resolves: #488
-> References: #122, #556
+To make a breaking change to the `vtrim` function in the base library,
+addressing an issue:
+```git
+!feat(lib): adjust vtrim behavior
+
+Instead of only trimming a leading 'v', vtrim now trims any leading alphabetic
+character if it's immediately followed by a number.
+
+Resolves: #488
+References: #122, #556
+```
 
 ### Commit Types
-- auto:     automatic commits made by Vat
-- chore:    changes to auxiliary files
-- docs:     changes to any documentation
-- feat:     a new feature or package
-- fix:      a bugfix
+| Type  | Description                    |
+|-------|--------------------------------|
+| auto  | Automatic commits made by VAT  |
+| chore | Changes to auxiliary files     |
+| docs  | Changes to any documentation   |
+| feat  | A new feature or project       |
+| fix   | A bugfix                       |
 
 ### Scopes
-Scopes include but are not limited to:
-- (p):      packages
-- (lib):    the shell library
-- (sh):     other shell stuff
-- (aux):    auxiliary files
+| Scope | Description                    |
+|-------|--------------------------------|
+| (p)   | Packages                       |
+| (lib) | Library files                  |
+| (aux) | Auxiliary files                |
 
-<!-- TODO: Add some more information -->
+Unscoped commits refer to VAT itself.
