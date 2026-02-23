@@ -1,0 +1,5 @@
+upstream="https://mandoc.bsd.lv/"
+chance=11
+
+fetch() { cr | grep -F 'current version' | awk '{print $3}'; }
+:release() { :; }

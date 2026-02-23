@@ -1,0 +1,7 @@
+upstream="https://www.mercurial-scm.org/release/"
+
+:release() {
+    fetch() {
+        cr | vrepo -3 | vsort
+    }
+}

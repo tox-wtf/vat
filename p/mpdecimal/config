@@ -1,0 +1,7 @@
+upstream="https://www.bytereef.org/mpdecimal/download.html"
+
+:release() {
+    fetch() {
+        ca | vtrim | vsort
+    }
+}

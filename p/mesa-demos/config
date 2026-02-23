@@ -1,0 +1,5 @@
+upstream="freedesktop:/mesa/demos.git"
+
+:release() { :; }
+
+:commit() { :; }

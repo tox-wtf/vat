@@ -1,0 +1,4 @@
+upstream="gh:pallets/markupsafe"
+
+:release () { fetch() { defgitrelease | fl; }; }
+:commit  () { :; }

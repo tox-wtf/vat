@@ -1,0 +1,9 @@
+upstream="inria:mpfr/mpfr.git"
+
+:release() {
+    fetch() {
+        gr | vtrim | fl | vsort
+    }
+}
+
+:commit() { :; }

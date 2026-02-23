@@ -1,0 +1,9 @@
+upstream="https://www.mpg123.de/index.shtml"
+
+:release() {
+    fetch() {
+        cr | grep -Eo 'Releasing mpg123 version .+:' |
+            cut -d\  -f4 | cut -d: -f1 |
+            vsort
+    }
+}

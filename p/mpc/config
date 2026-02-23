@@ -1,0 +1,5 @@
+upstream="inria:mpc/mpc.git"
+
+:release() { :; }
+
+:commit() { :; }

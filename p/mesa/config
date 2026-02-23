@@ -1,0 +1,9 @@
+upstream="freedesktop:/mesa/mesa.git"
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,_,.,g' | fdate | fl | vsort
+    }
+}
+
+:commit() { :; }

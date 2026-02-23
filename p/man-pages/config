@@ -1,0 +1,4 @@
+upstream="kernel:docs/man-pages/man-pages.git"
+
+:release () { :; }
+:commit  () { :; }
