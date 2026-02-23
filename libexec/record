@@ -4,6 +4,8 @@
 
 . lib/vars
 
+shopt -s globstar
+
 retrieve_old_version() {
     local file="$VAT_ROOT/p/$project/v.tsv"
 

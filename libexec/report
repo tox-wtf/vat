@@ -12,8 +12,6 @@ command -v git &>/dev/null || {
 projects_updated=$(git status --porcelain=v1 -u all p | grep -vF ALL | cut -d/ -f2 | uniq | wc -l)
 
 shopt -s globstar
-shopt -s nullglob
-
 set -u
 
 echo "[ VAT $(<version) | $(date +"%Y-%m-%d %H:%M:%S %z") | #$(<runcount) ]"
