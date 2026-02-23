@@ -1,11 +1,25 @@
 #!/usr/bin/env bash
 
 log() {
+    local now_ms elapsed_ms hours minutes seconds millis elapsed
     now_ms=$(date +%s%N)
     now_ms=${now_ms:0:13}
-    diff_ms="$((now_ms - start_time_ms))"
+    elapsed_ms="$((now_ms - start_time_ms))"
 
-    printf "%8d [VAT] %s\n" "$diff_ms" "$1" >&2
+    hours=$((elapsed_ms / 3600000))
+    minutes=$((elapsed_ms % 3600000 / 60000))
+    seconds=$((elapsed_ms % 60000 / 1000))
+    millis=$((elapsed_ms % 1000))
+
+    if (( hours > 0 )); then
+        printf -v elapsed "%02d:%02d:%02d.%03dms" "$hours" "$minutes" "$seconds" "$millis"
+    elif (( minutes > 0 )); then
+        printf -v elapsed "%02d:%02d.%03d" "$minutes" "$seconds" "$millis"
+    else
+        printf -v elapsed "%d.%03d" "$seconds" "$millis"
+    fi
+
+    printf "%8s [VAT] %s\n" "$elapsed" "$1" >&"${2:-2}"
 }
 
 # Sanity check
