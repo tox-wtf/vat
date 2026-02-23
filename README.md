@@ -71,12 +71,12 @@ utilities. VAT uses this API internally to generate reports after a run.
 #### Examples
 To check the release version channel of FFmpeg:
 ```sh
-curl -fsSL "$VAT_URL/ffmpeg/v.tsv | grep -F release | cut -f3
+curl -fsSL "$VAT_URL/ffmpeg/v.tsv" | grep -F release | cut -f3
 ```
 
 To check the sdk version channel of Glslang:
 ```sh
-curl -fsSL "$VAT_URL/glslang/v.tsv | grep -F sdk | cut -f3
+curl -fsSL "$VAT_URL/glslang/v.tsv" | grep -F sdk | cut -f3
 ```
 
 To retrieve the release, unstable, and commit version channels of Gavin Howard's
@@ -98,7 +98,7 @@ done
 ```
 
 To retrieve all version channels for all projects, display them, and then parse
-out acl's release and inih's commit:
+out ACL's release and inih's commit:
 ```sh
 curl -fsSL "$VAT_URL/ALL.tsv" > _
 
