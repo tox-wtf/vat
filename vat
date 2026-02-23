@@ -75,10 +75,12 @@ if [ "${#projects[@]}" -eq 0 ]; then
 fi
 
 # Spawn jobs
-# TODO: Limit the number of jobs that may run at once
-jobs=()
+status=0
 for project in "${projects[@]}"; do
-    log "Fetching $project"
+    # Wait for a job to finish if we've hit the limit
+    while [ "$(jobs -rp | wc -l)" -ge "${JOBS:?}" ]; do
+        wait -n || status=1
+    done
 
     (
         log_file_out="$VAT_TARGET/logs/$project/out"
@@ -87,23 +89,18 @@ for project in "${projects[@]}"; do
         install -Dm644 /dev/null "$log_file_out"
         install -Dm644 /dev/null "$log_file_err"
         install -Dm644 /dev/null "$log_file_dbg"
-        exec 1> "$log_file_out"
-        exec 2> "$log_file_err"
-        exec 3> "$log_file_dbg"
+        exec 9>&2 # save stderr for log
+        exec 1> "$log_file_out" \
+             2> "$log_file_err" \
+             3> "$log_file_dbg"
         libexec/runner "$project"
-        exec 1>&-
-        exec 2>&-
-        exec 3>&-
+        log "Fetched $project" 9
     ) &
-    jobs+=($!)
 done
 
-# Reap jobs
-status=0
-for pid in "${jobs[@]}"; do
-    if ! wait $pid; then
-        status=1
-    fi
+# Wait for remaining jobs
+while [ "$(jobs -rp | wc -l)" -gt 0 ]; do
+    wait -n || status=1
 done
 
 # Log completion
