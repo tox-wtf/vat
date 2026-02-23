@@ -104,7 +104,12 @@ while [ "$(jobs -rp | wc -l)" -gt 0 ]; do
 done
 
 # Log completion
-log "Processed ${#jobs[@]} projects"
+log "Done fetching"
+end_time_ns="$(date +%s%N)"
+end_time_ms="${end_time_ns:0:13}"
+
+elapsed_ms=$((end_time_ms - start_time_ms))
+echo "$elapsed_ms" > "$VAT_TARGET/elapsed"
 
 # Consolidate logs
 log "Consolidating logs"
