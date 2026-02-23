@@ -7,7 +7,7 @@
 <h2 align="center">Version Aggregator and Tracker</h2>
 
 VAT aggregates and tracks arbitrarily many versions for a collection of
-packages. Though designed with Linux From Scratch maintenance in mind, VAT
+projects. Though designed with Linux From Scratch maintenance in mind, VAT
 is adaptable to most tasks requiring version fetching. The version database is
 updated every ~6 hours (as long as my server doesn't randomly go offline).
 
@@ -29,7 +29,7 @@ projects and fetches their version channels. For most projects, the `commit` and
 
 A project's versions are recorded to `v.*`. These version files are stored next
 to the project's config. Currently supported formats include TSV and JSON. Here
-are the `v.tsv`s for the above packages:
+are the `v.tsv`s for the above projects:
 - [ACL](./p/acl/v.tsv)
 - [Gawk](./p/gawk/v.tsv)
 - [GCC](./p/gcc/v.tsv)
@@ -97,7 +97,7 @@ for i in "${!channels[@]}"; do
 done
 ```
 
-To retrieve all version channels for all packages, display them, and then parse
+To retrieve all version channels for all projects, display them, and then parse
 out acl's release and inih's commit:
 ```sh
 curl -fsSL "$VAT_URL/ALL.tsv" > _
@@ -174,7 +174,7 @@ to be run in a controlled/contained environment, and doing so lets VAT make more
 assumptions.
 
 <!-- TODO: Add some way to test things -->
-<!-- To test that all packages work, execute the following command: -->
+<!-- To test that all projects work, execute the following command: -->
 <!-- ```bash -->
 <!-- make test -->
 <!-- ``` -->
@@ -214,7 +214,7 @@ may work without some of these, it's best to have all of the following:
 
 ## Contributing
 I'd love to work alongside anyone building a package repository, and I want this
-to be a community-driven project. I'm open to tracking new packages. For more
+to be a community-driven project. I'm open to tracking new projects. For more
 information, read [the contributing guidelines](./CONTRIBUTING.md).
 
 If you wish to contribute, a good place to start is [the to-do list](./TODO.md).

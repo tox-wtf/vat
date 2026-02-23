@@ -4,7 +4,7 @@
 - [x] Report should include the number of processed, checked, skipped, and
   failed project:channel fetches.
 - [ ] Potentially rework changelog generation in release script.
-- [ ] Write a shell script to find package versions that have not been updated
+- [ ] Write a shell script to find project versions that have not been updated
   in a while. These might then be manually confirmed.
 - [ ] Consider how VAT might (and whether it should) integrate with nvchecker.
 - [ ] Write man pages
