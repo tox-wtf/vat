@@ -107,7 +107,7 @@ chrony	release	4.8
 chrony	unstable	4.8
 cli11	commit	fe3772d3c2969330ed0e4f32351ad066e8d375c5
 cli11	release	2.6.1
-cmake	commit	abea27e89c06268c84685744664d061db779b366
+cmake	commit	da13687836d68fd3e2fdb9831931569a104c048c
 cmake	release	4.2.3
 cmake	unstable	4.3.0-rc1
 coreutils	commit	6ad189d87b66e1cd2d64c32478b58c116e1ce7c7
@@ -229,7 +229,7 @@ fftw	unstable	3.3.10
 file	commit	772f20eee4b88f0a459cd4011bbb9773fda1e01a
 file	release	5.46
 findutils	release	4.10.0
-fish	commit	6aee7bf378f215d88c1475dea7257e00a612c194
+fish	commit	23ce9de1c3bedf91def1f670019aeff9194c7ebb
 fish	release	4.5.0
 flac	commit	d1189379bc64557b382db9a18d249c0bf070f000
 flac	release	1.5.0
@@ -354,7 +354,7 @@ hicolor-icon-theme	commit	4dc168322b8b0bc06c521e9e90d66a4fa09816d4
 hicolor-icon-theme	release	0.18
 highlight	commit	166a971ac257ce230b6855a172a4709aa3790131
 highlight	release	4.18
-htop	commit	30ee245b7d004fe841d55d036d97297e757be016
+htop	commit	dd6b1bfc126c45b2104ed7e57440518baa052fcf
 htop	release	3.4.1
 hwdata	commit	428ad3882fff801c553fc575d99bcdb2edbd41f7
 hwdata	release	0.404
@@ -369,7 +369,7 @@ inih	commit	577ae2dee1f0d9c2d11c7f10375c1715f3d6940c
 inih	release	62
 iniparser	commit	4bef811283e0ec1658c60e09950bd5a1ddc92e4b
 iniparser	release	4.2.6
-inkscape	commit	ebf378fbaeb483c0b5991116a8a47409f35e2b25
+inkscape	commit	d9505f358da7a0c679edf7be7699927dfb4782ce
 inkscape	release	1.4.3
 inxi	commit	20451ca41fe61723250bb0d8f2ba2ec708719b90
 inxi	release	3.3.40.1
@@ -491,7 +491,7 @@ libgudev	release	238
 libice	commit	513399df5206f52db92bb88970f38dc8a3ea1645
 libice	release	1.1.2
 libid3tag	commit	c686430f60c6deff30bd081a99c71123222e58be
-libid3tag	release	0.16.3
+libid3tag	release	0.16.4
 libidn2	commit	482bc1fc2e701a27f5bc657a0fd0f6a75820109f
 libidn2	release	2.3.8
 libidn	commit	aa114794045c0863c61e902902db80b0d320b845
@@ -717,6 +717,11 @@ mrustc	commit	9fe54bee52476ebd4a906f566ec79a1b90e9dbb7
 mrustc	release	0.12.0
 rip	commit	5ac2eeb429034cb3241d8c86e7fd8acf11f2a0f2
 rip	release	2.1.1
+rust/serde	commit	6b1a17851ea3d86a56aa116ca1cbf428f8d5f22d
+rust/serde	release	1.0.228
+rust	commit	d3e8bd94cc042c65e30a6c60146a8a00531d1292
+rust	nightly	2026-02-23
+rust	release	1.93.1
 swc	commit	19893a5ca3239082b904a04fdb9ac7c3a1fb62e2
 tinaries	commit	a22399907efdb815de9e4da6638855b1bb550e84
 tinaries	release	0

@@ -217,7 +217,7 @@
     "cmake": {
         "unstable": "4.3.0-rc1",
         "release": "4.2.3",
-        "commit": "abea27e89c06268c84685744664d061db779b366"
+        "commit": "da13687836d68fd3e2fdb9831931569a104c048c"
     },
     "coreutils": {
         "release": "9.10",
@@ -456,7 +456,7 @@
     },
     "fish": {
         "release": "4.5.0",
-        "commit": "6aee7bf378f215d88c1475dea7257e00a612c194"
+        "commit": "23ce9de1c3bedf91def1f670019aeff9194c7ebb"
     },
     "flac": {
         "release": "1.5.0",
@@ -699,7 +699,7 @@
     },
     "htop": {
         "release": "3.4.1",
-        "commit": "30ee245b7d004fe841d55d036d97297e757be016"
+        "commit": "dd6b1bfc126c45b2104ed7e57440518baa052fcf"
     },
     "hwdata": {
         "release": "0.404",
@@ -730,7 +730,7 @@
     },
     "inkscape": {
         "release": "1.4.3",
-        "commit": "ebf378fbaeb483c0b5991116a8a47409f35e2b25"
+        "commit": "d9505f358da7a0c679edf7be7699927dfb4782ce"
     },
     "inxi": {
         "release": "3.3.40.1",
@@ -966,7 +966,7 @@
         "commit": "513399df5206f52db92bb88970f38dc8a3ea1645"
     },
     "libid3tag": {
-        "release": "0.16.3",
+        "release": "0.16.4",
         "commit": "c686430f60c6deff30bd081a99c71123222e58be"
     },
     "libidn2": {
@@ -1415,6 +1415,15 @@
     "rip": {
         "release": "2.1.1",
         "commit": "5ac2eeb429034cb3241d8c86e7fd8acf11f2a0f2"
+    },
+    "rust/serde": {
+        "release": "1.0.228",
+        "commit": "6b1a17851ea3d86a56aa116ca1cbf428f8d5f22d"
+    },
+    "rust": {
+        "release": "1.93.1",
+        "nightly": "2026-02-23",
+        "commit": "d3e8bd94cc042c65e30a6c60146a8a00531d1292"
     },
     "swc": {
         "commit": "19893a5ca3239082b904a04fdb9ac7c3a1fb62e2"
