@@ -1,0 +1,5 @@
+upstream="gh:serde-rs/serde"
+
+:release() { :; }
+
+:commit() { :; }
