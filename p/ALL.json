@@ -113,7 +113,7 @@
     },
     "binutils": {
         "release": "2.46",
-        "commit": "130abadf1af1093f60537136560a184461604d23"
+        "commit": "e1fdf4be1bd69fcfb2d291afa735c0e8f8f603ec"
     },
     "bison": {
         "release": "3.8.2"
@@ -456,7 +456,7 @@
     },
     "fish": {
         "release": "4.5.0",
-        "commit": "5b360238b244a7081b9d7192716036b8841992dd"
+        "commit": "6aee7bf378f215d88c1475dea7257e00a612c194"
     },
     "flac": {
         "release": "1.5.0",
@@ -501,7 +501,7 @@
     },
     "freetype": {
         "release": "2.14.1",
-        "commit": "31db10d922e9a16c45d240cbdbdd73fe61f4ea7f"
+        "commit": "459af335b9314bbbc9ec2f8306b7ed0c4773ad8a"
     },
     "fribidi": {
         "release": "1.0.16",
@@ -511,13 +511,18 @@
         "release": "0.68.0",
         "commit": "4d6a7757b87dd1cf93405c35dce21af610363d05"
     },
+    "gavinhoward/bc": {
+        "unstable": "7.1.0",
+        "release": "7.0.3",
+        "commit": "ec712dfba5c70fcf7958f1471fc93ead014d02f8"
+    },
     "gawk": {
         "release": "5.4.0"
     },
     "gcc": {
         "unstable": "16",
         "release": "15.2.0",
-        "commit": "f4fbf96acccb20b59f34993f1243b1f46ee20a4a"
+        "commit": "33b945b4e637f4e46e0c3bc42bded2949124c940"
     },
     "gdbm": {
         "release": "1.26"
@@ -574,7 +579,7 @@
     "glibc": {
         "unstable": "2.43.9000",
         "release": "2.43",
-        "commit": "0a380fe9a31bc2d5793c7c5d22d36c45dfe6e2ed"
+        "commit": "9af18a94e051fce513972254bf97c12ae563841e"
     },
     "glib-networking": {
         "unstable": "2.80.1",
@@ -601,6 +606,9 @@
     },
     "gmp": {
         "release": "6.3.0"
+    },
+    "gnu/bc": {
+        "release": "1.08.2"
     },
     "gnupg": {
         "unstable": "2.5.17",
@@ -722,7 +730,7 @@
     },
     "inkscape": {
         "release": "1.4.3",
-        "commit": "1b21b401f42e9401e85e2603fe144cce51cadc69"
+        "commit": "ebf378fbaeb483c0b5991116a8a47409f35e2b25"
     },
     "inxi": {
         "release": "3.3.40.1",
@@ -832,7 +840,7 @@
     "libaom": {
         "unstable": "3.13.1",
         "release": "3.13.1",
-        "commit": "16cda5ffacc435d0ce96e93481efb941b57752fe"
+        "commit": "3cec245855e193c29b006ddab248b4755bb1fbbe"
     },
     "libarchive": {
         "release": "3.8.5",
@@ -1358,7 +1366,7 @@
     "llvm": {
         "unstable": "22.1.0-rc3",
         "release": "21.1.8",
-        "commit": "2617cc5e82da19820d3da531c84df95f59e63b42"
+        "commit": "059accca5367283d842cfb2bbe03aa45af2fc543"
     },
     "lmdb": {
         "release": "0.9.35"

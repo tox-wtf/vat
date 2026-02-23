@@ -54,7 +54,7 @@ befunge-93	commit	8fe4065c0415b6f6fa6f699798fa9b64737aadc1
 befunge-93	release	2.25
 bind-utils	commit	bc0b26439b126d9cea9633cffe035d1b1ece99f4
 bind-utils	release	9.21.18
-binutils	commit	130abadf1af1093f60537136560a184461604d23
+binutils	commit	e1fdf4be1bd69fcfb2d291afa735c0e8f8f603ec
 binutils	release	2.46
 bison	release	3.8.2
 bluefish	release	2.4.0
@@ -229,7 +229,7 @@ fftw	unstable	3.3.10
 file	commit	772f20eee4b88f0a459cd4011bbb9773fda1e01a
 file	release	5.46
 findutils	release	4.10.0
-fish	commit	5b360238b244a7081b9d7192716036b8841992dd
+fish	commit	6aee7bf378f215d88c1475dea7257e00a612c194
 fish	release	4.5.0
 flac	commit	d1189379bc64557b382db9a18d249c0bf070f000
 flac	release	1.5.0
@@ -252,14 +252,17 @@ foot	release	1.25.0
 freeglut	commit	02b30d7b5c2cad775138426153c9d7cda810e382
 freeglut	release	3.8.0
 freeglut	unstable	3.8.0
-freetype	commit	31db10d922e9a16c45d240cbdbdd73fe61f4ea7f
+freetype	commit	459af335b9314bbbc9ec2f8306b7ed0c4773ad8a
 freetype	release	2.14.1
 fribidi	commit	b28f43bd3e8e31a5967830f721bab218c1aa114c
 fribidi	release	1.0.16
 fzf	commit	4d6a7757b87dd1cf93405c35dce21af610363d05
 fzf	release	0.68.0
+gavinhoward/bc	commit	ec712dfba5c70fcf7958f1471fc93ead014d02f8
+gavinhoward/bc	release	7.0.3
+gavinhoward/bc	unstable	7.1.0
 gawk	release	5.4.0
-gcc	commit	f4fbf96acccb20b59f34993f1243b1f46ee20a4a
+gcc	commit	33b945b4e637f4e46e0c3bc42bded2949124c940
 gcc	release	15.2.0
 gcc	unstable	16
 gdbm	release	1.26
@@ -288,7 +291,7 @@ glaze	commit	45a8e8432d02ab99a4ab936f7aa2715f3e32c7e5
 glaze	release	7.0.2
 glew	commit	ee5586bbd99c2976bafee5de97bbacc38c71a103
 glew	release	2.3.1
-glibc	commit	0a380fe9a31bc2d5793c7c5d22d36c45dfe6e2ed
+glibc	commit	9af18a94e051fce513972254bf97c12ae563841e
 glibc	release	2.43
 glibc	unstable	2.43.9000
 glib-networking	commit	7729908d75868492e0a4694af434d0915d101605
@@ -305,6 +308,7 @@ glslang	sdk	1.4.341.0
 glu	commit	a2b96c7bba8db8fec3e02fb4227a7f7b02cabad1
 glu	release	9.0.3
 gmp	release	6.3.0
+gnu/bc	release	1.08.2
 gnupg	commit	7fca79f0aae6c3d3f27bb714c4132f6f0171fe53
 gnupg	release	2.4.9
 gnupg	unstable	2.5.17
@@ -365,7 +369,7 @@ inih	commit	577ae2dee1f0d9c2d11c7f10375c1715f3d6940c
 inih	release	62
 iniparser	commit	4bef811283e0ec1658c60e09950bd5a1ddc92e4b
 iniparser	release	4.2.6
-inkscape	commit	1b21b401f42e9401e85e2603fe144cce51cadc69
+inkscape	commit	ebf378fbaeb483c0b5991116a8a47409f35e2b25
 inkscape	release	1.4.3
 inxi	commit	20451ca41fe61723250bb0d8f2ba2ec708719b90
 inxi	release	3.3.40.1
@@ -422,7 +426,7 @@ less	unstable	693
 lfstage	commit	bd468827e17dd907996615b3727875312eb66f85
 libaio	commit	b8eadc9f89e8f7ab0338eacda9f98a6caea76883
 libaio	release	0.3.113
-libaom	commit	16cda5ffacc435d0ce96e93481efb941b57752fe
+libaom	commit	3cec245855e193c29b006ddab248b4755bb1fbbe
 libaom	release	3.13.1
 libaom	unstable	3.13.1
 libarchive	commit	a255a8425032760be54d9d6ab430a051a2aade14
@@ -688,7 +692,7 @@ linux	stable1	6.19.3
 linux	stable2	6.18.13
 little-cms	commit	953f3997b580505346d15c86e4ecf60a3fba5a3e
 little-cms	release	2.18
-llvm	commit	2617cc5e82da19820d3da531c84df95f59e63b42
+llvm	commit	059accca5367283d842cfb2bbe03aa45af2fc543
 llvm	release	21.1.8
 llvm	unstable	22.1.0-rc3
 lmdb	release	0.9.35
