@@ -14,7 +14,31 @@ projects_updated=$(git status --porcelain=v1 -u all p | grep -vF ALL | cut -d/ -
 shopt -s globstar
 set -u
 
-echo "[ VAT $(<version) | $(date +"%Y-%m-%d %H:%M:%S %z") | #$(<runcount) ]"
+elapsed_ms=$(<"$VAT_TARGET/elapsed")
+hours=$((elapsed_ms / 3600000))
+minutes=$((elapsed_ms % 3600000 / 60000))
+seconds=$((elapsed_ms % 60000 / 1000))
+millis=$((elapsed_ms % 1000))
+
+if (( hours > 0 )); then
+    printf -v elapsed "%02d:%02d:%02d.%03dms" "$hours" "$minutes" "$seconds" "$millis"
+elif (( minutes > 0 )); then
+    printf -v elapsed "%02d:%02d.%03d" "$minutes" "$seconds" "$millis"
+else
+    printf -v elapsed "%d.%03d seconds" "$seconds" "$millis"
+fi
+
+cat << .
+[ VAT $(<version) | $(date +"%Y-%m-%d %H:%M:%S %Z") | #$(<runcount) ]
+
+Processed $(cat "$VAT_TARGET/logs/ALL.out" | wc -l) channels for $# projects in $elapsed
+    - Succeeded: $(grep -Evc '\s(SKIP|FAIL|TIME)$' "$VAT_TARGET/logs/ALL.out")
+    - Skipped: $(grep -c '\sSKIP$' "$VAT_TARGET/logs/ALL.out")
+    - Timed out: $(grep -c '\sTIME$' "$VAT_TARGET/logs/ALL.out")
+    - Failed: $(grep -c '\sFAIL$' "$VAT_TARGET/logs/ALL.out")
+
+New versions:
+.
 
 fmt() {
     local re="[a-f0-9]{40}"
@@ -71,7 +95,7 @@ while read -r line; do
             continue
         fi
 
-        printf "%-63s\t$(fmt $old) -> $(fmt $new)\n" "$project:$channel"
+        printf -- "    - %-57s\t$(fmt $old) -> $(fmt $new)\n" "$project:$channel"
         continue
     fi
 
@@ -86,7 +110,7 @@ while read -r line; do
             continue
         fi
 
-        printf "%-63s\t$(fmt $new)\n" "$project:$channel"
+        printf -- "    - %-57s\t$(fmt $new)\n" "$project:$channel"
         continue
     fi
 done <<< "$diff"
