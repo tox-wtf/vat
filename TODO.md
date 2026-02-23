@@ -14,8 +14,8 @@
 
 ## Projects
 - [ ] Migrate remaining projects from VAT 2.x
-- [ ] Run some experiments
-    - [ ] Define `expected` at the top level
-    - [ ] Define `fetch` at the top level
-    - [ ] Nest serde within the rust project directory
-    - [ ] Define a project without channels (nonsensical but I'm curious)
+- [x] Run some experiments
+    - [x] Define `expected` at the top level
+    - [x] Define `fetch` at the top level
+    - [x] Nest projects within projects
+    - [x] Define a project without channels (nonsensical but I'm curious)
