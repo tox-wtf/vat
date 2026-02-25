@@ -75,11 +75,10 @@ if [ "${#projects[@]}" -eq 0 ]; then
 fi
 
 # Spawn jobs
-status=0
 for project in "${projects[@]}"; do
     # Wait for a job to finish if we've hit the limit
     while [ "$(jobs -rp | wc -l)" -ge "${JOBS:?}" ]; do
-        wait -n || status=1
+        wait -n
     done
 
     (
@@ -100,7 +99,7 @@ done
 
 # Wait for remaining jobs
 while [ "$(jobs -rp | wc -l)" -gt 0 ]; do
-    wait -n || status=1
+    wait -n
 done
 
 # Log completion
@@ -146,6 +145,8 @@ if $DRY; then
     done
 
     git restore "p/ALL".* &>/dev/null
+    exit
 fi
 
-exit $status
+./libexec/commit
+./libexec/tag
