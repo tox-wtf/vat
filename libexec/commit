@@ -3,7 +3,7 @@
 # Generate a report of the run, once it's completed
 
 command -v git &>/dev/null || {
-    echo 'Missing `git` -- cannot continue'
+    echo 'Missing `git` -- cannot continue' >&2
     exit 1
 }
 
