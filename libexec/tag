@@ -15,9 +15,9 @@ set -u
 projects=$(git status --porcelain=v1 -u all p/**/v.tsv | sed -e 's,^p/,,' -e 's,/v.tsv$,,')
 
 rm -rf "$VAT_TARGET/dist"
-mkdir -pv "$VAT_TARGET/dist"
-cp -vf "$VAT_TARGET/report" "$VAT_TARGET/dist/report"
-cp -vf "$VAT_TARGET/logs/ALL."* "$VAT_TARGET/dist/"
+mkdir -p "$VAT_TARGET/dist"
+cp -f "$VAT_TARGET/report" "$VAT_TARGET/dist/report"
+cp -f "$VAT_TARGET/logs/ALL."* "$VAT_TARGET/dist/"
 xz -9e "$VAT_TARGET/dist/ALL."*
 
 runcount="$(<runcount)"
@@ -26,10 +26,10 @@ version="$(<version)"
 (
     echo "Archiving logs"
     cd "$VAT_TARGET"
-    tar --numeric-owner --transform "s,logs,logs-$version-$runcount," -cJvf "$VAT_TARGET/dist/logs.tar.xz" "logs"
+    tar --numeric-owner --transform "s,logs,logs-$version-$runcount," -cJf "$VAT_TARGET/dist/logs.tar.xz" "logs"
     echo "Archiving projects"
     cd "$VAT_ROOT"
-    tar --numeric-owner --transform "s,p,p-$version-$runcount,"       -cJvf "$VAT_TARGET/dist/p.tar.xz"    "p"
+    tar --numeric-owner --transform "s,p,p-$version-$runcount,"       -cJf "$VAT_TARGET/dist/p.tar.xz"    "p"
 )
 
 echo git tag "run-$runcount" -m "$(<$VAT_TARGET/report)"
