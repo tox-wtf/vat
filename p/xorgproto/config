@@ -1,0 +1,6 @@
+upstream="freedesktop:/xorg/proto/xorgproto.git"
+
+:commit  () { :; }
+:release () {
+    expected='[0-9]{4}\.[0-9]'
+}

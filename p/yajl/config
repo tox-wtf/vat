@@ -1,0 +1,5 @@
+upstream="gh:lloyd/yajl"
+chance=4
+
+:commit  () { :; }
+:release () { :; }

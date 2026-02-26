@@ -1,0 +1,15 @@
+upstream="gh:wine-mirror/wine"
+
+:commit  () { :; }
+
+:release () {
+    fetch() {
+        gr | vtrim | grep -F . | vsort | vfs
+    }
+}
+
+:unstable() {
+    fetch() {
+        gr | vtrim | grep -F . | vsort
+    }
+}

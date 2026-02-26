@@ -1,0 +1,6 @@
+upstream="gitlab:gnuwget/wget2.git"
+
+:commit  () { :; }
+:release () {
+    expected='2\.[0-9]+\.[0-9]+'
+}

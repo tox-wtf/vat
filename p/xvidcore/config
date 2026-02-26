@@ -1,0 +1,7 @@
+upstream="https://downloads.xvid.com/downloads"
+
+:release () {
+    fetch() {
+        ca | vtrim | vsort
+    }
+}

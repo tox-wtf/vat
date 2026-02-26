@@ -1,0 +1,8 @@
+upstream="gh:Cyan4973/xxhash"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim | grep -F . | vsort
+    }
+}

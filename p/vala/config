@@ -1,0 +1,15 @@
+upstream="gh:GNOME/vala"
+
+:commit  () { :; }
+
+:release () {
+    fetch() {
+        gr | tolower | vtrim -e 's,_,.,g' | vfem | vsort
+    }
+}
+
+:unstable() {
+    fetch() {
+        gr | tolower | vtrim -e 's,_,.,g' | vsort
+    }
+}

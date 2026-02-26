@@ -1,0 +1,4 @@
+upstream="gh:zaphoyd/websocketpp"
+
+:commit  () { :; }
+:release () { fetch() { defgitrelease | fl; }; }

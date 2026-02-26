@@ -1,0 +1,14 @@
+chance=55
+
+:commit  () {
+    upstream="https://hg.sr.ht/~scoopta/wofi/rev/default"
+    fetch() {
+        cr | commitgrep -o
+    }
+}
+:release () {
+    upstream="https://hg.sr.ht/~scoopta/wofi/tags"
+    fetch() {
+        cr | vrepo -3 | vsort
+    }
+}

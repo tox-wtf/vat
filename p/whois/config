@@ -1,0 +1,6 @@
+upstream="gh:rfc1036/whois"
+
+:commit  () { :; }
+:release () {
+    fetch() { defgitrelease | fl; }
+}

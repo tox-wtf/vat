@@ -1,0 +1,8 @@
+upstream="https://xapian.org/" # the tags are a fucking mess
+
+:commit  () { upstream="https://git.xapian.org/xapian"; }
+:release () {
+    fetch() {
+        cr | grep -FA1 'latest stable version' | vrepo
+    }
+}

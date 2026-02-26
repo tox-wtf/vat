@@ -1,0 +1,10 @@
+upstream="gh:tukaani-project/xz"
+
+:commit() { :; }
+:unstable() { :; }
+
+:release() {
+    fetch() {
+        gr | vtrim | vfem | vfs | vsort
+    }
+}

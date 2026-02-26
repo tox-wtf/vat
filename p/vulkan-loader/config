@@ -1,0 +1,16 @@
+upstream="gh:KhronosGroup/vulkan-loader"
+
+:commit  () { :; }
+
+:release () {
+    fetch() {
+        gr | vtrim -re 's,^(vulkan(-sdk|)|sdk)-,,' | fsl | vrepl | vsort
+    }
+}
+
+:sdk     () {
+    expected='[0-9]\.[0-9]\.[0-9]{3}\.[0-9]'
+    fetch() {
+        gr | grep '^vulkan-sdk-' | cut -d- -f3- | vsort
+    }
+}

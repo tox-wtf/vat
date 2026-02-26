@@ -1,0 +1,8 @@
+upstream="gh:facebook/zstd"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim | fsl | grep -vF kernel | vsort
+    }
+}
