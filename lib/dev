@@ -18,9 +18,8 @@ if ! [ -f "p/$project/config" ]; then
 install -vDm644 /dev/stdin "p/$project/config" << .
 upstream=""
 
-:release() { :; }
-
-:commit() { :; }
+:commit  () { :; }
+:release () { :; }
 .
 fi
 
