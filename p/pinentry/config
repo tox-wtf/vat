@@ -1,0 +1,8 @@
+upstream="gh:gpg/pinentry"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,pinentry-,,' -e 's,-,.,g' | fl | vsort
+    }
+}

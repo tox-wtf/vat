@@ -1,0 +1,5 @@
+upstream="gh:nixos/patchelf"
+chance=88
+
+:commit  () { :; }
+:release () { :; }

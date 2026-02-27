@@ -1,0 +1,8 @@
+upstream="gh:nss-dev/nss"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | tolower | vtrim -e 's,_rtm$,,' -e 's,_,.,g' | fsl | fdate | vfs | grep -vE 'base|tmp' | vsort
+    }
+}

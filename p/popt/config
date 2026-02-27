@@ -1,0 +1,9 @@
+upstream="gh:rpm-software-management/popt"
+chance=22
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,-release$,,' | vfs | vsort
+    }
+}

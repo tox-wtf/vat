@@ -1,0 +1,8 @@
+upstream="gh:plougher/squashfs-tools"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        defgitrelease | fl
+    }
+}

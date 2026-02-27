@@ -1,0 +1,8 @@
+upstream="gh:typst/typst"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | fdash | vtrim | vsort
+    }
+}

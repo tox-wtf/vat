@@ -1,0 +1,9 @@
+upstream="gh:kkos/oniguruma"
+chance=1 # "This project ended on April 24, 2025."
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,_p,.,g' | fl | vsort
+    }
+}

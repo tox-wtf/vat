@@ -1,0 +1,8 @@
+upstream="gh:pulseaudio/pulseaudio"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        defgitrelease | grep -vF 99 | fl
+    }
+}

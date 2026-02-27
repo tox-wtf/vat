@@ -1,0 +1,5 @@
+upstream="freedesktop:/xorg/proto/printproto.git"
+chance=11 # last commit dated 2018-03-01
+
+:commit  () { :; }
+:release () { :; }

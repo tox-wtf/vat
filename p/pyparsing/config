@@ -1,0 +1,8 @@
+upstream="gh:pyparsing/pyparsing"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        defgitrelease | fl
+    }
+}

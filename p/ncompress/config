@@ -1,0 +1,9 @@
+upstream="gh:vapier/ncompress"
+
+:release() {
+    fetch() {
+        defgitrelease | grep -vF old
+    }
+}
+
+:commit() { :; }

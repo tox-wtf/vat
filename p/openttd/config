@@ -1,0 +1,15 @@
+upstream="gh:openttd/openttd"
+
+:commit  () { :; }
+
+:release () {
+    fetch() {
+        gr | vtrim | vfs | vsort
+    }
+}
+
+:unstable() {
+    fetch() {
+        gr | vtrim | vsort
+    }
+}

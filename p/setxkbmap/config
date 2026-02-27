@@ -1,0 +1,8 @@
+upstream="freedesktop:/xorg/app/setxkbmap.git"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,_,.,g ' | fsl | vsort
+    }
+}

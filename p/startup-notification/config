@@ -1,0 +1,8 @@
+upstream="freedesktop:/xdg/startup-notification.git"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | tolower | vtrim -e 's,^startup_notification_?,,' | vsort
+    }
+}

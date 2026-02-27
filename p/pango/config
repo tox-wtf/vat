@@ -1,0 +1,8 @@
+upstream="gh:GNOME/pango"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | tolower | vtrim | fl | fdash | grep -vF .90 | vsort
+    }
+}

@@ -1,0 +1,11 @@
+upstream="gh:ruby/ruby"
+
+:commit  () { :; }
+:release () { :; }
+
+:unstable() {
+    expected='[0-9]+\.[0-9]+\.[0-9]+-?(rc|preview)?[0-9]*'
+    fetch() {
+        gr | vtrim -e 's,_,-,g' | vsort
+    }
+}

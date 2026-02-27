@@ -1,0 +1,9 @@
+upstream="https://www.stunnel.org/versions.html"
+chance=84
+
+:release () {
+    expected='[0-9]\.[0-9]+'
+    fetch() {
+        cr | grep -Eo 'Version [0-9\.a-z]+ released,' | awk '{print $2}' | vsort -c
+    }
+}

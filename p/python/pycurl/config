@@ -1,0 +1,8 @@
+upstream="gh:pycurl/pycurl"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,^rel_,,I' | vfs | vsort
+    }
+}

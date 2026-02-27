@@ -1,0 +1,5 @@
+upstream="gh:pciutils/pciutils"
+chance=88
+
+:commit  () { :; }
+:release () { :; }

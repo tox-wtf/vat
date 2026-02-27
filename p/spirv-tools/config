@@ -1,0 +1,17 @@
+upstream="gh:KhronosGroup/spirv-tools"
+
+:commit  () { :; }
+
+:release () {
+    expected='[0-9]{4}\.[0-9]+'
+    fetch() {
+        gr | vtrim -re 's,^(vulkan(-sdk|)|sdk)-,,' | fsl | grep -Ev '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+' | vfs | vsort
+    }
+}
+
+:sdk     () {
+    expected='[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+'
+    fetch() {
+        gr | grep -E '(vulkan(-sdk|)|sdk)-' | cut -d- -f3- | vsort
+    }
+}

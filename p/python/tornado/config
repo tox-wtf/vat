@@ -1,0 +1,14 @@
+upstream="gh:tornadoweb/tornado"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim | fl | vsort
+    }
+}
+
+:unstable () {
+    fetch() {
+        gr | vtrim | vsort
+    }
+}

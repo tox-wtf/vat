@@ -1,0 +1,8 @@
+upstream="gh:openssl/openssl"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim | fl | vsort
+    }
+}

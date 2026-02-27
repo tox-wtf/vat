@@ -1,0 +1,8 @@
+upstream="gh:pypa/setuptools"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        defgitrelease | fl
+    }
+}

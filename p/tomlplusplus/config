@@ -1,0 +1,8 @@
+upstream="gh:marzer/tomlplusplus"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,^v\.,,' | vsort
+    }
+}

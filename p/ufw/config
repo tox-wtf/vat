@@ -1,0 +1,8 @@
+upstream="https://git.launchpad.net/ufw"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        defgitrelease | fl | fdash
+    }
+}

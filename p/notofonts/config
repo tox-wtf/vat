@@ -1,0 +1,8 @@
+upstream="gh:notofonts/notofonts.github.io"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,noto-monthly-release-,,' | fsl | vsort
+    }
+}

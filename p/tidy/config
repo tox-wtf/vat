@@ -1,0 +1,16 @@
+upstream="gh:htacg/tidy-html5"
+
+:commit  () { :; }
+
+:release () {
+    fetch() {
+        gr | fl | vsort
+    }
+}
+
+:next() {
+    expected='[0-9]+\.[0-9]+\.[0-9]+-next'
+    fetch() {
+        gr | grep -F next | vsort
+    }
+}

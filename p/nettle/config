@@ -1,0 +1,15 @@
+upstream="https://git.lysator.liu.se/nettle/nettle.git"
+
+:commit  () { :; }
+
+:unstable() {
+    fetch() {
+        gr | vtrim -e 's,_release.*,,' | fsl | vsort
+    }
+}
+
+:release () {
+    fetch() {
+        gr | vtrim -e 's,_release.*,,' | fsl | vfs | vsort
+    }
+}

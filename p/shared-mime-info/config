@@ -1,0 +1,8 @@
+upstream="freedesktop:/xdg/shared-mime-info.git"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | tolower | vtrim -e 's,-,.,g' | vsort
+    }
+}

@@ -1,0 +1,21 @@
+:release() {
+    upstream="https://invisible-mirror.net/archives/ncurses/?C=M;O=D"
+    expected='[0-9]+\.[0-9]+'
+    fetch() {
+        cr | cut -d\" -f4 |
+            grep -Ev 'diff|doc|patch|asc|<|/|^t' |
+            vtrim -re 's,.tar.gz$,,' |
+            fl | vsort
+    }
+}
+
+:unstable() {
+    upstream="https://invisible-mirror.net/archives/ncurses/current/?C=M;O=D"
+    expected='^[0-9]+\.[0-9]+\.[0-9]{8}$'
+    fetch() {
+        cr | cut -d\" -f4 |
+            grep -Ev 'diff|doc|patch|asc|<|/|^t' |
+            vtrim -re 's,.tgz$,,' -e s,-,.,g |
+            fl | vsort
+    }
+}

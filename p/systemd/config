@@ -1,0 +1,8 @@
+upstream="gh:systemd/systemd"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,-,.,g' | uniq | vfs | vsort
+    }
+}

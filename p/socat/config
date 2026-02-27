@@ -1,0 +1,15 @@
+upstream="https://repo.or.cz/socat.git"
+
+:commit  () { :; }
+
+:release () {
+    fetch() {
+        gr | vtrim -e 's,^tag-,,' | vsort | fl
+    }
+}
+
+:unstable() {
+    fetch() {
+        gr | vtrim -e 's,^tag-,,' | vsort
+    }
+}

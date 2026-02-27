@@ -1,0 +1,16 @@
+upstream="gh:qt/qtbase"
+
+:commit  () { :; }
+
+:release () {
+    fetch() {
+        gr | vtrim -e 's,-lts-lgpl$,,' | vfs | vsort
+    }
+}
+
+:5() {
+    expected='5\.[0-9]+\.[0-9]+'
+    fetch() {
+        gr | vtrim -e 's,-lts-lgpl$,,' | vfs | grep '^5\.' | vsort
+    }
+}

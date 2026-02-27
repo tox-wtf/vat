@@ -1,0 +1,12 @@
+upstream="https://g.blicky.net/ncdu.git/"
+
+:release () { :; }
+:commit  () { :; }
+
+# C version (LTS)
+:1() {
+    expected='1\.[0-9]+'
+    fetch() {
+        defgitrelease | grep '^1\.'
+    }
+}

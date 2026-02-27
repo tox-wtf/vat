@@ -1,0 +1,9 @@
+upstream="salsa:debian/netcat-openbsd.git"
+
+:release() {
+    fetch() {
+        gr | vtrim -e 's,-,.,g' | fl | vsort
+    }
+}
+
+:commit() { :; }

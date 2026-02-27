@@ -1,0 +1,8 @@
+upstream="https://git.openldap.org/openldap/openldap.git"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,^REL_ENG_,,' | fl | vsort
+    }
+}

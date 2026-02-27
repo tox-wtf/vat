@@ -1,0 +1,8 @@
+upstream="gh:troydhanson/uthash"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim | grep -v start | vfs | vsort
+    }
+}

@@ -1,0 +1,13 @@
+upstream="https://gitlab.archlinux.org/archlinux/packaging/packages/rpmextract.git"
+
+:commit  () {
+    fetch() {
+        defgitcommit
+    }
+}
+
+:release () {
+    fetch() {
+        gr | vtrim -e 's,-.*,,' | vsort
+    }
+}

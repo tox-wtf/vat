@@ -1,0 +1,8 @@
+upstream="gh:shadow-maint/shadow"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        defgitrelease | fdate | fl
+    }
+}

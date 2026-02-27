@@ -1,0 +1,7 @@
+upstream="https://sourceforge.net/projects/traceroute/files/"
+
+:release () {
+    fetch() {
+        cr | grep -F /latest/download | vrepo -3
+    }
+}

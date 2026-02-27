@@ -1,0 +1,8 @@
+upstream="gh:ninja-build/ninja"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim | grep -F . | vsort
+    }
+}

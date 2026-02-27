@@ -1,0 +1,15 @@
+upstream="gh:perl/perl5"
+
+:commit  () { :; }
+
+:release () {
+    fetch() {
+        gr | vtrim | tolower | fsl | fdate | vfem | vfs | vsort
+    }
+}
+
+:unstable() {
+    fetch() {
+        gr | vtrim | tolower | fsl | fdate | vsort
+    }
+}

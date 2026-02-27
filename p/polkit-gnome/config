@@ -1,0 +1,5 @@
+upstream="https://gitlab.gnome.org/Archive/policykit-gnome.git"
+chance=1 # archived, effectively dead since 2011
+
+:commit  () { :; }
+:release () { :; }

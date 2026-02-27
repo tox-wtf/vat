@@ -1,0 +1,15 @@
+upstream="gh:python/cpython"
+
+:commit  () { :; }
+
+:release () {
+    fetch() {
+        gr | vtrim | fl | vsort
+    }
+}
+
+:unstable() {
+    fetch() {
+        gr | vtrim | fsl | vsort
+    }
+}

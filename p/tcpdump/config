@@ -1,0 +1,8 @@
+upstream="gh:the-tcpdump-group/tcpdump"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim | fl | vsort
+    }
+}
