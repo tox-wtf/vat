@@ -1,9 +1,15 @@
 upstream="https://gitlab.isc.org/isc-projects/bind9.git"
 
-:release() {
+:commit  () { :; }
+
+:release () {
+    fetch() {
+        gr | vtrim | grep -F . | fsl | vfs | vfem | vsort
+    }
+}
+
+:unstable() {
     fetch() {
         gr | vtrim | grep -F . | fsl | vfs | vsort
     }
 }
-
-:commit() { :; }
