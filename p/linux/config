@@ -11,7 +11,7 @@ upstream="https://www.kernel.org/feeds/kdist.xml"
 }
 
 # Corresponds to latest release
-:stable1() {
+:stable() {
     expected='[0-9]\.[0-9]+\.[0-9]+'
 
     fetch() {
@@ -20,57 +20,12 @@ upstream="https://www.kernel.org/feeds/kdist.xml"
     }
 }
 
-:stable2() {
+:longterm() {
     expected='[0-9]\.[0-9]+\.[0-9]+'
 
     fetch() {
-        cr | xmlstarlet sel -t -v '/rss/channel/item[3]/title' |
-            vtrim -e "s,: stable,,"
-    }
-}
-
-:longterm1() {
-    expected='[0-9]\.[0-9]+\.[0-9]+'
-
-    fetch() {
-        cr | xmlstarlet sel -t -v '/rss/channel/item[4]/title' |
-            vtrim -e "s,: longterm,,"
-    }
-}
-
-:longterm2() {
-    expected='[0-9]\.[0-9]+\.[0-9]+'
-
-    fetch() {
-        cr | xmlstarlet sel -t -v '/rss/channel/item[5]/title' |
-            vtrim -e "s,: longterm,,"
-    }
-}
-
-:longterm3() {
-    expected='[0-9]\.[0-9]+\.[0-9]+'
-
-    fetch() {
-        cr | xmlstarlet sel -t -v '/rss/channel/item[6]/title' |
-            vtrim -e "s,: longterm,,"
-    }
-}
-
-:longterm4() {
-    expected='[0-9]\.[0-9]+\.[0-9]+'
-
-    fetch() {
-        cr | xmlstarlet sel -t -v '/rss/channel/item[7]/title' |
-            vtrim -e "s,: longterm,,"
-    }
-}
-
-:longterm5() {
-    expected='[0-9]\.[0-9]+\.[0-9]+'
-
-    fetch() {
-        cr | xmlstarlet sel -t -v '/rss/channel/item[8]/title' |
-            vtrim -e "s,: longterm,,"
+        cr | xmlstarlet sel -t -v '/rss/channel/item/title' | grep longterm |
+            head -n1 | cut -d: -f1
     }
 }
 
