@@ -1,0 +1,150 @@
+VAT 3.0.0
+- [ 2026-03-04 00:15:43 | 9d772e082 ] fix: add missing echo in release script
+- [ 2026-03-04 00:12:46 | a0dffe923 ] !chore: rework release script
+- [ 2026-03-04 00:11:26 | 5bf620a25 ] chore: reset changelog
+- [ 2026-03-04 00:05:07 | 4c6ba52d7 ] chore: reset runcount
+- [ 2026-03-04 00:04:50 | 35a3ea83b ] feat: commit runcount
+- [ 2026-03-03 23:56:09 | 7e302832e ] fix(p): fix gr fallout
+- [ 2026-03-03 23:46:32 | 952384f5b ] !fix(lib): retain slashes in tags with `gr`
+- [ 2026-03-03 23:23:17 | 29a4d588e ] fix: tweak tag generation
+- [ 2026-03-02 20:24:00 | 0466195b8 ] feat: enable tagging
+- [ 2026-03-01 22:49:00 | 6699109a4 ] fix(p): simplify linux channels
+- [ 2026-02-27 17:47:39 | 6a21a1046 ] fix: correct upstream for sudo-rs
+- [ 2026-02-27 15:08:22 | 741d7172b ] fix(p): use vfem for bind-utils:release
+- [ 2026-02-27 15:03:28 | 28b00cd51 ] feat(p): add many packages
+- [ 2026-02-26 21:45:02 | c81a86a8d ] feat(p): add hevel
+- [ 2026-02-26 20:56:14 | 5cbd3f498 ] feat(p): add slibtool
+- [ 2026-02-25 23:29:53 | fd8bfa6cb ] feat: terser package template
+- [ 2026-02-25 21:43:26 | f7d2dbc19 ] feat(p): add several packages
+- [ 2026-02-25 20:28:40 | 1fd454555 ] fix: decrease verbosity in tag script
+- [ 2026-02-25 20:25:13 | ed07249b3 ] feat(p): add zutty
+- [ 2026-02-25 11:39:30 | 53c143ffe ] feat: execute commit and tag scripts and cleanup
+- [ 2026-02-25 11:39:07 | 290d638a2 ] fix: send error messages to stderr
+- [ 2026-02-23 01:27:43 | 707116c57 ] docs: fixes in readme
+- [ 2026-02-23 01:27:31 | a4e005092 ] docs: format todos
+- [ 2026-02-23 01:03:49 | 222494f2a ] feat(p): add several packages
+- [ 2026-02-23 00:38:35 | 49c2a2baa ] docs: update todos
+- [ 2026-02-23 00:38:16 | 233c7bfac ] feat(p): add a few more packages
+- [ 2026-02-23 00:31:04 | ebd4d2eb9 ] feat(p): add a few rust crates
+- [ 2026-02-23 00:22:05 | 71935ac76 ] feat(p): add rust/serde
+- [ 2026-02-23 00:21:52 | b42f0bf5a ] feat(p): add rust
+- [ 2026-02-23 00:18:14 | 7a73d3f1a ] doc: prefer "project" to "package"
+- [ 2026-02-22 23:59:42 | 921da577b ] doc: update contributing guidelines
+- [ 2026-02-22 23:59:30 | 852ed5f0b ] doc: update readme
+- [ 2026-02-22 23:59:15 | 7a2773bb1 ] doc: update todos
+- [ 2026-02-22 23:58:59 | 9de8d76e2 ] chore: tweak a comment
+- [ 2026-02-22 23:57:18 | 62b432d91 ] fix: some logic fixes
+- [ 2026-02-22 23:34:29 | 45348c715 ] chore: formatting
+- [ 2026-02-22 22:48:07 | 99b75f50d ] feat: more information in report
+- [ 2026-02-22 22:47:49 | 9b6587ca1 ] feat: record elapsed time
+- [ 2026-02-22 22:47:21 | e36a0543b ] feat: limit number of parallel jobs
+- [ 2026-02-22 22:46:27 | 20b0ff327 ] feat: prettier timestamps
+- [ 2026-02-22 22:45:20 | c75a17c5e ] fix: enable globstar
+- [ 2026-02-22 14:46:18 | 00659ba17 ] !fix: simplify and correct recording logic
+- [ 2026-02-22 14:45:51 | bb26033a5 ] !fix(p): correct json format
+- [ 2026-02-22 14:27:54 | db7ccdd96 ] feat: rely less on jq
+- [ 2026-02-22 14:27:42 | c2512f2f7 ] fix: misc recording fixes
+- [ 2026-02-22 14:26:29 | 0278903ca ] fix: proper quoting
+- [ 2026-02-22 04:07:12 | 987341cc9 ] chore(p): update json version format
+- [ 2026-02-21 23:55:02 | 59b3e5865 ] chore: vendor vat image as an asset
+- [ 2026-02-21 22:51:22 | df830a87b ] fix: improve fallback check
+- [ 2026-02-21 22:45:38 | b94790faa ] chore: add typos config
+- [ 2026-02-21 22:10:46 | 263d0bded ] feat: tweak default config
+- [ 2026-02-21 22:10:27 | 403a30048 ] !feat: add timeouts
+- [ 2026-02-21 21:56:57 | 126bf7b26 ] fix(p): fix typo in upstream
+- [ 2026-02-21 21:54:53 | df0e1c02f ] fix(p): make chance an int for automake
+- [ 2026-02-21 21:49:54 | 97e9f3ec8 ] fix: tell git we're noninteractive
+- [ 2026-02-21 21:07:57 | b19612622 ] feat(p): add xmlstarlet
+- [ 2026-02-21 19:57:39 | 896464f63 ] feat(p): add remaining l* projects
+- [ 2026-02-21 19:06:49 | 38a933fa4 ] feat(p): add lib* projects
+- [ 2026-02-21 18:17:01 | 1fbc2b44a ] feat: skipping cleanup and fixes
+- [ 2026-02-21 17:59:26 | 8e08effcf ] feat: tweak config flags in vt
+- [ 2026-02-21 17:49:48 | e3e22ac9b ] fix: lame release and unstable channels
+- [ 2026-02-21 17:47:13 | c4934c2c3 ] fix: clean version files instead of dir
+- [ 2026-02-21 17:46:56 | 60d5f2bd0 ] feat(p): add several projects
+- [ 2026-02-21 17:43:40 | c263c18cf ] feat: more sensible dry run behavior
+- [ 2026-02-21 17:43:10 | 2d6bdf295 ] feat: more output from vt
+- [ 2026-02-21 17:42:52 | 0e6c4e8b3 ] feat: better behavior on empty versions
+- [ 2026-02-21 17:08:39 | 10abdeed3 ] fix: exit instead of return
+- [ 2026-02-21 17:02:55 | ad6c0038c ] fix: use install to touch timestamp file
+- [ 2026-02-20 12:33:43 | 9b6566467 ] chore(p): update ALL.tsv
+- [ 2026-02-20 12:33:21 | cd2053df4 ] chore(p): add jsons
+- [ 2026-02-20 12:31:54 | 79512afde ] fix: add all formats in commit script
+- [ 2026-02-20 12:29:47 | bc27ef939 ] feat: add json serialization
+- [ 2026-02-20 12:27:55 | 3a97c6ac3 ] !feat: reorganize vat cache as target
+- [ 2026-02-20 11:33:23 | 26cca2836 ] fix: cache timestamping
+- [ 2026-02-19 22:28:16 | d7178c2a3 ] fix: comment out a debugging line
+- [ 2026-02-19 22:27:51 | 7e4b42a40 ] fix: don't write ALL.tsv in dry runs
+- [ 2026-02-19 22:22:44 | aa4beebb1 ] feat(p): add velox and friends
+- [ 2026-02-19 22:14:32 | f040789f6 ] !feat: denest versions
+- [ 2026-02-19 21:38:07 | f95388b28 ] fix: use grep to remove old versions
+- [ 2026-02-19 21:22:08 | e4eca28f1 ] fix(p): just delete all the version files
+- [ 2026-02-19 21:15:03 | c70f526d8 ] fix: ensure lines are needing deletion are deleted
+- [ 2026-02-19 21:14:26 | ec16a8483 ] fix(p): remove duplicate versions (oops)
+- [ 2026-02-19 00:55:03 | a2a4f3070 ] doc: update todos
+- [ 2026-02-19 00:54:24 | 2efa4c778 ] feat: include project in recorded versions
+- [ 2026-02-19 00:53:26 | 3776e1dda ] feat: add ALL.tsv
+- [ 2026-02-17 23:17:10 | 9a6c40f16 ] fix: place shell options earlier
+- [ 2026-02-17 23:03:20 | e7ccf85d8 ] fix(p): add expected for gsettings-desktop-schemas
+- [ 2026-02-17 22:56:56 | 0e5622051 ] feat: better variable handling
+- [ 2026-02-17 22:56:42 | d3ec420ba ] feat: add dry option
+- [ 2026-02-17 22:55:24 | b75870a42 ] feat(p): add more packages
+- [ 2026-02-17 21:46:00 | a6b8e4482 ] feat: improve tag script
+- [ 2026-02-17 21:43:25 | 1668176f5 ] fix(lib): silence an unset variable message
+- [ 2026-02-17 21:26:49 | 57923275f ] fix: don't hard code vat cache
+- [ 2026-02-17 21:23:46 | f288360b4 ] chore: add newline to runcount
+- [ 2026-02-17 21:23:17 | 0331259c7 ] feat: fix and improve commit script
+- [ 2026-02-17 21:01:16 | 00e6c0335 ] fix(p): remove commit channels for ed and expect
+- [ 2026-02-17 20:58:33 | aeb29fc4c ] !feat: improve ergonomics for dev library
+- [ 2026-02-17 20:57:57 | 26a5009eb ] feat(p): add many packages
+- [ 2026-02-17 19:57:56 | 3867bcc14 ] fix: misc fixes
+- [ 2026-02-17 19:57:30 | 1b3cd1e43 ] chore(p): update versions
+- [ 2026-02-17 19:22:22 | d4f6d1837 ] feat: simplify report format
+- [ 2026-02-17 19:22:05 | 472a883c2 ] fix: tarballs shouldn't use absolute paths
+- [ 2026-02-14 17:43:39 | 87457dd82 ] fix: properly use record and report scripts
+- [ 2026-02-14 17:43:21 | c404d49e2 ] feat: add commit and tag scripts
+- [ 2026-02-14 17:30:29 | 317b4d0fa ] chore(p): move bc
+- [ 2026-02-14 17:30:08 | 6c2a07f27 ] chore: remove old commit script
+- [ 2026-02-14 17:10:00 | 924c34fd8 ] feat(p): add gnu shortform
+- [ 2026-02-14 17:03:54 | a554bc8b2 ] feat: cleanup
+- [ 2026-02-14 17:01:08 | 2aaca202b ] feat: truncate long commits
+- [ 2026-02-14 15:56:01 | b3a98ce8b ] feat(p): track gnu and gavinhoward's bc impls
+- [ 2026-02-14 14:27:28 | 8acc0bf59 ] feat(p): add several more packages
+- [ 2026-02-14 13:37:54 | 27dc08b31 ] fix: unbreak incrementing runcount
+- [ 2026-02-14 13:37:38 | c5f52d82c ] fix: skip empty lines when generating reports
+- [ 2026-02-14 13:25:51 | e37225e66 ] !!feat: write vat in bash
+- [ 2026-02-14 13:25:34 | 8ed7dd9df ] feat: add libexec scripts
+- [ 2026-02-14 13:25:14 | f794d42aa ] feat(p): add several packages
+- [ 2026-02-14 13:25:01 | e5110b7e5 ] feat: add missing libraries
+- [ 2026-02-14 13:24:37 | 0b5b1b45a ] feat: add guarantee flag to config
+- [ 2026-02-14 13:23:42 | e0007a969 ] fix: source lib/vars in lib/dev
+- [ 2026-02-13 22:42:43 | d43f3faac ] feat(p): add several packages
+- [ 2026-02-13 22:42:12 | fb8d847a1 ] feat: add w to base library
+- [ 2026-02-13 22:41:56 | e2f276b8a ] feat: tweak vt dev util
+- [ 2026-02-13 22:41:31 | 3bddb3dff ] feat: github library tweaks
+- [ 2026-02-13 22:40:41 | 1905c3966 ] chore: remove makefile
+- [ 2026-02-13 22:40:22 | ca549c418 ] feat: add sourceware shortform to config
+- [ 2026-02-13 14:21:42 | 6a2fdcfbe ] chore: update gitignore
+- [ 2026-02-13 14:21:28 | b91072ae1 ] !feat: add new config
+- [ 2026-02-13 14:20:09 | 29ef2bb2c ] doc: clean out todos
+- [ 2026-02-13 14:19:57 | f59c63d16 ] chore: add version file
+- [ 2026-02-13 14:19:40 | de1f17632 ] !feat: move sh to lib
+- [ 2026-02-13 14:19:10 | 1c6dce3c5 ] !!feat: deoxidize
+- [ 2026-02-13 14:17:56 | 0076510d2 ] feat(p): add a handful of projects
+- [ 2026-02-13 14:17:41 | ec75ea08e ] !!feat: remove all packages
+- [ 2026-02-12 20:58:41 | 7c347fcb6 ] feat(p): add zoxide
+- [ 2026-02-12 20:56:52 | 8c59a3fb5 ] feat(p): add orbiton
+- [ 2026-02-12 20:44:55 | 0032b4bd8 ] feat(p): add libcloudproviders
+- [ 2026-02-12 20:43:30 | 135ee9a40 ] feat(p): add dxvk
+- [ 2026-02-12 20:03:07 | 55168aa69 ] feat(p): add svt-av1
+- [ 2026-02-12 20:01:44 | b542e5e31 ] feat(p): add dav1d
+- [ 2026-02-12 19:57:54 | c3b0c2388 ] feat(p): add xcursor-themes
+- [ 2026-02-12 19:54:04 | 322580188 ] feat(p): add ocl-icd
+- [ 2026-02-12 19:53:07 | 2f7dd4a64 ] feat(p): add opencl-headers
+- [ 2026-02-12 19:45:49 | 93a0a89d6 ] feat(p): add ruby
+- [ 2026-02-12 19:38:34 | d0d27cd7a ] feat(p): add libatomic_ops
+- [ 2026-02-12 19:36:45 | df6d9b273 ] feat(p): add scripts for bash patch versions
+- [ 2026-02-12 19:14:38 | 5be2233aa ] feat(p): add 580 and 590 channels for nvidia
+- [ 2026-02-09 02:25:48 | 776a04675 ] doc: manually fix changelog
+- [ 2026-02-09 02:23:44 | 848e66b3d ] doc: update todos
+
