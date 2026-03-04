@@ -54,7 +54,7 @@ changes="$(git log --pretty=format:"- [ %ci %h ] %s" "$old_tag".. | grep -F ": "
 } | tac > _
 mv -f _ CHANGES
 
-"$new_tag" > version
+echo "$new_tag" > version
 
 git add CHANGES version
 git commit -m "chore: release $new_tag" -m "VAT $new_tag$nl$changes"
