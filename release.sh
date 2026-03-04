@@ -59,9 +59,11 @@ echo "$new_tag" > version
 git add CHANGES version
 git commit -m "chore: release $new_tag" -m "VAT $new_tag$nl$changes"
 
-git tag "$new_tag"
+git tag "$new_tag" -m "VAT $new_tag$nl$changes"
 git push origin "$new_tag"
 git push
 
 git archive --format=tar -o vat-$new_tag.tar --prefix=vat-$new_tag/ $new_tag
 xz -9e vat-$new_tag.tar
+
+gh release create "$new_tag" --title "$new_tag" --notes-from-tag --latest=true "./vat-$new_tag.tar.xz"
