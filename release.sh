@@ -55,8 +55,9 @@ changes="$(git log --pretty=format:"- [ %ci %h ] %s" "$old_tag".. | grep -F ": "
 mv -f _ CHANGES
 
 echo "$new_tag" > version
+echo 0 > runcount
 
-git add CHANGES version
+git add CHANGES version runcount
 git commit -m "chore: release $new_tag" -m "VAT $new_tag$nl$changes"
 
 git tag "$new_tag" -m "VAT $new_tag$nl$changes"
