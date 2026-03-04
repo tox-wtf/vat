@@ -37,7 +37,7 @@ version="$(<version)"
     tar --numeric-owner --transform "s,p,p-$version-$runcount,"       -cJf "$VAT_TARGET/dist/p.tar.xz"    "p"
 )
 
-git tag "run-$runcount" -m "$(<$VAT_TARGET/report)"
+git tag "runs/$version/$runcount" -m "$(<$VAT_TARGET/report)"
 git push
 git push --tags
-gh release create "VAT $version run #$runcount" --notes-from-tag --latest=false "$VAT_TARGET/dist/"*
+gh release create "runs/$version/$runcount" --title "VAT $version run #$runcount" --notes-from-tag --latest=false "$VAT_TARGET/dist/"*
