@@ -1,6 +1,5 @@
 <div align="center">
-    <!-- TODO: When merging dev into master, change the line below -->
-    <img src="https://github.com/tox-wtf/vat/tree/dev/assets/vat.jpg" width="25%">
+    <img src="https://github.com/tox-wtf/vat/tree/master/assets/vat.jpg" width="25%">
     <h1 align="center">VAT</h1>
 </div>
 
