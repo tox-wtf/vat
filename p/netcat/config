@@ -2,7 +2,7 @@ upstream="salsa:debian/netcat-openbsd.git"
 
 :release() {
     fetch() {
-        gr | vtrim -e 's,-,.,g' | fl | vsort
+        gr | grep -vF upstream/ | vtrim -e 's,debian/,,' -e 's,-,.,g' | fl | vsort
     }
 }
 
