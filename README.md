@@ -169,6 +169,10 @@ fn main() {
 
 
 ## Running
+> [!NOTE]
+> If you just want to query the latest versions of projects, you don't need to
+> run VAT. Instead, refer to [Using the APIs](#using-the-apis).
+
 VAT must be run from its source directory. This is by design as VAT is intended
 to be run in a controlled/contained environment, and doing so lets VAT make more
 assumptions.
