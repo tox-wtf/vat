@@ -126,8 +126,9 @@ To retrieve a JSON object of btop's version channels:
 curl -fsSL "$VAT_URL/btop/v.json"
 ```
 
-> [!NOTE] Keys may contain characters `jq` does not interpret as strings, so
-> it's wise to quote them if dealing with variable keys.
+> [!NOTE]
+> Keys may contain characters `jq` does not interpret as strings, so it's wise
+> to quote them if dealing with variable keys.
 
 To retrieve the release version of Gavin Howard's bc:
 ```sh
