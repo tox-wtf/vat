@@ -52,7 +52,7 @@ You may choose to use any of the following API base URLS:
 The `curl` commands below will assume `$VAT_URL` is set to one of the above
 URLs. For example:
 ```sh
-export VAT_URL=https://vat.tox.wtf/
+export VAT_URL="https://raw.githubusercontent.com/tox-wtf/vat/refs/heads/master/p/"
 ```
 
 Versions for individual projects are stored under `/$project/v.$ext`. All
