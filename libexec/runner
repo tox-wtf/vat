@@ -89,6 +89,14 @@ set_default_fetch() {
     esac
 }
 
+set_default_compare() {
+    [ -n "${compare-}" ] && return
+    compare=true
+    case "$channel" in
+        commit) compare=false ;;
+    esac
+}
+
 eval_result() {
     case $? in
         124) echo TIME; return 124 ;;
@@ -153,13 +161,17 @@ for channel in "${channels[@]}"; do
             exit 1
         fi
 
-        old_ver="$(grep -F "	$channel	" "$VAT_ROOT/p/$project/v.tsv" 2>/dev/null | cut -f3)"
-        if [ -n "${old_ver-}" ]; then
-            greater="$(printf '%s\n%s\n' "$old_ver" "$ver" | versort | tail -n1)"
-            if [[ "$greater" != "$ver" ]]; then
-                echo FAIL
-                echo "Version '$ver' is less than '$old_ver' for $project:$channel" >&2
-                exit 1
+        set_default_compare
+        echo "compare is set to '$compare'" >&3
+        if "$compare"; then
+            old_ver="$(grep -F "	$channel	" "$VAT_ROOT/p/$project/v.tsv" 2>/dev/null | cut -f3)"
+            if [ -n "${old_ver-}" ]; then
+                greater="$(printf '%s\n%s\n' "$old_ver" "$ver" | versort | tail -n1)"
+                if [[ "$greater" != "$ver" ]]; then
+                    echo FAIL
+                    echo "Version '$ver' is less than '$old_ver' for $project:$channel" >&2
+                    exit 1
+                fi
             fi
         fi
 
