@@ -153,6 +153,16 @@ for channel in "${channels[@]}"; do
             exit 1
         fi
 
+        old_ver="$(grep -F "	$channel	" "$VAT_ROOT/p/$project/v.tsv" 2>/dev/null | cut -f3)"
+        if [ -n "${old_ver-}" ]; then
+            greater="$(printf '%s\n%s\n' "$old_ver" "$ver" | versort | tail -n1)"
+            if [[ "$greater" != "$ver" ]]; then
+                echo FAIL
+                echo "Version '$ver' is less than '$old_ver' for $project:$channel" >&2
+                exit 1
+            fi
+        fi
+
         echo "$ver"
     )
 done
