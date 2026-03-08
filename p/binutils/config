@@ -2,7 +2,7 @@ upstream="sourceware:binutils-gdb.git"
 
 :release() {
     fetch() {
-        gr | vtrim | fl | fdate | vsort
+        gr | vtrim -e 's,-release$,,' | fsl | grep -vF branchpoint | vsort
     }
 }
 
