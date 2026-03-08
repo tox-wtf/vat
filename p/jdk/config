@@ -1,4 +1,5 @@
 upstream="gh:openjdk/jdk"
+compare=false
 
 :unstable() {
     fetch() {
