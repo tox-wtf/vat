@@ -2,7 +2,9 @@ upstream="https://download.nvidia.com/XFree86/Linux-x86_64/"
 
 :latest() {
     upstream="https://download.nvidia.com/XFree86/Linux-x86_64/latest.txt"
-    expected='[0-9]{3}\.[0-9]+\.[0-9]+'
+    expected='[0-9]{3}(\.[0-9]+)+'
+    compare=false
+
     fetch() {
         cr | cut -d\  -f1
     }
@@ -11,7 +13,7 @@ upstream="https://download.nvidia.com/XFree86/Linux-x86_64/"
 for i in 580 590; do
     eval "
     :$i() {
-        expected='$i\.[0-9]+\.[0-9]+'
+        expected='$i(\.[0-9]+)+'
 
         fetch() {
             cr | vrepo | uniq | vsort | grep '^$i\.'
