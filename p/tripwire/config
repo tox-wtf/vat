@@ -1,0 +1,5 @@
+upstream="gh:tripwire/tripwire-open-source"
+chance=7 # last commit dated 2019-03-16
+
+:commit  () { :; }
+:release () { :; }

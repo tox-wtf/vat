@@ -1,0 +1,7 @@
+upstream="https://sourceware.org/ftp/lvm2/?C=M;O=D"
+
+:release () {
+    fetch() {
+        cr | grep -o 'LVM2.[^t]\+' | vtrim -e 's,LVM2.,,' | vrepo | uniq | vsort
+    }
+}

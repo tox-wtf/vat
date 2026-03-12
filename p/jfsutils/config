@@ -1,0 +1,7 @@
+upstream="https://jfs.sourceforge.net/source.html#latesrc"
+
+:release () {
+    fetch() {
+        defcurlrelease
+    }
+}
