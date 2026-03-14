@@ -1,0 +1,8 @@
+upstream="gh:pauldreik/rdfind"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,releases/,,' | vfs | vsort
+    }
+}
