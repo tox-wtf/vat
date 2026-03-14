@@ -1,0 +1,9 @@
+upstream="https://thrysoee.dk/editline/"
+chance=83
+
+:release () {
+    expected='[0-9]{8}-[0-9]+(\.[0-9]+)+'
+    fetch() {
+        cr | grep -F .tar.gz | grep -Eo 'libedit-[0-9]{8}-[^t]+' | uniq | sed 's,.$,,' | vtrim
+    }
+}
