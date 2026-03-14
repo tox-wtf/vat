@@ -1,7 +1,5 @@
 upstream="https://launchpad.net/libvterm/+download"
 
-# TODO: Use bazaar repo? <https://bazaar.leonerd.org.uk/c/libvterm>
-
 :release() {
     fetch() { defcurlrelease; }
 }
