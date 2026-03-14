@@ -1,0 +1,6 @@
+upstream="gl:kernel-firmware/linux-firmware"
+
+:commit  () { :; }
+:release () {
+    expected='[0-9]{8}'
+}
