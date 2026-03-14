@@ -1,0 +1,12 @@
+upstream="https://https.git.savannah.gnu.org/git/parallel.git"
+chance=94
+
+:commit  () { :; }
+
+# Parallel has some very interesting tags
+:release () {
+    expected='[0-9]{8}'
+    fetch() {
+        gr | grep -xE '[0-9]{8}'
+    }
+}
