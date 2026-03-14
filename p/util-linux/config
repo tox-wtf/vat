@@ -1,8 +1,9 @@
-upstream="gh:troydhanson/uthash"
+upstream="gh:util-linux/util-linux"
 
 :commit  () { :; }
-:release () {
+:release () { :; }
+:unstable() {
     fetch() {
-        gr | vtrim | grep -v start | vfs | vsort
+        gr | vtrim | grep -vF devel | vsort
     }
 }
