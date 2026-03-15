@@ -14,8 +14,7 @@
 - [ ] Check that a new version is greater than an old version.
     - [ ] Make this check configurable (per-project/channel).
         - `compare=true`, on by default
-- [ ] Add `fhigh` which filters out high version parts.
-- [ ] Make default expected not like high version parts.
+- [x] Add `fhigh` which filters out high version parts.
 
 ## Projects
 - [x] Migrate remaining projects from VAT 2.x.

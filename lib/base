@@ -195,6 +195,11 @@ fdatel() {
     grep -Ev '^[0-9]{4}-?[0-9]{2}-?[0-9]{2}$'
 }
 
+# filter out high non-major versions
+fhigh() {
+    grep -v '\.[89][0-9]'
+}
+
 # filter out lines containing CVEs
 fcve() {
     grep -vF -- CVE-
