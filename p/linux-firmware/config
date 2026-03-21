@@ -1,4 +1,4 @@
-upstream="gl:kernel-firmware/linux-firmware"
+upstream="gl:kernel-firmware/linux-firmware.git"
 
 :commit  () { :; }
 :release () {
