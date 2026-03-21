@@ -5,7 +5,7 @@ upstream="gh:gnome/gsettings-desktop-schemas"
 # Upstream's tagging scheme is more than a little cursed, and I wouldn't be
 # surprised if this breaks.
 :unstable() {
-    expected='[0-9]+(\.(alpha|beta|rc))*$'
+    expected='[0-9]+(\.(alpha|beta|rc|[0-9]+))*$'
 }
 
 :commit() { :; }
