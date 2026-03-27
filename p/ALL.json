@@ -119,7 +119,7 @@
     },
     "binutils": {
         "release": "2.46",
-        "commit": "edf0ae3b9f1ca23daaa55628683edc9a3360286f"
+        "commit": "bcbe649bcb11d0ea7aa11a63c1f37957a7d90b5e"
     },
     "bison": {
         "release": "3.8.2"
@@ -154,7 +154,7 @@
     },
     "btrfs-progs": {
         "release": "6.19.1",
-        "commit": "ff0294e107011ed94105b2193258997182736926"
+        "commit": "079097537303d0156ac5eee94d58bde068e43b6b"
     },
     "bubblewrap": {
         "release": "0.11.1",
@@ -231,7 +231,7 @@
     "cmake": {
         "unstable": "4.3.0",
         "release": "4.3.0",
-        "commit": "1eb36153b4eb83fca0821db358dcec9c2d754822"
+        "commit": "0b4a69d04640aabe8423f4d8f4a1e257b2ce0e8b"
     },
     "coreutils": {
         "release": "9.10",
@@ -466,7 +466,7 @@
         "3": "3.4.14",
         "2": "2.8.22",
         "release": "8.1",
-        "commit": "ae6f233988a4128b1759ae54982d07b750b7f294"
+        "commit": "5dfe661f034234ca05bcc3c1c1c11ae47bd03cfb"
     },
     "fftw": {
         "unstable": "3.3.10",
@@ -548,7 +548,7 @@
     "gcc": {
         "unstable": "16",
         "release": "15.2.0",
-        "commit": "9780a52dffaf5e476bbce80dac84514cd6863483"
+        "commit": "17b211ff3a43acfaf8fb662115b2c667e1263dc5"
     },
     "gd/betteredit": {
         "unstable": "6.10.0-beta.5",
@@ -565,7 +565,7 @@
     },
     "gdb": {
         "release": "17.1",
-        "commit": "edf0ae3b9f1ca23daaa55628683edc9a3360286f"
+        "commit": "bcbe649bcb11d0ea7aa11a63c1f37957a7d90b5e"
     },
     "gd/cleanstartpos": {
         "unstable": "2.0.5",
@@ -688,7 +688,7 @@
     "glibc": {
         "unstable": "2.43.9000",
         "release": "2.43",
-        "commit": "4a97c1230227db346dcfcd4c6634f6245c9f7c7e"
+        "commit": "e10977481f4db4b2a3ce34fa4c3a1e26651ae312"
     },
     "glib-networking": {
         "unstable": "2.80.1",
@@ -732,7 +732,7 @@
     "go": {
         "unstable": "1.26.1",
         "release": "1.26.1",
-        "commit": "2dbd51e3b4bf29e6204caf0465258ced601494a2"
+        "commit": "91d1a883768b8b38fe79eefd820063b2b593f23a"
     },
     "gperf": {
         "release": "3.3"
@@ -815,7 +815,7 @@
     },
     "htop": {
         "release": "3.4.1",
-        "commit": "e5fadb0295b3088c09cfbd7a220968082273e8fb"
+        "commit": "b5c31246241dc9945e3e02c4058944ebac3217e4"
     },
     "hwdata": {
         "release": "0.405",
@@ -938,7 +938,7 @@
     },
     "ksh": {
         "release": "1.0.10",
-        "commit": "564bb22943cc6bf80cca87ddd04f1f60ba88b4fb"
+        "commit": "e4997cef5c819873f7b7d7c5177ecac1175384c7"
     },
     "lame": {
         "unstable": "3.100",
@@ -1205,7 +1205,7 @@
     "librsvg": {
         "unstable": "2.62.1",
         "release": "2.62.1",
-        "commit": "ccad23e24138a7526fb55b8a3316aa48a3dc8a15"
+        "commit": "25c6d56c8cc936d8e9bfd4897c64da48c0679ae5"
     },
     "libsamplerate": {
         "release": "0.2.2",
@@ -1491,7 +1491,7 @@
     "llvm": {
         "unstable": "22.1.2",
         "release": "22.1.2",
-        "commit": "160b29cb527ce048b811eb9839b7189b1bfced0a"
+        "commit": "8a49af8752021bbabc6f76e657beaf56a4645624"
     },
     "lmdb": {
         "release": "0.9.35"
@@ -1563,7 +1563,7 @@
     },
     "mango": {
         "release": "0.12.7",
-        "commit": "b55de2874929b146c37b866f9a3e23c35c94c8d8"
+        "commit": "f94ddc671e1d01ad85ffd6f1cf2f09811c2629c8"
     },
     "man-pages": {
         "release": "6.17",
@@ -1673,7 +1673,7 @@
     },
     "neovim": {
         "release": "0.11.6",
-        "commit": "ae2829ee35c1fb8649f9d4046c5af48987193d03"
+        "commit": "925e9e87222cba0c48d2a9184fa3e5fcad65d4ba"
     },
     "netcat": {
         "release": "1.234.2",
@@ -1748,7 +1748,7 @@
     },
     "nvidia": {
         "590": "590.48.01",
-        "latest": "595.58.03",
+        "latest": "580.142",
         "580": "580.142"
     },
     "obs-studio": {
@@ -1790,7 +1790,7 @@
     "openttd": {
         "unstable": "15.2",
         "release": "15.2",
-        "commit": "34fdaec58eba2f145a448d9ca095ae99cf0e8108"
+        "commit": "aeddd30a48e789bce36a84653c0e90494687a5b7"
     },
     "opus": {
         "release": "1.6.1",
@@ -1838,7 +1838,7 @@
     "perl": {
         "unstable": "5.43.9",
         "release": "5.42.1",
-        "commit": "94e539065d94fbbf604cff345c786d952c08d6b1"
+        "commit": "042eaf57f6e691eef472f4ad41fd2179aad6615b"
     },
     "picom": {
         "release": "13",
@@ -1926,7 +1926,7 @@
     },
     "python/packaging": {
         "release": "26.0",
-        "commit": "e9385363dcbdc4494cd1b2438e1f945b42a49422"
+        "commit": "c901ded1a6b97acee3b6b1eb17526228129c4645"
     },
     "python/platformdirs": {
         "release": "4.9.4",
@@ -1968,7 +1968,7 @@
     "python": {
         "unstable": "3.15.0a7",
         "release": "3.14.3",
-        "commit": "c75d220e257ef7fda8d54e6b5d90de19d6122474"
+        "commit": "36e4ffc1731fc939fde83a62ed547e81e94961af"
     },
     "qemu": {
         "release": "10.2.2",
@@ -1981,7 +1981,7 @@
     "qt": {
         "5": "5.15.18",
         "release": "6.11.0",
-        "commit": "06d515bb4345bbf051012715b3e10bb46a295dbb"
+        "commit": "487f04b286f7d6c14739462435f0fbd913225301"
     },
     "quickshell": {
         "release": "0.2.1",
@@ -2038,7 +2038,7 @@
     "ruby": {
         "unstable": "4.0.2",
         "release": "4.0.2",
-        "commit": "6c1071f35630ec165dac1fbecd39e105b8bcf6ec"
+        "commit": "54593b55fedce4a2f00b0b2231ea697388fe7bf1"
     },
     "rust/anyhow": {
         "release": "1.0.102",
@@ -2078,8 +2078,8 @@
     },
     "rust": {
         "release": "1.94.1",
-        "nightly": "2026-03-26",
-        "commit": "23903d01c237d7c7d4fb62b82ca846bc45de4e0c"
+        "nightly": "2026-03-27",
+        "commit": "ac40f5e105ddc8144904679cb63c8879708a9a26"
     },
     "samurai": {
         "release": "1.2",
@@ -2371,7 +2371,7 @@
     },
     "vat": {
         "release": "3.2.0",
-        "commit": "3cf6fcefa45165a04cea676e8a14067a23a30587"
+        "commit": "0f9e7b7017318f686361f33f0302dc16a2edca61"
     },
     "velox": {
         "release": "0.0.3",
