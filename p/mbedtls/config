@@ -1,5 +1,18 @@
 upstream="gh:mbed-tls/mbedtls"
 
 :release() { :; }
-
 :commit() { :; }
+
+:3() {
+    expected="3\.6\.[0-9]+"
+    fetch() {
+        defgitrelease | grep "^3"
+    }
+}
+
+:2() {
+    expected="2\.28\.[0-9]+"
+    fetch() {
+        defgitrelease | grep "^2"
+    }
+}
