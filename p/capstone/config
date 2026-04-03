@@ -1,0 +1,9 @@
+upstream="gh:/capstone-engine/capstone"
+
+:commit  () { :; }
+:release () { :; }
+:unstable() {
+    fetch() {
+        gr | tolower | vtrim | vsort
+    }
+}
