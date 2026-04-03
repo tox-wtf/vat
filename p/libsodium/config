@@ -1,0 +1,8 @@
+upstream="gh:jedisct1/libsodium"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,-RELEASE,,' | fl | vsort
+    }
+}
