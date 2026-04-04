@@ -1,0 +1,7 @@
+upstream="https://www.ladspa.org/ladspa_sdk/overview.html"
+
+:release () {
+    fetch() {
+        cr | grep 'LADSPA SDK v.\+ Overview' | vrepo
+    }
+}
