@@ -1,0 +1,15 @@
+upstream="gh:kde/dolphin"
+
+:commit  () { :; }
+
+:release () {
+    fetch() {
+        gr | vtrim | vsort | fhigh
+    }
+}
+
+:unstable() {
+    fetch() {
+        gr | vtrim | vsort
+    }
+}
