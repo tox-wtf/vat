@@ -1,0 +1,10 @@
+upstream="gh:mirabilos/mksh-cvs2git"
+chance=82
+
+:commit  () { :; }
+:release () {
+    expected="[0-9]{2}[a-f]"
+    fetch() {
+        gr | vtrim -e 's,^R,,' | vsort -c
+    }
+}
