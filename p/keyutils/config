@@ -1,0 +1,5 @@
+upstream="kernel:linux/kernel/git/dhowells/keyutils.git"
+chance=44
+
+:commit  () { :; }
+:release () { :; }
