@@ -1,0 +1,11 @@
+upstream="salsa:debian/anthy.git"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -re 's,^(upstream|release|debian|ubuntu)/,,' -e 's,^1%,,' |
+        fl | grep -v '[0-9][0-9][0-9[0-9]' |
+        sed 's,-,.,g' |
+        vsort
+    }
+}
