@@ -1,0 +1,5 @@
+upstream="gh:gnome/librest"
+chance=64
+
+:commit  () { :; }
+:release () { :; }
