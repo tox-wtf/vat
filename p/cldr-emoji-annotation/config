@@ -1,0 +1,10 @@
+upstream="gh:fujiwarat/cldr-emoji-annotation"
+chance=4
+
+:commit  () { :; }
+:release () {
+    expected="38-alpha1.0_13.0_0_1"
+    fetch() {
+        gr
+    }
+}
