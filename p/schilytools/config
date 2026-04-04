@@ -1,0 +1,8 @@
+upstream="cb:schilytools/schilytools"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,-,.,g' | fl | vsort
+    }
+}
