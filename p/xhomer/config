@@ -1,0 +1,7 @@
+upstream="http://xhomer.isani.org/xhomer/xhomer.html#download"
+
+:release () {
+    fetch() {
+        cr | grep 'Xhomer source' | grep -E '[0-9]+-[0-9]+-[0-9]+' -o | sed 's,-,.,g'
+    }
+}
