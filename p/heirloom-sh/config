@@ -1,0 +1,8 @@
+upstream="https://sourceforge.net/projects/heirloom/rss?path=/heirloom-sh"
+chance=11
+
+:release () {
+    fetch() {
+         cr | grep -F '<title><![CDATA[/heirloom-sh/' | cut -d/ -f3 | vsort
+    }
+}
