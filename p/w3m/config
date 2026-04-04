@@ -1,0 +1,8 @@
+upstream="srht:rkta/w3m"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,^upstream/,,' | fl | vsort
+    }
+}
