@@ -1,0 +1,8 @@
+upstream="gh:gnome/msgraph"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,-,p,' | vsort
+    }
+}
