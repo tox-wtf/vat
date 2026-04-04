@@ -1,4 +1,5 @@
 upstream="https://sourceforge.net/projects/motif/files/"
+chance=8
 
 :release () {
     fetch() {
