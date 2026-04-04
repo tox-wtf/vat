@@ -1,5 +1,9 @@
 upstream="gh:flatpak/flatpak"
 
-:release() { :; }
-
-:commit() { :; }
+:commit()   { :; }
+:release()  {
+    fetch() {
+        defgitrelease | vfem
+    }
+}
+:unstable() { :; }
