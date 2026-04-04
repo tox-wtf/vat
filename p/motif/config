@@ -1,0 +1,7 @@
+upstream="https://sourceforge.net/projects/motif/files/"
+
+:release () {
+    fetch() {
+        defcurlrelease
+    }
+}
