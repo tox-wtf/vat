@@ -1,0 +1,15 @@
+upstream="gh:PCSX2/PCSX2"
+
+:commit  () { :; }
+
+:release () {
+    fetch() {
+        gr | vtrim | vsort | vfem
+    }
+}
+
+:unstable() {
+    fetch() {
+        gr | vtrim | vsort
+    }
+}
