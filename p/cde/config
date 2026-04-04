@@ -1,0 +1,8 @@
+upstream="https://sourceforge.net/projects/cdesktopenv/rss?path=/src"
+chance=77
+
+:release () {
+    fetch() {
+         ca | vsort | fl
+    }
+}
