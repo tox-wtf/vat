@@ -1,0 +1,7 @@
+upstream="https://sourceforge.net/p/idle-lisa-emu/code/26/log/?path"
+
+:release () {
+    fetch() {
+        cr | grep -o 'r[0-9]\+' | vtrim | vsort
+    }
+}
