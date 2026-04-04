@@ -1,0 +1,8 @@
+upstream="sourceware:valgrind.git"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | tolower | vtrim -e 's,svn/valgrind_,,' | vsort
+    }
+}
