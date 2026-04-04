@@ -1,0 +1,8 @@
+upstream="gh:miniupnp/miniupnp"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,^[cd]_,,' | fl | vsort
+    }
+}
