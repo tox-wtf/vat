@@ -1,0 +1,8 @@
+upstream="https://https.git.savannah.gnu.org/git/autoconf.git"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim | fl | fhigh | vsort
+    }
+}
