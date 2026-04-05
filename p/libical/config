@@ -1,0 +1,8 @@
+upstream="gh:libical/libical"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+         defgitrelease | fl
+    }
+}
