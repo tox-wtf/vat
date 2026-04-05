@@ -1,0 +1,15 @@
+upstream="gh:KDE/kate"
+
+:commit  () { :; }
+
+:release () {
+    fetch() {
+        defgitrelease | fhigh
+    }
+}
+
+:unstable() {
+    fetch() {
+        defgitrelease
+    }
+}
