@@ -1,0 +1,8 @@
+upstream="https://svn.r-project.org/R/tags/"
+chance=88
+
+:release () {
+    fetch() {
+        cr | sed -e 's,-,.,g' | grep 'R\.[0-9]' | cut -d\" -f2 | vtrim -e 's,^\.,,' -e 's,/$,,' | fl | vsort
+    }
+}
