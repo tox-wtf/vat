@@ -1,0 +1,8 @@
+upstream="https://gitlab.gnome.org/World/gedit/gedit"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+         gr | vtrim | fl | fdash | vsort
+    }
+}
