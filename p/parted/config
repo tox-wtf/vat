@@ -1,0 +1,15 @@
+upstream="https://https.git.savannah.gnu.org/git/parted.git"
+
+:commit  () { :; }
+
+:release () {
+    fetch() {
+        defgitrelease | vrepo -2
+    }
+}
+
+:unstable() {
+    fetch() {
+        defgitrelease
+    }
+}
