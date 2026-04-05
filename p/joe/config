@@ -1,0 +1,8 @@
+upstream="gh:joe-editor/joe"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,releases/joe-,,' | fl | vsort
+    }
+}
