@@ -1,0 +1,8 @@
+upstream="gh:AbiWord/wv"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | grep '^wv-' | vtrim -e 's,-,.,g' | vsort
+    }
+}
