@@ -1,0 +1,9 @@
+upstream="https://git.code.sf.net/p/clucene/code"
+chance=7
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,src-,,' | vsort
+    }
+}
