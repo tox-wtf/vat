@@ -1,0 +1,7 @@
+upstream="https://launchpad.net/intltool/+download"
+
+:release () {
+    fetch() {
+        defcurlrelease
+    }
+}
