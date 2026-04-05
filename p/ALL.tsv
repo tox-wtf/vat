@@ -129,7 +129,7 @@ cldr-emoji-annotation	commit	c1373d4b959425a6bf4d3b005a578561a96cc6a6
 cldr-emoji-annotation	release	38-alpha1.0_13.0_0_1
 cli11	commit	30d783eb61a2bf83ae29fcde70691eac852a7b7d
 cli11	release	2.6.2
-cmake	commit	b73e1508ec10831e0d4a16bf986201dcd2e882b6
+cmake	commit	9add46e2fb71474128971be028495f8b11b757ce
 cmake	release	4.3.1
 cmake	unstable	4.3.1
 cmark	commit	64efa3b3b3d35f2ffb604b57a8a9c89047cb420b
@@ -232,7 +232,7 @@ ell	release	0.83
 elogind	commit	88c346cdc5ef231465552de9c55332fd9d2c408b
 elogind	release	255.17
 elogind	unstable	257-pre
-emacs	commit	0bfdb068f2f7031d6e8bb9cae8142be0bc4962ab
+emacs	commit	670bb34d91179eef087b6964edb445244180e8f6
 emacs	release	30.2
 enchant	commit	774ff6dc2e441ba2b9b786f8edbe00e014960408
 enchant	release	2.8.15
@@ -243,7 +243,7 @@ entr	release	5.8
 expect	release	5.45.4
 eza	commit	f822450c89719ae758033bfeee5fb6acc5a757ee
 eza	release	0.23.4
-fastfetch	commit	14cd933969d121bdcd13e7f6325f417c8150de4a
+fastfetch	commit	85594d2056f7f92b0cd4eef42311d8e6abbd6636
 fastfetch	release	2.61.0
 fcft	commit	fc9330645fb8bf122424e63b3a9ccfa1d0a92cfc
 fcft	release	3.3.3
@@ -284,7 +284,7 @@ fftw	unstable	3.3.10
 file	commit	adfc2a0c50085e7a95f8814f817624b3c37034d2
 file	release	5.47
 findutils	release	4.10.0
-fish	commit	0367aaea7df60f5e8ccff64bb90493f8677a54ae
+fish	commit	f3f675b4ccdf72f68d0f539857cf08eb4205244e
 fish	release	4.6.0
 flac	commit	343f3481562213cdc4f196af87da0d26bf2530ad
 flac	release	1.5.0
@@ -871,7 +871,7 @@ linux	next	20260403
 linux	stable	6.19.11
 little-cms	commit	3fd1a71a137f7851391f6693f37335ae459dda01
 little-cms	release	2.18
-llvm	commit	257cc5ad89840cdfba4affcc8fe62cf9d02d9017
+llvm	commit	e3e4b8481d97880dd595bbc48eff372777053f12
 llvm	release	22.1.2
 llvm	unstable	22.1.2
 lmdb	release	0.9.35
@@ -1030,7 +1030,7 @@ nv-codec-headers	commit	33a9ede8d9914299d9262539c576a15bd0a19621
 nv-codec-headers	release	13.0.19.0
 nvidia	580	580.142
 nvidia	590	590.48.01
-nvidia	latest	580.126.09
+nvidia	latest	595.58.03
 obs-studio	commit	7272af1375b38bc3cf4e0f98a5d999e8b76e9309
 obs-studio	release	32.1.1
 ocl-icd	commit	b24c025112175fb210ec6f875fc9ff5727476f43
@@ -1153,7 +1153,7 @@ python/pygobject	commit	d274c43c1f4f6c8f459c11ca4723ca55c11b3fed
 python/pygobject	release	3.56.2
 python/pyserial	commit	a5c48d445fbc1943d4fabf8d9090a50fda3172fd
 python/pyserial	release	3.5
-python/pytest	commit	f93656d611f3c9cd22f346dfeda52cddb778c589
+python/pytest	commit	9e6755a891aa9db7381eca6db4a2f87026dcd29c
 python/pytest	release	9.0.2
 python/pyyaml	commit	d51d8a138f7230834fc6e95635ff09ebd329185f
 python/pyyaml	release	6.0.3
@@ -1229,7 +1229,7 @@ rust/tokio	commit	ad8c59add6a1988d8c327fb3358beeeae3bbb5cd
 rust/tokio	release	1.51.0
 rust/tracing	commit	72cf52a9e2723cf99a238be1e823a50915ca3977
 rust/tracing	release	0.1.44
-rust	commit	c92036b45babceee1d8d31cac5536207a26369a5
+rust	commit	f92020a676251cf985cbe5134a1fd976b5207ab6
 rust	nightly	2026-04-05
 rust	release	1.94.1
 s4-3b1-pc7300	commit	efe55b8cc917e3e27bcae9786c5b5dec0469be45
@@ -1251,7 +1251,7 @@ sdl2-compat	commit	91d36b8d9d06958e2663623d100d12b596675120
 sdl2-compat	release	2.32.66
 sdl2_net	commit	5e27fdf4998fec2e559a36df7edbb8c9e40370ca
 sdl2_net	release	2.2.0
-sdl	commit	19f70284adcbdde918267e77325df309a267098c
+sdl	commit	1442c5a4a0b97e697362c44983a62eed46e29856
 sdl	release	3.4.4
 seatd	commit	daa8196e10b180b8b0caeafa8e5f860eb1bd6706
 seatd	release	0.9.3
@@ -1280,6 +1280,7 @@ slop	release	7.7
 slurp	commit	466a4e3b726e2fb01e7000806c85c8c849d9de17
 slurp	release	1.5.0
 s-nail	commit	bf99a2bb04be7b3cfa57c47127a1d865dc7ec3be
+s-nail	release	14.9.25
 snowball	commit	0364fe364dc94cc286c9d94f80506f0f073e04c9
 snowball	release	3.0.1
 socat	commit	4ce87862210af06e02cebeb08415e2290b980a07
@@ -1391,9 +1392,9 @@ util-macros	release	1.20.2
 vala	commit	2c9e91b4a0387b8e6e2fbd11a9b335cdc63896cd
 vala	release	0.56.19
 vala	unstable	0.57.0
-valgrind	commit	31de6694d0e868f6fec5490f5c06ddfe9bc95977
+valgrind	commit	6a10536648f6601f01c47b2c7671a9fb2a202e0b
 valgrind	release	3.26.0
-vat	commit	31e08538c7ca5b4a1e1948d50ec7a2388338f350
+vat	commit	6a89b304989d7c2baa6c492c901cc35158ee62b0
 vat	release	3.2.0
 velox	commit	76b11f42e3703df6e2da892940bea9e0175c7b4f
 velox	release	0.0.3
