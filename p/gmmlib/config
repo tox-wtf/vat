@@ -1,0 +1,8 @@
+upstream="gh:intel/gmmlib"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,intel-gmmlib-,,' | vsort
+    }
+}
