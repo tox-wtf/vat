@@ -4,7 +4,7 @@
 7zip	release	26.00
 99f	commit	ca378419587d31c53ca871d9afda9b2f3ac006f7
 99f	release	2
-abseil-cpp	commit	eb769815864694e6a56907005f85625461c4b796
+abseil-cpp	commit	884282e28f6591d6c0680a79e07357a5aa868618
 abseil-cpp	release	20260107.1
 abseil-cpp	unstable	20260107.1
 acl	commit	ae0448cb7d0d328440425d1ac347e9d6845e3f0e
@@ -27,7 +27,7 @@ anubis	commit	dbd64e0f4f23c37476b40b332781c676ffa413ef
 anubis	release	1.25.0
 appstream-glib	commit	3bbf7e94243de5a2c4e0838c751dda1c4063d437
 appstream-glib	release	0.8.3
-appstream	commit	fb9cf52976e6d22547925855cc7315997a6da571
+appstream	commit	4bec2b1af9c9f1946d56fefdcb09a7fbf9da9ccb
 appstream	release	1.1.2
 apr-util	commit	c9a9a77cbed92a50cdb30d3f88038d8c8271cc14
 apr-util	release	1.6.3
@@ -66,11 +66,11 @@ befunge-93	release	2.25
 bind-utils	commit	634194484dcf81590b30213d690aade4745bfcd5
 bind-utils	release	9.20.22
 bind-utils	unstable	9.21.21
-binutils	commit	ea0a02294b16720b58d616276678c47dc7657f01
+binutils	commit	2db79d8000d40451b313ad6c3b6c029bcf82e643
 binutils	release	2.46
 bison	release	3.8.2
 bluefish	release	2.4.1
-boost	commit	ba00950e465b0c10d5bae001614dfb2ae65598bd
+boost	commit	0ccadaf7da9515d74a29f18873e6384b80a46a85
 boost	release	1.90.0
 bottom	commit	bce84d8db4c1c0d2f7ecbe94dda9b50ef588cc9b
 bottom	release	0.12.3
@@ -138,7 +138,7 @@ cmake	release	4.3.1
 cmake	unstable	4.3.1
 cmark	commit	64efa3b3b3d35f2ffb604b57a8a9c89047cb420b
 cmark	release	0.31.2
-coreutils	commit	5b0cb4379abfe328bc6a3838fbc59ebf6b39b720
+coreutils	commit	745f4000fea83fb0fecb3970ae4396af0d639c50
 coreutils	release	9.10
 cowsay	commit	eef317a302d025e3f31787566727c49eaee43648
 cowsay	release	1.5.0
@@ -156,7 +156,7 @@ cups-filters	commit	1255e2071294ee2c4633e1fd73472c0f61babee3
 cups-filters	release	2.0.1
 cups	commit	23bc8ac77a95065397f57c1cb62e884aee04b623
 cups	release	2.4.16
-curl	commit	b2a767dbcef3d9442d51cc22ffb52804927e473f
+curl	commit	4c9af8b6d183ba4f84564dda9c17303b6c10d6f8
 curl	release	8.19.0
 curl	unstable	8.19.0
 cyrus-sasl	commit	b2e733c5f7351fadecadb797882e71d2529f4053
@@ -296,9 +296,9 @@ fish	commit	2193e884239966574abc111ec704565bea836e75
 fish	release	4.6.0
 flac	commit	343f3481562213cdc4f196af87da0d26bf2530ad
 flac	release	1.5.0
-flatpak	commit	f1bdc6aeae91f7171d1529f40267acc78825231d
+flatpak	commit	c52cca2d7351e7a434dd011151be74919107a4bd
 flatpak	release	1.16.4
-flatpak	unstable	1.17.3
+flatpak	unstable	1.17.4
 flex	commit	9fcb2a4d093ee059717c18c85263f2f768dd3fa5
 flex	release	2.6.4
 flit	commit	53634707f58358b94a80614f16b212f8df4c8f38
@@ -329,7 +329,7 @@ gavinhoward/bc	commit	6bb536ccbd3281e22bd168f7d53e2f7ef084bcfe
 gavinhoward/bc	release	7.0.3
 gavinhoward/bc	unstable	7.1.0
 gawk	release	5.4.0
-gcc	commit	7b39d7b3b84d4d098b51bbdbd15e6ddea6bf99db
+gcc	commit	2b49581351509c4dc93f74ea86a48f3b50caf128
 gcc	release	15.2.0
 gcc	unstable	16
 gcr	commit	33d78d804c4c2131fedcca0512a9e45b384c4ba6
@@ -341,7 +341,7 @@ gd/betterinfo	commit	157cb675b57ae5ea552bb4e83693ad08b070d047
 gd/betterinfo	release	4.4.5
 gd/betterinfo	unstable	4.4.5
 gdbm	release	1.26
-gdb	commit	ea0a02294b16720b58d616276678c47dc7657f01
+gdb	commit	2db79d8000d40451b313ad6c3b6c029bcf82e643
 gdb	release	17.1
 gd/cleanstartpos	commit	6c53181803d9f32806f3bd06c50f176486e45908
 gd/cleanstartpos	release	2.0.6
@@ -399,7 +399,7 @@ giflib	commit	08ff0dd9708a84141dc0a961bb97e16066bc031c
 giflib	release	6.1.2
 girara	commit	49d83349a6c2798bb8b728c9e765a3e95931e24a
 girara	release	2026.02.04
-git	commit	1adf5bca8c3cf778103548b9355777cf2d12efdd
+git	commit	7c4e9e957a427d4c6a19265a528de0a161ff9b62
 git	release	2.53.0
 git	unstable	2.54.0-rc0
 gkermit	release	2.01
@@ -445,7 +445,7 @@ gnutls	release	3.8.12
 gnutls	unstable	3.8.12
 googletest	commit	d72f9c8aea6817cdf1ca0ac10887f328de7f3da2
 googletest	release	1.17.0
-go	commit	6f662188c2e2640712af74a01f589ee31ba0282f
+go	commit	e2a9aeae52531781301779e2bb1ddb56fff670b7
 go	release	1.26.2
 go	unstable	1.26.2
 gperf	release	3.3
@@ -470,7 +470,7 @@ gsettings-desktop-schemas	unstable	50.0
 gsl	release	2.8
 gspell	commit	4781a91e2fa81f56f47b206cc1755d4053dc4d06
 gspell	release	1.14.3
-gstreamer	commit	726ebe9889e1c5c22e15c8aaaf84048d3294d816
+gstreamer	commit	a0ec03f01861e8bf44b30dca7ff0cf7aca88e809
 gstreamer	release	1.29.1
 gstreamer	unstable	1.29.1
 gtkmm	3	3.24.10
@@ -478,7 +478,7 @@ gtkmm	commit	5c7cc2708cf1e89c1d32c455af08d1cf47781b94
 gtkmm	release	4.22.0
 gtk	2	2.24.33
 gtk	3	3.24.52
-gtk	commit	feec2543f11683cb430b6c2acf42623892f7e32e
+gtk	commit	92651e0f5c235ac395fef5f5d5f6c646cea1fa1b
 gtk	release	4.22.2
 gtk	unstable	4.22.2
 gumbo-parser	commit	0f9f013910d6a46e28c1f95c942bca1f4c849464
@@ -586,7 +586,7 @@ jemalloc	release	5.3.0
 jfsutils	release	1.1.15
 jinja	commit	5ef70112a1ff19c05324ff889dd30405b1002044
 jinja	release	3.1.6
-joe	commit	03dcaaadc35cd6668ff2f9e0d142b17127b1a16d
+joe	commit	e04bf8a69fc90d03ff3967477b1fa9705c5b8b1a
 joe	release	4.6
 jq	commit	69785bf77f86e2ea1b4a20ca86775916889e91c9
 jq	release	1.8.1
@@ -598,7 +598,7 @@ json-c	release	0.18
 json-glib	commit	07cd0a16e2b5bc3cd1775a1f58dd42722908d957
 json-glib	release	1.10.8
 jstest-sdl	commit	710687344a8bd35553f0edf40469531c07b6ef31
-kate	commit	351fa7e499fc4ec81134c13817d5d63e91d1d0c1
+kate	commit	97d098934060c01e72f5c74444110975c1b3c98c
 kate	release	25.12.3
 kate	unstable	26.03.90
 kbd	commit	50e3189fb21423964d314a5b21b8b0e6017a7e8d
@@ -758,7 +758,7 @@ libpng	commit	c0ba09ecb44f0962b6532747b09e2f8160e29baf
 libpng	release	1.6.56
 libppd	commit	b9c015f6ba556f0fea42f9772944d211f6d23f1b
 libppd	release	2.1.1
-libpsl	commit	b87753fbe660316716569b64502b094085738949
+libpsl	commit	8f769dd06d3ac888dcd0ec2a8cfc46e3f00a413c
 libpsl	release	0.21.5
 libpwquality	commit	a8192cd2908377e50254598001c6d40fc528feb4
 libpwquality	release	1.4.5
@@ -783,7 +783,7 @@ libsm	commit	5f6da959a34bcefc425b6e37462553acf44369a3
 libsm	release	1.2.6
 libsndfile	commit	68f6c16fe1407eff4cdde158566694c3ed666c2f
 libsndfile	release	1.2.2
-libsodium	commit	fd52fd61a25e6a0e373c57756839aa4472b182bc
+libsodium	commit	ad53cae4c3833e123fbfec7dbeaa67a202af8c50
 libsodium	release	1.0.21
 libsoup	commit	53a609e9c73161335fbd6dde34cf614fb37683e9
 libsoup	release	3.6.6
@@ -791,7 +791,7 @@ libspng	commit	adc94393dbeddf9e027d1b2dfff7c1bab975224e
 libspng	release	0.7.4
 libsrtp	commit	9073dfe9eea29ebd75ea747278e997924f3988bd
 libsrtp	release	2.8.0
-libssh2	commit	bb3c6bbf75fbfffacb1fcb2b8fee99c91aeed6ad
+libssh2	commit	734ec12c92c51950056596cb464f452b32f5c2a8
 libssh2	release	1.11.1
 libtasn1	commit	2f560e2b0ddca402f8b19d8a7cfd02871ea26927
 libtasn1	release	4.21.0
@@ -822,7 +822,7 @@ libvpl-tools	commit	ad9deecaf0ee76f689373b55fe620c843e3c8a4d
 libvpl-tools	release	1.5.0
 libvpl	commit	778a66d6c6537f08eabb91955dbbf1bce3812894
 libvpl	release	2.16.0
-libvpx	commit	db2e2485279f61bbcfe688507c099f1cd39ed0f9
+libvpx	commit	e914ae9e8d253d2230009778846475334eb451e5
 libvpx	release	1.16.0
 libvterm	release	0.3.3
 libwebp	commit	6a9eb4428260e5827e737a26823626b70239b209
@@ -972,9 +972,9 @@ melonds	release	1.1
 mercurial	release	7.2.1
 mesa-demos	commit	d913183723337e1cac755ea5367dbdbacd0e7c2e
 mesa-demos	release	9.0.0
-mesa	commit	3b4a7f2d1a4582e9e23465eb572c95db073ee10a
+mesa	commit	cfdb3ddb93c02eb1e98e9f634263313fc87693c0
 mesa	release	26.0.4
-meson	commit	c8d91acdc94535b7b123202cd9fc5caa943bd02b
+meson	commit	5dc89b57438bce21d6290e8f013a207e047e89c2
 meson	release	1.10.2
 mgba	commit	81fa2e982c107a8d337e46cf858aaf99fe4d2e49
 mgba	release	0.10.5
@@ -1042,7 +1042,7 @@ ncurses	release	6.6
 ncurses	unstable	6.6.20260404
 neofetch	commit	ccd5d9f52609bbdcd5d8fa78c4fdb0f12954125f
 neofetch	release	7.1.0
-neovim	commit	5d66ef188fd034b6342c4146e9bbb10fdc4a8643
+neovim	commit	8603fc918016daaa597855ab00d72799aeab88b1
 neovim	release	0.12.1
 netcat	commit	90d82b64526a8fe569909863a61cd65eba7751aa
 netcat	release	1.234.2
@@ -1066,7 +1066,7 @@ nodejs	release	25.9.0
 noise-suppression-for-voice	commit	9c4e5c28d8950e2cef837d8a0abd36c2fd9b5c2d
 noise-suppression-for-voice	release	1.10
 noto-cjk	commit	f8d157532fbfaeda587e826d4cd5b21a49186f7c
-notofonts	commit	fb02b3d1aae763de7f9f5b7ff97c860320c51f02
+notofonts	commit	fe6e7fc95ceadc51572f0e5518093661ced30589
 notofonts	release	2026.04.01
 npth	commit	d4e067d96c5e868e5208613f37dfacaab4298d7c
 npth	release	1.8
@@ -1085,7 +1085,7 @@ nv-codec-headers	commit	33a9ede8d9914299d9262539c576a15bd0a19621
 nv-codec-headers	release	13.0.19.0
 nvidia	580	580.142
 nvidia	590	590.48.01
-nvidia	latest	595.58.03
+nvidia	latest	580.126.09
 obs-studio	commit	e04b883e4bc8209e0719f0a8046c0360d7a8f513
 obs-studio	release	32.1.1
 ocl-icd	commit	b24c025112175fb210ec6f875fc9ff5727476f43
@@ -1133,7 +1133,7 @@ pciutils	commit	b424ac8b498317965bfd3ab33ae21b158a7f1dd2
 pciutils	release	3.15.0
 pcre2	commit	ac0eb7122a0ac04d6717585f132d82aec3adc8d3
 pcre2	release	10.47
-pcsx2	commit	9022072de817e76c2db9c548d6cce546cd52d116
+pcsx2	commit	acb29963bafa43fe1587aab10f783d5a1b834299
 pcsx2	release	2.6.3
 pcsx2	unstable	2.7.243
 perl	commit	bb3b5a6b4200a22651478e4804c30dcb289d6c3f
@@ -1166,7 +1166,7 @@ polkit-gnome	commit	a0763a246a81188f60b0f9810143e49224dc752f
 polkit-gnome	release	0.105
 polkit	commit	a446e4a498635a872676a1c4410b36d00253463e
 polkit	release	127
-poppler	commit	1eda332f1247b3a8033bd4bfaba9450bfd0c6a82
+poppler	commit	be21d93a7ffc3f54cc7cf42efbd56ac6c3f78869
 poppler	release	26.04.0
 popt	commit	63f096798125e96a0125faa477350f61901f3570
 popt	release	1.19
@@ -1179,7 +1179,7 @@ procps-ng	commit	8f0c1eb1260c160c646e6daa02c1c4decd057867
 procps-ng	release	4.0.6
 protobuf-c	commit	4719fdd7760624388c2c5b9d6759eb6a47490626
 protobuf-c	release	1.5.2
-protobuf	commit	f59b49aed03841135a98e1c12ad938d68940ad2a
+protobuf	commit	9ccdda1e7e4a5fca46d852545ac2a1ad0fe7ca58
 protobuf	release	34.1
 psmisc	commit	f3b51bdc90b6b5cb610528cce3d8262a932d50f0
 psmisc	release	23.7
@@ -1268,7 +1268,7 @@ rsync	commit	b905ab23af2d71363271e99e446e8fe0bfc77f7f
 rsync	release	3.4.1
 rubberband	commit	e4296ac80b1170018a110bc326fd0d45a0eb27d6
 rubberband	release	4.0.0
-ruby	commit	f62bec1b9055159873fab357d3a32388fe307b2d
+ruby	commit	76eb974bd347be94ec4dce2ea37cbbc5b558a6e1
 ruby	release	4.0.2
 ruby	unstable	4.0.2
 rust/anyhow	commit	841522b2aa09732fecee40804440d2c35c68c480
@@ -1289,8 +1289,8 @@ rust/tokio	commit	ad8c59add6a1988d8c327fb3358beeeae3bbb5cd
 rust/tokio	release	1.51.0
 rust/tracing	commit	4fb9ca34f9abb1dc1aaf70203eccee5c74d63635
 rust/tracing	release	0.1.44
-rust	commit	ad4b9354009cb6bd5a9ff1b5f5a63a13ec98ebc9
-rust	nightly	2026-04-07
+rust	commit	e5efd33d2df6bd128be197468b3c6119bf58fe66
+rust	nightly	2026-04-08
 rust	release	1.94.1
 r	release	4.5.3
 s4-3b1-pc7300	commit	efe55b8cc917e3e27bcae9786c5b5dec0469be45
@@ -1472,7 +1472,7 @@ vala	release	0.56.19
 vala	unstable	0.57.0
 valgrind	commit	e5920ba3fed2384d1660d1e4d2cbf29aba0f6342
 valgrind	release	3.26.0
-vat	commit	2d8312f937038e7504013a55bbb07cfdca473b44
+vat	commit	5dd2a528c2550da8550e0e89bc0ef82aa93e3595
 vat	release	3.2.0
 velox	commit	76b11f42e3703df6e2da892940bea9e0175c7b4f
 velox	release	0.0.3
@@ -1577,7 +1577,7 @@ xdg-desktop-portal-gtk	commit	9be95fe78c6ea8ca59238f7466576e8198fc489d
 xdg-desktop-portal-gtk	release	1.15.3
 xdg-desktop-portal-hyprland	commit	a9b862d1aa000a676d310cc62d249f7ad726233d
 xdg-desktop-portal-hyprland	release	1.3.11
-xdg-desktop-portal	commit	37aaaeac2938130bc99cf5662bee94986f6b7b90
+xdg-desktop-portal	commit	105b3a53bf176c717f9469ea8949dbe8a5526d8a
 xdg-desktop-portal	release	1.21.0
 xdg-desktop-portal-wlr	commit	896cee82a6f14ee996fb870c0fc5e27533e37907
 xdg-desktop-portal-wlr	release	0.8.1
@@ -1649,7 +1649,7 @@ yajl	commit	5e3a7856e643b4d6410ddc3f84bc2f38174f2872
 yajl	release	2.1.0
 ydotool	commit	708e96ff27e381a8c549418a9d34cdde12305317
 ydotool	release	1.0.4
-yt-dlp	commit	8001ff4349fa4eaafd0f88fd8abdf8756090596d
+yt-dlp	commit	a4acc4223289eeb4d32af7b798bfe6e9c38f4b8d
 yt-dlp	release	2026.03.17
 yyjson	commit	1e4b0d830506d99fd94d364613538fbcb72bde35
 yyjson	release	0.12.0
