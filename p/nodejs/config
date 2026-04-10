@@ -2,3 +2,8 @@ upstream="gh:nodejs/node"
 
 :commit  () { :; }
 :release () { :; }
+
+# Even major versions are LTS
+:24      () { :; }
+:22      () { :; }
+:20      () { :; }
