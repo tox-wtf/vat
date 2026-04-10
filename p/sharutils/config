@@ -1,0 +1,8 @@
+upstream="https://git.savannah.gnu.org/git/sharutils.git/"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,-,.,g' | vsort
+    }
+}
