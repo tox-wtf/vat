@@ -1,0 +1,7 @@
+upstream="http://ftp.xemacs.org/pub/xemacs/aux/"
+
+:release () {
+    fetch() {
+        defcurlrelease
+    }
+}
