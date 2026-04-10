@@ -1,0 +1,10 @@
+upstream="gh:GNOME/gvfs"
+
+:commit  () { :; }
+
+# TODO: Confirm vfem should be used here
+:release () {
+    fetch() {
+        defgitrelease | vfem
+    }
+}
