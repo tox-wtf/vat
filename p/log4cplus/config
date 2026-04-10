@@ -1,0 +1,8 @@
+upstream="gh:log4cplus/log4cplus"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,^REL_,,' | fl | vsort
+    }
+}
