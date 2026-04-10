@@ -1,3 +1,243 @@
+VAT 3.2.1
+- [ 2026-04-10 00:17:38 | 90236ce45 ] feat(p): add glfs
+- [ 2026-04-10 00:17:10 | 8dd4f8866 ] feat(p): add slfs
+- [ 2026-04-10 00:16:21 | 8b8acc1fa ] feat(p): add blfs
+- [ 2026-04-10 00:15:59 | 77e7ef735 ] feat(p): add lfs
+- [ 2026-04-10 00:15:39 | f421c0ca9 ] feat(p): port tk config to tcl
+- [ 2026-04-10 00:08:02 | 45ba6dd7c ] feat(p): add tk
+- [ 2026-04-09 23:56:21 | b7578b144 ] fix(p): add chance for subversion
+- [ 2026-04-09 23:56:10 | c75544aea ] feat(p): add subversion
+- [ 2026-04-09 23:51:05 | 716a04d9e ] feat(p): add slang
+- [ 2026-04-09 23:49:33 | e0e66b2d6 ] feat(p): add scons
+- [ 2026-04-09 23:48:17 | e321b0e9f ] feat(p): add rust-bindgen
+- [ 2026-04-09 23:47:55 | fd04f4ed1 ] feat(p): add php
+- [ 2026-04-09 23:46:48 | f5a8abf6e ] feat(p): add guile
+- [ 2026-04-09 23:45:27 | 104418b04 ] feat(p): add clisp
+- [ 2026-04-09 23:42:04 | 9758da775 ] fix(p): add chance for unifdef
+- [ 2026-04-09 23:41:49 | 89e30d0df ] feat(p): add unifdef
+- [ 2026-04-09 23:41:07 | 795cac9d0 ] feat(p): add yasm
+- [ 2026-04-09 23:33:42 | 2b43f6404 ] feat(p): add hdparm
+- [ 2026-04-09 23:32:06 | cf088ec07 ] feat(p): add sysmon3
+- [ 2026-04-09 23:30:55 | 0c123a00f ] feat(p): add sysmond
+- [ 2026-04-09 23:28:15 | cba9f93cb ] feat(p): add sg3_utils
+- [ 2026-04-09 23:26:40 | b89ed4a1a ] feat(p): avoid arch for zip
+- [ 2026-04-09 23:22:45 | 26d2445b7 ] feat(p): add upower
+- [ 2026-04-09 23:21:39 | b2aa22ae2 ] feat(p): avoid arch for unrar
+- [ 2026-04-09 23:18:47 | ed8db61d7 ] feat(p): add udisks
+- [ 2026-04-09 23:18:24 | 34a2a0ea6 ] feat(p): add sysstat
+- [ 2026-04-09 23:17:50 | 9420f3931 ] feat(p): add redland
+- [ 2026-04-09 23:15:41 | b6cfeda0c ] feat(p): add rasqal
+- [ 2026-04-09 23:13:30 | 9365c9d28 ] feat(p): add raptor
+- [ 2026-04-09 23:11:01 | 107dfc76a ] feat(p): add power-profiles-daemon
+- [ 2026-04-09 23:10:30 | 1e281117b ] feat(p): add pm-utils
+- [ 2026-04-09 23:09:29 | a5aeb37d1 ] feat(p): add paxmirabilis
+- [ 2026-04-09 22:59:17 | 012c5957b ] feat(p): add notification-daemon
+- [ 2026-04-09 22:56:37 | ab39935ee ] feat(p): add modemmanager
+- [ 2026-04-09 22:55:51 | 8d23ac8bd ] feat(p): add mc
+- [ 2026-04-09 22:55:21 | 99f7db4a5 ] feat(p): add logrotate
+- [ 2026-04-09 22:54:12 | d14a38fe5 ] feat(p): add gpm
+- [ 2026-04-09 22:53:01 | 9aca14f2b ] feat(p): add fcron
+- [ 2026-04-09 22:51:20 | 509797091 ] feat(p): add cups-pk-helper
+- [ 2026-04-09 22:50:42 | 8e5e737f3 ] feat(p): add colord
+- [ 2026-04-09 22:49:14 | 3d412bbc4 ] feat(p): add bluez
+- [ 2026-04-09 22:48:37 | 332a50455 ] feat(p): add autofs
+- [ 2026-04-09 22:47:46 | 22bb3da84 ] feat(p): add at
+- [ 2026-04-09 22:43:56 | 8ae7cd554 ] feat(p): add acpid
+- [ 2026-04-09 22:41:49 | f51e666e7 ] feat(p): add accountsservice
+- [ 2026-04-09 22:40:55 | bd4e5309f ] feat(p): add unixodbc
+- [ 2026-04-09 22:40:22 | c74ec9473 ] fix(p): add chance for sharutils
+- [ 2026-04-09 22:39:00 | 8f6a93cd4 ] feat(p): add time
+- [ 2026-04-09 22:38:54 | 2d2b3d308 ] feat(p): add sharutils
+- [ 2026-04-09 22:36:58 | a41fa9ee1 ] feat(p): add screen
+- [ 2026-04-09 22:35:05 | c2747d127 ] feat(p): add gtk-doc
+- [ 2026-04-09 22:34:23 | 23489ce04 ] feat(p): add dos2unix
+- [ 2026-04-09 22:32:16 | aaa59c33b ] feat(p): add compface
+- [ 2026-04-09 22:31:07 | 4eb2717bf ] feat(p): add bogofilter
+- [ 2026-04-09 22:28:13 | 2939e10cf ] feat(p): add asciidoctor
+- [ 2026-04-09 22:26:03 | d695b67ab ] feat(p): add zxing-cpp
+- [ 2026-04-09 22:25:34 | a71fc9f29 ] feat(p): add woff2
+- [ 2026-04-09 22:25:02 | 74b4cfd24 ] feat(p): add libsass
+- [ 2026-04-09 22:24:38 | 1bc3c98ef ] feat(p): add sassc
+- [ 2026-04-09 22:24:16 | 5d3301529 ] feat(p): add qpdf
+- [ 2026-04-09 22:22:57 | c3205caa1 ] feat(p): add opencv
+- [ 2026-04-09 22:22:29 | beee7334d ] chore(p): use pagure shortform
+- [ 2026-04-09 22:22:20 | 62ac61a98 ] chore: add pagure shortform
+- [ 2026-04-09 22:21:31 | f915a25ea ] feat(p): add newt
+- [ 2026-04-09 22:19:30 | c83f2929d ] feat(p): add mypaint-brushes
+- [ 2026-04-09 22:18:59 | 9ecc95ac8 ] feat(p): add libspiro
+- [ 2026-04-09 22:15:30 | a14086ea4 ] feat(p): add libraw
+- [ 2026-04-09 22:15:00 | 54f21e736 ] feat(p): add libqrencode
+- [ 2026-04-09 22:14:26 | cafdbe911 ] feat(p): add libmypaint
+- [ 2026-04-09 22:13:49 | 94b7e895e ] feat(p): add libheif
+- [ 2026-04-09 22:13:28 | af890ac50 ] feat(p): add libgxps
+- [ 2026-04-09 22:12:56 | 4628acbdf ] feat(p): add libavif
+- [ 2026-04-09 22:12:51 | 34bbae84a ] feat(p): add graphite
+- [ 2026-04-09 22:12:45 | 3f4c64716 ] feat(p): add glycin
+- [ 2026-04-09 22:09:37 | 3c6257399 ] feat(p): add gegl
+- [ 2026-04-09 22:09:08 | 62ceb70e7 ] feat(p): add exiv2
+- [ 2026-04-09 22:08:33 | 6db589030 ] feat(p): add babl
+- [ 2026-04-09 22:08:00 | c5cdc636c ] feat(p): add aalib
+- [ 2026-04-09 22:02:41 | 6e548bd86 ] feat(p): add gvfs
+- [ 2026-04-09 22:02:28 | 0e12e606d ] feat(p): add umockdev
+- [ 2026-04-09 21:48:38 | 26822d767 ] feat(p): add spirv-headers
+- [ 2026-04-09 21:45:32 | 58b7461b2 ] feat(p): add firefox
+- [ 2026-04-09 20:37:48 | 97f5d7b39 ] feat(p): add qcoro
+- [ 2026-04-09 20:36:53 | d633a98af ] fix(p): add lts channels for nodejs
+- [ 2026-04-09 20:33:48 | 9a65a15e4 ] feat(p): add log4cplus
+- [ 2026-04-09 20:32:03 | 1a1a5f769 ] feat(p): add libfyaml
+- [ 2026-04-09 20:31:26 | 05b0a51ad ] feat(p): add libwacom
+- [ 2026-04-09 20:29:55 | a54ba919e ] feat(p): add libstatgrab
+- [ 2026-04-09 20:27:43 | 0b0ef07e8 ] feat(p): add libsigsegv
+- [ 2026-04-09 20:02:40 | d9ed318af ] chore(p): use arch shortform
+- [ 2026-04-09 20:02:29 | 9691aab22 ] chore: add arch and aur shortforms
+- [ 2026-04-09 20:02:17 | e6cec8393 ] feat(p): add libsigcplusplus
+- [ 2026-04-09 20:01:43 | 0a58c8f09 ] feat: more flexible archver
+- [ 2026-04-09 20:01:11 | c583c322c ] feat: add defaults for numeric channels
+- [ 2026-04-09 19:59:07 | 38746edf6 ] doc: add missing comment
+- [ 2026-04-09 19:16:07 | b504f86b7 ] feat(p): add libqmi
+- [ 2026-04-09 19:14:01 | 5c6b2315d ] feat(p): add libptytty
+- [ 2026-04-09 19:12:58 | 35d03d29d ] feat(p): add libproxy
+- [ 2026-04-09 19:12:40 | 55fb8f3ea ] feat(p): add libportal
+- [ 2026-04-09 19:12:17 | fca76ab13 ] feat(p): add libpaper
+- [ 2026-04-09 19:11:36 | 6789aa545 ] feat(p): add libnvme
+- [ 2026-04-09 19:03:47 | 3ddcb9744 ] feat(p): add libmbim
+- [ 2026-04-07 11:53:08 | 2d8312f93 ] fix(p): remove chance for samurai
+- [ 2026-04-05 03:37:45 | 3ebd5a3f0 ] feat(p): add utfcpp
+- [ 2026-04-05 03:37:17 | f0c1c13b4 ] feat(p): add talloc
+- [ 2026-04-05 03:33:55 | f00cf2f87 ] feat(p): add wv
+- [ 2026-04-05 03:33:40 | b96c23f37 ] feat(p): add simdutf
+- [ 2026-04-05 03:32:48 | f6c4e5daa ] feat(p): add wv
+- [ 2026-04-05 03:29:39 | db303b84b ] feat(p): add libgusb
+- [ 2026-04-05 03:29:22 | 591b9538f ] feat(p): add libical
+- [ 2026-04-05 03:29:16 | 5b27a643a ] feat(p): add libgsf
+- [ 2026-04-05 03:27:40 | 73da0783a ] feat(p): add libbytesize
+- [ 2026-04-05 03:27:08 | 9b74f7432 ] feat(p): add libblockdev
+- [ 2026-04-05 03:26:45 | 1969fb02d ] fix(p): add chance for libatasmart
+- [ 2026-04-05 03:26:27 | 2f9397fc8 ] feat(p): add libatasmart
+- [ 2026-04-05 03:21:16 | 191b2556f ] feat(p): add highway
+- [ 2026-04-05 03:20:55 | 7c569e5c4 ] feat(p): add gspell
+- [ 2026-04-05 03:20:25 | eba5e0244 ] feat(p): add gmmlib
+- [ 2026-04-05 03:18:58 | e9b6d55e0 ] feat(p): add gmime
+- [ 2026-04-05 03:18:27 | 7922fac44 ] feat(p): add glibmm
+- [ 2026-04-05 03:16:47 | 5461ae71a ] feat(p): add fast_float
+- [ 2026-04-05 03:16:11 | e0eabe3cf ] feat(p): add exempi
+- [ 2026-04-05 03:14:04 | 420eba7dd ] feat(p): add clucene
+- [ 2026-04-05 03:09:58 | 6935e789a ] feat(p): add mousepad
+- [ 2026-04-05 03:08:49 | 16d0a96cf ] feat(p): add joe
+- [ 2026-04-05 03:08:44 | 918cc67c7 ] feat(p): add kate
+- [ 2026-04-05 03:05:38 | 9604d43a5 ] feat(p): add gedit
+- [ 2026-04-05 03:02:26 | 12d52f0fb ] feat(p): add ntfs-3g
+- [ 2026-04-05 03:01:42 | 4b765304c ] feat(p): add smartmontools
+- [ 2026-04-05 03:01:35 | b17d4a7b1 ] feat(p): add xfsprogs
+- [ 2026-04-05 03:01:28 | b144377d6 ] feat(p): add sshfs
+- [ 2026-04-05 02:59:43 | cf70b4fee ] feat(p): add parted
+- [ 2026-04-05 02:55:38 | 548b28e22 ] feat(p): add gptfdisk
+- [ 2026-04-05 02:51:40 | 14bcd5c31 ] feat(p): add mdadm
+- [ 2026-04-05 02:47:19 | f63800c32 ] feat(p): add r
+- [ 2026-04-05 02:41:29 | 779e99994 ] feat(p): add libebur128
+- [ 2026-04-05 02:39:57 | c3cfe7d21 ] fix(p): migrate sysvinit
+- [ 2026-04-05 02:38:40 | 789eacc97 ] fix(p): add chance for jinja
+- [ 2026-04-05 02:37:34 | d3683b694 ] feat(p): add iproute2
+- [ 2026-04-05 02:34:43 | b8b2b8423 ] feat(p): add autoconf
+- [ 2026-04-05 02:31:14 | 2794b4136 ] feat(p): add inetutils
+- [ 2026-04-05 02:28:34 | 482e5d1a4 ] feat(p): add tcl
+- [ 2026-04-05 02:24:58 | 2428ba0b3 ] feat(p): add intltool
+- [ 2026-04-05 02:22:52 | b3e19bd0f ] feat(p): add kirigami
+- [ 2026-04-05 02:22:37 | cca8fe6ee ] feat(p): speexdsp
+- [ 2026-04-05 02:18:55 | ea1a11f41 ] feat(p): add swig
+- [ 2026-04-05 02:18:49 | 54afcb8f4 ] feat(p): add libdeflate
+- [ 2026-04-05 02:15:43 | 2a7ded041 ] feat(p): add libbs2b
+- [ 2026-04-05 02:11:34 | 2835b12bc ] feat(p): add rnnoise
+- [ 2026-04-05 02:10:50 | f63eab02a ] feat(p): add soundtouch
+- [ 2026-04-04 04:13:44 | 9319952a0 ] feat(p): add cde
+- [ 2026-04-03 21:04:34 | 8791d34b6 ] feat(p): add heirloom-ex-vi
+- [ 2026-04-03 21:03:40 | cbd02cd19 ] fix(p): add chance for s-nail
+- [ 2026-04-03 21:03:07 | e1e478453 ] feat(p): add pkgsuite
+- [ 2026-04-03 21:02:33 | ef58f31f7 ] feat(p): add heiroom-*
+- [ 2026-04-03 21:02:24 | b24e05746 ] feat(p): add s-nail
+- [ 2026-04-03 20:55:52 | 0f6c4b5bb ] feat(p): add schilytools
+- [ 2026-04-03 20:55:42 | c3542438a ] feat(p): add heirloom-ng
+- [ 2026-04-03 20:53:07 | d1f47e49d ] feat(p): add pcsx2
+- [ 2026-04-03 20:51:03 | e0c931820 ] feat(p): add mupen64plus-*
+- [ 2026-04-03 20:47:17 | 59db51962 ] feat(p): add dolphin
+- [ 2026-04-03 20:44:47 | 497538f97 ] feat(p): add dolphin-emu
+- [ 2026-04-03 20:44:41 | 8f6c36ff1 ] feat(p): add mgba
+- [ 2026-04-03 20:41:47 | 9c352e30f ] feat(p): add melonds
+- [ 2026-04-03 20:40:47 | cb9944dd7 ] feat(p): add idle-lisa-emu
+- [ 2026-04-03 20:37:55 | 284c798b9 ] feat(p): add plexus_20_emu
+- [ 2026-04-03 20:37:04 | f69417433 ] feat(p): add s4-3b1-pc7300
+- [ 2026-04-03 20:36:31 | 85a2a589a ] feat(p): add freebee
+- [ 2026-04-03 20:36:02 | 8757e23db ] feat(p): add xhomer
+- [ 2026-04-03 20:30:00 | 9efaa6a19 ] feat(p): add hypr*
+- [ 2026-04-03 20:26:02 | 07b292733 ] feat(p): add fcitx5*
+- [ 2026-04-03 20:18:02 | 037aa5f4c ] feat(p): add intel-mediasdk
+- [ 2026-04-03 20:17:29 | 22d56b07c ] feat(p): add intel-onevpl
+- [ 2026-04-03 20:15:06 | 1b8434cb8 ] feat(p): add xcb-imdkit
+- [ 2026-04-03 20:14:43 | 3169770e2 ] fix(p): add chance for motif
+- [ 2026-04-03 20:14:27 | 8335b049e ] feat(p): add motif
+- [ 2026-04-03 20:10:55 | 1eae97661 ] feat(p): add nginx
+- [ 2026-04-03 20:09:52 | ffc9c9ac3 ] feat(p): add ladspa
+- [ 2026-04-03 20:03:10 | f9fbd6d74 ] feat(p): add sdl12-compat
+- [ 2026-04-03 20:02:09 | f38f84042 ] feat(p): add mksh
+- [ 2026-04-03 19:59:48 | ddbd4867b ] feat(p): add oksh
+- [ 2026-04-03 19:56:54 | 7f4194541 ] feat(p): add pygments
+- [ 2026-04-03 19:56:26 | b95211da3 ] feat(p): add python/pluggy
+- [ 2026-04-03 19:55:54 | 66268c289 ] feat(p): add python/pytest
+- [ 2026-04-03 19:55:12 | 881f3d54c ] feat(p): add python/pyflakes
+- [ 2026-04-03 19:54:33 | 6890133c8 ] feat(p): add python/pycodestyle
+- [ 2026-04-03 19:52:51 | a94bd2a2c ] feat(p): add python/pycairo
+- [ 2026-04-03 19:52:37 | 2727fd7f0 ] feat(p): add python/pygobject
+- [ 2026-04-03 19:48:53 | 1663dcb91 ] feat(p): add anthy
+- [ 2026-04-03 19:38:39 | f73d87a33 ] feat(p): add w3m
+- [ 2026-04-03 19:36:04 | 5df4e134a ] feat(p): add qca
+- [ 2026-04-03 19:35:23 | 6e369003a ] feat(p): add protobuf-c
+- [ 2026-04-03 19:34:20 | 2b3c9a386 ] feat(p): add googletest
+- [ 2026-04-03 19:33:44 | 21c0bc51a ] feat(p): add miniupnp
+- [ 2026-04-03 19:31:26 | 1969105f2 ] feat(p): add unbound
+- [ 2026-04-03 19:30:38 | e923432c7 ] feat(p): add monero
+- [ 2026-04-03 19:29:21 | 00c009160 ] feat(p): add 123elf
+- [ 2026-04-03 19:28:02 | f0ea243a9 ] feat(p): add jstest-sdl
+- [ 2026-04-03 19:27:23 | 8a1f53acd ] feat(p): add imv
+- [ 2026-04-03 19:26:31 | 50fb0f1b8 ] feat(p): add hwinfo
+- [ 2026-04-03 19:26:09 | b75eef729 ] feat(p): add fluidsynth
+- [ 2026-04-03 19:25:04 | d8cff4060 ] feat(p): add cldr-emoji-annotation
+- [ 2026-04-03 19:20:18 | de3486277 ] feat(p): add cmark
+- [ 2026-04-03 19:17:48 | 4a75fd7df ] fix(p): vfem for flatpak
+- [ 2026-04-03 19:15:33 | 571899ee5 ] feat(p): add yyjson
+- [ 2026-04-03 19:14:47 | 994c5b1fc ] feat(p): add simde
+- [ 2026-04-03 19:14:10 | b6def7508 ] feat(p): add sdl2_net
+- [ 2026-04-03 19:13:13 | 5cef3a636 ] feat(p): add quazip
+- [ 2026-04-03 19:12:29 | 424ca7646 ] feat(p): add plutosvg
+- [ 2026-04-03 19:12:13 | d68c884ea ] feat(p): add plutovg
+- [ 2026-04-03 19:11:25 | f89f0da82 ] feat(p): add gnome-online-accounts
+- [ 2026-04-03 19:10:03 | 9bbf17980 ] feat(p): add gcr
+- [ 2026-04-03 19:09:29 | c72f1512b ] feat(p): add libsecret
+- [ 2026-04-03 19:08:52 | d1e46e1b7 ] feat(p): add librest
+- [ 2026-04-03 19:08:13 | 3ac33be49 ] feat(p): add keyutils
+- [ 2026-04-03 19:06:46 | 27fde4259 ] feat(p): add libadwaita
+- [ 2026-04-03 19:06:04 | 8b6b4054f ] feat(p): add uhttpmock
+- [ 2026-04-03 19:05:12 | 335dd9d01 ] feat(p): add valgrind
+- [ 2026-04-03 19:02:40 | 84c43041b ] feat(p): add msgraph
+- [ 2026-04-03 18:59:38 | 11b9fd6e0 ] feat(p): add major version channels for mbedtls
+- [ 2026-04-03 18:49:28 | 73479d3ca ] feat(p): add anubis
+- [ 2026-04-03 18:48:06 | 36909726c ] feat(p): add m17n-*
+- [ 2026-04-03 18:45:22 | de644e948 ] feat(p): add libzmq
+- [ 2026-04-03 18:44:49 | 661832f44 ] feat(p): add libx86emu
+- [ 2026-04-03 18:44:01 | c1fd8d699 ] feat(p): add libsodium
+- [ 2026-04-03 18:42:19 | e4ca564d5 ] fix(p): add chances for kenlm and plog
+- [ 2026-04-03 18:42:12 | b3ba0a1db ] feat(p): add usrsctp
+- [ 2026-04-03 18:40:42 | 56800ad56 ] feat(p): add plog
+- [ 2026-04-03 18:38:25 | eb9a6cbc8 ] feat(p): add kenlm
+- [ 2026-04-03 18:38:20 | 0f82a0539 ] feat(p): add libime
+- [ 2026-04-03 18:36:43 | ca5d1625c ] feat(p): add libbacktrace
+- [ 2026-04-03 18:35:47 | 68161a40c ] feat(p): add hidapi
+- [ 2026-04-03 18:35:14 | 45b689b99 ] feat(p): add cglm
+- [ 2026-04-03 18:35:14 | b7b18c57a ] feat(p): add capstone
+- [ 2026-03-31 23:03:37 | 0e9a9eef1 ] feat(p): add drift
+- [ 2026-03-29 03:39:46 | ae3663b93 ] feat(p): add monomod
+- [ 2026-03-26 18:12:28 | 3cf6fcefa ] feat(p): add cowsay
+- [ 2026-03-26 18:11:48 | 7f1a54753 ] feat(p): add lolcat
+
 VAT 3.2.0
 - [ 2026-03-24 22:59:47 | e5f99c177 ] doc: update todos
 - [ 2026-03-24 22:55:43 | de4ba94db ] feat(p): track gd projects
