@@ -1,0 +1,9 @@
+upstream="https://pagure.io/newt.git"
+chance=91
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,-,.,g' | vsort
+    }
+}
