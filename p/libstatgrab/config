@@ -1,0 +1,5 @@
+upstream="gh:libstatgrab/libstatgrab"
+chance=33 # last commit dated 2023-09-06
+
+:commit  () { :; }
+:release () { :; }
