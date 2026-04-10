@@ -1,8 +1,31 @@
 upstream="gh:tcltk/tcl"
 
 :commit  () { :; }
+
+:unstable() {
+    fetch() {
+        gr | vtrim -e 's,core[_-],,;s,[_-],.,g' | fsl |
+            grep -Ev 'win.arc.small|7f67bb|base|tip'  |
+            vsort |
+            sed 's|\.a|a|;s|\.b|b|'
+
+        # What the fuck do I even do with `9.0.b1.rc4` :sob:
+    }
+}
+
 :release () {
     fetch() {
-        gr | vtrim -e 's,core-,,' -e 's,-,.,g' | fl | vsort
+        gr | vtrim -e 's,core[_-],,;s,[_-],.,g' | fsl |
+            grep -Ev 'win.arc.small|7f67bb|base|tip'  | fl |
+            vsort
+    }
+}
+
+:8       () {
+    fetch() {
+        gr | vtrim -e 's,core[_-],,;s,[_-],.,g' | fsl |
+            grep -Ev 'win.arc.small|7f67bb|base|tip'  | fl |
+            vsort |
+            grep '^8\.'
     }
 }
