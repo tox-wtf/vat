@@ -1,0 +1,8 @@
+upstream="gh:yo8192/fcron"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,^ver,,' | vfs | vsort
+    }
+}
