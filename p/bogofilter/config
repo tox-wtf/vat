@@ -1,0 +1,8 @@
+upstream="gl:bogofilter/bogofilter"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim | fsl | fdash | grep -F . | vfs | vsort
+    }
+}
