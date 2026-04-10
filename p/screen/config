@@ -1,0 +1,8 @@
+upstream="https://git.savannah.gnu.org/git/screen.git/"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,v\.,,' | vsort
+    }
+}
