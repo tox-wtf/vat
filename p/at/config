@@ -1,0 +1,8 @@
+upstream="salsa:debian/at"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+         gr | vtrim -Ee 's,^(release|upstream)/,,' | fsl | vsort
+    }
+}
