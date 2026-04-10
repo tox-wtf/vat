@@ -231,11 +231,17 @@ ca() {
 # get version from arch packages or aur (upstream should be the arch package
 # page)
 archver() {
-    if echo "$upstream" | grep -F 'aur.archlinux.org'; then
-        cr | jq -r '.results[].Version' | cut -d- -f1
-    else
-        cr | jq -r '.pkgver'
-    fi
+    case "$upstream" in
+        http?://archlinux.org/packages/*/json) cr | jq -r '.pkgver' ;;
+
+        http?://aur.archlinux.org/packages/*)
+            upstream="https://aur.archlinux.org/rpc/?v=5&type=info&arg=${upstream##*/}" cr |
+                jq -r '.results[].Version' | cut -d- -f1
+        ;;
+        http?://aur.archlinux.org/rpc/*) cr | jq -r '.results[].Version' | cut -d- -f1 ;;
+
+        *) upstream+="/json" cr | jq -r '.pkgver' ;;
+    esac
 }
 
 # get version from crates.io api (upstream should be the crates.io page)
