@@ -1,0 +1,13 @@
+upstream="https://git.savannah.gnu.org/git/guile.git/"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+         gr | vtrim -e 's,-,.,g' | vfs | vsort
+    }
+}
+:unstable () {
+    fetch() {
+         gr | vtrim -e 's,-,.,g' | vsort
+    }
+}
