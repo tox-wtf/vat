@@ -1,4 +1,5 @@
 upstream="https://archive.apache.org/dist/subversion/?C=M;O=D"
+chance=83
 
 :release () {
     fetch() {
