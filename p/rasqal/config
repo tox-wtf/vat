@@ -1,0 +1,9 @@
+upstream="gh:dajobe/rasqal"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        # Thanks for release 1.0 ten years before 0.9.33 you rascal
+        gr | grep -vF rasqal_1_0 | vtrim | fsl | vsort
+    }
+}
