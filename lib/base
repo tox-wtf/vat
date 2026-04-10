@@ -270,6 +270,7 @@ defcurlunstable() {
     ca | vsort
 }
 
+# default curl commit
 defcurlcommit() {
     cr | commitgrep -o
 }
