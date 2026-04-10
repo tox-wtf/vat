@@ -1,0 +1,5 @@
+upstream="gh:php/php-src"
+
+:commit  () { :; }
+:release () { :; }
+:unstable() { :; }
