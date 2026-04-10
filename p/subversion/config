@@ -1,0 +1,7 @@
+upstream="https://archive.apache.org/dist/subversion/?C=M;O=D"
+
+:release () {
+    fetch() {
+        cr | grep -F '<a href="subversion-' | cut -d\" -f6 | vrepo | vsort
+    }
+}
