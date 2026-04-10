@@ -1,0 +1,12 @@
+upstream="https://gitlab.com/gnu-clisp/clisp"
+
+:commit  () {
+    upstream+=".git"
+}
+
+:release () {
+    upstream+="/-/raw/master/version.sh"
+    fetch() {
+        cr | grep -F VERSION_NUMBER= | vrepo
+    }
+}
