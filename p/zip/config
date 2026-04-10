@@ -1,4 +1,8 @@
-upstream="arch:extra/x86_64/zip"
+upstream="https://infozip.sourceforge.net/Zip.html"
 chance=2
 
-:release () { :; }
+:release () {
+    fetch() {
+        cr | grep -F 'h1 align="center"> Zip ' | vrepo
+    }
+}
