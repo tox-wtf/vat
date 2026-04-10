@@ -1,0 +1,15 @@
+upstream="https://sourceforge.net/projects/aa-project/rss?path=/aa-lib"
+chance=1 # last modified before 9/11
+
+:release () {
+    fetch() {
+        cr | grep -F '<title><![CDATA[/aa-lib/' | cut -d/ -f3 | vfs | vsort
+    }
+}
+
+# This is what most people use
+:unstable() {
+    fetch() {
+        cr | grep -F '<title><![CDATA[/aa-lib/' | cut -d/ -f3 | vsort
+    }
+}
