@@ -1,0 +1,7 @@
+upstream="http://dist.schmorp.de/libptytty/"
+
+:release () {
+    fetch() {
+        defcurlrelease
+    }
+}
