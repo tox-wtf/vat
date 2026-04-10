@@ -1,0 +1,7 @@
+upstream="http://www.mirbsd.org/MirOS/dist/mir/cpio/"
+
+:release () {
+    fetch() {
+        cr | grep -F 'HREF="paxmirabilis-' | vrepo -1 | vsort
+    }
+}
