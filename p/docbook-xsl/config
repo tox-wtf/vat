@@ -1,4 +1,4 @@
-upstream="https://archlinux.org/packages/extra/any/docbook-xsl/json/"
+upstream="arch:extra/any/docbook-xsl"
 chance=2
 
 :release() { :; }
