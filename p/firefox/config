@@ -1,0 +1,23 @@
+upstream="gh:mozilla-firefox/firefox"
+
+:commit  () { :; }
+
+:release () {
+    fetch() {
+        gr | grep '^FIREFOX.*RELEASE' | grep -Ev '(ANDROID|END|BASE)' | vtrim -e 's,_RELEASE$,,' | fl | vsort
+    }
+}
+
+:unstable() {
+    fetch() {
+        gr | grep '^FIREFOX.*RELEASE' | grep -Ev '(ANDROID|END|BASE)' | vtrim -e 's,_RELEASE$,,' | vsort
+    }
+}
+
+:esr     () {
+    expected='[0-9]+(\.[0-9]+)+esr'
+
+    fetch() {
+        gr | grep '^FIREFOX.*RELEASE' | grep -Ev '(ANDROID|END|BASE)' | vtrim -e 's,_RELEASE$,,' | grep esr | vsort -l
+    }
+}
