@@ -1,0 +1,10 @@
+upstream="gh:KhronosGroup/spirv-headers"
+
+:commit  () { :; }
+
+:sdk     () {
+    expected='[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+'
+    fetch() {
+        gr | grep -E '(vulkan(-sdk|)|sdk)-' | cut -d- -f3- | vsort
+    }
+}
