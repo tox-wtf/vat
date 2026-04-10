@@ -1,0 +1,8 @@
+upstream="gh:dajobe/raptor"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | sed -E 's,raptor2?_,,;s,_,.,g' | fsl | vsort
+    }
+}
