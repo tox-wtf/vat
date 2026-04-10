@@ -56,6 +56,10 @@ set_default_expected() {
         unstable) expected='[0-9]+(\.[0-9]+)*-?(rc|alpha|beta|a|b|pre|dev)?\.?[0-9]*' ;;
         commit) expected='[0-9a-f]{40}' ;;
     esac
+
+    if [[ "$channel" =~ ^[0-9]+$ ]]; then
+        expected="$channel"'(\.[0-9]+)*'
+    fi
 }
 
 expand_upstream_shortforms() {
@@ -73,6 +77,8 @@ set_default_fetch() {
                 unstable) fetch() { defgitunstable; } ;;
                 commit) fetch() { defgitcommit; } ;;
             esac
+
+            [[ "$channel" =~ ^[0-9]+$ ]] && fetch() { defgitchannel; }
         ;;
         curl)
             case "$channel" in
@@ -80,11 +86,15 @@ set_default_fetch() {
                 unstable) fetch() { defcurlunstable; } ;;
                 commit) fetch() { defcurlcommit; } ;;
             esac
+
+            [[ "$channel" =~ ^[0-9]+$ ]] && fetch() { defcurlchannel; }
         ;;
         arch)
             case "$channel" in
                 release) fetch() { archver; } ;;
             esac
+
+            # NOTE: Numeric channels aren't supported since arch only returns one version
         ;;
     esac
 }

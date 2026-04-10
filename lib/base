@@ -260,6 +260,11 @@ defgitcommit() {
     githead
 }
 
+# default git channel
+defgitchannel() {
+    defgitrelease | grep "^$channel"'\.' | fhigh
+}
+
 # default curl releaese
 defcurlrelease() {
     ca | fdash | vsort | vfs
@@ -273,4 +278,9 @@ defcurlunstable() {
 # default curl commit
 defcurlcommit() {
     cr | commitgrep -o
+}
+
+# default curl channel
+defcurlchannel() {
+    defcurlrelease | grep "^$channel"'\.' | fhigh
 }
