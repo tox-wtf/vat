@@ -1,0 +1,8 @@
+upstream="gh:logrotate/logrotate"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,-,.,g' | vsort
+    }
+}
