@@ -18,6 +18,11 @@
 - [ ] Add Discord webhook integration
 
 ## Projects
+- [ ] Track everything in \*LFS
+    - [x] LFS
+    - [ ] BLFS
+    - [ ] GLFS
+    - [x] SLFS
 - [ ] Track gd, celeste, terraria projects (mostly mods)
 - [ ] Try to track gd/mega-hack (unfortunately closed source and releases are
   announced on Discord and Twitter of all places)
