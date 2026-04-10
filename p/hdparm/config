@@ -1,0 +1,7 @@
+upstream="https://sourceforge.net/projects/hdparm/rss?path=/hdparm"
+
+:release () {
+    fetch() {
+        cr | grep -F '<title><![CDATA[/hdparm/' | vrepo | vsort
+    }
+}
