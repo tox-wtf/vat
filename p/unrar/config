@@ -1,3 +1,7 @@
-upstream="arch:extra/x86_64/unrar"
+upstream="https://www.rarlab.com/rar_add.htm"
 
-:release () { :; }
+:release () {
+    fetch() {
+        cr | grep 'rar/unrarsrc-' | vrepo
+    }
+}
