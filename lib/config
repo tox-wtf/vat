@@ -14,4 +14,5 @@ for shortform in "${!shortforms[@]}"; do
     from="$shortform:"
     to="${shortforms[$shortform]}"
     echo "s|$from|$to|" >> "$VAT_TARGET/shortforms.sed"
+    echo "s|$to|$from|" >> "$VAT_TARGET/longforms.sed"
 done

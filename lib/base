@@ -258,6 +258,14 @@ cpanver() {
     esac
 }
 
+# get version from pypi api
+pypiver() {
+    case "$upstream" in
+        http?://pypi.org/pypi/*/json) cr | jq -r '.info.version' ;;
+        http?://pypi.org/pypi/*) upstream+="/json" cr | jq -r '.info.version' ;;
+    esac
+}
+
 # default git release
 defgitrelease() {
     gr | vtrim | fsl | vfs | vsort

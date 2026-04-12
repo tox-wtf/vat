@@ -20,6 +20,7 @@ upstream_type() {
         */\?C=M?O=D) echo curl ;;
         *archlinux.org*) echo arch ;;
         *metacpan.org*) echo cpan ;;
+        *pypi.org*) echo pypi ;;
         *) echo git ;;
     esac
 }
@@ -100,6 +101,11 @@ set_default_fetch() {
         cpan)
             case "$channel" in
                 release) fetch() { cpanver; } ;;
+            esac
+        ;;
+        pypi)
+            case "$channel" in
+                release) fetch() { pypiver; } ;;
             esac
         ;;
     esac
