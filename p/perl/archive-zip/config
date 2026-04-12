@@ -1,0 +1,6 @@
+upstream="cpan:Archive-Zip"
+
+:release () { :; }
+:commit  () {
+    upstream="gh:redhotpenguin/perl-Archive-Zip"
+}

@@ -1,0 +1,9 @@
+# This is a weird one -- cpan:... doesn't work
+upstream="https://www.cpan.org/authors/id/R/RA/RAAB/"
+chance=4 # Last modified in 2010
+
+:release () {
+    fetch() {
+        cr | grep -o 'SGMLSpm-[0-9\.]\+\.tar\.gz' | vrepo
+    }
+}
