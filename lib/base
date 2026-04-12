@@ -251,6 +251,13 @@ cratesiover() {
         jq -r '.crate.max_stable_version'
 }
 
+cpanver() {
+    case "$upstream" in
+        http?://metacpan.org/dist/*) upstream="https://fastapi.metacpan.org/v1/release/${upstream##*/}" cr | jq -r '.version' ;;
+        http?://fastapi.metacpan.org/v1/release/*) cr | jq -r '.version' ;;
+    esac
+}
+
 # default git release
 defgitrelease() {
     gr | vtrim | fsl | vfs | vsort

@@ -19,6 +19,7 @@ upstream_type() {
     case "$upstream" in
         */\?C=M?O=D) echo curl ;;
         *archlinux.org*) echo arch ;;
+        *metacpan.org*) echo cpan ;;
         *) echo git ;;
     esac
 }
@@ -95,6 +96,11 @@ set_default_fetch() {
             esac
 
             # NOTE: Numeric channels aren't supported since arch only returns one version
+        ;;
+        cpan)
+            case "$channel" in
+                release) fetch() { cpanver; } ;;
+            esac
         ;;
     esac
 }

@@ -27,6 +27,31 @@ fi
 
 }
 
+# Add a CPAN-tracked Perl module by its name
+vacpan() {
+
+if ! [ -d p ]; then
+    echo "Execute this from the source directory" >&2
+    return 2
+fi
+
+local pretty="${1//::/-}"
+project="perl/${pretty,,}"
+export project="${project/::/-/g}"
+
+mkdir -p "p/${project:?}"
+if ! [ -f "p/$project/config" ]; then
+install -vDm644 /dev/stdin "p/$project/config" << .
+upstream="cpan:$pretty"
+
+:release () { :; }
+.
+fi
+
+vt "$project"
+
+}
+
 # Test a project by its name
 vt() {
 
