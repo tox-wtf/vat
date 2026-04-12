@@ -1,0 +1,4 @@
+upstream="pypi:docutils"
+
+:commit  () { upstream="gh:docutils/docutils"; }
+:release () { :; }

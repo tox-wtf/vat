@@ -1,0 +1,4 @@
+upstream="pypi:doxypypy"
+
+:commit  () { upstream="github:Feneric/doxypypy"; }
+:release () { :; }

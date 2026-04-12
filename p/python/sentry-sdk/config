@@ -1,0 +1,8 @@
+upstream="gh:getsentry/sentry-python"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim | fl | vsort
+    }
+}

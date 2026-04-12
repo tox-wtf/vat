@@ -1,0 +1,4 @@
+upstream="gh:pypa/pyproject-hooks"
+
+:commit  () { :; }
+:release () { :; }

@@ -1,0 +1,8 @@
+upstream="freedesktop:xdg/pyxdg.git"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,rel-,,' | vfs | vsort
+    }
+}

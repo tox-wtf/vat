@@ -1,0 +1,8 @@
+upstream="gh:stub42/pytz"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim | fl | vsort
+    }
+}
