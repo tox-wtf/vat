@@ -1,0 +1,8 @@
+upstream="gh:apache/ant"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,rel/,,' | fl | vsort | grep -F . | vsort
+    }
+}
