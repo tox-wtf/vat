@@ -18,6 +18,7 @@
 - [ ] Add Discord webhook integration
 
 ## Projects
+- [ ] Move all python projects into python/
 - [ ] Track everything in \*LFS
     - [x] LFS
     - [ ] BLFS
