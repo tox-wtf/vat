@@ -5,8 +5,8 @@ upstream="https://www.kernel.org/feeds/kdist.xml"
     expected='[0-9]\.[0-9]+(-rc[0-9]+)?'
 
     fetch() {
-        cr | xmlstarlet sel -t -v '/rss/channel/item[1]/title' |
-            vtrim -e "s,: mainline,,"
+        cr | grep -Eo '<title>[0-9](\.[0-9])+(-rc[0-9]+)?: mainline</title>' |
+            vtrim -e 's,^<title>,,;s,: mainline</title>$,,'
     }
 }
 
@@ -15,17 +15,16 @@ upstream="https://www.kernel.org/feeds/kdist.xml"
     expected='[0-9]\.[0-9]+\.[0-9]+'
 
     fetch() {
-        cr | xmlstarlet sel -t -v '/rss/channel/item[2]/title' |
-            vtrim -e "s,: stable,,"
+        cr | grep -Eo '<title>[0-9](\.[0-9])+: stable</title>' | vrepo
     }
 }
 
+# Corresponds to latest LTS
 :longterm() {
     expected='[0-9]\.[0-9]+\.[0-9]+'
 
     fetch() {
-        cr | xmlstarlet sel -t -v '/rss/channel/item/title' | grep longterm |
-            head -n1 | cut -d: -f1
+        cr | grep -Eo '<title>[0-9\.]+: longterm</title>' | vrepo | vsort
     }
 }
 
@@ -33,8 +32,7 @@ upstream="https://www.kernel.org/feeds/kdist.xml"
     expected='[0-9]{8}'
 
     fetch() {
-        cr | xmlstarlet sel -t -v '/rss/channel/item[9]/title' |
-            vtrim -e 's,next-,,' -e 's,: linux-next,,'
+        cr | grep -Eo '<title>next-[0-9]{8}:' | vrepo -1
     }
 }
 
