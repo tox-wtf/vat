@@ -1,5 +1,8 @@
 upstream="gh:boostorg/boost"
 
-:release() { :; }
-
-:commit() { :; }
+:release () {
+    fetch() {
+        defgitrelease | sed 's,-,.,g' | vsort
+    }
+}
+:commit  () { :; }
