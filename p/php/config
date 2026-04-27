@@ -2,4 +2,8 @@ upstream="gh:php/php-src"
 
 :commit  () { :; }
 :release () { :; }
-:unstable() { :; }
+:unstable() {
+    fetch() {
+        defgitunstable | tolower
+    }
+}
