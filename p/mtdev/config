@@ -1,4 +1,11 @@
-upstream="https://bitmath.se/org/git/mtdev.git/"
+upstream="https://bitmath.se/org/code/mtdev/"
 
-:release () { :; }
-:commit  () { :; }
+:release () {
+    fetch() {
+        cr | grep -Eo 'mtdev v[0-9\.]+ released</h4>' | vrepo | vsort
+    }
+}
+
+:commit  () {
+    upstream="https://bitmath.se/org/git/mtdev.git/"
+}
