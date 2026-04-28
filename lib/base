@@ -251,6 +251,7 @@ cratesiover() {
         jq -r '.crate.max_stable_version'
 }
 
+# get version from cpan api
 cpanver() {
     case "$upstream" in
         http?://metacpan.org/dist/*) upstream="https://fastapi.metacpan.org/v1/release/${upstream##*/}" cr | jq -r '.version' ;;
