@@ -17,10 +17,11 @@ name="${project##*/}"
 
 upstream_type() {
     case "$upstream" in
-        */\?C=M?O=D) echo curl ;;
         *archlinux.org*) echo arch ;;
         *metacpan.org*) echo cpan ;;
         *pypi.org*) echo pypi ;;
+        *sourceforge.net/projects/*) echo sf ;;
+        */\?C=M?O=D) echo curl ;;
         *) echo git ;;
     esac
 }
@@ -72,42 +73,29 @@ expand_upstream_shortforms() {
 
 set_default_fetch() {
     type -t fetch | grep -qxF function && return
-    case "$(upstream_type)" in
-        git)
-            case "$channel" in
-                release) fetch() { defgitrelease; } ;;
-                unstable) fetch() { defgitunstable; } ;;
-                commit) fetch() { defgitcommit; } ;;
-            esac
 
-            [[ "$channel" =~ ^[0-9]+$ ]] && fetch() { defgitchannel; }
-        ;;
-        curl)
-            case "$channel" in
-                release) fetch() { defcurlrelease; } ;;
-                unstable) fetch() { defcurlunstable; } ;;
-                commit) fetch() { defcurlcommit; } ;;
-            esac
+    # Handle numeric channels for supported upstreams
+    if [[ "$channel" =~ ^[0-9]+$ ]]; then
+        case "$(upstream_type)" in
+            git)  fetch() { defgitchannel; }  ;;
+            curl) fetch() { defcurlchannel; } ;;
+        esac
+        return
+    fi
 
-            [[ "$channel" =~ ^[0-9]+$ ]] && fetch() { defcurlchannel; }
-        ;;
-        arch)
-            case "$channel" in
-                release) fetch() { archver; } ;;
-            esac
+    case "$(upstream_type)/$channel" in
+        git/release)    fetch() { defgitrelease; }      ;;
+        git/unstable)   fetch() { defgitunstable; }     ;;
+        git/commit)     fetch() { defgitcommit; }       ;;
 
-            # NOTE: Numeric channels aren't supported since arch only returns one version
-        ;;
-        cpan)
-            case "$channel" in
-                release) fetch() { cpanver; } ;;
-            esac
-        ;;
-        pypi)
-            case "$channel" in
-                release) fetch() { pypiver; } ;;
-            esac
-        ;;
+        curl/release)   fetch() { defcurlrelease; }     ;;
+        curl/unstable)  fetch() { defcurlunstable; }    ;;
+        curl/commit)    fetch() { defcurlcommit; }      ;;
+
+        arch/release)   fetch() { archver; }            ;;
+        cpan/release)   fetch() { cpanver; }            ;;
+        pypi/release)   fetch() { pypiver; }            ;;
+        sf/release)     fetch() { sfver; }              ;;
     esac
 }
 
