@@ -267,6 +267,14 @@ pypiver() {
     esac
 }
 
+# get version from sourceforge api
+sfver() {
+    case "$upstream" in
+        http?://sourceforge.net/projects/*/best_release.json) cr | jq -r '.release.filename' | vrepo | vsort ;;
+        http?://sourceforge.net/projects/*) upstream+="/best_release.json" cr | jq -r '.release.filename' | vrepo | vsort ;;
+    esac
+}
+
 # default git release
 defgitrelease() {
     gr | vtrim | fsl | vfs | vsort
