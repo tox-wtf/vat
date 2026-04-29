@@ -1,3 +1,31 @@
+VAT 3.2.2
+- [ 2026-04-28 19:52:45 | 742facf66 ] feat(p): clean up sf prjects
+- [ 2026-04-28 19:52:33 | 44cc225c2 ] feat: add sfgit shorthand
+- [ 2026-04-28 19:41:29 | adb4282c2 ] fix: interpolate variables in printf
+- [ 2026-04-28 19:20:15 | 132d88b3f ] fix(p): improve idle-lisa-emu fetch
+- [ 2026-04-28 19:04:30 | 59432b610 ] fix: use linux releases for `sfver`
+- [ 2026-04-28 19:03:44 | 33eee0aee ] feat: allow `cr` to propagate flags to `_curl`
+- [ 2026-04-28 18:51:05 | 3186645e7 ] feat(p): add libmodplug
+- [ 2026-04-28 18:45:56 | a3f59ec16 ] feat: add sf utils, refactor
+- [ 2026-04-28 18:45:07 | 344e64ebc ] feat: add sfver
+- [ 2026-04-28 18:44:57 | c79f30985 ] doc: add missing comment
+- [ 2026-04-27 16:35:00 | b359c60b2 ] fix(p): fix boost fetch
+- [ 2026-04-27 16:33:55 | 6f6b9fbdd ] fix(p): fix php fetch
+- [ 2026-04-27 16:33:03 | 11152df54 ] fix(p): fix fetch for mtdev
+- [ 2026-04-27 16:26:28 | 66845f30b ] fix(p): fix fetches for linux
+- [ 2026-04-18 13:22:06 | 6c4a51d8c ] fix(p): use tags for latest asio release
+- [ 2026-04-16 11:44:27 | f5c596d28 ] fix(p): manually decrement libical version
+- [ 2026-04-15 20:38:57 | ea7d5301b ] fix(p): don't compare firefox esr versions
+- [ 2026-04-15 20:38:18 | 7de166b65 ] fix(p): redirects
+- [ 2026-04-15 20:37:18 | 663915bde ] fix(p): remove class:tiny
+- [ 2026-04-15 20:34:22 | 14c5815c0 ] docs: update todos
+- [ 2026-04-12 18:14:23 | 1fd49f36e ] feat(p): add ant
+- [ 2026-04-12 18:11:23 | 19e4663ce ] feat(p): add many python modules
+- [ 2026-04-12 18:11:01 | 6a52f3d0d ] feat: add pypi utils
+- [ 2026-04-12 16:54:26 | 2b84d55df ] feat(p): add many perl modules
+- [ 2026-04-12 16:54:26 | f575e502a ] feat: add cpan utils
+- [ 2026-04-10 00:33:04 | 5df3377e6 ] doc: update todos
+
 VAT 3.2.1
 - [ 2026-04-10 00:17:38 | 90236ce45 ] feat(p): add glfs
 - [ 2026-04-10 00:17:10 | 8dd4f8866 ] feat(p): add slfs
