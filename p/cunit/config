@@ -1,0 +1,8 @@
+upstream="sf:cunit"
+
+:release () {
+    upstream+="/best_release.json"
+    fetch() {
+         cr | jq -r '.platform_releases.linux.filename' | cut -d/ -f3 | vtrim -e 's,-,.,g'
+    }
+}
