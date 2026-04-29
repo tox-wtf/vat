@@ -217,7 +217,7 @@ cr() {
 
     if [ ! -r "$cache" ] || [ ! -s "$cache" ] || "$NO_CACHE" ; then
         install -Dm644 /dev/null "$cache"
-        _curl "${upstream:?}" -o "$cache"
+        _curl "${upstream:?}" -o "$cache" "$@"
     fi
 
     cat "$cache"
