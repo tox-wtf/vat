@@ -1,0 +1,17 @@
+upstream="sf:infozip"
+
+:release () {
+    upstream="https://infozip.sourceforge.net/UnZip.html"
+
+    fetch() {
+        cr | grep '^UnZip [0-9\.]\+' | vrepo
+    }
+}
+
+:unstable() {
+    upstream+="/rss?path=/unreleased%20Betas/UnZip%20betas"
+    expected="[0-9]+\.[0-9]+[a-z]"
+    fetch() {
+        cr | grep -F '<title><![CDATA[/unreleased Betas/UnZip betas/' | grep -o '[0-9]\+[a-z]' | sed 's,^[0-9],&.,' | vsort -c
+    }
+}

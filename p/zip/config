@@ -1,8 +1,18 @@
-upstream="https://infozip.sourceforge.net/Zip.html"
-chance=2
+upstream="sf:infozip"
+chance=2 # little has changed since 2010
 
 :release () {
+    upstream="https://infozip.sourceforge.net/Zip.html"
+
     fetch() {
         cr | grep -F 'h1 align="center"> Zip ' | vrepo
+    }
+}
+
+:unstable() {
+    upstream+="/rss?path=/unreleased%20Betas/Zip%20betas"
+    expected="[0-9]+\.[0-9]+[a-z]"
+    fetch() {
+        cr | grep -F '<title><![CDATA[/unreleased Betas/Zip betas/' | grep -o '[0-9]\+[a-z]' | sed 's,^[0-9],&.,' | vsort -c
     }
 }

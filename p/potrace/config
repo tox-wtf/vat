@@ -1,8 +1,4 @@
-upstream="https://potrace.sourceforge.net/"
+upstream="sf:potrace"
 chance=33 # last release dated 2019-09-17
 
-:release () {
-    fetch() {
-        defcurlrelease
-    }
-}
+:release () { :; }

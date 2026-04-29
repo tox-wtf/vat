@@ -1,5 +1,5 @@
-upstream="https://sourceforge.net/projects/heirloom/rss?path=/heirloom-sh"
-chance=11
+upstream="sf:heirloom/rss?path=/heirloom-sh"
+chance=1 # last release dated 2005-07-06
 
 :release () {
     fetch() {

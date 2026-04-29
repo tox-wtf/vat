@@ -1,5 +1,4 @@
-upstream="https://git.code.sf.net/p/giflib/code"
+upstream="sfgit:giflib/code"
 
-:release() { :; }
-
-:commit() { :; }
+:release () { :; }
+:commit  () { :; }

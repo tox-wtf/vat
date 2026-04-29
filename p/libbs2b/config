@@ -1,8 +1,4 @@
-upstream="https://sourceforge.net/projects/bs2b/rss?path=/libbs2b"
+upstream="sf:bs2b"
 chance=22
 
-:release () {
-    fetch() {
-        cr | grep -F '<title><![CDATA[/libbs2b/' | cut -d/ -f3 | vrepo | vsort
-    }
-}
+:release () { :; }

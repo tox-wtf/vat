@@ -1,4 +1,5 @@
 upstream="https://jfs.sourceforge.net/source.html#latesrc"
+chance=3 # last updated 2013-06-05
 
 :release () {
     fetch() {

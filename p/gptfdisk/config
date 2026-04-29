@@ -1,11 +1,7 @@
-upstream="https://sourceforge.net/projects/gptfdisk/rss?path=/gptfdisk"
+upstream="sf:gptfdisk"
 
 :commit  () {
-    upstream="https://git.code.sf.net/p/gptfdisk/code"
+    upstream="sfgit:gptfdisk/code"
 }
 
-:release () {
-    fetch() {
-        cr | grep -F '<title><![CDATA[/gptfdisk/' | cut -d/ -f3 | vsort
-    }
-}
+:release () { :; }

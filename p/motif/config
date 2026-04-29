@@ -1,8 +1,4 @@
-upstream="https://sourceforge.net/projects/motif/files/"
+upstream="sf:motif"
 chance=8
 
-:release () {
-    fetch() {
-        defcurlrelease
-    }
-}
+:release () { :; }

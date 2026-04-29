@@ -1,5 +1,4 @@
-upstream="https://sourceforge.net/projects/lame/rss?path=/lame"
-# TODO: Use svn repo?
+upstream="sf:lame/rss?path=/lame"
 
 :release() {
     fetch() {
