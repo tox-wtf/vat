@@ -1,7 +1,7 @@
-upstream="https://sourceforge.net/p/idle-lisa-emu/code/26/log/?path"
+upstream="https://sourceforge.net/p/idle-lisa-emu/code/feed"
 
 :release () {
     fetch() {
-        cr | grep -o 'r[0-9]\+' | vtrim | vsort
+        cr | grep -o 'idle-lisa-emu/code/[0-9]\+/' | vrepo -1 | vsort
     }
 }
