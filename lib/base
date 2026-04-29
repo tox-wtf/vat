@@ -270,8 +270,8 @@ pypiver() {
 # get version from sourceforge api
 sfver() {
     case "$upstream" in
-        http?://sourceforge.net/projects/*/best_release.json) cr | jq -r '.release.filename' | vrepo | vsort ;;
-        http?://sourceforge.net/projects/*) upstream+="/best_release.json" cr | jq -r '.release.filename' | vrepo | vsort ;;
+        http?://sourceforge.net/projects/*/best_release.json) cr | jq -r '.platform_releases.linux.filename' | vrepo | vsort ;;
+        http?://sourceforge.net/projects/*) upstream+="/best_release.json" cr | jq -r '.platform_releases.linux.filename' | vrepo | vsort ;;
     esac
 }
 
