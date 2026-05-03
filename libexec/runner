@@ -162,6 +162,12 @@ for channel in "${channels[@]}"; do
         echo "$out" | tail -n32 >&3
         ver="$(echo "$out" | tail -n1)"
 
+        if [[ -z $ver ]]; then
+            echo FAIL
+            echo "Empty version for $project:$channel" >&2
+            exit 1
+        fi
+
         set_default_expected
         echo "expected is set to '$expected'" >&3
 
