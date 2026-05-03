@@ -139,7 +139,7 @@ timeout() {
         return 124
     fi
 
-    kill "$sleep_pid" &>/dev/null &>/dev/null
+    kill "$sleep_pid" &>/dev/null
     return "$finished"
 }
 
