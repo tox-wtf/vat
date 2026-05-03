@@ -11,7 +11,7 @@ w() {
             return 1
         }
 
-        . "$VAT_ROOT/lib/$lib" ] || {
+        . "$VAT_ROOT/lib/$lib" || {
             echo "Library '$lib' could not be sourced"
             return 1
         }
