@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# shellcheck disable=1091
 
 log() {
     local now_ms elapsed_ms hours minutes seconds millis elapsed
