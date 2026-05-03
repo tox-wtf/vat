@@ -9,8 +9,6 @@ command -v git &>/dev/null || {
 
 . lib/vars
 
-projects_updated=$(git status --porcelain=v1 -u all p | grep -vF ALL | cut -d/ -f2 | uniq | wc -l)
-
 shopt -s globstar
 set -u
 

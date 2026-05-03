@@ -17,8 +17,6 @@ command -v gh &>/dev/null || {
 shopt -s globstar
 set -u
 
-projects=$(git status --porcelain=v1 -u all p/**/v.tsv | sed -e 's,^p/,,' -e 's,/v.tsv$,,')
-
 rm -rf "$VAT_TARGET/dist"
 mkdir -p "$VAT_TARGET/dist"
 cp -f "$VAT_TARGET/report" "$VAT_TARGET/dist/report"
