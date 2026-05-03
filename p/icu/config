@@ -1,0 +1,15 @@
+upstream="gh:unicode-org/icu"
+
+:commit  () { :; }
+
+:release () {
+    fetch() {
+        gr | sed 's,^release-,,' | fsl | dashdot | grep -Ev 'cldr|eclipse' | vsort | vfs
+    }
+}
+
+:unstable() {
+    fetch() {
+        gr | sed 's,^release-,,' | fsl | dashdot | grep -Ev 'cldr|eclipse' | vsort
+    }
+}
