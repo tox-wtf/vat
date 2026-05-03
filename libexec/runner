@@ -9,7 +9,7 @@ set -u
 }
 
 project="$1"
-name="${project##*/}"
+export name="${project##*/}"
 
 . "p/$project/config" || {
     echo "Could not source config for $1" >&2
