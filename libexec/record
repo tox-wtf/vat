@@ -49,7 +49,7 @@ write_json() {
         local ct=0
         for entry in "${!entries[@]}"; do
             ((ct++))
-            if [ $ct -eq $len ]; then
+            if [ $ct -eq "$len" ]; then
                 printf '"%s": "%s"\n' "${entry}" "${entries["$entry"]}"
             else
                 printf '"%s": "%s",\n' "${entry}" "${entries["$entry"]}"

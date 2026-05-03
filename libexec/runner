@@ -10,7 +10,7 @@ set -u
 project="$1"
 name="${project##*/}"
 
-. p/$project/config || {
+. "p/$project/config" || {
     echo "Could not source config for $1" >&2
     exit 2
 }
@@ -43,7 +43,7 @@ roll_dice() {
     fi
 
     rand="$((RANDOM % 101))"
-    if [ $rand -gt ${chance:-100} ]; then
+    if [ $rand -gt "${chance:-100}" ]; then
         echo "Chance $rand > ${chance:-100}; skipping" >&3
         return 77
     fi
