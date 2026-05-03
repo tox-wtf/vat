@@ -87,12 +87,12 @@ vx() {
 
 echo "${project:?}" >/dev/null # ensure it's set
 
-name="${project##*/}"
-. p/"$project"/config
+export name="${project##*/}"
+. "p/$project/config"
 . lib/vars
 . lib/config
 
 upstream="$(echo "${upstream:?}" | sed -f "${VAT_TARGET:?}/shortforms.sed")"
-eval "$@"
+"$@"
 
 }
