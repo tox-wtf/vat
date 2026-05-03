@@ -95,7 +95,7 @@ while read -r line; do
             continue
         fi
 
-        printf -- "    - %-57s\t$(fmt $old) -> $(fmt $new)\n" "$project:$channel"
+        printf -- "    - %-57s\t%s -> %s\n" "$project:$channel" "$(fmt "$old")" "$(fmt "$new")"
         continue
     fi
 
@@ -110,7 +110,7 @@ while read -r line; do
             continue
         fi
 
-        printf -- "    - %-57s\t$(fmt $new)\n" "$project:$channel"
+        printf -- "    - %-57s\t%s\n" "$project:$channel" "$(fmt "$new")"
         continue
     fi
 done <<< "$diff"

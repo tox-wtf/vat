@@ -27,7 +27,7 @@ write_tsv() {
         mv "$file.tmp" "$file"
     fi
 
-    printf "$project\t$channel\t$version\n" >> "$file"
+    printf "%s\t%s\t%s\n" "$project" "$channel" "$version" >> "$file"
 }
 
 # Reserialize the TSV data to JSON

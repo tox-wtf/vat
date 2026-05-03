@@ -145,7 +145,7 @@ timeout() {
 
 for channel in "${channels[@]}"; do
     (
-        printf "$project\t$channel\t"
+        printf "%s\t%s\t" "$project" "$channel"
 
         type ":$channel" >&3
         ":$channel"
