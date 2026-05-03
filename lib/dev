@@ -1,5 +1,5 @@
 #!/usr/bin/env false
-#shellcheck shell=bash
+#shellcheck shell=bash disable=1090,1091
 
 . lib/base
 . lib/vars

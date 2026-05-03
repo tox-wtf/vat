@@ -1,5 +1,5 @@
 #!/usr/bin/env false
-#shellcheck shell=bash
+#shellcheck shell=bash disable=1087,1090,2119,2120,2154
 
 export GIT_TERMINAL_PROMPT=false
 
