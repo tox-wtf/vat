@@ -1,4 +1,4 @@
-upstream="freedesktop:/xorg/driver/xf86-input-libinput.git"
+upstream="freedesktop:/xorg/driver/$name.git"
 
 :commit  () { :; }
 :release () { :; }
