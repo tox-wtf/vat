@@ -57,9 +57,9 @@ fi
 # Clear old logs
 rm -rf "$VAT_TARGET/logs"
 
-if [ $diff -gt $CACHE_LIFESPAN ]; then
+if [ $diff -gt "$CACHE_LIFESPAN" ]; then
     log "Clearing cache ($diff seconds old)"
-    rm -rf $VAT_CACHE
+    rm -rf "$VAT_CACHE"
     install -Dm644 /dev/null "$VAT_CACHE/timestamp"
 else
     log "Not clearing cache ($diff seconds old)"
@@ -120,15 +120,15 @@ install -Dm644 /dev/null "$all_out"
 install -Dm644 /dev/null "$all_err"
 install -Dm644 /dev/null "$all_dbg"
 
-find $VAT_TARGET/logs -type f -name 'out' ! -name 'ALL.out' | sort | while read -r log_out; do
+find "$VAT_TARGET/logs" -type f -name 'out' ! -name 'ALL.out' | sort | while read -r log_out; do
     cat "$log_out" >> "$all_out"
 done
 
-find $VAT_TARGET/logs -type f -name 'err' ! -name 'ALL.err' | sort | while read -r log_err; do
+find "$VAT_TARGET/logs" -type f -name 'err' ! -name 'ALL.err' | sort | while read -r log_err; do
     cat "$log_err" >> "$all_err"
 done
 
-find $VAT_TARGET/logs -type f -name 'dbg' ! -name 'ALL.dbg' | sort | while read -r log_dbg; do
+find "$VAT_TARGET/logs" -type f -name 'dbg' ! -name 'ALL.dbg' | sort | while read -r log_dbg; do
     cat "$log_dbg" >> "$all_dbg"
 done
 
