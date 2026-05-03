@@ -60,13 +60,15 @@ _gitremote() {
 
 # git list remote tags
 gr() {
-    local cache="$(_gitremote)"
+    local cache
+    cache="$(_gitremote)"
     grep -F refs/tags/ "$cache" | sed -e 's,.\+refs/tags/,,'
 }
 
 # retrieve latest commit
 githead() {
-    local cache="$(_gitremote)"
+    local cache
+    cache="$(_gitremote)"
     head -n1 "$cache" | cut -f1
 }
 
