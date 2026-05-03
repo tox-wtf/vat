@@ -1,0 +1,8 @@
+upstream="freedesktop:/xorg/font/${name#font-}.git"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e "s,_,.,g;s,^${name#font-},,;s,^-,," | fsl | vsort
+    }
+}
