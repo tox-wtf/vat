@@ -1,4 +1,4 @@
-upstream="freedesktop:/xorg/driver/$name.git"
+upstream="gh:linuxwacom/$name"
 
 :commit  () { :; }
 :release () { :; }
