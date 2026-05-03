@@ -1,0 +1,8 @@
+upstream="freedesktop:/xorg/app/$name.git"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,_,.,g' | fsl | vsort
+    }
+}
