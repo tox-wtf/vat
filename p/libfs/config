@@ -1,0 +1,8 @@
+upstream="freedesktop:/xorg/lib/libfs.git"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | tolower | vtrim -e 's,_,.,g' | fsl | vsort
+    }
+}
