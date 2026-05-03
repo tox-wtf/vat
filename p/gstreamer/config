@@ -1,11 +1,11 @@
 upstream="gh:gstreamer/gstreamer"
 
-:release() {
+:commit  () { :; }
+
+:release () {
     fetch() {
-        gr | vtrim | fsl | grep -Ev '\.9[0-9]+$' | vsort
+        gr | vtrim | fsl | grep -Ev '\.9[0-9]+$' | vfem | vsort
     }
 }
 
 :unstable() { :; }
-
-:commit() { :; }
