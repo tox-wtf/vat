@@ -3,15 +3,9 @@
 
 # Generate a tag and release assets for the run, once it's completed
 
-command -v git &>/dev/null || {
-    echo 'Missing `git` -- cannot continue' >&2
-    exit 1
-}
-
-command -v gh &>/dev/null || {
-    echo 'Missing `gh` -- cannot continue' >&2
-    exit 1
-}
+for cmd in gh git; do
+    command -v "$cmd" &>/dev/null || echo "Missing $cmd -- cannot continue" >&2 && exit 1
+done
 
 . lib/vars
 

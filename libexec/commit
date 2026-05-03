@@ -3,10 +3,10 @@
 
 # Generate a report of the run, once it's completed
 
-command -v git &>/dev/null || {
-    echo 'Missing `git` -- cannot continue' >&2
-    exit 1
-}
+# shellcheck disable=2043
+for cmd in git; do
+    command -v "$cmd" &>/dev/null || echo "Missing $cmd -- cannot continue" >&2 && exit 1
+done
 
 . lib/vars
 
