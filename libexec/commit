@@ -5,7 +5,7 @@
 
 # shellcheck disable=2043
 for cmd in git; do
-    command -v "$cmd" &>/dev/null || echo "Missing $cmd -- cannot continue" >&2 && exit 1
+    command -v "$cmd" &>/dev/null || { echo "Missing $cmd -- cannot continue" >&2 && exit 1; }
 done
 
 . lib/vars
