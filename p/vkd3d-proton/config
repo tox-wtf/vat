@@ -1,0 +1,9 @@
+upstream="gh:HansKristian-Work/vkd3d-proton"
+
+:commit  () { :; }
+:release () {
+    expected="[0-9\.]+[a-z]?"
+    fetch() {
+        gr | vtrim -e 's,^vkd3d-,,' | vsort -c
+    }
+}
