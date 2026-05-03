@@ -10,7 +10,7 @@ upstream="https://download.nvidia.com/XFree86/Linux-x86_64/"
     }
 }
 
-for i in 580 590; do
+for i in 580 590 595; do
     eval "
     :$i() {
         expected='$i(\.[0-9]+)+'
