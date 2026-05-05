@@ -1,0 +1,7 @@
+upstream="https://hg-edge.mozilla.org/projects/nss/atom-log/tip/lib/ckfw/builtins/certdata.txt"
+
+:commit  () {
+    fetch() {
+        cr | commitgrep -om1
+    }
+}
