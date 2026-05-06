@@ -1,0 +1,4 @@
+upstream="salsa:reproducible-builds/strip-nondeterminism.git"
+
+:commit  () { :; }
+:release () { :; }
