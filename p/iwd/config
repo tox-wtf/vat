@@ -1,0 +1,5 @@
+upstream="kernel:network/wireless/iwd.git"
+chance=93
+
+:commit  () { :; }
+:release () { :; }
