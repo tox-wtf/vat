@@ -1,5 +1,13 @@
 upstream="gl:AOMediaCodec/SVT-AV1.git"
 
 :commit  () { :; }
-:release () { :; }
-:unstable() { :; }
+:release () {
+    fetch() {
+        gr | vtrim | fl | vsort
+    }
+}
+:unstable() {
+    fetch() {
+        gr | vtrim | grep -Ev '(-cqp-extended|SPIE2022)$' | vsort
+    }
+}
