@@ -1,5 +1,15 @@
 upstream="http://git.sdaoden.eu/scm/s-nail.git"
-chance=77
+chance=91
 
 :commit  () { :; }
-:release () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,.ar$,,' | vfs | vsort
+    }
+}
+
+:unstable() {
+    fetch() {
+        gr | vtrim -e 's,.ar$,,' | vsort
+    }
+}
