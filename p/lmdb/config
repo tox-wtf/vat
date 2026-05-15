@@ -3,6 +3,6 @@ chance=77
 
 :release() {
     fetch() {
-        gr | tolower | grep '^lmdb' | vtrim | vsort
+        gr | tolower | grep '^lmdb' | vtrim | fl | vsort
     }
 }
