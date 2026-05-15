@@ -1,3 +1,62 @@
+VAT 3.3.0
+- [ 2026-05-14 20:19:30 | 31a3d5313 ] fix(p): move slibtool upstream
+- [ 2026-05-14 20:18:18 | 92a0d8ddd ] fix(p): fix lmdb:release fetch
+- [ 2026-05-14 20:17:06 | cdf15077d ] fix(p): change jbig2dec upstream
+- [ 2026-05-14 20:15:07 | dabfa4a60 ] fix(p): fix gavinhoward/bc release version
+- [ 2026-05-13 15:30:49 | 3e0e76e41 ] feat(p): add tcc
+- [ 2026-05-13 15:30:41 | ab3199fdd ] feat(p): add forgejo
+- [ 2026-05-13 15:20:24 | ca4987139 ] feat(p): add zig
+- [ 2026-05-13 15:19:40 | 194943c76 ] feat(p): add outfieldr
+- [ 2026-05-13 15:19:19 | 964d0f355 ] feat(p): add iwd
+- [ 2026-05-06 03:30:49 | 1bf02b4e1 ] feat(p): add several go/charm packages
+- [ 2026-05-06 03:27:06 | f31f75e54 ] feat(p): add a few go projects
+- [ 2026-05-06 01:44:22 | a385ce63a ] feat(p): add strip-nondeterminism
+- [ 2026-05-05 02:33:54 | 6e01aa3ac ] feat(p): add certdatatxt
+- [ 2026-05-03 18:06:40 | 49b2e7337 ] fix: group commands
+- [ 2026-05-03 17:57:07 | 13896b288 ] feat(p): add mingw-w64
+- [ 2026-05-03 17:56:27 | bcbe1d726 ] feat(p): add several xorg font projects
+- [ 2026-05-03 17:56:09 | eb491c789 ] feat(p): add several xorg apps
+- [ 2026-05-03 17:31:48 | 8f1ea5fcb ] chore: exclude CHANGES in typos config
+- [ 2026-05-03 17:28:29 | ebd243682 ] feat: tweak dependency ensurance
+- [ 2026-05-03 17:28:10 | 9a85ba5d4 ] chore: silence some more shellcheck lints
+- [ 2026-05-03 17:23:43 | 91765206e ] fix(lib): address a few shellcheck lints
+- [ 2026-05-03 17:23:30 | 30c3aaeb1 ] chore(lib): add shebangs and shellcheck directives
+- [ 2026-05-03 17:18:04 | a84f7e49c ] fix(lib): declare and assign locals separately
+- [ 2026-05-03 17:17:41 | 36cfd34a4 ] fix(lib): remove stray closing bracket
+- [ 2026-05-03 17:14:37 | 78b853639 ] fix: more variable quoting fixes
+- [ 2026-05-03 17:09:15 | 5c2d93368 ] %feat: pure bash line cleanup
+- [ 2026-05-03 17:08:56 | ba94eeb77 ] fix: export name
+- [ 2026-05-03 17:08:45 | 0c7f835f1 ] chore: add shellcheck directives
+- [ 2026-05-03 17:07:37 | c42e5e0f9 ] %fix: remove unused variables
+- [ 2026-05-03 17:06:59 | 614fa564c ] fix: quote variables correctly
+- [ 2026-05-03 17:05:25 | 4ff4d0acc ] fix: correct printf variable interpolation
+- [ 2026-05-03 17:01:49 | a9bad2852 ] !feat: error message for empty versions
+- [ 2026-05-03 17:01:09 | bb9268905 ] fix: remove duplicate redirect
+- [ 2026-05-03 16:41:51 | cb92977b5 ] fix(p): remove duplicate for python/cssselect
+- [ 2026-05-03 16:39:39 | 273c505a7 ] fix(p): correct xf86-input-wacom upstream
+- [ 2026-05-03 16:33:55 | c49fb1cd4 ] feat(p): add millennium
+- [ 2026-05-02 23:18:28 | 07b91a7b2 ] feat(p): add gamemode
+- [ 2026-05-02 23:16:54 | c619e8d93 ] feat(p): add vkd3d-proton
+- [ 2026-05-02 23:10:22 | 0045abb0e ] fix(p): use `vfem` for gstreamer
+- [ 2026-05-02 23:02:47 | 9f58fa59b ] feat(p): add xf86-input drivers
+- [ 2026-05-02 22:51:18 | 93cfaa17b ] feat(p): add nvidia channel 595
+- [ 2026-05-02 22:45:50 | f41edf78f ] feat(p): add nvidia-vaapi-driver
+- [ 2026-05-02 22:44:56 | 17b99f7cd ] feat(p): add egl-wayland2
+- [ 2026-05-02 22:24:06 | 6961299a5 ] feat(p): add libxrender
+- [ 2026-05-02 22:22:40 | c151e19fd ] feat(p): add libxaw
+- [ 2026-05-02 22:21:48 | 84e5d04b4 ] feat(p): add libfs
+- [ 2026-05-02 22:06:24 | 7795e3f99 ] feat(p): add harfbuzz
+- [ 2026-05-02 21:47:17 | 6a704ee9b ] feat(p): add make-ca
+- [ 2026-05-02 21:46:09 | 6c95e371d ] feat(p): add icu
+- [ 2026-05-02 21:45:52 | 2ffc5791d ] feat(lib): add `dashdot`
+- [ 2026-05-02 20:18:54 | 2826e4149 ] feat(p): add evdevhook2
+- [ 2026-04-28 20:05:01 | 7fa8a4127 ] feat(p): add love
+- [ 2026-04-28 20:04:21 | 87c807255 ] feat(p): add openal
+- [ 2026-04-28 20:03:18 | 723b36ddf ] feat(p): add portaudio
+- [ 2026-04-28 20:03:12 | e23b9e1e4 ] feat(p): add libmysofa
+- [ 2026-04-28 20:03:05 | 8a9b3b058 ] feat(p): add cunit
+- [ 2026-04-28 19:55:51 | 3072f9cca ] feat(p): add libtheora
+
 VAT 3.2.2
 - [ 2026-04-28 19:52:45 | 742facf66 ] feat(p): clean up sf prjects
 - [ 2026-04-28 19:52:33 | 44cc225c2 ] feat: add sfgit shorthand
