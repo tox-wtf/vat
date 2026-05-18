@@ -1,0 +1,8 @@
+upstream="gh:beltoforion/muparser"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,-,.,' | vfs | vsort
+    }
+}
