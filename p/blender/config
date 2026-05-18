@@ -1,0 +1,10 @@
+upstream="https://projects.blender.org/blender/blender.git"
+
+:commit  () { :; }
+:release () { :; }
+
+# LTS supported until July 2027
+:4.5() { :; }
+
+# LTS supported until July 2026
+:4.2() { :; }
