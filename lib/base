@@ -300,7 +300,7 @@ defgitcommit() {
 
 # default git channel
 defgitchannel() {
-    defgitrelease | grep "^$channel"'\.' | fhigh
+    defgitrelease | grep "^$channel\.*" | fhigh
 }
 
 # default curl releaese

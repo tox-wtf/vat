@@ -61,7 +61,7 @@ set_default_expected() {
         commit) expected='[0-9a-f]{40}' ;;
     esac
 
-    if [[ "$channel" =~ ^[0-9]+$ ]]; then
+    if [[ "$channel" =~ ^[0-9\.]+$ ]]; then
         expected="$channel"'(\.[0-9]+)*'
     fi
 }
@@ -76,7 +76,7 @@ set_default_fetch() {
     type -t fetch | grep -qxF function && return
 
     # Handle numeric channels for supported upstreams
-    if [[ "$channel" =~ ^[0-9]+$ ]]; then
+    if [[ "$channel" =~ ^[0-9\.]+$ ]]; then
         case "$(upstream_type)" in
             git)  fetch() { defgitchannel; }  ;;
             curl) fetch() { defcurlchannel; } ;;
