@@ -1,0 +1,8 @@
+upstream="gh:GNOME/gobject-introspection"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,^GOBJECT_INTROSPECTION_,,' | fsl | vsort
+    }
+}
