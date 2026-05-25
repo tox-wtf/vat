@@ -5,7 +5,7 @@ upstream="https://www.kernel.org/feeds/kdist.xml"
     expected='[0-9]\.[0-9]+(-rc[0-9]+)?'
 
     fetch() {
-        cr | grep -Eo '<title>[0-9](\.[0-9])+(-rc[0-9]+)?: mainline</title>' |
+        cr | grep -Eo '<title>[0-9](\.[0-9]+)+(-rc[0-9]+)?: mainline</title>' |
             vtrim -e 's,^<title>,,;s,: mainline</title>$,,'
     }
 }
@@ -15,7 +15,7 @@ upstream="https://www.kernel.org/feeds/kdist.xml"
     expected='[0-9]\.[0-9]+\.[0-9]+'
 
     fetch() {
-        cr | grep -Eo '<title>[0-9](\.[0-9])+: stable</title>' | vrepo
+        cr | grep -Eo '<title>[0-9](\.[0-9]+)+: stable</title>' | vrepo
     }
 }
 
