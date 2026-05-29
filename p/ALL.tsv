@@ -483,7 +483,7 @@ glfs	commit	46f7f4b07bd9fb8eaa5ba8915b172c0da0c9d97a
 glfs	release	13.0
 glfw	commit	b00e6a8a88ad1b60c0a045e696301deb92c9a13e
 glfw	release	3.4
-glibc	commit	b20b94006c79d65d75e5bd3a8d14fbcf9cd5bee6
+glibc	commit	7052455f0e85673abebad5d5814e73e22287c081
 glibc	release	2.43
 glibc	unstable	2.43.9000
 glibmm	commit	e454df52387caece6b0cb4157b5d2cc778f38d9f
@@ -581,7 +581,7 @@ gsettings-desktop-schemas	unstable	50.1
 gsl	release	2.8
 gspell	commit	5e7b8aed56d8a00a9b6cada8c749eb33f152b7ad
 gspell	release	1.14.3
-gstreamer	commit	17862a5604e80e1f9a244ec5433f0028104ca848
+gstreamer	commit	691408cfeffcc284f59521d82fb4269d9456d7ac
 gstreamer	release	1.28.3
 gstreamer	unstable	1.29.1
 gtk-doc	commit	cf004748a68e947e5cd995d3791c7b1ae2e0f2bf
@@ -661,11 +661,11 @@ ibus	commit	26aaf13bd62b972cfee1f4b58ba168d214e99eca
 ibus	release	1.5.34
 iceauth	commit	dd8a8dbe100d6427c01605da0a69a74fa36ddc87
 iceauth	release	1.0.11
-icu	commit	ff5ffa0645181300e7a341ba418e1b0e65fe8780
+icu	commit	69619a44a403d128d869acdec149ff6f7c693c77
 icu	release	78.3
 icu	unstable	78.3
 idle-lisa-emu	release	26
-imagemagick	commit	7bbbc2d3e6a05887158c57971ffe4bcad97b9b44
+imagemagick	commit	81c1296d44b9b705ae24ca8f64dc92378888df92
 imagemagick	release	7.1.2.24
 imv	commit	55bd3ef8772a20309111181d26a695cc2f24c189
 imv	release	5.0.1
@@ -1107,7 +1107,7 @@ linux	next	20260528
 linux	stable	7.0.10
 little-cms	commit	19e786a7feb79ea9387a1afe7cb11e72ee644d36
 little-cms	release	2.19.1
-llvm	commit	9b77b22a0d14b08fb4d3b217f323449911ef8213
+llvm	commit	a3241c53528a9600046b4cd9d55793cf59992a75
 llvm	release	22.1.6
 llvm	unstable	22.1.6
 lmdb	release	0.9.35
@@ -1221,7 +1221,7 @@ muon	commit	745b10c08e8926fd55d6df17bfda04c17eb3a454
 muon	release	0.5.0
 muparser	commit	8451d953228dba689e42b9e372040a77a78b873f
 muparser	release	2.3.5
-mupdf	commit	6b75615ea4c8d631ea35bf7b5ba4baff9304314f
+mupdf	commit	ae49949e89014a385fc9b9f68994430097e2cd00
 mupdf	release	1.27.2
 mupen64plus-audio-sdl	commit	5c58d3f69c8fdcc23b8d9dbd47685ab84bd0e08e
 mupen64plus-audio-sdl	release	2.6.0
@@ -1294,7 +1294,7 @@ ntfs-3g	commit	d1cb9e825d059ef5db0ccd30d5bce202edbd69dc
 ntfs-3g	release	2026.2.25
 numpy	commit	98239eb210f188ba2a28a477262b09f13f9f0293
 numpy	release	2.4.6
-nushell	commit	7b7df4aa68e957cf38b9d8157c35fa7523f44a6d
+nushell	commit	9c05da49a89c8e7a898be3f712536087a415002a
 nushell	release	0.113.1
 nvchecker	commit	a6cfd7b1d0c7a51a9b29a1302c5dcbc62e2985dd
 nvchecker	release	2.20
@@ -1739,7 +1739,7 @@ qpdf	release	12.3.2
 qr-code-generator	commit	2c9044de6b049ca25cb3cd1649ed7e27aa055138
 qr-code-generator	release	1.8.0
 qt	5	5.15.19
-qt	commit	a8448c6c9079f5953e285da01885852afef6c46a
+qt	commit	eaf48cc8a7c11b2249955bc29a91f7b4604cacbe
 qt	release	6.11.1
 quazip	commit	3087fc7d1195e59f15855d68d9fb4aba6578eeb6
 quazip	release	1.7.0
@@ -1895,15 +1895,15 @@ spirv-headers	commit	1e770e7de8373a8dd49f23416cf7ca4001d01040
 spirv-headers	sdk	1.4.350.0
 spirv-llvm-translator	commit	bd15d75e94741f6cac9099f4e1c70ee186cd0d87
 spirv-llvm-translator	release	22.1.2
-spirv-tools	commit	7fa421b3cb2db75c9c8a241fe674f467dd4d240b
+spirv-tools	commit	5b418e58bd952be2bb13ec613359da64f1ed04ba
 spirv-tools	release	2026.2
 spirv-tools	sdk	1.4.350.0
-sqlite	commit	3d006d0d00cc79bb8cfb9dc63f2db2acb080ac82
+sqlite	commit	5b98467d28aa1ceff5602b54a0cd7c0d3f1c8fb0
 sqlite	release	3.53.1
 squashfs-tools	commit	8300be87174d77064d01d8edffdae671ae18461c
 squashfs-tools	release	4.7.5
-sshfs	commit	6893c3a51b8389d62403e919768bac1a618678ea
-sshfs	release	3.7.5
+sshfs	commit	7a2d988775446ebe7af9b01c99b3b8e86bddb05a
+sshfs	release	3.7.6
 startup-notification	commit	64eb585315cfb1fb4fe68c8f705956e9fed46545
 startup-notification	release	0.12
 steam	release	1.0.0.85
@@ -2035,7 +2035,7 @@ vala	release	0.56.19
 vala	unstable	0.57.0
 valgrind	commit	fe490e34a6939a1a0bb1f727bb5d60085ce1fe20
 valgrind	release	3.27.1
-vat	commit	b79a68b46c234d365bb2c7725cb557788374b4da
+vat	commit	4216324659cb559c28cb8b7688a8d2462f650b31
 vat	release	3.3.0
 velox	commit	40b3f9c58edcc35efe3d37ffed50b067dbd431b8
 velox	release	0.0.3
