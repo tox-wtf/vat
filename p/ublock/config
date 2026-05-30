@@ -1,0 +1,15 @@
+upstream="gh:gorhill/uBlock"
+
+:commit  () { :; }
+
+:release () {
+    fetch() {
+        gr | fl | vsort
+    }
+}
+
+:unstable() {
+    fetch() {
+        gr | fsl | vsort
+    }
+}
