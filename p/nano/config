@@ -1,4 +1,4 @@
-upstream="https://git.savannah.gnu.org/git/nano.git"
+upstream="savannah:nano.git"
 
 :release () { :; }
 :commit  () { :; }
