@@ -1,3 +1,25 @@
+VAT 3.3.1
+- [ 2026-06-02 15:39:21 | 2d771582c ] fix(p): filter out letters in lxml release fetch
+- [ 2026-06-02 15:37:26 | 38c7142c2 ] feat: add and use savannah shortform
+- [ 2026-06-02 15:29:33 | b5ce26ddf ] feat(p): add keepassxc
+- [ 2026-06-02 15:29:33 | 1d85373a0 ] chore: remove vat.log
+- [ 2026-06-02 15:29:33 | 80dbde34a ] fix(lib): trivial tweaks
+- [ 2026-06-02 15:29:24 | 8d4ca60f8 ] feat(p): add pcsc
+- [ 2026-05-30 16:41:32 | e85c448b1 ] feat(p): add ublock
+- [ 2026-05-24 23:34:47 | 9b9d1613d ] fix(p): linux fetches
+- [ 2026-05-24 23:19:48 | 92cbbf02e ] feat(p): add hyfetch
+- [ 2026-05-22 12:45:08 | 7b968bbe3 ] feat(p): add libxo
+- [ 2026-05-21 19:05:08 | bf51099e6 ] feat(p): add audit
+- [ 2026-05-19 00:56:13 | 06411daf8 ] feat(p): add gobject-introspection
+- [ 2026-05-19 00:40:58 | cb14e5f1e ] fix(p): don't use `vfem` for gnupg
+- [ 2026-05-19 00:25:28 | 24b07c718 ] feat(p): add matugen
+- [ 2026-05-18 13:58:48 | 4163110c0 ] feat(p): add muparser
+- [ 2026-05-18 13:54:54 | 4bb4ba350 ] feat(p): add go/bleve
+- [ 2026-05-18 13:01:15 | dbb34497b ] feat(p): add blender
+- [ 2026-05-18 12:59:57 | 130a311ce ] feat: more granular numeric channels
+- [ 2026-05-15 14:11:22 | 0490fda0c ] fix(p): account for svt-av1 ignoring semver
+- [ 2026-05-15 14:08:10 | f61d9eae9 ] fix(p): fix s-nail fetch
+
 VAT 3.3.0
 - [ 2026-05-14 20:19:30 | 31a3d5313 ] fix(p): move slibtool upstream
 - [ 2026-05-14 20:18:18 | 92a0d8ddd ] fix(p): fix lmdb:release fetch
