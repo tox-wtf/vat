@@ -46,12 +46,12 @@ _gitremote() {
     cache="$VAT_CACHE/git-$hash"
 
     if [ ! -r "$cache" ] || [ ! -s "$cache" ] || "$NO_CACHE" ; then
-        GIT_HTTP_LOW_SPEED_LIMIT=1 \
-        GIT_HTTP_LOW_SPEED_TIME=16 \
-        GIT_HTTP_MAX_REQUESTS=8 \
-        git ls-remote -q "$upstream" |
+        GIT_HTTP_LOW_SPEED_LIMIT=1                  \
+        GIT_HTTP_LOW_SPEED_TIME=16                  \
+        GIT_HTTP_MAX_REQUESTS=8                     \
+        git ls-remote -q "$upstream"                |
             grep -aEo '[a-f0-9]{40}\s+.+[^\^\{\}]$' |
-            sed 's,[[:space:]]\+,\t,' |
+            sed 's,[[:space:]]\+,\t,'               |
             install -Dm644 /dev/stdin "$cache"
     fi
 
@@ -62,7 +62,7 @@ _gitremote() {
 gr() {
     local cache
     cache="$(_gitremote)"
-    grep -F refs/tags/ "$cache" | sed -e 's,.\+refs/tags/,,'
+    grep -F refs/tags/ "$cache" | sed 's,.\+refs/tags/,,'
 }
 
 # retrieve latest commit
@@ -84,10 +84,10 @@ vtrim() {
     # 2. trim release with an optional delimiter of - or _
     # 3. trim version prefixes v, r, n
     # 4. replace all underscores between numbers with dots
-    sed -re "s,^${name:?}[-_]?,,I"           \
-        -e  "s,^release[-_],,I"              \
-        -e  "s,^[vrn]([0-9]),\1,"            \
-        -e  ":a; s,([0-9]+)_([0-9]+),\1.\2,g; ta" \
+    sed -re "s,^${name:?}[-_]?,,I"                  \
+        -e  "s,^release[-_],,I"                     \
+        -e  "s,^[vrn]([0-9]),\1,"                   \
+        -e  ":a; s,([0-9]+)_([0-9]+),\1.\2,g; ta"   \
         "$@"
 }
 
