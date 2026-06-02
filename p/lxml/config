@@ -1,5 +1,8 @@
 upstream="gh:lxml/lxml"
 
-:release() { :; }
-
-:commit() { :; }
+:release () {
+    fetch() {
+        gr | vtrim | fl | vsort
+    }
+}
+:commit  () { :; }
