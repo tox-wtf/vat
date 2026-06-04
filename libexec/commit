@@ -10,9 +10,7 @@ done
 
 . lib/vars
 
-shopt -s globstar
-shopt -s nullglob
-
+shopt -s globstar nullglob
 set -u
 
 readarray -t projects < <(git status --porcelain=v1 -u all p/**/v.tsv | sed -e 's,^...p/,,' -e 's,/v.tsv$,,')
