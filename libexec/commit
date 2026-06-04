@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # shellcheck disable=1091
 
-# Generate a report of the run, once it's completed
+# Commit changes after a run is completed
 
 # shellcheck disable=2043
 for cmd in git; do
