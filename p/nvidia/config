@@ -1,6 +1,14 @@
 upstream="https://download.nvidia.com/XFree86/Linux-x86_64/"
 
-:latest() {
+:release () {
+    fetch() {
+        cr | vrepo | vsort
+    }
+}
+
+# Whatever happens to be in nvidia's latest.txt, which is usually irrelevant.
+# This is subject to removal.
+:latest  () {
     upstream="https://download.nvidia.com/XFree86/Linux-x86_64/latest.txt"
     expected='[0-9]{3}(\.[0-9]+)+'
     compare=false
@@ -10,14 +18,15 @@ upstream="https://download.nvidia.com/XFree86/Linux-x86_64/"
     }
 }
 
-for i in 580 590 595; do
-    eval "
-    :$i() {
-        expected='$i(\.[0-9]+)+'
+# Various numbered channels
+for i in 470 580 590 595 610; do
+eval "
+:$i      () {
+    expected='$i(\.[0-9]+)+'
 
-        fetch() {
-            cr | vrepo | uniq | vsort | grep '^$i\.'
-        }
+    fetch() {
+        cr | vrepo | uniq | vsort | grep '^$i\.'
     }
-    "
+}
+"
 done
