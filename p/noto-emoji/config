@@ -1,0 +1,8 @@
+upstream="gh:googlefonts/noto-emoji"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+         gr | vtrim | fdate | vsort
+    }
+}
