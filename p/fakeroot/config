@@ -1,0 +1,8 @@
+upstream="salsa:clint/fakeroot.git"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+         gr | vtrim -e 's,upstream/,,' | fl | vsort
+    }
+}
