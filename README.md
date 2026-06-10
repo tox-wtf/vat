@@ -150,20 +150,33 @@ And here's a simple Rust implementation:
 ```rust
 use std::collections::HashMap;
 
-use serde::{Deserialize, Serialize};
+use ureq::Agent;
 
-#[derive(Serialize, Deserialize)]
-pub struct VatProject(HashMap<String, HashMap<String, String>>);
+type VatMap = HashMap<String, HashMap<String, String>>;
+
+const ALL_URL: &str = "https://raw.githubusercontent.com/tox-wtf/vat/refs/heads/master/p/ALL.json";
+const EXAMPLES: &[&str] = &["7zip:release", "iana-etc:release", "glslang:sdk"];
 
 fn main() {
-    let v = VatProject(HashMap::from(
-        [("7zip".into(), HashMap::from([
-            ("release".into(), "26.00".into()),
-            ("commit".into(), "839151eaaad24771892afaae6bac690e31e58384".into())
-        ]))
-    ]));
+    let agent = Agent::new_with_config(
+        Agent::config_builder()
+            .user_agent("VAT-example/0.0.0")
+            .http_status_as_error(true)
+            .build(),
+    );
 
-    println!("{}", serde_json::to_string_pretty(&v).unwrap());
+    let response = agent.get(ALL_URL).call().unwrap();
+
+    let mut body = response.into_body();
+    let reader = body.with_config().reader();
+    let vat: VatMap = serde_json::from_reader(reader).unwrap();
+
+    for (project, channel) in EXAMPLES.iter().filter_map(|pair| pair.split_once(':')) {
+        println!(
+            "{project}:{channel} = {}",
+            vat.get(project).unwrap().get(channel).unwrap()
+        );
+    }
 }
 ```
 
