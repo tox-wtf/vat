@@ -1,7 +1,5 @@
 upstream="gh:jqlang/jq"
 
-:release() { :; }
-
-:unstable() { :; }
-
-:commit() { :; }
+:commit   () { :; }
+:release  () { :; }
+:unstable () { :; }
