@@ -150,31 +150,19 @@ And here's a simple Rust implementation:
 ```rust
 use std::collections::HashMap;
 
-use ureq::Agent;
-
-type VatMap = HashMap<String, HashMap<String, String>>;
-
 const ALL_URL: &str = "https://raw.githubusercontent.com/tox-wtf/vat/refs/heads/master/p/ALL.json";
 const EXAMPLES: &[&str] = &["7zip:release", "iana-etc:release", "glslang:sdk"];
+type VatMap = HashMap<String, HashMap<String, String>>;
 
 fn main() {
-    let agent = Agent::new_with_config(
-        Agent::config_builder()
-            .user_agent("VAT-example/0.0.0")
-            .http_status_as_error(true)
-            .build(),
-    );
-
-    let response = agent.get(ALL_URL).call().unwrap();
-
-    let mut body = response.into_body();
-    let reader = body.with_config().reader();
+    let response = ureq::get(ALL_URL).call().unwrap();
+    let reader = response.into_body().into_reader();
     let vat: VatMap = serde_json::from_reader(reader).unwrap();
 
     for (project, channel) in EXAMPLES.iter().filter_map(|pair| pair.split_once(':')) {
         println!(
             "{project}:{channel} = {}",
-            vat.get(project).unwrap().get(channel).unwrap()
+            vat.get(project).expect("no such project").get(channel).expect("no such channel")
         );
     }
 }
