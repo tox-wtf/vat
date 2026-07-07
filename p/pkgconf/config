@@ -1,4 +1,9 @@
 upstream="gh:pkgconf/pkgconf"
 
 :commit  () { :; }
-:release () { :; }
+:unstable() { :; }
+:release () {
+    fetch() {
+        defgitrelease | fhigh
+    }
+}
