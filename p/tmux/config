@@ -3,6 +3,7 @@ upstream="gh:tmux/tmux"
 :commit  () { :; }
 :release () {
     expected='[0-9]+\.[0-9]+[a-z]?'
+    compare='-c'
     fetch() {
         gr | vsort -c
     }
