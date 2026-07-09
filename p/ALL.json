@@ -169,11 +169,11 @@
     "bind-utils": {
         "unstable": "9.21.23",
         "release": "9.20.24",
-        "commit": "eed44c3876240edd709c975400dab1059553946b"
+        "commit": "c3fe58093d9edb7a71e77f03209cd5da7a54fad6"
     },
     "binutils": {
         "release": "2.46.1",
-        "commit": "32a7e94f84a3df0bcd08a2835e2c316f5ed07f77"
+        "commit": "b43c744924b3f5df3677dbe97d12608e63ca5a4d"
     },
     "bison": {
         "release": "3.8.2"
@@ -182,7 +182,7 @@
         "4.5": "4.5.11",
         "4.2": "4.2.22",
         "release": "5.1.2",
-        "commit": "41e992ee8d073c705f647b4ddc2d8470780de6c6"
+        "commit": "561a7c046e328f0cf0ec757a24db2348a3090e8a"
     },
     "blfs": {
         "release": "13.0",
@@ -260,7 +260,7 @@
     "capstone": {
         "unstable": "6.0.0-alpha9",
         "release": "5.0.9",
-        "commit": "d55666155e9b014ed9a3232fd10a9003c2639dd7"
+        "commit": "f3d47d1b105d3a7d944e9010020aeb75c98fa684"
     },
     "c-ares": {
         "unstable": "1.34.8",
@@ -330,7 +330,7 @@
     "cmake": {
         "unstable": "4.4.0-rc3",
         "release": "4.3.4",
-        "commit": "c9d0311a2bd710c2046075ee2883770800b55030"
+        "commit": "4c0451ac95c9fc3e5c4c529c69a0757e92e9142b"
     },
     "cmark": {
         "release": "0.31.2",
@@ -395,7 +395,7 @@
     "curl": {
         "unstable": "8.21.0",
         "release": "8.21.0",
-        "commit": "6841d59af67345493c0a692a6200bc4d8a82c5fd"
+        "commit": "6e5f94cd5dad9764641d1718b36e79907c68caf4"
     },
     "cyrus-sasl": {
         "release": "2.1.28",
@@ -466,7 +466,7 @@
     "dolphin": {
         "unstable": "26.04.3",
         "release": "26.04.3",
-        "commit": "6ad396e9924a3bf02e0aaf3547803b283e01bb2f"
+        "commit": "01d4cc068bb93687aefd54b54c6ed54b76cebf93"
     },
     "dos2unix": {
         "release": "7.5.6",
@@ -562,7 +562,7 @@
     },
     "emacs": {
         "release": "31.0.90",
-        "commit": "d7b070b74c5f0f34cf2298e218c1701d52e35c7a"
+        "commit": "300deca4a8ff627efe081e7b5b48b8d78810e6e7"
     },
     "enchant": {
         "release": "2.8.19",
@@ -586,14 +586,14 @@
     },
     "exiv2": {
         "release": "0.28.8",
-        "commit": "4d1d6568ea67b7c485a321d93924fd18555c17e1"
+        "commit": "feb9468287d296e7cabb27c25f681f568945317a"
     },
     "expect": {
         "release": "5.45.4"
     },
     "eza": {
-        "release": "0.23.4",
-        "commit": "0864331165064e7d11e2c0bde7143978d0f2310b"
+        "release": "0.23.5",
+        "commit": "471bfbc7b03cbac8c738e8d9050edb06ee79132a"
     },
     "fakeroot": {
         "release": "2.1.3",
@@ -601,7 +601,7 @@
     },
     "fastfetch": {
         "release": "2.65.2",
-        "commit": "44056f1c85ffd268171ee8bbd7a40f1fc90e0958"
+        "commit": "55e674e1cb0a0e07bb8b8f4fa09e6430bc855068"
     },
     "fast_float": {
         "release": "8.2.10",
@@ -676,7 +676,7 @@
         "3": "3.4.14",
         "2": "2.8.22",
         "release": "8.1.2",
-        "commit": "8de8405796df0c11c52772dd14bf6ed552d25c07"
+        "commit": "8ad6288553ffb99f1260d4770683f9d6c367e16b"
     },
     "fftw": {
         "unstable": "3.3.11",
@@ -698,7 +698,7 @@
     },
     "fish": {
         "release": "4.8.0",
-        "commit": "beb32f3ab4aa2bc8de612a8783895d2e7ad15082"
+        "commit": "2a28107be769cd79b28793889f440ba19da78c3e"
     },
     "flac": {
         "release": "1.5.0",
@@ -746,8 +746,8 @@
         "commit": "4868bb5e731b8a85afd97b8704d707a871610273"
     },
     "fontconfig": {
-        "release": "2.18.1",
-        "commit": "36b0c58b0705f40a7205cd9f49a286ff60088887"
+        "release": "2.18.2",
+        "commit": "2883bba03389e4a525923d446ab834af54b2fd4b"
     },
     "font-encodings": {
         "release": "1.1.0",
@@ -774,8 +774,8 @@
         "commit": "3c5b584b0eafa772eb4376fb6eaf6643399e190e"
     },
     "forgejo": {
-        "release": "15.0.3",
-        "commit": "c1c02f711104c366670c1b548b5ca72e9dc4622b"
+        "release": "15.0.4",
+        "commit": "5da9f78f5231ec68e21e02b0783c83fe6d9c7342"
     },
     "freebee": {
         "commit": "b727767d2ac48b86f984bf816dfbad9ece94776f"
@@ -812,11 +812,11 @@
     "gcc": {
         "unstable": "17",
         "release": "16.1.0",
-        "commit": "b0a84b6100389c5b24658743252a7ff259ba0816"
+        "commit": "3d8093d7cb7acb98288657ae34a9c99f8fd5a14c"
     },
     "gcr": {
         "release": "4.4.0.1",
-        "commit": "7c7977944a47741fb4779da2cc7d15c18f0c0bd2"
+        "commit": "f3f7578842423cd6cfc0b9d1f08fe9d7e394ec8f"
     },
     "gd/betteredit": {
         "unstable": "6.10.0-beta.6",
@@ -833,7 +833,7 @@
     },
     "gdb": {
         "release": "17.2",
-        "commit": "32a7e94f84a3df0bcd08a2835e2c316f5ed07f77"
+        "commit": "b43c744924b3f5df3677dbe97d12608e63ca5a4d"
     },
     "gd/cleanstartpos": {
         "unstable": "2.0.6",
@@ -939,7 +939,7 @@
     },
     "github-cli": {
         "release": "2.96.0",
-        "commit": "12fb220b31c578387b3e69af47f35d7d22b5e780"
+        "commit": "eb42db6853a392f5ab6b2b58d39642acaeea899d"
     },
     "git": {
         "unstable": "2.55.0",
@@ -986,7 +986,7 @@
     "glib": {
         "unstable": "2.89.1",
         "release": "2.88.2",
-        "commit": "1a7fc34d6832956fd8877ddfabf4dc4957b75215"
+        "commit": "8729ab2477e230828992d35b05e58de3e0176b32"
     },
     "glm": {
         "release": "1.0.3",
@@ -1168,7 +1168,7 @@
     "gstreamer": {
         "unstable": "1.29.2",
         "release": "1.28.5",
-        "commit": "a3b3b859e63fa8f5fbca059e725ec69dfdae7b1b"
+        "commit": "5f80c624739b6c662f22336fe3d5e5a20cf541df"
     },
     "gtk-doc": {
         "release": "1.36.1",
@@ -1184,7 +1184,7 @@
         "3": "3.24.52",
         "2": "2.24.33",
         "release": "4.22.4",
-        "commit": "c9dfa7c8ae0e3d618b2747e7e1f5eab656cc3f5d"
+        "commit": "904b21fb235a8eb9b699224692ecfe6ee72b0e71"
     },
     "guile": {
         "unstable": "3.0.10",
@@ -1252,7 +1252,7 @@
     },
     "highway": {
         "release": "1.4.0",
-        "commit": "b4f48979c28dc6b73dd6c2555357716826bf7894"
+        "commit": "3e98d6580cbf330175e5d87ed5f77056c8abf0ad"
     },
     "htop": {
         "release": "3.5.1",
@@ -1336,14 +1336,14 @@
     "icu": {
         "unstable": "78.3",
         "release": "78.3",
-        "commit": "174b794d76cb988e7fc13ebded47044cb60798d9"
+        "commit": "a4d2bb712e2f9181f2abead7ff99a5d471230f4c"
     },
     "idle-lisa-emu": {
         "release": "26"
     },
     "imagemagick": {
         "release": "7.1.2.27",
-        "commit": "bbbf79e33935be36890707a49103b0e66698b82e"
+        "commit": "e529f60580cc6c809acd2d99441af2ec764c6cbb"
     },
     "imv": {
         "release": "5.0.1",
@@ -1362,7 +1362,7 @@
     },
     "inkscape": {
         "release": "1.4.4",
-        "commit": "05c7103c69bca3fc67e6abd05a931776230b7663"
+        "commit": "1a4b0290d43a3d55113af185c379b3ada40968de"
     },
     "intel-mediasdk": {
         "release": "23.2.2",
@@ -1510,8 +1510,8 @@
         "release": "1.17"
     },
     "lame": {
-        "unstable": "3.100",
-        "release": "3.100"
+        "unstable": "3.101",
+        "release": "3.101"
     },
     "less": {
         "unstable": "706",
@@ -1527,7 +1527,7 @@
     },
     "libadwaita": {
         "release": "1.9.2",
-        "commit": "c8cac298373add06d7f216b6b5b68edc5a1f387f"
+        "commit": "42f647ffcbec3282c126ad9153c77baecf86ba90"
     },
     "libaio": {
         "release": "0.3.113",
@@ -1536,11 +1536,11 @@
     "libaom": {
         "unstable": "3.14.1",
         "release": "3.14.1",
-        "commit": "998a3fcda4e4de068eebb5a1f766be8126e83661"
+        "commit": "2b022abbd7b9d03e86d17cbabbb443a6a0941448"
     },
     "libarchive": {
         "release": "3.8.8",
-        "commit": "ba202cdafc124a8836d5b12f707c5205fb6fcb3f"
+        "commit": "cb2c1207f015a2f88b0f19a15b59dbe0dbb6e4d0"
     },
     "libassuan": {
         "release": "3.0.2",
@@ -1657,7 +1657,7 @@
     },
     "libffi": {
         "release": "3.7.0",
-        "commit": "132fb82ff4b43c9b8eaeeb533f38c95ae925131c"
+        "commit": "c2c2e538c7c5403bd4edc3e77220bbe25a3ad47f"
     },
     "libfontenc": {
         "release": "1.1.9",
@@ -1674,7 +1674,7 @@
     },
     "libfyaml": {
         "release": "0.9.6",
-        "commit": "ef891242e85196e732b19eb149b34455a7d0605c"
+        "commit": "1de24a3fb51c9a7c4054a9cd2d31df9aac077657"
     },
     "libgbm": {
         "release": "1.0.7",
@@ -1967,7 +1967,7 @@
     },
     "libssh2": {
         "release": "1.11.1",
-        "commit": "765d2f64cc050382764f6ee6a7b361029ec8853f"
+        "commit": "f2ec1f2f348daaeb74f9e3ed18548736d7bf35d2"
     },
     "libstatgrab": {
         "release": "0.92.1",
@@ -2014,7 +2014,7 @@
     },
     "libuv": {
         "release": "1.52.1",
-        "commit": "4b9d359b50ef4156d4af8171fd29caf08b29d65e"
+        "commit": "6ab8638e55ef24d4a48c4e22f34ff7f0a92d67a4"
     },
     "libva": {
         "release": "2.24.1",
@@ -2217,7 +2217,7 @@
     },
     "lighttpd": {
         "release": "1.4.85",
-        "commit": "39c8389e742a8c0c96d8404dafbc6ded4dc85064"
+        "commit": "78624eb2ae7e5d4de0ac9acc354e89352b5c0ea6"
     },
     "limine": {
         "release": "12.4.1",
@@ -2245,7 +2245,7 @@
     "llvm": {
         "unstable": "22.1.8",
         "release": "22.1.8",
-        "commit": "d7ccd02c9c78b6576ca2caa3f4d2435ebda50744"
+        "commit": "2e81babdf17d29d2b7e833137f92a598f76a8cbb"
     },
     "lmdb": {
         "release": "1.0.0"
@@ -2338,8 +2338,8 @@
         "release": "1.14.6"
     },
     "mango": {
-        "release": "0.14.4",
-        "commit": "c58e96db6e80c24041e4282441323bd6aa19d26c"
+        "release": "0.15.0",
+        "commit": "deecb4ca33935b3c82326d7522b30eb3a27120ca"
     },
     "man-pages": {
         "release": "6.18",
@@ -2369,7 +2369,7 @@
     },
     "mediawiki": {
         "release": "1.46.0",
-        "commit": "417ec01ef8fe041e5a2a64d4686c51046df6081f"
+        "commit": "2710c11108e63a71514ab8bd0da4d0613ea31e6b"
     },
     "melonds": {
         "release": "1.1",
@@ -2384,7 +2384,7 @@
     },
     "mesa": {
         "release": "26.1.4",
-        "commit": "058b45eede94f3912a1ab3ee2e3c556ede040730"
+        "commit": "a8aabfa3639fd0a90fb40f2e614f73cbd001bc9a"
     },
     "meson": {
         "release": "1.11.1",
@@ -2429,7 +2429,7 @@
     },
     "monkeytype": {
         "release": "26.28.0",
-        "commit": "428e0f87b71f38e21660abafda0e4088f1b2006a"
+        "commit": "37bb96cafbb03ffffe80960f2c28ddd2a088497a"
     },
     "monomod": {
         "release": "22.07.31.01",
@@ -2451,7 +2451,7 @@
     },
     "mpd": {
         "release": "0.24.12",
-        "commit": "5d058c283e166164f9a852f6fe731ff39568f5e2"
+        "commit": "5e6775e4c755ae3d72eb263d3ae18e1925e3d82c"
     },
     "mpfr": {
         "release": "4.2.2",
@@ -2489,7 +2489,7 @@
     },
     "mupdf": {
         "release": "1.28.0",
-        "commit": "72d9410655cb2aae545363f82cf771484d74b69c"
+        "commit": "067929c963b2ec84c3143d1bf3dd857c2f071478"
     },
     "mupen64plus-audio-sdl": {
         "release": "2.6.0",
@@ -2550,7 +2550,7 @@
     },
     "neovim": {
         "release": "0.12.4",
-        "commit": "7c9222f45eb731301bc1421cca96313a2034c12a"
+        "commit": "c0a16a59776649eacf649a95f909eca58f3678c1"
     },
     "netcat": {
         "release": "1.238.1",
@@ -2579,7 +2579,7 @@
     },
     "ninja": {
         "release": "1.13.2",
-        "commit": "ada4c1029b6bf4e8c5becd3870b887024c87c367"
+        "commit": "77d328f5f679bfef14b1f67f3cd431b729bc786f"
     },
     "niri": {
         "release": "26.04",
@@ -2587,14 +2587,14 @@
     },
     "nlohmann-json": {
         "release": "3.12.0",
-        "commit": "fe0299545ae311ecec66d04fc01a7add49d7de86"
+        "commit": "ff34a3fd2f6d2a96057e8a6af7ce463aeb2470bc"
     },
     "nodejs": {
         "24": "24.18.0",
         "22": "22.23.1",
         "20": "20.20.2",
         "release": "26.5.0",
-        "commit": "70361998cbcacd8ff55d112f7356b7f84f6da64a"
+        "commit": "8fec65d87731c86711bc930a78c612a4ae70b16b"
     },
     "noise-suppression-for-voice": {
         "release": "1.21",
@@ -2632,11 +2632,11 @@
     },
     "numpy": {
         "release": "2.5.1",
-        "commit": "f5f68cc3d25daf05402eed5aaa58459c56b3ac2b"
+        "commit": "ab5108ab51927307c1002c75af2f5f0897b473bb"
     },
     "nushell": {
         "release": "0.114.0",
-        "commit": "ca9ebead1447e586060baf135172a405c808a120"
+        "commit": "69e3a66178d00b6eeeda089a904ee41531283b62"
     },
     "nvchecker": {
         "release": "2.20",
@@ -2689,7 +2689,7 @@
     },
     "opencv": {
         "release": "5.0.0",
-        "commit": "b887e2fd3e6a50d26621ca298029c52eb11b476c"
+        "commit": "7507accf2e506f162cfe48a46e3be45e999f1ebe"
     },
     "openjpeg": {
         "release": "2.5.4",
@@ -2730,7 +2730,7 @@
     },
     "p11-kit": {
         "release": "0.26.2",
-        "commit": "0eedd4ddd7c924f9cbb4ac496b3fda699435c3cf"
+        "commit": "e909c6524d195b0eeb19d979bcfef5bdb45b0b26"
     },
     "pahole": {
         "release": "1.31",
@@ -2776,9 +2776,9 @@
         "commit": "d3d6b25ebc711d80c8afeff8e34d1fbfe5957150"
     },
     "pcsx2": {
-        "unstable": "2.7.454",
+        "unstable": "2.7.458",
         "release": "2.6.3",
-        "commit": "cb000a510180770036cc907978b3f05e704ff9ab"
+        "commit": "7e49bc5a501d14862b9c3c82a4c891a3fa669cbd"
     },
     "perl/algorithm-diff": {
         "release": "1.201"
@@ -3221,7 +3221,7 @@
     "php": {
         "unstable": "8.6.0alpha1",
         "release": "8.5.8",
-        "commit": "9dc29aafa5eecc71a9f9e2c7607b588597a91810"
+        "commit": "93e2349666048c810d825a23baf11469eb2f77f2"
     },
     "picom": {
         "release": "13",
@@ -3236,9 +3236,9 @@
         "commit": "15b7e8aa023e4fb38db8af53f3d55deb44be17e5"
     },
     "pipewire": {
-        "unstable": "1.6.7",
-        "release": "1.6.7",
-        "commit": "68716afa3d80231e12df0ea0d22acba673c55118"
+        "unstable": "1.6.8",
+        "release": "1.6.8",
+        "commit": "a6f529b508d9b0ca7edab223654d4cd0a3e8a94e"
     },
     "pixman": {
         "release": "0.46.4",
@@ -3408,7 +3408,7 @@
     },
     "python/gi-docgen": {
         "release": "2026.1",
-        "commit": "32926a53220287e648e7a5997ad16330aa8c439b"
+        "commit": "b27747121ae6045a6e0dfce5e268a65b642361cd"
     },
     "python/hatch-fancy-pypi-readme": {
         "release": "25.1.0",
@@ -3444,7 +3444,7 @@
     },
     "python/maturin": {
         "release": "1.14.1",
-        "commit": "e54b7775bd58d2f06a088027e4e53e5ef0771f61"
+        "commit": "f1dfd86970b46e18c996c1fa7d30234446028e12"
     },
     "python/meson-python": {
         "release": "0.20.0",
@@ -3544,7 +3544,7 @@
     },
     "python/requests": {
         "release": "2.34.2",
-        "commit": "4c800e9aea2059660b8306b0fc8f9e9a4232cb3e"
+        "commit": "f361ead047be5cb873174218582f7d8b9fcd9f49"
     },
     "python/roman-numerals": {
         "release": "4.1.0",
@@ -3560,7 +3560,7 @@
     },
     "python/sentry-sdk": {
         "release": "2.64.0",
-        "commit": "0cc4505858210e7e3bc3eb63be4293f33e3bee89"
+        "commit": "32a92b1baf5449f5deb2948c8a4c303152aba647"
     },
     "python/setuptools-rust": {
         "release": "1.13.0",
@@ -3641,12 +3641,12 @@
     },
     "python/uv": {
         "release": "0.11.28",
-        "commit": "ca9bb370d79635e3745f3fa4945be3297dbceb7f"
+        "commit": "f41afe15a7756b063d2a1a829b5d2d1e7d293da2"
     },
     "python": {
         "unstable": "3.15.0b3",
         "release": "3.14.6",
-        "commit": "f3fd9dc8d633a776439128fcc8de2b191fd94906"
+        "commit": "dd8739a35bf171068117019ceb836f2f2264a3e9"
     },
     "python/webencodings": {
         "release": "0.5.1",
@@ -3675,7 +3675,7 @@
     "qt": {
         "5": "5.15.19",
         "release": "6.11.1",
-        "commit": "9285a392b5d8bc685dcf02f9dbd3ef1e478c0281"
+        "commit": "117c9a2d5d4568d005e96a6d0180ba5001a960cf"
     },
     "quazip": {
         "release": "1.7.2",
@@ -3719,7 +3719,7 @@
     },
     "ripgrep": {
         "release": "15.1.0",
-        "commit": "f2f3d00df7b51c9581a07b7373353cf7eef08dd8"
+        "commit": "3a570990c4cf04404c4c320391e92749d434643b"
     },
     "rip": {
         "release": "2.4.0",
@@ -3759,7 +3759,7 @@
     "ruby": {
         "unstable": "4.0.5",
         "release": "4.0.5",
-        "commit": "df0622320bbd9a7c345e36e1b0730f25bc6a016b"
+        "commit": "8590e2384468bed70e8e1589e82da347cdb6ae84"
     },
     "rust/anyhow": {
         "release": "1.0.103",
@@ -3802,9 +3802,9 @@
         "commit": "d9d4c542de10f5d3a711b7a45ffe450fd0666437"
     },
     "rust": {
-        "release": "1.96.1",
+        "release": "1.97.0",
         "nightly": "2026-07-09",
-        "commit": "07074cfe1d991fe06b7fc613bbbd1dd9d0d37c80"
+        "commit": "561ea2bfa3022226082e2db39d6ccb241e9e34bc"
     },
     "r": {
         "release": "4.6.1"
@@ -3995,7 +3995,7 @@
     "spirv-tools": {
         "sdk": "1.4.350.1",
         "release": "2026.2",
-        "commit": "b707790a898e44038547df54580022fc1cf89c3d"
+        "commit": "f877466a5d2a08685e746af5c859ed4ae469218f"
     },
     "sqlite": {
         "release": "3.53.3",
@@ -4084,7 +4084,7 @@
     },
     "systemd": {
         "release": "261.1",
-        "commit": "9c21e058d14c7f529020abb03de711837527b612"
+        "commit": "add910a838ea718abd7f70d221fd5a69408c7026"
     },
     "sysvinit": {
         "release": "3.18",
@@ -4151,7 +4151,7 @@
     },
     "tldraw": {
         "release": "5.2.3",
-        "commit": "7d9a44c2e06d8c7ef50a587f07b7cfeecfa9db60"
+        "commit": "b7898239508e834517af03cbb3b5bb83534b0411"
     },
     "tllist": {
         "release": "1.1.0",
@@ -4194,7 +4194,7 @@
     "ublock": {
         "unstable": "1.72.2",
         "release": "1.72.2",
-        "commit": "b123c23a4f525465b930486d95b8878b68ece340"
+        "commit": "496814d073cd0e98e42330c9fadbddd617421398"
     },
     "uchardet": {
         "release": "0.0.8",
@@ -4267,7 +4267,7 @@
     "util-linux": {
         "unstable": "2.42.2",
         "release": "2.42.2",
-        "commit": "b38324a9a4020123e8972079de51a2aed7e44c69"
+        "commit": "9a6d1e94551a690a29d67dff721df593bed22195"
     },
     "util-macros": {
         "release": "1.20.2",
@@ -4284,7 +4284,7 @@
     },
     "vat": {
         "release": "3.3.2",
-        "commit": "209d636dd67af855ad3d9d3049fd1e317ffa295b"
+        "commit": "04a88233197aa130420a44e5dd199887581f2ab0"
     },
     "velox": {
         "release": "0.0.3",
@@ -4304,7 +4304,7 @@
     },
     "violentmonkey": {
         "release": "2.41.2",
-        "commit": "8aaafc54259b11db2e04396aed1d64b3b830f767"
+        "commit": "dd8bb6d3e90baecb2f99d5afd515210111a64751"
     },
     "vkd3d-proton": {
         "release": "3.0.1",
@@ -4334,15 +4334,15 @@
     },
     "wayfire": {
         "release": "0.10.1",
-        "commit": "1fda80ea6a5764ae8cd299ab209b32a4c54ea857"
+        "commit": "8603d18713162b8bc7bfff5a2da2deb9a1187b23"
     },
     "wayland-protocols": {
         "release": "1.49",
         "commit": "afb614d5fcbd02d261a6ae91920aa91cf3915a8a"
     },
     "wayland": {
-        "release": "1.25.0",
-        "commit": "60d6bb946c1d8a81a92830e3da557c3b1bcb31a4"
+        "release": "1.25.91",
+        "commit": "c23a8beb1ff41428e841137175c6be738ab627be"
     },
     "wbg": {
         "release": "1.3.0",
@@ -4362,7 +4362,7 @@
     },
     "wget2": {
         "release": "2.2.1",
-        "commit": "2118e98e9ed9caa0e4277ea2c7c3439bd817b2cc"
+        "commit": "7cdb9f42301cda972e994744f98ba87487f5e39f"
     },
     "wgetpaste": {
         "release": "2.34",
@@ -4370,7 +4370,7 @@
     },
     "wget": {
         "release": "1.25.0",
-        "commit": "7b1cdecc49bc77bde220fc575c8a00386c3f3bcf"
+        "commit": "82d945ff5dc9942b78b2bf736aac298c24fe00a1"
     },
     "wheel": {
         "release": "0.47.0",
@@ -4421,7 +4421,7 @@
     },
     "wpa_supplicant": {
         "release": "2.11",
-        "commit": "890d573a18647feb71b08031a2bda41682ed3c6e"
+        "commit": "b57ee6cfcce5b2c486001f7c416dad176b3b567c"
     },
     "wsxwm": {
         "commit": "f6a22e6d3c083cca5193e3f86154e2d654528ade"
@@ -4745,11 +4745,11 @@
     },
     "zathura": {
         "release": "2026.07.08",
-        "commit": "8b24330068937875a2fc147307cbb44247c420ef"
+        "commit": "bc0c26d54bd8a675afff91b355ef287933547a43"
     },
     "zig": {
         "release": "0.16.0",
-        "commit": "65073f3dc5244941914e7c4d1897a74ac8adcd69"
+        "commit": "01b60634c7edecfd4757e12bc5f3b265a2959761"
     },
     "zip": {
         "unstable": "3.1c",
