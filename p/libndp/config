@@ -1,0 +1,5 @@
+upstream="gh:jpirko/libndp"
+chance=33 # last commit dated 2024-06-28
+
+:commit  () { :; }
+:release () { :; }
