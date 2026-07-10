@@ -1,0 +1,8 @@
+upstream="gl:fetchmail/fetchmail"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | dashdot | vtrim -e s,SNAPSHOT_,, | fl | vsort
+    }
+}
