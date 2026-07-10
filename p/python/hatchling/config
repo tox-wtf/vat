@@ -1,0 +1,8 @@
+upstream="gh:pypa/hatch"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim | fl | vsort
+    }
+}
