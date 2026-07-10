@@ -1,0 +1,5 @@
+upstream="gh:HewlettPackard/wireless-tools"
+chance=2 # no commits since 2016, archived in 2025
+
+:commit  () { :; }
+:release () { :; }
