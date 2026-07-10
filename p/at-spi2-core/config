@@ -1,5 +1,15 @@
 upstream="gh:gnome/at-spi2-core"
 
-:release() { :; }
+:commit  () { :; }
 
-:commit() { :; }
+:unstable() {
+    fetch() {
+        gr | fl | vsort
+    }
+}
+
+:release () {
+    fetch() {
+        gr | fl | vfem | vsort
+    }
+}
