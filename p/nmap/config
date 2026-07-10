@@ -1,0 +1,6 @@
+upstream="https://nmap.org/dist/?C=M;O=D"
+
+:commit  () {
+    upstream="gh:nmap/nmap"
+}
+:release () { :; }
