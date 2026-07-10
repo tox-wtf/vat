@@ -1,0 +1,8 @@
+upstream="https://downloads.nwtime.org/ntp/"
+
+:release () {
+    expected='[0-9]+\.[0-9]+\.[0-9]+(p[0-9]+)?'
+    fetch() {
+        cr | grep -Eo "ntp-($expected)" | vtrim | vsort
+    }
+}
