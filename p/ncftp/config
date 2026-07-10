@@ -1,0 +1,7 @@
+upstream="https://www.ncftp.com/public_ftp/ncftp/"
+
+:release () {
+    fetch() {
+        cr | vrepo -a $name- | vtrim | vsort
+    }
+}
