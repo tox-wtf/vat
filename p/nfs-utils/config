@@ -1,0 +1,13 @@
+upstream="git://git.linux-nfs.org/projects/steved/nfs-utils.git"
+
+:commit  () { :; }
+:unstable() {
+    fetch() {
+        gr | vtrim | dashdot | vsort
+    }
+}
+:release () {
+    fetch() {
+        gr | vtrim | dashdot | fl | vsort
+    }
+}
