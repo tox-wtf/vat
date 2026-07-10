@@ -1,0 +1,9 @@
+# TODO: This is kind of horrible, but I genuinely cannot find an up-to-date
+# upstream page
+upstream="https://tracker.debian.org/pkg/heirloom-mailx"
+
+:release () {
+    fetch() {
+        cr | grep -A3 version: | vrepo
+    }
+}
