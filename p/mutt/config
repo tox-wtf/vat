@@ -1,0 +1,8 @@
+upstream="gl:muttmua/mutt"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | dashdot | vtrim -e s,-rel,, | fl | vsort
+    }
+}
