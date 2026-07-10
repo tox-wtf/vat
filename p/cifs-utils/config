@@ -1,0 +1,8 @@
+upstream="https://git.samba.org/cifs-utils.git"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,-,.,' | fl | vsort
+    }
+}
