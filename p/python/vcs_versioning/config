@@ -1,0 +1,8 @@
+upstream="gh:pypa/setuptools-scm"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | grep 'vcs[_-]versioning' | vtrim | vfs | vsort
+    }
+}
