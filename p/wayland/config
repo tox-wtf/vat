@@ -1,4 +1,9 @@
 upstream="freedesktop:/wayland/wayland.git"
 
 :commit  () { :; }
-:release () { :; }
+:unstable() { :; }
+:release () {
+    fetch() {
+        defgitrelease | fhigh
+    }
+}
