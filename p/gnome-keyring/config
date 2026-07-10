@@ -1,0 +1,8 @@
+upstream="gh:GNOME/gnome-keyring"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        defgitrelease | fhigh
+    }
+}
