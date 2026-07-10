@@ -1,0 +1,13 @@
+upstream="gl:wireshark/wireshark"
+
+:commit  () { :; }
+:unstable() {
+    fetch() {
+         gr | vtrim | fdash | vsort
+    }
+}
+:release () {
+    fetch() {
+         gr | vtrim | fdash | fl | vsort
+    }
+}
