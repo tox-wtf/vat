@@ -12,7 +12,28 @@ if ! [ -d p ]; then
     return 2
 fi
 
-export project="$1"
+project="${1:-${project:?Specify the project to add}}"
+project_bak="$project"
+if [[ $project != */* ]] && ! [ -f p/$project/config ]; then
+    project="$(find p -type d -name $1 | sed s,^p/,,)"
+
+    case "$(echo "$project" | wc -l)" in
+        1)
+            read -rn1 -p "A project of a similar name exists. Target it? (yes/no/die) "
+            echo
+            case ${REPLY,,} in
+                y*) : ;;
+                d*) return 0 ;;
+                n*) project="${project_bak}" ;;
+                *) echo "Invalid action: $REPLY" >&2 && return 2 ;;
+            esac
+        ;;
+        *) project="${project_bak}" ;;
+    esac
+fi
+unset project_bak
+export project
+
 mkdir -p "p/${project:?}"
 if ! [ -f "p/$project/config" ]; then
 install -vDm644 /dev/stdin "p/$project/config" << .
@@ -60,7 +81,16 @@ if ! [ -d p ]; then
     return 2
 fi
 
-export project="${1:-${project:?Specify the project to test}}"
+project="${1:-${project:?Specify the project to test}}"
+if [[ $project != */* ]] && ! [ -f p/$project/config ]; then
+    project="$(find p -type d -name $1 | sed s,^p/,,)"
+    case "$(echo "$project" | wc -l)" in
+        0) echo "No such project" >&2 && return 2 ;;
+        1) : ;;
+        *) echo "Multiple projects with this name exist:" >&2 && echo "$project" >&2 && return 2 ;;
+    esac
+fi
+export project
 
 install -D config "$VAT_TARGET/config.bak"
 cat >> config << '.'
