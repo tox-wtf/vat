@@ -1,9 +1,9 @@
-upstream="gl:wireshark/wireshark"
+upstream="gl:wireshark/wireshark.git"
 
 :commit  () { :; }
 :unstable() {
     fetch() {
-         gr | vtrim | fdash | vsort
+         gr | vtrim | fdash | fsl | vsort
     }
 }
 :release () {
