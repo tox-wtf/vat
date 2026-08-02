@@ -1,0 +1,9 @@
+upstream="freedesktop:libinput/libei"
+
+:commit  () { :; }
+:unstable() { :; }
+:release () {
+    fetch() {
+        defgitrelease | fhigh
+    }
+}
