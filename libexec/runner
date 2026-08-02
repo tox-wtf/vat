@@ -144,6 +144,29 @@ timeout() {
     return "$finished"
 }
 
+wrapped_fetch() {
+    local secs=30
+
+    # Silence job control output through redirectionanigans
+    { fetch | tail -n128 2>&3 & } 3>&2 2>&-
+    local cmd_pid="$!"
+
+    { sleep "$secs" 2>&3 & } 3>&2 2>&-
+    local sleep_pid="$!"
+
+    wait -n "$cmd_pid" "$sleep_pid" &>/dev/null
+    local finished="$?"
+
+    if kill -0 "$cmd_pid" &>/dev/null; then
+        kill "$cmd_pid" &>/dev/null
+        wait "$cmd_pid" &>/dev/null
+        return 124
+    fi
+
+    kill "$sleep_pid" &>/dev/null
+    return "$finished"
+}
+
 for channel in "${channels[@]}"; do
     (
         printf "%s\t%s\t" "$project" "$channel"
@@ -157,7 +180,7 @@ for channel in "${channels[@]}"; do
 
         set_default_fetch
         type fetch >&3
-        out=$(timeout 30 fetch | tail -n128)
+        out=$(wrapped_fetch)
         eval_result || exit
 
         echo "$out" | tail -n32 >&3
