@@ -141,7 +141,9 @@ libexec/report "${projects[@]}" | tee "$VAT_TARGET/report"
 if $DRY; then
     echo
     log "Cleaning artifacts after dry run"
+    # PERF: Could replace this loop with an array of filenames on which to call git just twice
     for project in "${projects[@]}"; do
+        git restore "p/$project/v".* &>/dev/null
         git clean -f "p/$project/v".* &>/dev/null
     done
 
