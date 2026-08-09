@@ -1,3 +1,53 @@
+VAT 3.3.4
+- [ 2026-08-03 15:40:55 | fcda8ca788 ] fix(p): fix channels for emacs
+- [ 2026-08-03 15:35:24 | d8b0b58f6e ] feat(p): add opentimeline
+- [ 2026-08-01 22:22:12 | 3592ec1b14 ] feat(p): add libei
+- [ 2026-08-01 21:59:58 | 3923ad551a ] feat(p): add waypipe
+- [ 2026-08-01 21:29:03 | 6c13200f1f ] fix: correct timeout logic
+- [ 2026-08-01 21:28:29 | bbfc7f52a8 ] fix: restore modified version files in dry runs
+- [ 2026-08-01 21:28:15 | 6911308096 ] feat(p): add helix
+- [ 2026-07-16 22:39:23 | 31cadaca42 ] fix(p): silence a redirect warning for mutt
+- [ 2026-07-16 22:39:23 | c2075b9cec ] fix(p): silence a redirect warning for fetchmail
+- [ 2026-07-14 16:01:13 | b6a818d38b ] fix(p): use latest stable for linux
+- [ 2026-07-10 20:47:50 | 004cfe280a ] fix(p): wireshark fixes
+- [ 2026-07-10 16:31:55 | e8f041fb16 ] feat(p): add procmail
+- [ 2026-07-10 16:31:55 | 13600001ec ] feat(p): add mutt
+- [ 2026-07-10 16:31:54 | c83d6d439c ] feat(p): add heirloom-mailx
+- [ 2026-07-10 16:31:54 | 6b4102e554 ] feat(p): add fetchmail
+- [ 2026-07-10 16:31:54 | 4b56ccada5 ] feat(p): add links
+- [ 2026-07-10 16:04:48 | 83a7d03c8b ] feat(p): add wireshark
+- [ 2026-07-10 16:04:48 | bac9b81c00 ] feat(p): add wireless-tools
+- [ 2026-07-10 16:04:48 | bdcc39bd09 ] feat(p): add samba
+- [ 2026-07-10 16:04:48 | 40ae89766b ] feat(p): add rpcsvc-proto
+- [ 2026-07-10 16:04:48 | 50c599b767 ] feat(p): add rpcbind
+- [ 2026-07-10 16:04:48 | cb1f89e3bf ] feat(p): add ntp
+- [ 2026-07-10 16:04:48 | 52d0528350 ] feat(p): add nmap
+- [ 2026-07-10 16:04:48 | 77558068db ] feat(p): add nfs-utils
+- [ 2026-07-10 16:04:48 | eb173232e7 ] feat(p): add network-manager-applet
+- [ 2026-07-10 16:04:48 | c0d7322eb4 ] feat(p): add networkmanager
+- [ 2026-07-10 16:04:48 | cf890fa674 ] feat(p): add net-tools
+- [ 2026-07-10 16:04:48 | bf1f19bcda ] feat(p): add neon
+- [ 2026-07-10 16:04:48 | 65f2ff152d ] feat(p): add ncftp
+- [ 2026-07-10 16:04:48 | c8d0848ef0 ] feat(p): add libnma
+- [ 2026-07-10 16:04:48 | 2ddb8c3c93 ] feat(p): add libndp
+- [ 2026-07-10 16:04:48 | 6b4044387d ] feat(p): add ldns
+- [ 2026-07-10 16:04:48 | 1cb2ba32eb ] feat(p): add kdsoap-ws-discovery-client
+- [ 2026-07-10 16:04:48 | 6fc6ea9c05 ] feat(p): add kdsoap
+- [ 2026-07-10 16:04:48 | 126a439b9a ] feat(p): add geoclue
+- [ 2026-07-10 16:04:48 | fb6730e58f ] feat(p): add cifs-utils
+- [ 2026-07-10 16:04:48 | fd425c0588 ] feat(p): add apache-ant
+- [ 2026-07-10 16:04:48 | 62842cf887 ] fix: `printf` before piping to `wc -l`
+- [ 2026-07-10 16:04:48 | 7049c7ce32 ] feat(p): add apache
+- [ 2026-07-10 16:04:48 | 01cca84b86 ] feat(p): add gnome-keyring
+- [ 2026-07-10 16:04:48 | e1cf1ad3f3 ] feat(p): add serf
+- [ 2026-07-10 05:03:23 | b555914882 ] fix(p): fix channels for at-spi2-core
+- [ 2026-07-10 00:40:58 | 672debcd2e ] feat: improve dev util ux
+- [ 2026-07-10 00:14:36 | f71d06dc33 ] feat(p): add python/patchling
+- [ 2026-07-10 00:14:36 | 6a713d1552 ] feat(p): add python/vcs_versioning
+- [ 2026-07-10 00:14:36 | 8359274db8 ] feat: normalize dashes and underscores in `$name` in `vtrim()`
+- [ 2026-07-09 22:07:23 | 56035065bf ] feat(p): add unstable channel for wayland
+- [ 2026-07-09 16:29:36 | 126f643c67 ] fix(p): fix expected regex for glib-networking
+
 VAT 3.3.3
 - [ 2026-07-07 13:57:47 | 76f7c45dea ] fix(p): move gd/eclipsemenu upstream
 - [ 2026-07-07 13:46:32 | 5be09a6930 ] fix(p): add compare flag for tmux
