@@ -1,8 +1,8 @@
 upstream="gh:emacs-mirror/emacs"
 
-:commit()   { :; }
+:commit  () { :; }
 :unstable() { :; }
-:release()  {
+:release () {
     fetch() {
         defgitrelease | fhigh
     }
