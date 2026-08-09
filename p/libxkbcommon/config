@@ -1,9 +1,15 @@
 upstream="gh:xkbcommon/libxkbcommon"
 
-:release() {
+:release () {
+    fetch() {
+        gr | vtrim -e 's,^xkbcommon-,,' | vfs | vsort
+    }
+}
+
+:unstable() {
     fetch() {
         gr | vtrim -e 's,^xkbcommon-,,' | vsort
     }
 }
 
-:commit() { :; }
+:commit  ()   { :; }
