@@ -3,6 +3,7 @@ upstream="gh:dolphin-emu/dolphin"
 :commit  () { :; }
 :release () {
     expected="[0-9]{4}[a-f]?"
+    compare="-c"
     fetch() {
         gr | grep -vF . | vsort -c
     }
