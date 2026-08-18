@@ -2,8 +2,8 @@ upstream="gh:gavinhoward/bc"
 
 :release() {
     fetch() {
-        w github
-        ghr | vtrim
+        upstream="https://formulae.brew.sh/api/formula/bc-gh.json"
+        cr | jq -r .versions.stable
     }
 }
 
