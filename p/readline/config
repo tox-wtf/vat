@@ -2,12 +2,24 @@ upstream="gnu:readline/?C=M&O=D"
 
 :release () {
     fetch() {
-        cr | grep $name | cut -d\" -f8 | vtrim -E -e 's,.tar.gz.*$,,' | grep -Ev 'diff|doc|patches|a$|<' | vfs | vsort
+        local basever=$(cr | grep $name | cut -d\" -f8 | vtrim -E -e 's,.tar.gz.*$,,' | grep -Ev 'diff|doc|patches|a$|<' | grep -x '[0-9]\+\.[0-9]\+' | vsort | tail -n1)
+        local upstream="${upstream%\?*}/readline-$basever-patches/?C=M&O=D"
+        local patch=$(cr | grep -Eo 'readline[0-9]+-[0-9]{3}' | uniq | cut -d- -f2 | sed 's,^0*,,' | vsort | tail -n1)
+
+        echo "$basever.$patch"
     }
 }
 
 :unstable() {
     fetch() {
-        cr | grep $name | cut -d\" -f8 | vtrim -E -e 's,.tar.gz.*$,,' | grep -Ev 'diff|doc|patches|a$|<' | vsort
+        :release
+        {
+            fetch
+            cr | grep $name | cut -d\" -f8 | vtrim -E -e 's,.tar.gz.*$,,' | grep -Ev 'diff|doc|patches|a$|<'
+        } | vsort
     }
+}
+
+:commit() {
+    upstream=savannah:readline.git
 }
