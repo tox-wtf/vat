@@ -2,7 +2,7 @@ upstream="gh:lxml/lxml"
 
 :release () {
     fetch() {
-        gr | vtrim | fl | vsort
+        gr | vtrim | fl | fdash | vsort
     }
 }
 :commit  () { :; }
