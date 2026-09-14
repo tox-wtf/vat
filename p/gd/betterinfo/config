@@ -1,5 +1,13 @@
 upstream="gh:Cvolton/betterinfo-geode"
 
 :commit  () { :; }
-:release () { :; }
-:unstable() { :; }
+:release () {
+    fetch() {
+        defgitrelease | dashdot
+    }
+}
+:unstable() {
+    fetch() {
+        defgitunstable | dashdot
+    }
+}
