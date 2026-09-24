@@ -9,6 +9,7 @@ chance=55
 :release () {
     upstream="https://hg.sr.ht/~scoopta/wofi/tags"
     fetch() {
-        cr | vrepo -3 | vsort
+        # FIXME: Filter out the source of 5.3.1 instead
+        cr | vrepo -3 | grep -vF 5.3.1 | vsort
     }
 }
