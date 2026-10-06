@@ -1,3 +1,5 @@
-upstream="gnu:grub/?C=M&O=D"
+upstream="freedesktop:gnu-grub/grub"
 
 :release() { :; }
+:unstable() { :; }
+:commit() { :; }
