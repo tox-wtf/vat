@@ -1,0 +1,15 @@
+upstream="https://gitlab.isc.org/isc-projects/kea"
+
+:commit  () { :; }
+
+:release () {
+    fetch() {
+        gr | tolower | grep -F kea | vrep | vtrim | vfs | vsort
+    }
+}
+
+:unstable() {
+    fetch() {
+        gr | tolower | grep -F kea | vrep | vtrim | vsort
+    }
+}
