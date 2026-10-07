@@ -1,0 +1,15 @@
+upstream="https://code.exim.org/exim/exim.git"
+
+:commit  () { :; }
+
+:release () {
+    fetch() {
+        gr | vtrim -e 's,([0-9])_([0-9]),\1.\2,g' -e 's,_,-,' | fsl | tolower | vfs | vsort
+    }
+}
+
+:unstable() {
+    fetch() {
+        gr | vtrim -e 's,([0-9])_([0-9]),\1.\2,g' -e 's,_,-,' | fsl | tolower | vsort
+    }
+}
