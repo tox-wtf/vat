@@ -1,0 +1,8 @@
+upstream="gh:official-stockfish/stockfish"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        gr | vtrim -e 's,sf_,,' | fsl | vfs | vsort
+    }
+}
