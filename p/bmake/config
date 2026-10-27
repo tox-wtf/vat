@@ -1,0 +1,7 @@
+upstream="https://www.crufty.net/ftp/pub/sjg/"
+
+:release () {
+    fetch() {
+        cr | grep -Po 'bmake-\K\d+' | vsort
+    }
+}
