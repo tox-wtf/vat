@@ -5,6 +5,7 @@ _expected='[0-9]+(\.[0-9]+)*[a-z]?'
 
 :release () {
     expected="$_expected"
+    compare=-c
     fetch() {
         gr | vfs | vtrim | vsort -c
     }
@@ -12,6 +13,7 @@ _expected='[0-9]+(\.[0-9]+)*[a-z]?'
 
 :unstable() {
     expected='('"$_expected"'|[0-9]+(\.[0-9]+)*-?(rc|alpha|beta|a|b|pre|dev)?\.?[0-9]*)'
+    compare=-c
     fetch() {
         gr | vtrim | grep -v '[a-z][0-9]-[0-9]$' | vsort -c
     }
