@@ -2,7 +2,13 @@ upstream="gh:westes/flex"
 
 :release() {
     fetch() {
-        gr | vtrim -e s,-,.,g | vsort
+        gr | vtrim | dashdot | fsl | vfs | vsort
+    }
+}
+
+:unstable() {
+    fetch() {
+        gr | vtrim | dashdot | fsl | vsort
     }
 }
 
