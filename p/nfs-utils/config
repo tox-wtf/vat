@@ -2,6 +2,8 @@ upstream="git://git.linux-nfs.org/projects/steved/nfs-utils.git"
 
 :commit  () { :; }
 :unstable() {
+    expected="[0-9]+(\.[0-9]+)*(-|\.)?(rc|alpha|beta|a|b|pre|dev)?\.?[0-9]*"
+
     fetch() {
         gr | vtrim | dashdot | vsort
     }
