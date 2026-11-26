@@ -1,0 +1,8 @@
+upstream="gh:davea42/libdwarf-code"
+
+:commit  () { :; }
+:release () {
+    fetch() {
+        defgitrelease | fdate
+    }
+}
